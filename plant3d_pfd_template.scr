@@ -1,0 +1,138 @@
+; AutoCAD / Plant 3D script (.scr)
+; Draws an approximate PFD/P&ID layout similar to the provided image.
+; Units: arbitrary drawing units (tuned for readability).
+
+_.UCS _W
+_.ZOOM _E
+
+; =========================
+; LINES: TOP FLARE HEADER
+; =========================
+_.LINE 80,250 620,250 ""
+_.TEXT 630,250 0 3 TO FLARE
+
+; =========================
+; LEFT VESSEL: V-102
+; =========================
+; Body (rectangle + semicircle ends)
+_.LINE 160,90 160,210 ""
+_.LINE 220,90 220,210 ""
+_.ARC 190,210 220,210 160,210
+_.ARC 160,90 220,90 190,90
+
+_.TEXT 178,156 0 3 V-102
+_.TEXT 164,145 0 3 PROPYLENE
+_.TEXT 168,134 0 3 FEED DRUM
+
+; Left instrument bubbles
+_.CIRCLE 90,165 10
+_.TEXT 81,164 0 2.4 LAH-102
+_.CIRCLE 140,130 10
+_.TEXT 131,129 0 2.4 LI-102
+_.CIRCLE 90,95 10
+_.TEXT 81,94 0 2.4 LAL-102
+
+; Dashed connection guide (approximation)
+_.PLINE 100,165 130,165 130,95 100,95 ""
+
+; PSV on V-102 to flare
+_.LINE 190,210 190,230 ""
+_.LINE 190,230 182,236 ""
+_.LINE 190,230 198,236 ""
+_.LINE 182,236 198,236 ""
+_.TEXT 203,236 0 2.6 PSV-1001
+_.LINE 190,236 190,250 ""
+
+; Bottom outlet from V-102
+_.LINE 190,90 190,80 ""
+_.LINE 190,80 260,80 ""
+
+; Block valve symbol (simplified)
+_.LINE 260,80 270,86 ""
+_.LINE 260,80 270,74 ""
+_.LINE 270,86 280,80 ""
+_.LINE 270,74 280,80 ""
+_.TEXT 246,64 0 2.3 BLOCK VALVE
+_.TEXT 257,57 0 2.3 (CSO)
+
+; FCV-2001 valve (simplified)
+_.LINE 280,80 330,80 ""
+_.LINE 330,80 340,86 ""
+_.LINE 330,80 340,74 ""
+_.LINE 340,86 350,80 ""
+_.LINE 340,74 350,80 ""
+_.TEXT 322,64 0 2.3 FCV-2001 (FO)
+_.TEXT 320,57 0 2.3 PROP. FEED
+_.TEXT 324,50 0 2.3 CONTROL
+
+_.LINE 350,80 410,80 ""
+
+; =========================
+; RIGHT VESSEL: R-101
+; =========================
+_.LINE 440,65 440,210 ""
+_.LINE 530,65 530,210 ""
+_.ARC 485,210 530,210 440,210
+_.ARC 440,65 530,65 485,65
+
+_.TEXT 468,146 0 3 R-101
+_.TEXT 458,135 0 3 ALKYLATION
+_.TEXT 466,124 0 3 REACTOR
+
+; PSV-3001 from R-101 to flare
+_.LINE 485,210 485,230 ""
+_.LINE 485,230 477,236 ""
+_.LINE 485,230 493,236 ""
+_.LINE 477,236 493,236 ""
+_.TEXT 498,236 0 2.6 PSV-3001
+_.LINE 485,236 485,250 ""
+
+; Outlet to T-101
+_.LINE 530,180 620,180 ""
+_.TEXT 630,183 0 2.5 TO T-101
+_.TEXT 630,176 0 2.5 BENZENE RECOVERY
+_.TEXT 630,169 0 2.5 COLUMN
+
+; Side nozzles + instruments (right)
+_.LINE 530,145 560,145 ""
+_.CIRCLE 575,145 10
+_.TEXT 568,144 0 2.3 PI-301
+_.LINE 585,145 630,145 ""
+_.CIRCLE 645,145 10
+_.TEXT 635,144 0 2.3 PSH-301
+
+_.LINE 530,110 560,110 ""
+_.CIRCLE 575,110 10
+_.TEXT 568,109 0 2.3 TI-301
+_.LINE 585,110 630,110 ""
+_.CIRCLE 645,110 10
+_.TEXT 635,109 0 2.3 TAH-301
+
+; Cooling water return
+_.LINE 530,65 580,65 ""
+_.LINE 580,65 580,35 ""
+_.LINE 580,35 620,35 ""
+_.TEXT 630,35 0 2.5 CW RETURN
+_.TEXT 630,28 0 2.5 HEADER
+
+; Cooling water supply header (bottom left) + FCV-3002
+_.LINE 40,35 120,35 ""
+_.TEXT 10,39 0 2.5 CW SUPPLY
+_.TEXT 10,32 0 2.5 HEADER
+
+_.LINE 120,35 170,35 ""
+_.LINE 170,35 178,41 ""
+_.LINE 170,35 178,29 ""
+_.LINE 178,41 186,35 ""
+_.LINE 178,29 186,35 ""
+_.TEXT 145,20 0 2.3 FCV-3002 (FO)
+
+; Route CW line up to reactor lower left nozzle
+_.LINE 186,35 430,35 ""
+_.LINE 430,35 430,120 ""
+_.LINE 430,120 440,120 ""
+
+; Feed line into reactor mid-left nozzle
+_.LINE 410,80 440,80 ""
+
+_.ZOOM _E
