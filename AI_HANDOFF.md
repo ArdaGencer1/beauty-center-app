@@ -18,6 +18,10 @@ inceleyerek token harcamasını önlemektir.
   `salon`/`kas` küçük farklı; `lazer`, `kirpik`, `lifting`, `pmu`, `cilt`
   v3 ile aynı. Yeni derlemeler yayındaki sürümden yapılır
   (`plans/claude/20261007/lazer-wow-plan.md` §7).
+- **Yayın (10-07): Version 8 = “v4 lazer”** (`1791384922-cc83`, 315 dosya).
+  `a3_build.py` ile `artifact-1791383911.html` tabanından derlendi; geri
+  okunan `index.html` sha256 eşleşti. Artifact başka bir organizasyondan
+  düzenleme yetkisiyle paylaşılmıştır (bu hesabın “mine” listesinde yok).
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.

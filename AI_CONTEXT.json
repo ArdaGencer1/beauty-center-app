@@ -5,19 +5,17 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3,
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-1791383911.html",
+    "repository_snapshot_version": "published 1791383911-8f6e (base of v4)",
     "published_version_checked": {
-      "version": "1791383911-8f6e",
+      "version": "1791384922-cc83",
+      "label": "v4 lazer (Artifact Version 8)",
       "checked_at": "2026-10-07",
-      "files": 291,
-      "index_bytes": 459418,
-      "differs_from_snapshot": [
-        "tirnak",
-        "salon",
-        "kas"
-      ],
-      "note": "build from the published version, not the v3 snapshot"
+      "files": 315,
+      "index_bytes": 1025792,
+      "index_sha256": "285962c3275366cdb486c78595d930434324b7e437dad3c3a0848e9494328a31",
+      "built_by": "sources/atelier_lazer_20261007/a3_build.py --base prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-1791383911.html",
+      "note": "always rebuild from the currently published index.html; it may change inside Claude"
     }
   },
   "measurement": {
@@ -80,10 +78,11 @@
         "src/lazer.js",
         "CRM/navigation/review data",
         "wave 1 fixes (calendar, hotspots, proof strip)",
-        "wave 2: light-sweep hero, line-art map, Lazer Planım card"
+        "wave 2: light-sweep hero, line-art map, Lazer Planım card",
+        "A: Artifact v4 published to the same URL (6 laser views, 24 media), read back sha256-identical"
       ],
       "remaining": [
-        "A: a3_build.py from the published artifact + 24 media files, publish v4 to the same URL",
+        "A8: owner phone approval of v4",
         "B: wave 3 (5 reels, reviews, device tour, journey, face zoom) -> v5",
         "C: wave 4 + subpage identities + speed budget -> v6, owner approval",
         "D: live patch build.py (needs live HTML/script.js access), --check, click test, owner --apply, TagCtx gates"

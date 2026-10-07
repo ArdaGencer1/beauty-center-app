@@ -294,6 +294,35 @@ Açık olanlar:
 | A7 | Yerel doğrulama (Playwright, yayından önce): 6 lazer görünümü + menü + davetiye, 320 / 390 / 430 / 1400 px. Dalga 2 testleri (`check2`), JS hatası 0, taşma 0. Diğer 7 görünüm için önce/sonra ekran görüntüsü karşılaştırması: fark 0. | `scratchpad` çekimleri + özet tablo plana yazılır. |
 | A8 | Aynı URL'ye yayın (`label: "v4 lazer"`). Yayın öncesi yayındaki sürüm yeniden okunur; arada değişmişse önce birleştirilir. Yayından sonra geri okunur: boyut + sha + dosya listesi. | Sahibe bağlantı → **telefon onayı**. |
 
+**Durum (10-07): Adım A tamamlandı, A8 sahip onayı bekliyor.**
+
+- A1: `artifact-1791383911.html` depoya alındı (yayındaki `1791383911-8f6e`).
+- A2–A5: `sources/atelier_lazer_20261007/a3_build.py`. 6 lazer görünümü
+  (`lazer`, `lazer-fiyat`, `lazer-erkek`, `lazer-yuz`, `lazer-hassas`,
+  `lazer-bolgesel`), `VIEWS`, `initView` → `ATLZ.mount` (ev sahibi kancaları),
+  alt çubuk (etiket + davetiye; etiket anahtarı sayfa kodu: `at-lzfiyat-bar-saat`
+  …), menüde 5 lazer sayfası vitrin oldu, prototip panelinde “Lazer sayfası · 6”,
+  kademe anahtarı lazer görünümlerine de uygulanıyor. Eski lazer planlayıcısı
+  (örnek saatler) lazer için devre dışı; `[data-plan="lazer"]` lazer davetiyesini
+  açar. Diğer 7 bölüm bayt bayt aynı (betik doğruluyor).
+- A6: 24 medya dosyası tek yayında; toplam 315 dosya.
+- A7: yerel sunucuda 6 görünüm × 320/390/430/1400: JS/konsol hatası 0, taşma 0,
+  kesilen etiket 0, etiketsiz `a`/`button` 0, [W-]'siz WhatsApp 0, kırık lazer
+  görseli 0. Akışlar: alt çubuk → lazer davetiyesi; menü → `#lazer-erkek`;
+  panel → `#lazer-bolgesel`; salon karosu → `#lazer`. Diğer 8 görünüm (9
+  ekran) 390 ve 1400 px'te piksel karşılaştırması: aynı. Yalnız `cilt` ve
+  `tirnak/kalici-oje`'de küçük fark çıktı; aynı fark eski sürümün kendisiyle
+  karşılaştırmasında da çıkıyor (animasyon zamanlaması), değişiklikten değil.
+- A8: Version 8 (`1791384922-cc83`) yayınlandı; geri okunan `index.html`
+  1.025.792 bayt, sha256 yerel derlemeyle aynı.
+- Bilinen: HTML 459 → 1.026 KB (gzip 95 → 209 KB); 6 görünümün her biri
+  harita SVG'lerini taşıyor. Yalnız prototipi etkiler; canlıda her sayfa tek
+  görünüm. Gerekirse Dalga 4'te SVG'ler bir kez yazılıp kopyalanır.
+- Not: Prototipteki H1'ler yer tutucudur; canlı yama her sayfanın gerçek H1'ini
+  birebir korur.
+- Not: Durable izleme aboneliği kurulamadı (servis 404); Artifact'e gelen
+  yorumlar bu oturumu uyandırmaz.
+
 ### Adım B — Dalga 3 (kanıt bölümleri) → Artifact v5
 
 Sıra: W6 → W7 → W5 → W4 → yüze yakınlaşma (etkisi en yüksekten).
