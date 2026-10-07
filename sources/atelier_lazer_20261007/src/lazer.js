@@ -62,6 +62,7 @@
     this.initHero(); this.initRings(); this.initScroll(); this.initMap(); this.initJourney(); this.initCal(); this.initDevice();
     this.initReels(); this.initReviews(); this.initZoom(); this.initMenu(); this.initTone(); this.initQuick(); this.initFamily();
     if (!this.host.bar) this.initBar();
+    this.initShine(); this.initHalo();
     this.sync();
     this.refreshMinutes();
   }
@@ -179,6 +180,7 @@
     $$("[data-lz-wa]", root).forEach(function (a) { a.href = self.wa(self.msg(a.getAttribute("data-lz-wa"))); });
     var waLbl = $('[data-lz-wa="harita-wa"] .lz-lbl', root);
     if (waLbl) waLbl.textContent = this.sel.length ? this.sel.length + " bölgeyi WhatsApp'tan sor" : "WhatsApp'tan fiyat sor";
+    var qg = $("[data-lz-qgo]", root); if (qg) qg.hidden = !this.sel.length;
     var my = $("[data-lz-mybar]", root);
     if (my) { my.hidden = !this.sel.length; var c = $("[data-lz-mycount]", my); if (c) c.textContent = "Fiyat listem · " + this.sel.length + " kalem"; }
     if (this.bar) { this.bar.wa.href = this.wa(this.msg(this.sel.length ? "plan-wa" : "bar-wa")); $(".lz-lbl", this.bar.wa).textContent = this.sel.length ? "Planım · " + this.sel.length + " bölge" : "WhatsApp'tan fiyat sor"; }
@@ -402,6 +404,7 @@
   P.interval = function () {
     var face = 0, body = 0, self = this;
     this.sel.forEach(function (k) { if (self.isFace(k)) face++; else body++; });
+    if (!this.sel.length && this.D.faceDefault) return [4, 6, "yüz"];
     return (face && !body) ? [4, 6, "yüz"] : [6, 8, "vücut"];
   };
   P.renderCal = function () {
@@ -434,6 +437,12 @@
     this.sel.forEach(function (k) { var r = self.mins(k); if (r) { sum += r.m; known++; } });
     $("[data-lz-pc-min]", cal).textContent = known ? "Menüdeki süreler ≈ " + sum + " dk / seans" + (known < this.sel.length ? " + paket" : "") : (this.sel.length ? "Pakete göre" : "Bölge seçince görünür");
     $("[data-lz-pc-iv]", cal).textContent = "8 seans · " + iv[0] + "–" + iv[1] + " hafta arayla (" + iv[2] + ")";
+    var trow = $("[data-lz-pc-tonerow]", cal);
+    if (trow) {
+      var tn = this.tone && $('[data-tone="' + this.tone + '"] span', this.root), bits = [];
+      if (tn) bits.push(tn.textContent + " ton"); if (this.sens) bits.push("hassas, ön görüşme");
+      trow.hidden = !bits.length; $("[data-lz-pc-tone]", cal).textContent = bits.join(" · ");
+    }
     var badge = $("[data-lz-pc-badge]", cal);
     if (badge) badge.hidden = !this.sel.some(function (k) { return GUAR.indexOf(k) >= 0 || (k.indexOf("pkg:") === 0 && /bitiş garantili/i.test(k)); });
     cal.classList.toggle("has", this.sel.length > 0);
@@ -466,7 +475,11 @@
   P.initReels = function () {
     var self = this, reels = $$(".lz-reel", this.root);
     if (!reels.length) return;
-    var films = reels.map(function (r) { var v = $("video", r); return { video: v.getAttribute("data-src") || v.currentSrc || v.src, poster: v.getAttribute("poster"), cap: $(".lz-reel-t", r).textContent }; });
+    var films = reels.map(function (r) { var v = $("video", r); return { video: v.getAttribute("data-src") || v.currentSrc || v.src, poster: v.getAttribute("data-poster") || v.getAttribute("poster"), cap: $(".lz-reel-t", r).textContent }; });
+    /* <video poster> downloads at parse time even with preload="none"; posters come in only near the viewport */
+    function posters() { reels.forEach(function (r) { var v = $("video", r), p = v.getAttribute("data-poster"); if (p) { v.setAttribute("poster", p); v.removeAttribute("data-poster"); } }); }
+    if ("IntersectionObserver" in window) { var pio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { pio.disconnect(); posters(); } }, { rootMargin: "900px 0px" }); pio.observe(reels[0]); }
+    else posters();
     reels.forEach(function (r, i) {
       r.addEventListener("click", function () {
         $$(".lz-reel video", self.root).forEach(function (v) { v.pause(); });
@@ -676,6 +689,27 @@
     if (this.tier === "C") { el.textContent = msg; return; }
     var i = 0, step = Math.max(1, Math.ceil(msg.length / 60));
     this.typeT = setInterval(function () { i += step; el.textContent = msg.slice(0, i); if (i >= msg.length) clearInterval(self.typeT); }, 16);
+  };
+
+  /* ---------------- finish: gold CTAs shine once when they come into view; a soft light follows the pointer ---------------- */
+  P.initShine = function () {
+    var els = $$(".lz-shine", this.root).concat(this.bar ? [this.bar.wa] : []);
+    if (this.tier === "C" || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } });
+    }, { threshold: 0.8 });
+    els.forEach(function (e) { io.observe(e); });
+  };
+  P.initHalo = function () {
+    if (this.tier !== "A" || !matchMedia("(pointer: fine) and (min-width: 960px)").matches) return;
+    var root = this.root, h = document.createElement("div"), x = 0, y = 0, q = false;
+    h.className = "lz-halo"; h.setAttribute("aria-hidden", "true"); root.appendChild(h);
+    root.addEventListener("pointermove", function (e) {
+      var b = root.getBoundingClientRect(); x = e.clientX - b.left; y = e.clientY - b.top;
+      if (q) return; q = true;
+      requestAnimationFrame(function () { q = false; h.style.transform = "translate(" + (x - 210) + "px," + (y - 210) + "px)"; h.classList.add("on"); });
+    }, { passive: true });
+    root.addEventListener("pointerleave", function () { h.classList.remove("on"); });
   };
 
   /* ---------------- sticky bar (live pages) ---------------- */

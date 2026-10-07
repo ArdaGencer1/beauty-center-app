@@ -27,7 +27,7 @@ inceleyerek token harcamasını önlemektir.
   **o anki yayındaki sürümden** derlenir: `a3_build.py` yeniden derleme kipi
   yalnız lazer bloklarını (görünümler, `#lz-css`, veri + `lazer.js`) değiştirir,
   gerisini bayt bayt korur. Reddedilen yayın yeni tabanı verir; onunla yeniden
-  derlenir. Son yayın: Version 11 = “v5 lazer dalga 3” (`1791386228-c5b1`).
+  derlenir. Son yayın: Version 14 = “v6 lazer dalga 4” (`1791387402-8d7b`).
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.

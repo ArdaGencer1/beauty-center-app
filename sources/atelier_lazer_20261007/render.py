@@ -609,6 +609,7 @@ def cal_section(code):
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-{code}-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
+      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -643,7 +644,7 @@ def device_section(code, media):
 def reels_section(code, media):
     items = "".join(
         f'<button type="button" class="lz-reel" data-reel="{s}" data-track-label="at-{code}-film-ac" aria-label="{esc(c)}: videoyu açın">'
-        f'<video muted playsinline loop preload="none" poster="{media}{s}-poster.webp" data-src="{media}{s}.mp4" aria-hidden="true"></video>'
+        f'<video muted playsinline loop preload="none" data-poster="{media}{s}-poster.webp" data-src="{media}{s}.mp4" aria-hidden="true"></video>'
         f'<span class="lz-reel-t"><i>{ICON["play"]}</i>{esc(c)}</span></button>' for s, c in REELS)
     return f'''<section class="lz-sec lz-reels" id="lz-film">
   {sec_head("Salonumuzda çekildi", "Işığı <em>iş başında</em> görün", "Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.")}
@@ -763,6 +764,7 @@ def quick_section(code):
     return f'''<section class="lz-sec lz-quick" id="lz-hizli">
   {sec_head("15 dakikalık bölgeler", "Tek bölge, <em>kısa seans</em>", "Randevu sistemimizde tek seansı 15 dakika olan kadın bölgeleri. Dokunun, listenize eklensin; erkek bölgeleri haritada.")}
   <div class="lz-qrow">{chips}</div>
+  <a class="lz-qgo" href="#lz-takvim" data-lz-scroll data-lz-qgo hidden data-track-label="at-{code}-hizli-plan">Lazer Planım'a bakın {ICON["arrow"]}</a>
 </section>'''
 
 
@@ -805,7 +807,7 @@ def page_data(key: str, media: str, nav: bool) -> dict:
         {"t": "Yorumlar", "th": f"{media}lazer-koltuk-480.webp", "fr": [{"rv": r} for r in rev["items"][:3]]},
         {"t": "Fiyat", "th": f"{media}lazer-uzman-480.webp", "fr": [{"price": True}]},
     ]
-    d = {"page": key, "code": P["code"], "g": P["g"], "media": media, "wa": WA, "regions": regs,
+    d = {"page": key, "code": P["code"], "g": P["g"], "media": media, "wa": WA, "regions": regs, "faceDefault": bool(P.get("face")),
          "pkgParts": PKG_PARTS, "face": sorted(FACE_IDS), "stories": stories, "stats": rev["stats"]}
     if nav:
         d["nav"] = load("nav.json")

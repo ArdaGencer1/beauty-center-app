@@ -258,6 +258,8 @@ Açık olanlar:
    olmadan da çalışır.
 4. 6. video (`lazer-film-kol`, IG 18101999296585006): sunucuda işlensin mi?
 5. Canlı yama dosyalarına erişim (§7, Adım D0).
+6. Sayfa boyu ≤ 8.500 için içerik kısaltması yapılsın mı (§7 Adım C durumu)?
+7. Video bütçesi: şerit videoları yalnız dokununca mı oynasın?
 
 ## 7. Kalan adımlar — ayrıntılı plan (10-07)
 
@@ -387,6 +389,44 @@ Sıra: W6 → W7 → W5 → W4 → yüze yakınlaşma (etkisi en yüksekten).
   ilk ekran ≤ 180 KB, sayfa ≤ 1,5 MB, C kademesi ≤ 0,4 MB.
 - Artifact v6 → **sahibin son prototip onayı.** Canlı yama bu onaydan önce
   başlamaz.
+
+**Durum (10-07): Adım C tamamlandı — Artifact Version 14 = “v6 lazer dalga 4”**
+(`1791387402-8d7b`, geri okunan `index.html` sha256 yerel derlemeyle aynı;
+taban paralel oturumun kaş düzenlemesini içeren `1791386645-72f7`).
+
+- İnce işçilik: bölümler arası pembe-altın ışık çizgisi; masaüstünde
+  (`pointer: fine`, ≥ 960 px, A kademesi) imleci izleyen hafif pembe hale;
+  altın CTA parıltısı artık sonsuz döngü değil, görünür olunca **bir kez**.
+- Sayfa boyu (390 px, merkez): 9.845 → **9.015 px** (başlangıç 10.481).
+  Hijyen ve alt sayfa karoları telefonda yatay şerit; bölüm boşluğu 52 px;
+  yolculuk adım boşluğu 3 svh (4 adımın hepsi hâlâ sırayla tetikleniyor).
+  **≤ 8.500 hedefine ulaşılmadı;** kalan fark içerik çıkarmadan kapanmıyor
+  (adaylar: haritadaki “Gün de seçeyim” tekrarı, fiyat kartı ile kapı
+  kartının birleşmesi) — sahip kararı.
+- Alt sayfa kimlikleri: erkek grafit + gül altını (lazer ışığı pembe kalır);
+  yüz sayfasında Plan kartı seçim yokken 4–6 hafta; hassas sayfasında Plan
+  kartında “Cilt” satırı (ton + hassas işareti, mesaja da gider); bölgeselde
+  15 dk bölgesine dokununca “Lazer Planım'a bakın” bağlantısı (`hizli-plan`);
+  fiyat menüsündeki “+ Ekle” Plan kartını dolduruyor (doğrulandı).
+- Hız (Playwright, 390 px, 1,6 Mbps / 150 ms, CPU 4×; Lighthouse değil):
+  - LCP 0,60–1,02 sn (≤ 2,5 ✓); CLS kaydırma dahil ≤ 0,028 (≤ 0,05 ✓;
+    önce 0,08–0,12 — kaynak cihaz kartlarının farklı yüksekliğiydi, kartlar
+    artık aynı ızgara hücresinde).
+  - İlk yükleme 403 → 276 KB sıkıştırmasız; gzip'le ≈ 140 KB (≤ 180 ✓).
+    Kazanç: `<video poster>` `preload="none"`a rağmen posterleri hemen
+    indiriyordu (5 × ~16 KB) → posterler ekrana 900 px kala; Cormorant
+    `latin-ext` dosyaları sayfaların kullandığı 5 Türkçe harfe (Ğ ğ İ Ş ş)
+    indirildi: 2 × 34 KB → 2 × 2,5 KB (`fonts/cormorant-*-tr.woff2`,
+    `wght` ekseni korundu; görsel kontrol yapıldı).
+  - **Açık konu, sayfa toplamı:** videolar hariç ≈ 0,43 MB (gzip). A
+    kademesinde hero videosu (1,16 MB) + kaydırınca bir şerit videosu
+    (1,0–1,4 MB) eklenince ≈ 2,6 MB → **≤ 1,5 MB bütçesini aşar.** Seçenek:
+    şerit videoları kendiliğinden oynamasın, yalnız dokununca (≈ 1,6 MB).
+    Sahip kararı. (Test tarayıcısı H.264 oynatmadığı için videolar ölçüme
+    girmedi; rakamlar dosya boyutlarından.)
+- Doğrulama: `check2` 7 sayfa × 4 genişlik temiz; `w3` ve `w4` (ton satırı,
+  yüz varsayılanı, hızlı bağlantı, menü → kart, hale, tek parıltı) temiz;
+  Artifact'te 6 görünüm × 4 genişlik + akışlar temiz.
 
 ### Adım D — Canlı yama (sunucu, sahip onaylı)
 

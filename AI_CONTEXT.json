@@ -5,14 +5,14 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-1791385926.html",
-    "repository_snapshot_version": "published 1791385926-0e0c (base of v5; another session's cilt/tirnak edits included)",
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-1791386645.html",
+    "repository_snapshot_version": "published 1791386645-72f7 (base of v6; parallel session's cilt/tirnak/kas edits included)",
     "published_version_checked": {
-      "version": "1791386228-c5b1",
-      "label": "v5 lazer dalga 3 (Artifact Version 11)",
+      "version": "1791387402-8d7b",
+      "label": "v6 lazer dalga 4 (Artifact Version 14)",
       "checked_at": "2026-10-07",
-      "index_bytes": 1099471,
-      "index_sha256": "8a62456e692b06a26091f0b6119650151c19989b09827e729ce518af41527198",
+      "index_bytes": 1114770,
+      "index_sha256": "1d18a0cadac597f34dbe1d7c350a56143728b95a5311e705def050851fca69c9",
       "built_by": "sources/atelier_lazer_20261007/a3_build.py --base <published index.html> (rebuild mode swaps only the laser blocks)",
       "note": "another session edits cilt/tirnak on this Artifact in parallel: always read the live version right before building, and expect a refused publish to hand back a newer base"
     }
@@ -79,11 +79,11 @@
         "wave 1 fixes (calendar, hotspots, proof strip)",
         "wave 2: light-sweep hero, line-art map, Lazer Planım card",
         "A: Artifact v4 published to the same URL (6 laser views, 24 media), read back sha256-identical",
-        "B: wave 3 (5-film story, review topics + count, device tour, glass journey, face zoom) published as v5"
+        "B: wave 3 (5-film story, review topics + count, device tour, glass journey, face zoom) published as v5",
+        "C: wave 4 (dividers, desktop halo, shine once, mobile strips, subpage identities, Turkish font subset, lazy reel posters, stable device cards) published as v6"
       ],
       "remaining": [
-        "owner phone check of v5",
-        "C: wave 4 + subpage identities + speed budget -> v6, owner approval",
+        "owner final prototype approval of v6",
         "D: live patch build.py (needs live HTML/script.js access), --check, click test, owner --apply, TagCtx gates"
       ],
       "wow_plan": "plans/claude/20261007/lazer-wow-plan.md"
