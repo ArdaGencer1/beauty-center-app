@@ -1,6 +1,6 @@
 # AI handoff — web sitesi, Artifact ve medya
 
-Son doğrulama: **2026-10-07**
+Son doğrulama: **2026-10-07** (Cilt Atlası v5 eklendi)
 
 Bu dosyayı web sitesi, Claude Artifact veya Instagram medyası üzerinde çalışmaya
 başlamadan önce oku. Amaç, her yeni ajanın yüzlerce fotoğrafı ve videoyu yeniden
@@ -10,9 +10,19 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
-  anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
-  olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
+- Yayındaki sürüm **Artifact v7** = Artifact sürüm 16, `1791388726-c3e0` (önceki: v6 = sürüm 12)
+  (başka oturumların vücut, lazer, tırnak, kaş işleri + Cilt Atlası + mobil düzen). Depoda
+  `artifact-v7.html` = `website/index.html` (yayın iskeleti olmadan). Artifact'e
+  aynı anda birden çok oturum yayın yapıyor: yayından hemen önce yeniden oku ve
+  değişiklikleri o sürümün üzerine birleştir.
+- Yayın servisi sayfayı kendi `<!doctype…><body>` iskeletiyle sarar ve geri
+  okumada bu iskelet döner. Geri okunan dosyayı olduğu gibi yayınlama: önce
+  iskeleti sök (ilk satır ve son `</body></html>`), yoksa iskelet ikilenir.
+  Cilt değişikliği: `python3 sources/atelier_cilt_20261007/a4_build.py --refresh <yayındaki.html>`.
+- Ortak mobil/yön düzeni `<style id="mobil-duzen">` bloğundadır (kaynak:
+  `sources/atelier_cilt_20261007/src/mobil.css`); denetim `mobil_audit.cjs`.
+- Bu bulut ortamından `seldagencerbeauty.com` ve `instagram.com` erişilemiyor
+  (ağ politikası); CRM ve sunucu arşivi işleri sunucuda yapılmalı.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.
@@ -37,8 +47,9 @@ inceleyerek token harcamasını önlemektir.
 | Medya üreticisi | `sources/media_ig_20261007/build_media.py` | Crop, hizalama, poster, video ve varyant üretim kuralları. |
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
-| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html` | Mevcut Artifact'in depodaki v3 tabanı. |
-| Güncel planlar | `plans/claude/20261007/` | Lazer, PMU ve Cilt Atlası planları. |
+| Artifact anlık görüntüleri | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v{3..7}.html` | v4/v5 = ara sürümler; v6 = sürüm 12; v7 = yayındaki sürüm 16 (Cilt + mobil düzen). |
+| Cilt Atlası kaynakları | `sources/atelier_cilt_20261007/` | `build_cilt_media.py`, `a4_build.py`, `shoot_cilt.cjs`, `src/`, `data/cilt_media.json`. |
+| Güncel planlar | `plans/claude/20261007/` | Lazer, PMU, Cilt Atlası ve Cilt Atlası v5 uygulama/güncelleme planı. |
 
 ### Sunucudaki asıl yollar
 
@@ -129,15 +140,18 @@ Hazır olanlar: 24 PMU manifest kaydı ve bunlardan üretilmiş varyantlar.
 Kalanlar: `pmu_build.py`, `pmu_pack.py`, yeni vitrin/sahneler, `shoot2.mjs`,
 Artifact yayını ve plandaki doğrulamalar.
 
-### 3. Cilt Atlası — planlandı, uygulama büyük ölçüde bekliyor
+### 3. Cilt Atlası — 24 sayfa yayında (Artifact sürüm 16, mobil/yön düzeltmeleriyle)
 
-Plan: `plans/claude/20261007/planlayal-m-mutable-rossum.md`
+Plan: `plans/claude/20261007/planlayal-m-mutable-rossum.md`; uygulama ve
+güncelleme planı: `plans/claude/20261007/cilt-atlasi-hikaye-v5.md`.
 
-Hazır olanlar: medya araştırması, sayfa-medya matrisi, edit reçetesi, çekim
-listesi ve dalga planı; manifestte 13 cilt kaydı.
+Hazır olanlar: 11 yeni cilt medyası (9 video, 1 kaydırma filmi sprite'ı, 1
+döndürülmüş önce/sonra çifti); sayfa motoru; 24 alt sayfa (`#cilt/<slug>`) ve
+hub'da atlas; çıkarılan kareler kaldırıldı; tarayıcı doğrulaması 50/50.
 
-Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
-çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
+Kalanlar: yeni CRM kalemlerinin doğrulanması,
+yalnız sunucuda duran kadro fotoğrafları (#1, #3, #5, #7…), personel çekimleri,
+canlıya taşıma ve TagCtx kapısı. Ayrıntı ve sıra v5 planında (G0–G6).
 
 Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
 
@@ -164,7 +178,15 @@ Cilt planında çıkarılması kararlaştırılan eski seçimler:
 - `cilt-video-2` (`18084203987184570`)
 
 Manifest eski kayıtları hâlâ içerebilir. Cilt geliştirmesinde planın son kararı
-manifestteki eski varlıktan üstündür. Lazer için gerçek “önce/sonra” yoktur;
+manifestteki eski varlıktan üstündür.
+
+Cilt v5'te verilen ek kararlar (ayrıntı: `cilt-atlasi-hikaye-v5.md` §2):
+
+- `cilt-cift-1` (`18039236768821035`) → `yuz-cift-1`: 180° döndürüldü, ters
+  etiket iki yarımdan eşit kırpıldı; gerçek ve güçlü tam yüz kanıtı.
+- `18192437785391754` saten videosunda 0,7–1,6 sn siyah geçiş var; döngü 1,7
+  sn'den başlar (planın 1,6–6,6 önerisi düzeltildi).
+- `salon-tur` posteri tırnak barını gösterir; cilt sayfalarında kullanılmaz. Lazer için gerçek “önce/sonra” yoktur;
 gerçek işlem videoları ve dürüst süreç anlatımı kullanılır.
 
 ## “Tamamlandı” demeden önce zorunlu kapılar

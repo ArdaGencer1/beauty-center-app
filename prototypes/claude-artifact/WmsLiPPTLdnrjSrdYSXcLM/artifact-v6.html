@@ -153,32 +153,6 @@ html[data-tier="C"] .ca-layer,html[data-tier="C"] .ca-card{transition:none}
 .ca-row button,.ca-row>span:first-child{background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .ca-row .pr{padding:9px 14px;border:1px solid var(--line-strong);border-radius:999px;font:500 19px/1 var(--display);color:var(--gold-ink);white-space:nowrap}
 #ciltHubStory{padding-top:0}
-
-/* ---------- yön (oryantasyon) ve konum ---------- */
-.ca-crumb{min-height:44px;padding-right:8px}
-@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
-  .ca-hero .hero-media{aspect-ratio:auto;height:calc(100svh - var(--nav-h))}
-  .ca-scrolly{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
-  .ca-stage{grid-column:1;grid-row:1;height:calc(100svh - var(--nav-h) - 20px);top:calc(var(--nav-h) + 10px)}
-  .ca-acts{grid-column:2;grid-row:1}
-  .ca-act{min-height:92svh;align-items:center;padding:0}
-  .ca-act:first-child{margin-top:0}
-  .ca-card{padding:16px}
-  .ca-card h3{font-size:26px}
-  .ca-film{height:200svh}
-  .ca-film-pin{height:calc(100svh - var(--nav-h) - 20px)}
-  .ca-map{grid-template-columns:minmax(0,.8fr) minmax(0,1fr)}
-  .ca-face{width:min(100%,250px)}
-  .ca-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .ca-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ca-duel{grid-template-columns:1fr auto 1fr;align-items:stretch}
-  .ca-duel .vs{align-self:center}
-}
-@media (min-width:600px) and (max-width:959px) and (orientation:portrait){
-  .ca-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .ca-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ca-stage{height:min(52svh,600px)}
-}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -399,72 +373,9 @@ html[data-tier="C"] .film-frame{height:auto;width:min(100%,380px)}
 .hero-copy h1 em{font-style:italic}
 .hero-note{font-size:12px;color:var(--text-3)}
 
-/* ---------- kaş: beş perde ---------- */
-.perde{position:relative;height:calc(var(--n) * 62svh + 100svh)}
-.perde-stage{position:sticky;top:var(--nav-h);height:calc(100svh - var(--nav-h));display:grid;align-content:center;gap:16px;padding-block:18px;max-width:1120px;margin-inline:auto}
-.perde-head{display:grid;gap:8px}
-.perde-head h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,6.4vw,50px);line-height:1;margin:0;text-wrap:balance}
-.perde-head h2 em{font-style:italic;color:#F4E6BE}
-.perde-frame{position:relative;width:min(100%,calc(52svh * 1200 / 552));aspect-ratio:1200/552;max-width:100%;border-radius:20px;overflow:hidden;border:1px solid rgba(233,215,165,.25);box-shadow:0 30px 80px -30px rgba(0,0,0,.8);background:#1A1713}
-.perde-shot{margin:0}
-.perde-frame .perde-shot{position:absolute;inset:0;opacity:0;will-change:opacity,clip-path}
-.perde-frame .perde-shot:first-child{opacity:1}
-.perde-shot img{width:100%;height:100%;object-fit:cover}
-.perde-shot figcaption{display:none}
-.perde-tag{position:absolute;left:12px;top:12px;font:600 10.5px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;padding:7px 10px;border-radius:999px;background:rgba(14,13,12,.62);color:#F4E6BE;border:1px solid rgba(233,215,165,.35)}
-.perde-seam{position:absolute;top:0;bottom:0;left:0;width:2px;margin-left:-1px;z-index:3;background:linear-gradient(#F6EACB,#C9A55C);box-shadow:0 0 16px rgba(244,230,190,.95);opacity:0;pointer-events:none}
-.perde-dots{display:flex;gap:6px;margin:0;padding:0;list-style:none;width:min(100%,calc(52svh * 1200 / 552))}
-.perde-dots li{flex:1;height:2px;border-radius:2px;background:rgba(247,241,228,.2);transition:background .4s var(--ease)}
-.perde-dots li.on{background:#F4E6BE;box-shadow:0 0 10px rgba(244,230,190,.7)}
-.perde-cap{display:grid;gap:6px;min-height:7.6em;align-content:start;transition:opacity .3s var(--ease),transform .3s var(--ease)}
-.perde-cap.out{opacity:0;transform:translateY(6px)}
-.perde-cap .n,.perde-shot figcaption .n{font:600 11px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:#EBD49A}
-.perde-cap .t,.perde-shot figcaption .t{font-family:var(--display);font-weight:400;font-size:clamp(28px,6vw,42px);line-height:1;text-wrap:balance}
-.perde-cap .s,.perde-shot figcaption .s{color:#E2D8C5;font-size:15px;max-width:56ch;margin:0}
-.perde-note{font-size:12px;color:#C3B8A1;margin:0;max-width:70ch}
-html[data-tier="C"] .perde{height:auto}
-html[data-tier="C"] .perde-stage{position:static;height:auto;gap:22px}
-html[data-tier="C"] .perde-frame{width:100%;aspect-ratio:auto;overflow:visible;border:0;box-shadow:none;background:none;border-radius:0;display:grid;gap:26px}
-html[data-tier="C"] .perde-frame .perde-shot{position:relative;inset:auto;opacity:1}
-html[data-tier="C"] .perde-shot img{height:auto;aspect-ratio:1200/552;border-radius:16px}
-html[data-tier="C"] .perde-shot figcaption{display:grid;gap:6px;margin-top:12px}
-html[data-tier="C"] .perde-seam,html[data-tier="C"] .perde-dots,html[data-tier="C"] .perde-cap{display:none}
-.perde-final{display:grid;gap:22px;align-items:center}
-.perde-final figure{margin:0;position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-width:380px;border:1px solid rgba(233,215,165,.25);box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
-.perde-final figure img{width:100%;height:100%;object-fit:cover}
-.perde-final h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,7vw,52px);line-height:1;margin:0;text-wrap:balance}
-.perde-final h2 em{font-style:italic;color:#F4E6BE}
-.perde-final .copy{display:grid;gap:14px;min-width:0}
-.perde-final .steps-mini{color:#E2D8C5}
-@media (min-width:860px){.perde-final{grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:56px}.perde-final .btn-gold{width:auto;max-width:340px;justify-self:start;padding:0 30px}}
-
-/* ---------- kaş: mobil (kasyuz-mobile) ---------- */
-.perde-dots button{flex:1;height:44px;margin:-21px 0;padding:0;border:0;background:none;cursor:pointer;position:relative}
-.perde-dots button::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;border-radius:2px;background:rgba(247,241,228,.2);transition:background .4s var(--ease),box-shadow .4s var(--ease)}
-.perde-dots li.on button::before{background:#F4E6BE;box-shadow:0 0 10px rgba(244,230,190,.7)}
-.perde-dots li,.perde-dots li.on{background:none;box-shadow:none;display:flex;height:2px}
-.perde-shot img{object-position:var(--fx,50%) 50%}
-#galKas .gcard.wide{aspect-ratio:2/1}
-#galKas .gcard .gl{font-size:11px}
-[data-view="kas"] .faq details{padding:6px 0}
-[data-view="kas"] .faq summary{min-height:44px;align-items:center}
-@media (max-width:699px){
-  .hero-kas .cmp{aspect-ratio:16/10}
-  .hero-kas .cmp img{object-position:55% 50%}
-  .perde{height:calc(var(--n) * 46svh + 100svh)}
-  .perde-stage{height:calc(100svh - var(--nav-h) - var(--bar-h));gap:12px;padding-block:8px}
-  .perde-frame{width:auto;margin-inline:calc(-1 * var(--gutter));aspect-ratio:1.8;border-radius:0;border-inline:0}
-  .perde-dots{width:100%}
-  .perde-cap{min-height:8.4em}
-  .perde-cap .t{font-size:clamp(28px,8.4vw,36px)}
-  .perde-note{font-size:11.5px}
-  .perde-final figure{width:min(100%,calc(44svh * .8))}
-  html[data-tier="C"] .perde-frame{margin-inline:0}
-}
-
 /* ---------- golden mirror ---------- */
 .golden{display:grid;gap:22px}
-.golden-fig{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:800/368;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);border:1px solid rgba(233,215,165,.25)}
+.golden-fig{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:800/500;box-shadow:0 30px 80px -30px rgba(0,0,0,.8);border:1px solid rgba(233,215,165,.25)}
 .golden-fig img{width:100%;height:100%;object-fit:cover}
 .golden-fig svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .g-line{fill:none;stroke:url(#goldStroke);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 0 6px rgba(244,230,190,.9))}
@@ -1152,10 +1063,6 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz{  position:relative;isolation:isolate;overflow:clip;background:var(--lz-bg);color:var(--lz-text);
   font:16px/1.6 var(--lz-body);-webkit-font-smoothing:antialiased;text-align:left;letter-spacing:normal}
 .lz *,.lz *::before,.lz *::after{box-sizing:border-box}
-.lz[data-lz-page="erkek"]{--lz-bg:#0C0D0F;--lz-bg2:#121316;--lz-raised:#1A1C20;--lz-raised2:#22252A;--lz-text2:#C4C2C0;--lz-text3:#8F8E8C;
-  --lz-line:rgba(214,214,220,.13);--lz-line2:rgba(214,214,220,.28);--lz-rose:#D9A58F;background:var(--lz-bg)}
-.lz[data-lz-page="erkek"] .lz-map,.lz[data-lz-page="erkek"] .lz-journey{background:linear-gradient(180deg,#0C0D0F,#14161A 50%,#0C0D0F)}
-.lz[data-lz-page="erkek"] .lz-plancard{background:radial-gradient(90% 60% at 100% 0%,rgba(217,165,143,.12),transparent 60%),linear-gradient(180deg,#1A1C20,#0F1012)}
 .lz img,.lz video,.lz svg{display:block;max-width:100%}
 .lz h1,.lz h2,.lz h3{font-family:var(--lz-display);font-weight:400;margin:0;letter-spacing:-.01em;line-height:1;text-shadow:none;
   color:var(--lz-text)!important;text-transform:none;text-align:left;background:none;border:0;padding:0}
@@ -1170,12 +1077,7 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-over{display:block;font:600 11px/1.3 var(--lz-body);letter-spacing:.24em;text-transform:uppercase;color:var(--lz-rose)!important}
 .lz-fine{font-size:12.5px!important;line-height:1.5;color:var(--lz-text3)!important;margin-top:12px!important}
 .lz-fine a{color:var(--lz-rose)!important;text-decoration:underline}
-.lz-sec{position:relative;padding:52px var(--lz-g)}
-.lz-sec+.lz-sec::before{content:"";position:absolute;top:0;left:50%;width:min(62%,520px);height:1px;transform:translateX(-50%);pointer-events:none;
-  background:linear-gradient(90deg,transparent,rgba(255,121,190,.55) 30%,rgba(244,230,190,.75) 50%,rgba(255,121,190,.55) 70%,transparent);box-shadow:0 0 12px rgba(255,79,163,.35)}
-.lz-halo{position:absolute;left:0;top:0;width:420px;height:420px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;transition:opacity .5s;
-  background:radial-gradient(closest-side,rgba(255,79,163,.11),rgba(255,79,163,.04) 55%,transparent);mix-blend-mode:screen;will-change:transform}
-.lz-halo.on{opacity:1}
+.lz-sec{position:relative;padding:60px var(--lz-g)}
 .lz-head{display:grid;gap:12px;margin-bottom:26px;max-width:640px}
 .lz-head h2{font-size:clamp(36px,10vw,58px);line-height:.98;text-wrap:balance}
 .lz-head p{max-width:56ch}
@@ -1191,8 +1093,8 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-btn-gold svg{width:20px;height:20px;flex:none}
 .lz-btn-gold .lz-lbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#1B1A18!important}
 .lz-shine::after{content:"";position:absolute;inset:-20% auto -20% -40%;width:28%;transform:skewX(-20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);opacity:0}
-.lz[data-lz-tier="A"] .lz-shine.seen::after,.lz[data-lz-tier="B"] .lz-shine.seen::after,.lz-bar .lz-shine.seen::after{animation:lzShine 1.3s var(--lz-ease) .25s 1 both}
-@keyframes lzShine{0%{left:-40%;opacity:0}15%{opacity:1}100%{left:120%;opacity:0}}
+.lz[data-lz-tier="A"] .lz-shine::after,.lz[data-lz-tier="B"] .lz-shine::after{animation:lzShine 6.5s var(--lz-ease) 2.4s infinite}
+@keyframes lzShine{0%{left:-40%;opacity:0}6%{opacity:1}18%{left:120%;opacity:0}100%{left:120%;opacity:0}}
 .lz-btn-line{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:50px;padding:0 20px;border-radius:999px;border:1px solid var(--lz-line2);background:rgba(255,255,255,.02);cursor:pointer;
   font:600 14px/1 var(--lz-body);color:var(--lz-text)!important;text-decoration:none!important}
 .lz-btn-line svg{width:17px;height:17px;flex:none;color:var(--lz-rose)}
@@ -1309,9 +1211,6 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-rgchips button small,.lz-qchip small{font-size:11.5px!important;color:var(--lz-text3)!important}
 .lz-rgchips button[aria-pressed="true"],.lz-qchip[aria-pressed="true"]{background:var(--lz-text);color:#1B1A18;border-color:var(--lz-text)}
 .lz-rgchips button[aria-pressed="true"] small,.lz-qchip[aria-pressed="true"] small{color:#5B5346!important}
-.lz-qgo{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:600 14px/1 var(--lz-body);color:var(--lz-pink-hi)!important;text-decoration:underline;text-underline-offset:4px}
-.lz-qgo[hidden]{display:none}
-.lz-qgo svg{width:16px;height:16px}
 .lz-qchip{height:auto;padding:12px 16px;flex-direction:column;align-items:flex-start;gap:4px;border-radius:18px}
 .lz-qchip b{font:500 20px/1 var(--lz-display);color:inherit}
 
@@ -1347,7 +1246,7 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-sess i.on{background:var(--lz-pink);border-color:var(--lz-pink);box-shadow:0 0 6px var(--lz-pink)}
 .lz-jfig[data-step="4"] .lz-sess{opacity:1}
 .lz-jsteps{position:relative;z-index:1}
-.lz-jstep{min-height:26svh;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:0 4px 3svh}
+.lz-jstep{min-height:26svh;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:0 4px 9svh}
 .lz-jstep:first-child{min-height:26svh}
 .lz-jtxt{display:grid;gap:8px;padding:16px 16px 18px;border-radius:20px;background:rgba(18,10,14,.74);border:1px solid rgba(255,211,234,.18);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
 .lz-jn{font:600 11px/1 var(--lz-body);letter-spacing:.22em;color:var(--lz-pink)}
@@ -1409,9 +1308,6 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-hot::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,211,234,.9);animation:lzPulse 2.2s var(--lz-ease) infinite}
 .lz-hot[aria-pressed="true"]{background:rgba(255,79,163,.6)}
 .lz-hot[aria-pressed="true"] i{background:var(--lz-pink)}
-.lz-hotcards{display:grid}
-.lz-hotcard,.lz .lz-hotcard[hidden]{grid-area:1/1;display:block}
-.lz .lz-hotcard[hidden]{visibility:hidden;animation:none}
 .lz-hotcard{border-radius:20px;padding:18px;background:rgba(255,79,163,.07);border:1px solid rgba(255,79,163,.3);animation:lzFade .35s var(--lz-ease)}
 .lz-hotcard b{display:block;font:500 26px/1.05 var(--lz-display);margin-bottom:6px}
 .lz-spec{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
@@ -1456,9 +1352,7 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-rv footer b{color:var(--lz-text2);font-weight:600}
 
 /* ---------- L8 hygiene ---------- */
-.lz-hygrid{display:grid;grid-auto-flow:column;grid-auto-columns:min(56vw,240px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--lz-g) 4px;margin-inline:calc(var(--lz-g) * -1)}
-.lz-hygrid::-webkit-scrollbar,.lz-tiles::-webkit-scrollbar{display:none}
-.lz-hygrid>*{scroll-snap-align:start}
+.lz-hygrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .lz-hy{position:relative;display:block;border:0;padding:0;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#1a1113;cursor:zoom-in;text-align:left}
 .lz-hy img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .lz-hy::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,9,9,.9))}
@@ -1504,12 +1398,11 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 .lz-how p{font-size:14px}
 
 /* ---------- family / visit ---------- */
-.lz-tiles{display:grid;grid-auto-flow:column;grid-auto-columns:min(52vw,220px);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--lz-g) 4px;margin-inline:calc(var(--lz-g) * -1)}
-.lz-tiles>*{scroll-snap-align:start}
+.lz-tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .lz-tile{position:relative;display:block;border-radius:20px;overflow:hidden;aspect-ratio:3/4;background:#1a1113;border:1px solid var(--lz-line)}
 .lz-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--lz-ease)}
 .lz-tile:hover img{transform:scale(1.05)}
-@media (min-width:960px){.lz-tile:last-child:nth-child(odd){grid-column:1 / -1;aspect-ratio:16/9}}
+.lz-tile:last-child:nth-child(odd){grid-column:1 / -1;aspect-ratio:16/9}
 .lz-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(11,9,9,.92))}
 .lz-tile span{position:absolute;z-index:2;left:12px;right:12px;bottom:12px;display:grid;gap:3px}
 .lz-tile b{font:500 21px/1.05 var(--lz-display);color:#fff}
@@ -1646,8 +1539,8 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .lz-devfig{max-width:520px}
   .lz-reelrow{margin:0;padding:4px 0 12px}
   .lz-reel{width:220px}
-  .lz-hygrid{grid-auto-flow:row;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible;margin:0;padding:0}
-  .lz-tiles{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;margin:0;padding:0}
+  .lz-hygrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .lz-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
   .lz-tile{aspect-ratio:4/3}
   .lz-fgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .lz-pricecard .lz-card,.lz-menu .lz-card,.lz-tonesec .lz-card,.lz-visitcard{max-width:760px}
@@ -1787,8 +1680,8 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     <div class="hero-split">
       <div class="hero-media lit">
         <div class="cmp" id="kasCmp" style="view-transition-name:media-kas">
-          <picture><source media="(max-width:699px)" srcset="m/ig/kas-perde-okuma-800.webp 800w, m/ig/kas-perde-okuma-1200.webp 1200w" sizes="100vw"><img class="cmp-b" src="m/ig/kas-altin-oran-once-1200.webp" alt="Önce: altın oran kaş alımı öncesi" width="1200" height="800" fetchpriority="high"></picture>
-          <picture><source media="(max-width:699px)" srcset="m/ig/kas-perde-sonuc-800.webp 800w, m/ig/kas-perde-sonuc-1200.webp 1200w" sizes="100vw"><img class="cmp-a" src="m/ig/kas-altin-oran-sonra-1200.webp" alt="Sonra: altın oranla şekillendirilmiş kaş" width="1200" height="800"></picture>
+          <img class="cmp-b" src="m/ig/kas-altin-oran-once-1200.webp" alt="Önce: altın oran kaş alımı öncesi" width="1200" height="800" fetchpriority="high">
+          <img class="cmp-a" src="m/ig/kas-altin-oran-sonra-1200.webp" alt="Sonra: altın oranla şekillendirilmiş kaş" width="1200" height="800">
           <canvas class="dust" data-dust></canvas>
           <div class="cmp-beam"></div>
           <span class="cmp-tag a">Sonra</span><span class="cmp-tag b">Önce</span>
@@ -1810,42 +1703,21 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     </div>
   </div>
 
-  <div class="perde dark-band gutter" id="perde" style="--n:6">
-    <div class="perde-stage">
-      <div class="perde-head">
-        <span class="eyebrow">Bir kaş, beş perde</span>
-        <h2>Kaydırın, <em>kaş</em> şekillensin.</h2>
-      </div>
-      <div class="perde-frame">
-        <figure class="perde-shot" data-step="0" data-mode="fade"><img style="--fx:40%" src="m/ig/kas-perde-okuma-1200.webp" srcset="m/ig/kas-perde-okuma-800.webp 800w, m/ig/kas-perde-okuma-1200.webp 1200w" sizes="(min-width:1160px) 1120px, 100vw" alt="Altın oran kaş alımı öncesi, dağınık kabarık kaş" width="1200" height="552" fetchpriority="low" decoding="async"><span class="perde-tag">Önce</span><figcaption><span class="n">01 / 05 · Okuma</span><span class="t">Önce bakarız.</span><p class="s">Kaşın nerede başladığına, nerede bittiğine ve yüzünüzde nasıl durduğuna birlikte bakarız.</p></figcaption></figure>
-        <figure class="perde-shot" data-step="1" data-mode="fade"><img style="--fx:50%" src="m/ig/kas-perde-harita-1200.webp" srcset="m/ig/kas-perde-harita-800.webp 800w, m/ig/kas-perde-harita-1200.webp 1200w" sizes="(min-width:1160px) 1120px, 100vw" alt="Kaş çevresinde beyaz çizimle işaretlenmiş alım alanı" width="1200" height="552" loading="lazy" decoding="async"><span class="perde-tag">Haritalama</span><figcaption><span class="n">02 / 05 · Haritalama</span><span class="t">Çizgiyi belirleriz.</span><p class="s">Başlangıç, kavis ve bitiş yüz hatlarınıza göre işaretlenir. Beyaz çizim, alınacak alanı gösterir.</p></figcaption></figure>
-        <figure class="perde-shot" data-step="2" data-mode="sweep"><img style="--fx:50%" src="m/ig/kas-perde-alim-1200.webp" srcset="m/ig/kas-perde-alim-800.webp 800w, m/ig/kas-perde-alim-1200.webp 1200w" sizes="(min-width:1160px) 1120px, 100vw" alt="Haritalanan kaşın alım sonrası temiz, düzenli hâli" width="1200" height="552" loading="lazy" decoding="async"><span class="perde-tag">Sonra · aynı kaş</span><figcaption><span class="n">03 / 05 · Alım</span><span class="t">Dağınıklığı toplarız.</span><p class="s">İp ve cımbızla yalnız çizginin dışı alınır; dolu duran kısım korunur.</p></figcaption></figure>
-        <figure class="perde-shot" data-step="3" data-mode="fade"><img style="--fx:62%" src="m/ig/kas-perde-sonuc-1200.webp" srcset="m/ig/kas-perde-sonuc-800.webp 800w, m/ig/kas-perde-sonuc-1200.webp 1200w" sizes="(min-width:1160px) 1120px, 100vw" alt="Altın oranla şekillendirilmiş kaş, ilk perdedeki danışan" width="1200" height="552" loading="lazy" decoding="async"><span class="perde-tag">Sonra · 01'deki kaş</span><figcaption><span class="n">04 / 05 · Sonuç</span><span class="t">Yüzünüze göre.</span><p class="s">Altın oran ölçü verir; son şekli yüzünüz belirler.</p></figcaption></figure>
-        <figure class="perde-shot" data-step="4" data-mode="fade"><img style="--fx:50%" src="m/ig/kas-perde-gur-once-1200.webp" srcset="m/ig/kas-perde-gur-once-800.webp 800w, m/ig/kas-perde-gur-once-1200.webp 1200w" sizes="(min-width:1160px) 1120px, 100vw" alt="Gür ve dağınık kaş, alım öncesi" width="1200" height="552" loading="lazy" decoding="async"><span class="perde-tag">Önce</span></figure>
-        <figure class="perde-shot" data-step="4" data-mode="sweep"><img style="--fx:50%" src="m/ig/kas-perde-gur-1200.webp" srcset="m/ig/kas-perde-gur-800.webp 800w, m/ig/kas-perde-gur-1200.webp 1200w" sizes="(min-width:1160px) 1120px, 100vw" alt="Gür kaşın doğal doluluğu korunarak toparlanmış hâli" width="1200" height="552" loading="lazy" decoding="async"><span class="perde-tag">Sonra</span><figcaption><span class="n">05 / 05 · Gür kaşlar</span><span class="t">İncelmeden toparlanır.</span><p class="s">Gür kaşta da amaç inceltmek değil; dağınık kıllar alınır, doğal doluluk kalır.</p></figcaption></figure>
-        <span class="perde-seam" aria-hidden="true"></span>
-      </div>
-      <ol class="perde-dots"><li class="on"><button type="button" data-perde-go="0" aria-label="1. adım: Okuma"></button></li><li><button type="button" data-perde-go="1" aria-label="2. adım: Haritalama"></button></li><li><button type="button" data-perde-go="2" aria-label="3. adım: Alım"></button></li><li><button type="button" data-perde-go="3" aria-label="4. adım: Sonuç"></button></li><li><button type="button" data-perde-go="4" aria-label="5. adım: Gür kaşlar"></button></li></ol>
-      <div class="perde-cap" aria-live="polite"><span class="n">01 / 05 · Okuma</span><span class="t">Önce bakarız.</span><p class="s">Kaşın nerede başladığına, nerede bittiğine ve yüzünüzde nasıl durduğuna birlikte bakarız.</p></div>
-      <p class="perde-note">Kareler salonumuzda yapılan gerçek işlemlerden; yalnız kırpıldı, rötuş yok. 01 ile 04 aynı danışan, 02 ile 03 aynı danışan.</p>
-    </div>
-  </div>
-
   <div class="sec dark-band gutter">
     <div class="golden">
       <div class="golden-fig lit" id="golden">
-        <img src="m/ig/kas-perde-alim-800.webp" alt="Altın oran ölçü çizgileriyle kaş, salonumuzda yapıldı" width="800" height="368" loading="lazy">
-        <svg viewBox="0 0 800 368" aria-hidden="true">
+        <img src="m/ig/kas-kina-sonra-800.webp" alt="Altın oran ölçü çizgileriyle kaş, salonumuzda yapıldı" width="800" height="534" loading="lazy">
+        <svg viewBox="0 0 800 500" aria-hidden="true">
           <defs><linearGradient id="goldStroke" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#9C7A35"/><stop offset=".45" stop-color="#F6EACB"/><stop offset="1" stop-color="#C9A55C"/></linearGradient></defs>
-          <path class="g-line" pathLength="1" d="M830 917 L715 211"/>
-          <path class="g-line" pathLength="1" d="M830 917 L452 76"/>
-          <path class="g-line" pathLength="1" d="M830 917 L-17 241"/>
-          <circle class="g-ring d1" cx="722" cy="255" r="13"/><circle class="g-ring d2" cx="470" cy="117" r="13"/><circle class="g-ring d3" cx="18" cy="269" r="13"/>
-          <circle class="g-dot d1" cx="722" cy="255" r="9"/><circle class="g-dot d2" cx="470" cy="117" r="9"/><circle class="g-dot d3" cx="18" cy="269" r="9"/>
-          <text class="g-lbl d1" x="760" y="313" text-anchor="end">BAŞLANGIÇ</text>
-          <text class="g-lbl d2" x="494" y="91">KAVİS</text>
-          <text class="g-lbl d3" x="24" y="323">BİTİŞ</text>
-          <text class="g-ratio" x="24" y="62">1 : 1,618</text>
+          <path class="g-line" pathLength="1" d="M830 900 L715 194"/>
+          <path class="g-line" pathLength="1" d="M830 900 L452 59"/>
+          <path class="g-line" pathLength="1" d="M830 900 L-17 224"/>
+          <circle class="g-ring d1" cx="722" cy="238" r="13"/><circle class="g-ring d2" cx="470" cy="100" r="13"/><circle class="g-ring d3" cx="18" cy="252" r="13"/>
+          <circle class="g-dot d1" cx="722" cy="238" r="9"/><circle class="g-dot d2" cx="470" cy="100" r="9"/><circle class="g-dot d3" cx="18" cy="252" r="9"/>
+          <text class="g-lbl d1" x="760" y="296" text-anchor="end">BAŞLANGIÇ</text>
+          <text class="g-lbl d2" x="494" y="74">KAVİS</text>
+          <text class="g-lbl d3" x="24" y="306">BİTİŞ</text>
+          <text class="g-ratio" x="24" y="482">1 : 1,618</text>
         </svg>
       </div>
       <div class="sec-head" style="margin:0">
@@ -1867,16 +1739,12 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 
   <div class="live" data-live="kas"></div>
 
-  <div class="sec dark-band gutter">
-    <div class="perde-final">
-      <figure class="lit"><img src="m/ig/kas-profil-4x5-800.webp" alt="Altın oranla şekillendirilmiş kaş, yandan yakın çekim, salonumuzda yapıldı" width="800" height="999" loading="lazy" decoding="async"></figure>
-      <div class="copy">
-        <span class="eyebrow">Aynada ilk bakış</span>
-        <h2>Kaşınız, <em>yüzünüze</em> göre.</h2>
-        <p class="s" style="margin:0;color:#E2D8C5;max-width:46ch">30 dakika. İlk deneyimde altın oran kaş alımı 500 TL. Davetiyeniz üç dokunuşta hazır.</p>
-        <div class="steps-mini"><span>1 · İşlem</span><span>2 · Gün ve saat</span><span>3 · Davetiye → WhatsApp</span></div>
-        <button class="btn-gold shine" data-plan="kas" data-opt="ilk" data-track-label="at-kas-perde-davetiye"><span class="lbl">Saatimi seç</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-      </div>
+  <div class="sec gutter">
+    <div class="invite-teaser">
+      <span class="eyebrow">Randevu davetiyesi</span>
+      <h3>Üç dokunuşta hazır.</h3>
+      <div class="steps-mini"><span>1 · İşlem</span><span>2 · Gün ve saat</span><span>3 · Davetiye → WhatsApp</span></div>
+      <button class="btn-gold shine" data-plan="kas"><span class="lbl">Davetiyemi hazırla</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
     </div>
   </div>
 
@@ -2210,7 +2078,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-lazer-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
-      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -2236,7 +2103,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 </section>
 <section class="lz-sec lz-reels" id="lz-film">
   <div class="lz-head"><span class="lz-over">Salonumuzda çekildi</span><h2>Işığı <em>iş başında</em> görün</h2><p>Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.</p></div>
-  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lazer-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lazer-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lazer-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lazer-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lazer-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
+  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lazer-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lazer-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lazer-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lazer-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lazer-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
 </section>
 <section class="lz-sec lz-reviews" id="lz-yorumlar">
   <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b data-lz-count="30">30</b><span>/ 31</span></div><p>Google'da lazer geçen 31 yorumun 30'u 5 yıldız.</p></div>
@@ -2347,7 +2214,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-lzfiyat-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
-      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -2373,7 +2239,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 </section>
 <section class="lz-sec lz-reels" id="lz-film">
   <div class="lz-head"><span class="lz-over">Salonumuzda çekildi</span><h2>Işığı <em>iş başında</em> görün</h2><p>Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.</p></div>
-  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzfiyat-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzfiyat-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzfiyat-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzfiyat-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzfiyat-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
+  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzfiyat-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzfiyat-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzfiyat-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzfiyat-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzfiyat-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
 </section>
 <section class="lz-sec lz-family" id="lz-sayfalar">
   <div class="lz-head"><span class="lz-over">Lazer sayfalarımız</span><h2>Size en yakın <em>plan</em></h2></div>
@@ -2448,7 +2314,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-lzerkek-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
-      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -2483,7 +2348,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 </section>
 <section class="lz-sec lz-reels" id="lz-film">
   <div class="lz-head"><span class="lz-over">Salonumuzda çekildi</span><h2>Işığı <em>iş başında</em> görün</h2><p>Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.</p></div>
-  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzerkek-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzerkek-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzerkek-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzerkek-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzerkek-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
+  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzerkek-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzerkek-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzerkek-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzerkek-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzerkek-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
 </section>
 <section class="lz-sec lz-pricecard" id="lz-fiyat">
   <div class="lz-card lz-foil">
@@ -2567,7 +2432,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-lzyuz-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
-      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -2606,7 +2470,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 </section>
 <section class="lz-sec lz-reels" id="lz-film">
   <div class="lz-head"><span class="lz-over">Salonumuzda çekildi</span><h2>Işığı <em>iş başında</em> görün</h2><p>Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.</p></div>
-  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzyuz-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzyuz-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzyuz-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzyuz-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzyuz-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
+  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzyuz-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzyuz-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzyuz-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzyuz-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzyuz-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
 </section>
 <section class="lz-sec lz-reviews" id="lz-yorumlar">
   <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b data-lz-count="30">30</b><span>/ 31</span></div><p>Google'da lazer geçen 31 yorumun 30'u 5 yıldız.</p></div>
@@ -2724,7 +2588,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-lzhassas-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
-      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -2746,7 +2609,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 </section>
 <section class="lz-sec lz-reels" id="lz-film">
   <div class="lz-head"><span class="lz-over">Salonumuzda çekildi</span><h2>Işığı <em>iş başında</em> görün</h2><p>Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.</p></div>
-  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzhassas-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzhassas-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzhassas-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzhassas-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzhassas-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
+  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzhassas-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzhassas-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzhassas-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzhassas-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzhassas-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
 </section>
 <section class="lz-sec lz-pricecard" id="lz-fiyat">
   <div class="lz-card lz-foil">
@@ -2797,7 +2660,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 <section class="lz-sec lz-quick" id="lz-hizli">
   <div class="lz-head"><span class="lz-over">15 dakikalık bölgeler</span><h2>Tek bölge, <em>kısa seans</em></h2><p>Randevu sistemimizde tek seansı 15 dakika olan kadın bölgeleri. Dokunun, listenize eklensin; erkek bölgeleri haritada.</p></div>
   <div class="lz-qrow"><button type="button" class="lz-qchip" data-rg="dudak-ustu" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Dudak üstü</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="cene" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Çene</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="gidi" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Gıdı</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="boyun" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Boyun</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="koltuk" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Koltuk altı</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="gogus" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Göğüs</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="gobek" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Göbek</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="omuz" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Omuz</b><small>15 dk</small></button><button type="button" class="lz-qchip" data-rg="bel" aria-pressed="false" data-track-label="at-lzbolge-hizli-bolge"><b>Bel</b><small>15 dk</small></button></div>
-  <a class="lz-qgo" href="#lz-takvim" data-lz-scroll data-lz-qgo hidden data-track-label="at-lzbolge-hizli-plan">Lazer Planım'a bakın <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </section>
 <section class="lz-sec lz-map" id="lz-harita" aria-labelledby="lz-harita-h">
   <div class="lz-head"><span class="lz-over">Vücut haritası</span><h2 id="lz-harita-h">Işığı nereye <em>yönlendirelim</em>?</h2><p>Bölgeye dokunun, ışık orada yansın. Süreler randevu sistemimizdeki menüden.</p></div>
@@ -2831,7 +2693,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
       <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-lzbolge-plan-harita">Haritadan bölge seçin</a></dd></div>
       <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
       <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
-      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
     </dl>
     <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
     <span class="lz-pc-lab">Başlangıç</span>
@@ -2847,7 +2708,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 </section>
 <section class="lz-sec lz-reels" id="lz-film">
   <div class="lz-head"><span class="lz-over">Salonumuzda çekildi</span><h2>Işığı <em>iş başında</em> görün</h2><p>Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.</p></div>
-  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzbolge-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzbolge-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzbolge-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzbolge-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzbolge-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" data-poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
+  <div class="lz-reelrow"><button type="button" class="lz-reel" data-reel="lazer-film-jel" data-track-label="at-lzbolge-film-ac" aria-label="Jel, ışık, kayış: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-jel-poster.webp" data-src="m/ig/lazer-film-jel.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Jel, ışık, kayış</span></button><button type="button" class="lz-reel" data-reel="lazer-film-cene" data-track-label="at-lzbolge-film-ac" aria-label="Çene ve gıdı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-cene-poster.webp" data-src="m/ig/lazer-film-cene.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Çene ve gıdı</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak" data-track-label="at-lzbolge-film-ac" aria-label="Bacak: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak-poster.webp" data-src="m/ig/lazer-film-bacak.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Bacak</span></button><button type="button" class="lz-reel" data-reel="lazer-film-yuz" data-track-label="at-lzbolge-film-ac" aria-label="Yüz, gözlükle: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-yuz-poster.webp" data-src="m/ig/lazer-film-yuz.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Yüz, gözlükle</span></button><button type="button" class="lz-reel" data-reel="lazer-film-bacak2" data-track-label="at-lzbolge-film-ac" aria-label="Diz altı: videoyu açın"><video muted playsinline loop preload="none" poster="m/ig/lazer-film-bacak2-poster.webp" data-src="m/ig/lazer-film-bacak2.mp4" aria-hidden="true"></video><span class="lz-reel-t"><i><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></i>Diz altı</span></button></div>
 </section>
 <section class="lz-sec lz-reviews" id="lz-yorumlar">
   <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b data-lz-count="30">30</b><span>/ 31</span></div><p>Google'da lazer geçen 31 yorumun 30'u 5 yıldız.</p></div>
@@ -2940,49 +2801,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 
 <div class="lightbox" id="lightbox"><button class="sheet-x lb-x" id="lbClose" aria-label="Kapat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button><img id="lbImg" alt="Yakından görünüm"><div class="lb-hint">Çift dokunun: yakınlaştır</div></div>
 
-<style id="mobil-duzen">
-/* ---------- MOBİL DÜZEN: yön (oryantasyon) ve konum, tüm görünümler ----------
-   Yalnızca 960 px altında ve yatay kısa ekranlarda çalışır; masaüstü düzenine dokunmaz.
-   Ölçüm (2026-10-07, 10 ekran): yatay telefonda kahraman 4:5 dikey kaldığı için H1 ekranın 700–1300 px altına
-   düşüyordu; dikey tablette ve 320 px telefonda H1 ilk ekranın dışındaydı; alt çubuk yatay ekranın %25'ini
-   kaplıyordu; çentikli telefonda yatay tutuşta içerik çentiğin altına giriyordu. */
-
-/* Çentik / güvenli alan: yatay tutuşta sol-sağ boşluk çentikten küçük olmasın */
-.gutter{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
-.nav{padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px))}
-.hero-copy{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
-
-/* Dikey telefon ve tablet: kahraman medya ilk ekranda başlığa ve çiplere yer bıraksın */
-@media (max-width:959px) and (orientation:portrait){
-  /* yükseklik sınırı genişliği daraltmasın diye oran yerine açık yükseklik (karşılaştırma kaydırıcılı kahramanlar hariç) */
-  .hero-split .hero-media:not(:has(> .cmp)){aspect-ratio:auto;height:min(125vw,58svh,calc(100svh - 300px));max-height:none}
-  .hero-split .hero-media:not(:has(> .cmp)) > .half-stage,.hero-split .hero-media:not(:has(> .cmp)) > .kb-stage,.hero-split .hero-media:not(:has(> .cmp)) > .look-stage{aspect-ratio:auto;height:100%;max-height:none}
-  .hero-split .hero-media img,.hero-split .hero-media video{object-position:50% 40%}
-}
-
-/* Yatay telefon (kısa ekran): kahraman iki sütun, medya ekran yüksekliğinde; alt çubuk sağda küçük hap */
-@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
-  .hero-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;min-height:0}
-  .hero-split .hero-media{aspect-ratio:auto;height:calc(100svh - var(--nav-h) - env(safe-area-inset-top,0px));max-height:none}
-  .hero-split .hero-media > .cmp,.hero-split .half-stage,.hero-split .kb-stage,.hero-split .look-stage,.hero-split .atelier-stage{aspect-ratio:auto;height:100%;max-height:none;width:100%}
-  .hero-split .hero-copy{padding-top:14px;padding-bottom:14px;gap:10px;align-content:start}
-  .hero-copy h1{font-size:clamp(32px,5.2vw,50px)}
-  .hero-copy .lede{font-size:18px}
-  .bar{left:auto;right:max(10px,env(safe-area-inset-right,0px));bottom:max(8px,env(safe-area-inset-bottom,0px));width:min(380px,48vw);padding:6px;border:1px solid var(--line);border-radius:999px}
-  .bar .btn-gold{height:44px}
-  .bar .btn-round{width:44px;height:44px}
-  .sec{padding-block:44px}
-}
-
-/* Lazer ailesinin kendi kahramanı (.lz-): yatay kısa ekranda da iki sütun, başlık ilk ekranda */
-@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
-  .lz-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
-  .lz-stage{height:calc(100svh - var(--lz-top,58px));min-height:0;order:2}
-  .lz-copy{margin:0;padding:calc(var(--lz-top,64px) + 8px) 20px 14px max(20px,env(safe-area-inset-left,0px));order:1}
-  .lz-h1{font-size:clamp(30px,5vw,46px)!important}
-}
-</style>
-<script>window.ATLZ_NOAUTO=true;(function(){var D={"shared":{"face":["cene","dudak-ustu","gidi","kulak","sakal-ustu","tum-yuz"],"media":"m/ig/","pkgParts":{"tepeden":"all","full-vucut":"all","kemer-ustu":["boyun","ense","gogus","gobek","koltuk","omuz","sirt","bel","ust-kol","alt-kol"],"tum-vucut-4":[]},"regions":{"kadin":[{"id":"dudak-ustu","n":"Dudak üstü","crm":"DUDAK ÜSTÜ","z":"face","m":15,"mx":15},{"id":"cene","n":"Çene","crm":"ÇENE","z":"face","m":15,"mx":15},{"id":"gidi","n":"Gıdı","crm":"GIDI","z":"face","m":15,"mx":15},{"id":"tum-yuz","n":"Tüm yüz","crm":"TÜM YÜZ","z":"face","m":30,"mx":30},{"id":"boyun","n":"Boyun","crm":"BOYUN","z":"front","m":15,"mx":15},{"id":"koltuk","n":"Koltuk altı","crm":"KOLTUK ALTI","z":"front","m":15,"mx":15},{"id":"gogus","n":"Göğüs","crm":"GÖĞÜS","z":"front","m":15,"mx":15},{"id":"gobek","n":"Göbek","crm":"GÖBEK","z":"front","m":15,"mx":15},{"id":"genital","n":"Genital","crm":"GENİTAL","z":"front","m":30,"mx":30},{"id":"tum-kol","n":"Tüm kol","crm":"TÜM KOL","z":"both","m":30,"mx":30},{"id":"yarim-kol","n":"Yarım kol","crm":"YARIM KOL","z":"both","m":30,"mx":30},{"id":"tum-bacak","n":"Tüm bacak","crm":"TÜM BACAK","z":"both","m":45,"mx":45},{"id":"yarim-bacak","n":"Yarım bacak","crm":"YARIM BACAK","z":"both","m":30,"mx":30},{"id":"omuz","n":"Omuz","crm":"OMUZ","z":"back","m":15,"mx":15},{"id":"sirt","n":"Sırt","crm":"SIRT","z":"back","m":30,"mx":30},{"id":"bel","n":"Bel","crm":"BEL","z":"back","m":15,"mx":15},{"id":"popo","n":"Popo","crm":"POPO","z":"back","m":26,"mx":26},{"id":"tum-vucut-4","n":"Tüm vücut 4 bölge","crm":"TÜM VÜCUT 4 BÖLGE","z":"pkg","m":75,"mx":75},{"id":"tepeden","n":"Tepeden tırnağa","crm":"TEPEDEN TIRNAĞA","z":"pkg","m":120,"mx":120}],"erkek":[{"id":"sakal-ustu","n":"Sakal üstü","crm":"SAKAL ÜSTÜ","z":"face","m":30,"mx":30},{"id":"kulak","n":"Kulak","crm":"KULAK","z":"face","m":15,"mx":15},{"id":"tum-yuz","n":"Tüm yüz","crm":"TÜM YÜZ","z":"face","m":30,"mx":30},{"id":"boyun","n":"Boyun","crm":"BOYUN","z":"front","m":15,"mx":15},{"id":"koltuk","n":"Koltuk altı","crm":"KOLTUK ALTI","z":"front","m":15,"mx":15},{"id":"gogus","n":"Göğüs","crm":"GÖĞÜS","z":"front","m":30,"mx":30},{"id":"gobek","n":"Göbek","crm":"GÖBEK","z":"front","m":45,"mx":45},{"id":"genital","n":"Genital","crm":"GENİTAL","z":"front","m":31,"mx":46},{"id":"tum-kol","n":"Tüm kol","crm":"TÜM KOL","z":"both","m":45,"mx":45},{"id":"yarim-kol","n":"Yarım kol","crm":"YARIM KOL","z":"both","m":30,"mx":30},{"id":"tum-bacak","n":"Tüm bacak","crm":"TÜM BACAK","z":"both","m":60,"mx":60},{"id":"yarim-bacak","n":"Yarım bacak","crm":"YARIM BACAK","z":"both","m":30,"mx":30},{"id":"ense","n":"Ense","crm":"ENSE","z":"back","m":15,"mx":15},{"id":"omuz","n":"Omuz","crm":"OMUZ","z":"back","m":30,"mx":30},{"id":"sirt","n":"Sırt","crm":"SIRT","z":"back","m":45,"mx":45},{"id":"bel","n":"Bel","crm":"BEL","z":"back","m":30,"mx":30},{"id":"kemer-ustu","n":"Kemer üstü","crm":"KEMER ÜSTÜ","z":"pkg","m":90,"mx":90},{"id":"full-vucut","n":"Full vücut","crm":"FULL VÜCUT","z":"pkg","m":120,"mx":120}]},"stats":{"mentions":31,"five":30,"as_of":"2026-10-06","rule":"original (non-translated) comment matches /lazer|epilasyon/i"},"stories":[{"t":"Uygulama","th":"m/ig/lazer-film-jel-poster.webp","fr":[{"video":"m/ig/lazer-film-jel.mp4","poster":"m/ig/lazer-film-jel-poster.webp","cap":"Jel, ışık, kayış"},{"video":"m/ig/lazer-film-bacak.mp4","poster":"m/ig/lazer-film-bacak-poster.webp","cap":"Bacakta uygulama"}]},{"t":"Yüz","th":"m/ig/lazer-film-cene-poster.webp","fr":[{"video":"m/ig/lazer-film-cene.mp4","poster":"m/ig/lazer-film-cene-poster.webp","cap":"Çene ve gıdı"},{"video":"m/ig/lazer-film-yuz.mp4","poster":"m/ig/lazer-film-yuz-poster.webp","cap":"Koruyucu gözlükle"}]},{"t":"Cihaz","th":"m/ig/lazer-ekran-480.webp","fr":[{"img":"m/ig/lazer-ekran-1200.webp","cap":"Lasermach · 3 dalga boyu"},{"img":"m/ig/lazer-5-1200.webp","cap":"Başlığın ışığı"}]},{"t":"Hijyen","th":"m/ig/lazer-kilif-480.webp","fr":[{"img":"m/ig/lazer-kilif-800.webp","cap":"Kılıflı başlık"},{"img":"m/ig/lazer-uzman-800.webp","cap":"Eldivenli uygulama"},{"img":"m/ig/lazer-yuz-gozluk-800.webp","cap":"Koruyucu gözlük"}]},{"t":"Yorumlar","th":"m/ig/lazer-koltuk-480.webp","fr":[{"rv":{"n":"Senem Cemre D.","d":"2026-07","t":"Daha önce bir çok yerde epilasyona gitmiş olmama rağmen hiç sonuç almamıştım. Çok memnunum. …"}},{"rv":{"n":"A. B.","d":"2026-06","t":"Kapıdan girdiğiniz andan itibaren güler yüz ile karşılanıyorsunuz. Lazer epilasyonda gerçek anlamda çok kaliteliler. …"}},{"rv":{"n":"Berke S.","d":"2025-11","g":"m","t":"Başarılı işlem. Acısız lazer. Başarılı uzman."}}]},{"t":"Fiyat","th":"m/ig/lazer-uzman-480.webp","fr":[{"price":true}]}],"wa":"905330390076"},"own":{"hub":{"page":"hub","code":"lazer","g":"kadin","faceDefault":false},"fiyat":{"page":"fiyat","code":"lzfiyat","g":"kadin","faceDefault":false},"erkek":{"page":"erkek","code":"lzerkek","g":"erkek","faceDefault":false},"yuz":{"page":"yuz","code":"lzyuz","g":"kadin","faceDefault":true},"hassas":{"page":"hassas","code":"lzhassas","g":"kadin","faceDefault":false},"bolge":{"page":"bolge","code":"lzbolge","g":"kadin","faceDefault":false}}},o={};for(var k in D.own){var x={},s;for(s in D.shared)x[s]=D.shared[s];for(s in D.own[k])x[s]=D.own[k][s];o[k]=x;}window.ATLZ_DATA=o;})();</script>
+<script>window.ATLZ_NOAUTO=true;(function(){var D={"shared":{"face":["cene","dudak-ustu","gidi","kulak","sakal-ustu","tum-yuz"],"media":"m/ig/","pkgParts":{"tepeden":"all","full-vucut":"all","kemer-ustu":["boyun","ense","gogus","gobek","koltuk","omuz","sirt","bel","ust-kol","alt-kol"],"tum-vucut-4":[]},"regions":{"kadin":[{"id":"dudak-ustu","n":"Dudak üstü","crm":"DUDAK ÜSTÜ","z":"face","m":15,"mx":15},{"id":"cene","n":"Çene","crm":"ÇENE","z":"face","m":15,"mx":15},{"id":"gidi","n":"Gıdı","crm":"GIDI","z":"face","m":15,"mx":15},{"id":"tum-yuz","n":"Tüm yüz","crm":"TÜM YÜZ","z":"face","m":30,"mx":30},{"id":"boyun","n":"Boyun","crm":"BOYUN","z":"front","m":15,"mx":15},{"id":"koltuk","n":"Koltuk altı","crm":"KOLTUK ALTI","z":"front","m":15,"mx":15},{"id":"gogus","n":"Göğüs","crm":"GÖĞÜS","z":"front","m":15,"mx":15},{"id":"gobek","n":"Göbek","crm":"GÖBEK","z":"front","m":15,"mx":15},{"id":"genital","n":"Genital","crm":"GENİTAL","z":"front","m":30,"mx":30},{"id":"tum-kol","n":"Tüm kol","crm":"TÜM KOL","z":"both","m":30,"mx":30},{"id":"yarim-kol","n":"Yarım kol","crm":"YARIM KOL","z":"both","m":30,"mx":30},{"id":"tum-bacak","n":"Tüm bacak","crm":"TÜM BACAK","z":"both","m":45,"mx":45},{"id":"yarim-bacak","n":"Yarım bacak","crm":"YARIM BACAK","z":"both","m":30,"mx":30},{"id":"omuz","n":"Omuz","crm":"OMUZ","z":"back","m":15,"mx":15},{"id":"sirt","n":"Sırt","crm":"SIRT","z":"back","m":30,"mx":30},{"id":"bel","n":"Bel","crm":"BEL","z":"back","m":15,"mx":15},{"id":"popo","n":"Popo","crm":"POPO","z":"back","m":26,"mx":26},{"id":"tum-vucut-4","n":"Tüm vücut 4 bölge","crm":"TÜM VÜCUT 4 BÖLGE","z":"pkg","m":75,"mx":75},{"id":"tepeden","n":"Tepeden tırnağa","crm":"TEPEDEN TIRNAĞA","z":"pkg","m":120,"mx":120}],"erkek":[{"id":"sakal-ustu","n":"Sakal üstü","crm":"SAKAL ÜSTÜ","z":"face","m":30,"mx":30},{"id":"kulak","n":"Kulak","crm":"KULAK","z":"face","m":15,"mx":15},{"id":"tum-yuz","n":"Tüm yüz","crm":"TÜM YÜZ","z":"face","m":30,"mx":30},{"id":"boyun","n":"Boyun","crm":"BOYUN","z":"front","m":15,"mx":15},{"id":"koltuk","n":"Koltuk altı","crm":"KOLTUK ALTI","z":"front","m":15,"mx":15},{"id":"gogus","n":"Göğüs","crm":"GÖĞÜS","z":"front","m":30,"mx":30},{"id":"gobek","n":"Göbek","crm":"GÖBEK","z":"front","m":45,"mx":45},{"id":"genital","n":"Genital","crm":"GENİTAL","z":"front","m":31,"mx":46},{"id":"tum-kol","n":"Tüm kol","crm":"TÜM KOL","z":"both","m":45,"mx":45},{"id":"yarim-kol","n":"Yarım kol","crm":"YARIM KOL","z":"both","m":30,"mx":30},{"id":"tum-bacak","n":"Tüm bacak","crm":"TÜM BACAK","z":"both","m":60,"mx":60},{"id":"yarim-bacak","n":"Yarım bacak","crm":"YARIM BACAK","z":"both","m":30,"mx":30},{"id":"ense","n":"Ense","crm":"ENSE","z":"back","m":15,"mx":15},{"id":"omuz","n":"Omuz","crm":"OMUZ","z":"back","m":30,"mx":30},{"id":"sirt","n":"Sırt","crm":"SIRT","z":"back","m":45,"mx":45},{"id":"bel","n":"Bel","crm":"BEL","z":"back","m":30,"mx":30},{"id":"kemer-ustu","n":"Kemer üstü","crm":"KEMER ÜSTÜ","z":"pkg","m":90,"mx":90},{"id":"full-vucut","n":"Full vücut","crm":"FULL VÜCUT","z":"pkg","m":120,"mx":120}]},"stats":{"mentions":31,"five":30,"as_of":"2026-10-06","rule":"original (non-translated) comment matches /lazer|epilasyon/i"},"stories":[{"t":"Uygulama","th":"m/ig/lazer-film-jel-poster.webp","fr":[{"video":"m/ig/lazer-film-jel.mp4","poster":"m/ig/lazer-film-jel-poster.webp","cap":"Jel, ışık, kayış"},{"video":"m/ig/lazer-film-bacak.mp4","poster":"m/ig/lazer-film-bacak-poster.webp","cap":"Bacakta uygulama"}]},{"t":"Yüz","th":"m/ig/lazer-film-cene-poster.webp","fr":[{"video":"m/ig/lazer-film-cene.mp4","poster":"m/ig/lazer-film-cene-poster.webp","cap":"Çene ve gıdı"},{"video":"m/ig/lazer-film-yuz.mp4","poster":"m/ig/lazer-film-yuz-poster.webp","cap":"Koruyucu gözlükle"}]},{"t":"Cihaz","th":"m/ig/lazer-ekran-480.webp","fr":[{"img":"m/ig/lazer-ekran-1200.webp","cap":"Lasermach · 3 dalga boyu"},{"img":"m/ig/lazer-5-1200.webp","cap":"Başlığın ışığı"}]},{"t":"Hijyen","th":"m/ig/lazer-kilif-480.webp","fr":[{"img":"m/ig/lazer-kilif-800.webp","cap":"Kılıflı başlık"},{"img":"m/ig/lazer-uzman-800.webp","cap":"Eldivenli uygulama"},{"img":"m/ig/lazer-yuz-gozluk-800.webp","cap":"Koruyucu gözlük"}]},{"t":"Yorumlar","th":"m/ig/lazer-koltuk-480.webp","fr":[{"rv":{"n":"Senem Cemre D.","d":"2026-07","t":"Daha önce bir çok yerde epilasyona gitmiş olmama rağmen hiç sonuç almamıştım. Çok memnunum. …"}},{"rv":{"n":"A. B.","d":"2026-06","t":"Kapıdan girdiğiniz andan itibaren güler yüz ile karşılanıyorsunuz. Lazer epilasyonda gerçek anlamda çok kaliteliler. …"}},{"rv":{"n":"Berke S.","d":"2025-11","g":"m","t":"Başarılı işlem. Acısız lazer. Başarılı uzman."}}]},{"t":"Fiyat","th":"m/ig/lazer-uzman-480.webp","fr":[{"price":true}]}],"wa":"905330390076"},"own":{"hub":{"page":"hub","code":"lazer","g":"kadin"},"fiyat":{"page":"fiyat","code":"lzfiyat","g":"kadin"},"erkek":{"page":"erkek","code":"lzerkek","g":"erkek"},"yuz":{"page":"yuz","code":"lzyuz","g":"kadin"},"hassas":{"page":"hassas","code":"lzhassas","g":"kadin"},"bolge":{"page":"bolge","code":"lzbolge","g":"kadin"}}},o={};for(var k in D.own){var x={},s;for(s in D.shared)x[s]=D.shared[s];for(s in D.own[k])x[s]=D.own[k][s];o[k]=x;}window.ATLZ_DATA=o;})();</script>
 <script>
 /* ATELIER · FAZ L (2026-10-07) -- laser family interactions, shared by the live pages and the prototype.
    Markup comes from render.py; this file only adds behaviour.  Contact buttons stay real <a href="wa.me">
@@ -3048,7 +2867,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     this.initHero(); this.initRings(); this.initScroll(); this.initMap(); this.initJourney(); this.initCal(); this.initDevice();
     this.initReels(); this.initReviews(); this.initZoom(); this.initMenu(); this.initTone(); this.initQuick(); this.initFamily();
     if (!this.host.bar) this.initBar();
-    this.initShine(); this.initHalo();
     this.sync();
     this.refreshMinutes();
   }
@@ -3166,7 +2984,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     $$("[data-lz-wa]", root).forEach(function (a) { a.href = self.wa(self.msg(a.getAttribute("data-lz-wa"))); });
     var waLbl = $('[data-lz-wa="harita-wa"] .lz-lbl', root);
     if (waLbl) waLbl.textContent = this.sel.length ? this.sel.length + " bölgeyi WhatsApp'tan sor" : "WhatsApp'tan fiyat sor";
-    var qg = $("[data-lz-qgo]", root); if (qg) qg.hidden = !this.sel.length;
     var my = $("[data-lz-mybar]", root);
     if (my) { my.hidden = !this.sel.length; var c = $("[data-lz-mycount]", my); if (c) c.textContent = "Fiyat listem · " + this.sel.length + " kalem"; }
     if (this.bar) { this.bar.wa.href = this.wa(this.msg(this.sel.length ? "plan-wa" : "bar-wa")); $(".lz-lbl", this.bar.wa).textContent = this.sel.length ? "Planım · " + this.sel.length + " bölge" : "WhatsApp'tan fiyat sor"; }
@@ -3390,7 +3207,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   P.interval = function () {
     var face = 0, body = 0, self = this;
     this.sel.forEach(function (k) { if (self.isFace(k)) face++; else body++; });
-    if (!this.sel.length && this.D.faceDefault) return [4, 6, "yüz"];
     return (face && !body) ? [4, 6, "yüz"] : [6, 8, "vücut"];
   };
   P.renderCal = function () {
@@ -3423,12 +3239,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     this.sel.forEach(function (k) { var r = self.mins(k); if (r) { sum += r.m; known++; } });
     $("[data-lz-pc-min]", cal).textContent = known ? "Menüdeki süreler ≈ " + sum + " dk / seans" + (known < this.sel.length ? " + paket" : "") : (this.sel.length ? "Pakete göre" : "Bölge seçince görünür");
     $("[data-lz-pc-iv]", cal).textContent = "8 seans · " + iv[0] + "–" + iv[1] + " hafta arayla (" + iv[2] + ")";
-    var trow = $("[data-lz-pc-tonerow]", cal);
-    if (trow) {
-      var tn = this.tone && $('[data-tone="' + this.tone + '"] span', this.root), bits = [];
-      if (tn) bits.push(tn.textContent + " ton"); if (this.sens) bits.push("hassas, ön görüşme");
-      trow.hidden = !bits.length; $("[data-lz-pc-tone]", cal).textContent = bits.join(" · ");
-    }
     var badge = $("[data-lz-pc-badge]", cal);
     if (badge) badge.hidden = !this.sel.some(function (k) { return GUAR.indexOf(k) >= 0 || (k.indexOf("pkg:") === 0 && /bitiş garantili/i.test(k)); });
     cal.classList.toggle("has", this.sel.length > 0);
@@ -3461,11 +3271,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   P.initReels = function () {
     var self = this, reels = $$(".lz-reel", this.root);
     if (!reels.length) return;
-    var films = reels.map(function (r) { var v = $("video", r); return { video: v.getAttribute("data-src") || v.currentSrc || v.src, poster: v.getAttribute("data-poster") || v.getAttribute("poster"), cap: $(".lz-reel-t", r).textContent }; });
-    /* <video poster> downloads at parse time even with preload="none"; posters come in only near the viewport */
-    function posters() { reels.forEach(function (r) { var v = $("video", r), p = v.getAttribute("data-poster"); if (p) { v.setAttribute("poster", p); v.removeAttribute("data-poster"); } }); }
-    if ("IntersectionObserver" in window) { var pio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { pio.disconnect(); posters(); } }, { rootMargin: "900px 0px" }); pio.observe(reels[0]); }
-    else posters();
+    var films = reels.map(function (r) { var v = $("video", r); return { video: v.getAttribute("data-src") || v.currentSrc || v.src, poster: v.getAttribute("poster"), cap: $(".lz-reel-t", r).textContent }; });
     reels.forEach(function (r, i) {
       r.addEventListener("click", function () {
         $$(".lz-reel video", self.root).forEach(function (v) { v.pause(); });
@@ -3677,27 +3483,6 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     this.typeT = setInterval(function () { i += step; el.textContent = msg.slice(0, i); if (i >= msg.length) clearInterval(self.typeT); }, 16);
   };
 
-  /* ---------------- finish: gold CTAs shine once when they come into view; a soft light follows the pointer ---------------- */
-  P.initShine = function () {
-    var els = $$(".lz-shine", this.root).concat(this.bar ? [this.bar.wa] : []);
-    if (this.tier === "C" || !("IntersectionObserver" in window)) return;
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } });
-    }, { threshold: 0.8 });
-    els.forEach(function (e) { io.observe(e); });
-  };
-  P.initHalo = function () {
-    if (this.tier !== "A" || !matchMedia("(pointer: fine) and (min-width: 960px)").matches) return;
-    var root = this.root, h = document.createElement("div"), x = 0, y = 0, q = false;
-    h.className = "lz-halo"; h.setAttribute("aria-hidden", "true"); root.appendChild(h);
-    root.addEventListener("pointermove", function (e) {
-      var b = root.getBoundingClientRect(); x = e.clientX - b.left; y = e.clientY - b.top;
-      if (q) return; q = true;
-      requestAnimationFrame(function () { q = false; h.style.transform = "translate(" + (x - 210) + "px," + (y - 210) + "px)"; h.classList.add("on"); });
-    }, { passive: true });
-    root.addEventListener("pointerleave", function () { h.classList.remove("on"); });
-  };
-
   /* ---------------- sticky bar (live pages) ---------------- */
   P.initBar = function () {
     var self = this, bar = document.createElement("nav");
@@ -3863,27 +3648,6 @@ function initCompare(el,intro){
 }
 
 /* ---------- golden ---------- */
-function initPerde(){ var sec=$("#perde"); if(!sec) return;
-  var shots=$$(".perde-shot",sec), seam=$(".perde-seam",sec), cap=$(".perde-cap",sec), dots=$$(".perde-dots li",sec), N=shots.length, cur=0, caps={};
-  shots.forEach(function(s){ var fc=$("figcaption",s); if(fc) caps[s.dataset.step]=fc.innerHTML; });
-  function update(){
-    if(S.view!=="kas"||S.tier==="C") return;
-    var r=sec.getBoundingClientRect(), vh=innerHeight, total=r.height-vh; if(total<=0||r.bottom<0||r.top>vh) return;
-    var p=Math.min(1,Math.max(0,-r.top/total)), x=Math.min(N-1e-4,p*N), i=Math.floor(x), t=x-i, f=i===0?1:Math.min(1,t/.5); f=f*f*(3-2*f);
-    shots.forEach(function(s,k){ var sw=s.dataset.mode==="sweep";
-      if(k<i){ s.style.opacity=1; s.style.clipPath="none"; }
-      else if(k===i){ if(sw){ s.style.opacity=1; s.style.clipPath="inset(0 "+((1-f)*100).toFixed(2)+"% 0 0)"; } else { s.style.opacity=f.toFixed(3); s.style.clipPath="none"; } }
-      else { s.style.opacity=0; } });
-    var sweeping=shots[i].dataset.mode==="sweep"&&f<1; seam.style.opacity=sweeping?1:0; seam.style.left=(f*100).toFixed(2)+"%";
-    var st=+shots[i].dataset.step; dots.forEach(function(d,j){ d.classList.toggle("on",j<=st); $("button",d).setAttribute("aria-current",j===st?"step":"false"); });
-    if(st!==cur && caps[st]){ cur=st; cap.classList.add("out"); setTimeout(function(){ cap.innerHTML=caps[cur]; cap.classList.remove("out"); },140); }
-  }
-  $$("[data-perde-go]",sec).forEach(function(b){ lbl(b,"at-kas-perde-adim"); b.addEventListener("click",function(){
-    var st=+b.dataset.perdeGo, k=-1; shots.forEach(function(s,j){ if(+s.dataset.step===st) k=j; });
-    var total=sec.offsetHeight-innerHeight, top=sec.getBoundingClientRect().top+scrollY;
-    scrollTo({top:Math.round(top+total*Math.min(1,(k+.75)/N)),behavior:S.tier==="A"?"smooth":"auto"}); }); });
-  scrollers.push(update); update();
-}
 function initGolden(){ var g=$("#golden"); var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ g.classList.add("draw"); io.disconnect(); } },{threshold:.45}); io.observe(g);
   $("#goldenReplay").addEventListener("click",function(){ g.classList.remove("draw"); void g.offsetWidth; g.classList.add("draw"); }); }
 
@@ -3904,7 +3668,7 @@ var SHAPES={uzun:{n:"Uzun",img:"m/ig/tirnak-uzun-kirmizi-1200.webp",mask:"m/ig/t
   oval:{n:"Oval",img:"m/ig/tirnak-yuvarlak-kirmizi-1200.webp",mask:"m/ig/tirnak-yuvarlak-kirmizi-mask.png",neutral:"m/ig/tirnak-yuvarlak-kirmizi-neutral-1200.webp",alt:"Kırmızı oval tırnak"}};
 
 /* ---------- gallery ---------- */
-var KAS_PAIRS=[["kas-perde-gur","Kaş alımı","kas-perde-gur-once"],["kas-perde-alim","Altın oran · kına","kas-perde-harita"],["kas-laminasyon-sonra","Kaş laminasyonu","kas-laminasyon-once"]];
+var KAS_PAIRS=[["kas-cift-2","Kaş alımı"],["kas-kina","Altın oran · kına"],["kas-laminasyon","Kaş laminasyonu"]];
 function card(g,a,b,label,wide){ var c=document.createElement("button"); c.className="gcard"+(wide?" wide":"");
   c.setAttribute("aria-label",label+(b?": basılı tutun, öncesini görün":": yakından görün"));
   c.innerHTML='<img src="'+a+'" alt="'+(b?"Sonra: ":"")+label+'" loading="lazy">'+(b?'<img class="gb" src="'+b+'" alt="Önce: '+label+'" loading="lazy">':'')+'<span class="gl"><span>'+label+'</span><span>'+(b?"Basılı tut":"Yakından bak")+'</span></span>';
@@ -3917,7 +3681,7 @@ function card(g,a,b,label,wide){ var c=document.createElement("button"); c.class
   c.addEventListener("contextmenu",function(e){ e.preventDefault(); });
   c.addEventListener("click",function(){ if(!b) openLightbox(a.replace("-800.","-800.")); });
   lbl(c,"at-"+S.view+"-galeri"); g.appendChild(c); }
-function initKasGallery(){ var g=$("#galKas"); KAS_PAIRS.forEach(function(p){ card(g,"m/ig/"+p[0]+"-800.webp","m/ig/"+p[2]+"-800.webp",p[1],true); }); }
+function initKasGallery(){ var g=$("#galKas"); KAS_PAIRS.forEach(function(p){ card(g,"m/ig/"+p[0]+"-sonra-800.webp","m/ig/"+p[0]+"-once-800.webp",p[1],true); }); }
 
 /* ---------- mosaic + living tiles ---------- */
 var MOSAIC=[["kirpik-makro-3","Mega volüm ipek kirpik"],["dudak-cift-1-sonra","Dudak renklendirme"],["tirnak-holo","Holografik nail art"],["kas-profil","Altın oran kaş"],["akne-cift-1-sonra","Akne bakımı sonrası"],["tirnak-3d","3D çiçek tırnak"],["ipek-kirpik-2","Klasik ipek kirpik"],["dudak-2","Doğal ton dudak"],["kirpik-makro-2","Volüm ipek kirpik"]];
@@ -4547,7 +4311,7 @@ function updateBar(){ var l=$("#barLbl"), v=S.view; if(v==="tirnak"){ l.textCont
   var bk=v==="tirnak"?tzKey():(LZV[v]?({hub:"lazer",fiyat:"lzfiyat",erkek:"lzerkek",yuz:"lzyuz",hassas:"lzhassas",bolge:"lzbolge"})[LZV[v]]:v); lbl($("#barCta"),"at-"+bk+"-bar-saat"); lbl($("#callBtn"),"at-"+bk+"-bar-tel"); }
 function initView(v){ if(S.inited[v]) return; S.inited[v]=true;
   if(v==="salon"){ initWalk(); initFilm(); initMosaic(); initTileVideos(); }
-  if(v==="kas"){ initCompare($("#kasCmp"),true); initPerde(); initGolden(); initKasGallery(); }
+  if(v==="kas"){ initCompare($("#kasCmp"),true); initGolden(); initKasGallery(); }
   if(v==="tirnak"){ tzBoot(); }
   if(v==="kirpik"){ initLooks(); initPairs("galKirpik","kirpik"); }
   if(v==="lifting"){ initCompare($("#liftCmp"),true); initCurl(); }
@@ -4786,16 +4550,7 @@ var CM={
  darsonval:{v:"cilt-darsonval",alt:"Darsonval elektrodu akneli yanakta"},
  yuz1:{pair:"yuz-cift-1",s:480,alt:"Yüz bakımı: kızarıklık ve ton farkı"},
  akne1:{pair:"akne-cift-1",s:800,alt:"Akne bakımı"},
- akne2:{pair:"akne-cift-2",s:800,alt:"Akne bakımı, ikinci danışan"},
- hydra:{v:"cilt-hydra",alt:"Başlıklı cihazla yüz uygulaması"},
- maske:{v:"cilt-maske",alt:"Bakım maskesinin uygulanması"},
- sunger:{v:"cilt-sunger",alt:"Altın lavabo ve temizleme süngerleri"},
- ledk:{v:"cilt-led-kubbe",alt:"LED kubbe altında renk döngüsü"},
- cihaz:{img:"cilt-cihaz",alt:"Salonumuzdaki çok başlıklı cilt bakım cihazı"},
- uygulama:{img:"cilt-uygulama",alt:"Başlıkla yüz uygulaması"},
- hazirlik:{img:"cilt-hazirlik",alt:"Bakım maskesinin kâsede hazırlanması"},
- urun:{img:"cilt-urun",alt:"Salonda kullanılan bakım ürünü"},
- lamba:{img:"cilt-lamba",alt:"Büyüteç lambası altında bakıma hazırlık"}
+ akne2:{pair:"akne-cift-2",s:800,alt:"Akne bakımı, ikinci danışan"}
 };
 var CA_GROUPS=[["akne","Sivilce, gözenek, siyah nokta"],["isilti","Işıltı ve nem"],["ton","Leke ve ton"],["yas","Sıkılık ve çizgi görünümü"],["vucut","Vücut ve dudak"],["rehber","Başlarken"]];
 var CA_SEANS=[
@@ -4806,9 +4561,9 @@ var CA_SEANS=[
  {m:"led",w:"Adım 5",k:"Işık",h:"LED ile kapanış.",p:"Bakımın sonunda LED ışık terapisiyle dinlenirsiniz. Işık rengini uzmanımız cildinize göre seçer."}];
 var CP={
 "cilt-bakimi-fiyatlari":{t:"Cilt bakımı fiyatları",code:"cfiyat",kind:"I",grp:"rehber",h1:["Cilt bakımı","fiyatları"],
- lede:"Her bakımın süresi ve fiyatı tek bakışta.",hero:"sunger",heroNote:"Altın lavabo ve temizleme süngerleri, salonumuzda çekildi. Fiyatlar randevu sistemimizdeki aktif menüden.",
+ lede:"Her bakımın süresi ve fiyatı tek bakışta.",hero:"kubbe",heroNote:"LED kubbe, salonumuzda çekildi. Fiyatlar randevu sistemimizdeki aktif menüden.",
  scene:{type:"menu"},
- acts:[{m:"sunger",k:"Nereden başlamalı?",h:"Yarım saatten iki saate.",p:"Kısa bir arada cilt temizliği, ilk kez geliyorsanız klasik bakım, belirli bir derdiniz varsa ana bakımlar."},
+ acts:[{m:"kubbe",k:"Nereden başlamalı?",h:"Yarım saatten iki saate.",p:"Kısa bir arada cilt temizliği, ilk kez geliyorsanız klasik bakım, belirli bir derdiniz varsa ana bakımlar."},
    {m:"analiz",k:"Fiyat neye göre?",h:"Bakımın süresine ve adımlarına göre.",p:"Ana bakımlar iki saat sürer ve cihazla desteklenir. Ara bakımlar daha kısa ve daha sadedir."},
    {m:"led",k:"Paketler",h:"Ana bakımlarda 5 seans.",p:"5 seanslık paket, tek seans fiyatının 4,5 katıdır. Hangi bakımın size uygun olduğunu ilk seansta birlikte konuşuruz."}],
  faq:[["Fiyatlar güncel mi?","Bu sayfadaki fiyatlar randevu sistemimizdeki aktif menüden alınır. Kesin fiyatı randevu onayında WhatsApp'tan da iletiriz."],["Ödemeyi nasıl yapıyorum?","Ödeme bakım günü salonda yapılır."]],
@@ -4888,7 +4643,6 @@ var CP={
  scene:{type:"map"},
  acts:[{m:"analiz",k:"Lambanın altında",h:"Gözle görmediğimizi büyüteçle.",p:"Gözenek, siyah nokta, kuruluk ve kızarıklık büyüteçli lamba altında değerlendirilir."},
    {m:"masaj",k:"Dokunarak",h:"Cildin dokusu.",p:"Nem ve esneklik dokunarak anlaşılır."},
-   {m:"lamba",k:"Erkekler de",h:"Herkese aynı özen.",p:"Cilt analizi ve bakımlarımız erkek danışanlarımız için de aynı adımlarla yapılır."},
    {m:"led",k:"Sonra",h:"Size uygun yol.",p:"Analiz ön görüşmedir; ardından ihtiyacınıza uygun bakım önerilir."}],
  faq:[["Analiz ücretli mi?","Cilt analizi bakımın başında yapılır. Yalnızca görüşme için gelmek isterseniz WhatsApp'tan yazın."]],
  route:["klasik-cilt-bakimi","akne-bakimi","cilt-yenileme","saten-yuz-germe"]},
@@ -4897,7 +4651,6 @@ var CP={
  acts:[{m:"yuz1",k:"Aynada",h:"Yüzünüz ne anlatıyor?",p:"Kızarıklık, matlık, sivilce ya da sadece yorgunluk. Her biri farklı bir bakıma işaret eder."},
    {m:"analiz",k:"Önce bakarız",h:"Doğru yol için.",p:"Kısa bir analizle başlarız."},
    {m:"masaj",k:"Koltukta",h:"Ellerimizle.",p:"Hangi bakımı seçerseniz seçin, masaj ve özen her bakımın parçasıdır."},
-   {m:"lamba",k:"Erkekler de",h:"Herkese aynı özen.",p:"Yüz bakımlarımız erkek danışanlarımız için de aynı adımlarla yapılır."},
    {m:"yuz1",k:"Sonra",h:"Gerçek bir danışanımız.",p:"Görsel salonumuzda bakım yaptıran bir danışanımızın gerçek önce/sonrasıdır."}],
  proof:["yuz1"],
  route:["klasik-cilt-bakimi","cilt-temizligi","paris-isiltisi-bakimi","cilt-yenileme"]},
@@ -4910,37 +4663,35 @@ var CP={
  faq:[["Kaç seans?","Ana bakımların 5 seanslık paketleri vardır; ihtiyacı ilk seansta birlikte belirleriz."],["Yazın yaptırabilir miyim?","Uzmanımız mevsime ve cildinize göre önerir; güneş koruyucu her mevsim gerekir."]],
  route:["ton-esitleme","cilt-yenileme","cilt-kararma-bakimi"],shoot:true},
 "hollywood-bakimi":{t:"Hollywood bakımı",code:"cholly",kind:"H",opt:"hollywood",grp:"isilti",h1:["Hollywood","bakımı"],
- lede:"Özel bir günden önce iki saatlik ışıltı.",hero:"maske",heroNote:"Maske uygulaması, salonumuzda çekildi. Hollywood bakımının önce/sonra fotoğrafları hazırlanıyor.",
+ lede:"Özel bir günden önce iki saatlik ışıltı.",hero:"kubbe",heroNote:"LED kubbe, salonumuzda çekildi. Hollywood bakımına özel çekimimiz hazırlanıyor.",
  scene:{type:"duel",a:"hollywood-bakimi",b:"paris-isiltisi-bakimi"},
  acts:[{m:"masaj",k:"Aynada",h:"Düğün, nişan, fotoğraf günü.",p:"Önemli bir günden önce cildin dinlenmiş ve ışıltılı görünmesi istenir."},
-   {m:"hazirlik",k:"Hazırlık",h:"Maske taze hazırlanır.",p:"Maske, uygulamadan hemen önce kâsede hazırlanır."},
-   {m:"maske",k:"Koltukta",h:"Maske ve ışık.",p:"Maske yüze fırçayla uygulanır; bakım LED kubbe altında tamamlanır."},
+   {m:"kopuk",k:"Hazırlık",h:"Derin arındırma.",p:"Cilt temizlenir ve bakıma hazırlanır."},
+   {m:"kubbe",k:"Koltukta",h:"Maske ve ışık.",p:"Bakım LED kubbe altında tamamlanır."},
    {m:"led",k:"Sonra",h:"Işıltılı görünüm.",p:"Özel günden birkaç gün önce planlamanızı öneririz."}],
  faq:[["Paris ışıltısından farkı ne?","İkisi de 120 dakikalık ışıltı bakımıdır; ürün ve adımları farklıdır. Hangisinin cildinize uygun olduğunu uzmanımız cildinize bakarak söyler."]],
  route:["paris-isiltisi-bakimi","klasik-cilt-bakimi"],shoot:true},
 "paris-isiltisi-bakimi":{t:"Paris ışıltısı",code:"cparis",kind:"H",opt:"paris",grp:"isilti",h1:["Paris","ışıltısı"],
- lede:"Mat cilde iki saatte canlı bir parıltı.",hero:"ledk",heroNote:"LED kubbe, salonumuzda çekildi. Paris ışıltısının önce/sonra fotoğrafları hazırlanıyor.",
+ lede:"Mat cilde iki saatte canlı bir parıltı.",hero:"led",heroNote:"LED ışık terapisi, salonumuzda çekildi. Paris ışıltısına özel çekimimiz hazırlanıyor.",
  scene:{type:"duel",a:"paris-isiltisi-bakimi",b:"hollywood-bakimi"},
  acts:[{m:"analiz",k:"Aynada",h:"Mat, susuz, yorgun.",p:"Kış, stres ve uykusuzluk cildin parlaklığını alır."},
    {m:"kopuk",k:"Hazırlık",h:"Arındırma.",p:"Cilt temizlenir ve bakıma hazırlanır."},
-   {m:"hazirlik",k:"Maske",h:"Taze hazırlanan maske.",p:"Maske uygulamadan hemen önce hazırlanır."},
    {m:"masaj",k:"Koltukta",h:"Bakım ve masaj.",p:"Işıltı bakımı yüz masajıyla devam eder."},
    {m:"led",k:"Sonra",h:"Canlı görünüm.",p:"LED ışık terapisiyle kapanış."}],
  faq:[["Hollywood bakımından farkı ne?","İkisi de 120 dakikalık ışıltı bakımıdır; ürün ve adımları farklıdır. Uzmanımız cildinize bakarak önerir."]],
  route:["hollywood-bakimi","hydra-elite"],shoot:true},
 "dermabrazyon":{t:"Dermabrazyon",code:"cderma",kind:"H",opt:"derma",grp:"isilti",h1:["Dermabrazyon","yüz bakımı"],
- lede:"Pürüzlü dokuya doksan dakikalık yenilenme.",hero:"hydra",heroNote:"Başlıklı cihazla uygulama, salonumuzda çekildi. Önce/sonra fotoğrafları hazırlanıyor.",
+ lede:"Pürüzlü dokuya doksan dakikalık yenilenme.",hero:"kubbe",heroNote:"LED kubbe, salonumuzda çekildi. Dermabrazyon cihazımızın çekimi hazırlanıyor.",
  acts:[{m:"analiz",k:"Aynada",h:"Gözenekler belirgin, doku pürüzlü.",p:"Makyaj oturmaz, cilt dokunca pürüzlü hissedilir."},
-   {m:"cihaz",k:"Cihaz",h:"Çok başlıklı cihazımız.",p:"Hangi başlığın kullanılacağını uzmanımız cildinize göre seçer."},
-   {m:"uygulama",k:"Koltukta",h:"Başlık yüzde gezer.",p:"Dermabrazyon uygulamasının ardından bakım LED ile tamamlanır."},
+   {m:"kopuk",k:"Hazırlık",h:"Arındırma.",p:"Cilt temizlenir."},
+   {m:"kubbe",k:"Koltukta",h:"Dermabrazyon ve ışık.",p:"Dermabrazyon uygulamasının ardından LED ile tamamlanır."},
    {m:"led",k:"Sonra",h:"Daha pürüzsüz bir yüzey.",p:"Ana bakımların 5 seanslık paketleri vardır; uzmanımız önerir."}],
  faq:[["Ne kadar sürer?","90 dakika."]],
  route:["hydra-elite","cilt-yenileme","klasik-cilt-bakimi"],shoot:true},
 "hydra-elite":{t:"Hydra elite nem bakımı",code:"chydra",kind:"I",grp:"isilti",h1:["Hydra elite","nem bakımı"],
- lede:"Susuz cilt için nem odaklı yol.",hero:"hydra",heroNote:"Başlıklı cihazla uygulama, salonumuzda çekildi.",
+ lede:"Susuz cilt için nem odaklı yol.",hero:"kopuk",heroNote:"Temizleme köpüğü, salonumuzda çekildi. Hydra uygulamasının çekimi hazırlanıyor.",
  acts:[{m:"analiz",k:"Aynada",h:"Gerilen, pul pul olan cilt.",p:"Nem eksikliği makyajı da cildi de yorgun gösterir."},
-   {m:"cihaz",k:"Cihaz",h:"Çok başlıklı cihazımız.",p:"Başlığı uzmanımız cildinize göre seçer."},
-   {m:"uygulama",k:"Yol",h:"Nem için doğru bakım.",p:"İhtiyacınıza göre dermabrazyon ya da Paris ışıltısı önerilir."},
+   {m:"kopuk",k:"Yol",h:"Nem için doğru bakım.",p:"İhtiyacınıza göre dermabrazyon ya da Paris ışıltısı önerilir."},
    {m:"led",k:"Sonra",h:"Rahatlamış cilt.",p:"Bakım ışıkla tamamlanır."}],
  faq:[["Hydra elite'in fiyatı ne?","Nem bakımı bir ihtiyaç başlığıdır; uygulanacak bakımın fiyatı kendi sayfasında."]],
  route:["dermabrazyon","paris-isiltisi-bakimi"],shoot:true},
@@ -4952,9 +4703,8 @@ var CP={
  faq:[["Hassas cildim var, hangi bakımla başlamalıyım?","Genellikle cilt temizliği ya da klasik bakımla başlarız; uzmanımız cildinize bakarak karar verir."]],
  route:["cilt-temizligi","klasik-cilt-bakimi"],shoot:true},
 "antioksidan-bakimi":{t:"Antioksidan bakımı",code:"canti",kind:"I",grp:"isilti",h1:["Antioksidan","bakımı"],
- lede:"Şehir, güneş ve stres yorgunluğuna karşı canlandırıcı yol.",hero:"maske",heroNote:"Maske uygulaması, salonumuzda çekildi. Serum uygulamasının çekimi hazırlanıyor.",
+ lede:"Şehir, güneş ve stres yorgunluğuna karşı canlandırıcı yol.",hero:"masaj",heroNote:"Yüz masajı, salonumuzda çekildi. Serum uygulamasının çekimi hazırlanıyor.",
  acts:[{m:"analiz",k:"Aynada",h:"Gri, yorgun bir ton.",p:"Şehir hayatı cildin canlılığını azaltır."},
-   {m:"urun",k:"Ürün",h:"Salonda kullandıklarımız.",p:"Bakımlarda kullandığımız ürünleri seansta size gösteririz."},
    {m:"masaj",k:"Yol",h:"Canlandırıcı bakımlar.",p:"Paris ışıltısı ve Hollywood bakımı bu ihtiyaca en yakın bakımlarımızdır."},
    {m:"led",k:"Sonra",h:"Daha canlı görünüm.",p:"LED ile kapanış."}],
  route:["paris-isiltisi-bakimi","hollywood-bakimi","klasik-cilt-bakimi"],shoot:true},
@@ -5018,12 +4768,11 @@ NAV.forEach(function(g){ if(g[0]==="Cilt") g[1].forEach(function(it){ if(!it[2] 
 function caOpt(id){ return PLANS.cilt.opts.filter(function(x){ return x.id===id; })[0]||null; }
 function caRoute(){ return CA.cur?"cilt/"+CA.cur:"cilt"; }
 function caL(code,place){ return ' data-track-label="at-'+code+'-'+place+'"'; }
-function caPoster(k){ var m=CM[k]; if(!m) return "m/monogram.png"; if(m.img) return "m/ig/"+m.img+"-480.webp"; return m.v?"m/ig/"+m.v+"-poster.webp":"m/ig/"+m.pair+"-sonra-"+m.s+".webp"; }
+function caPoster(k){ var m=CM[k]; if(!m) return "m/monogram.png"; return m.v?"m/ig/"+m.v+"-poster.webp":"m/ig/"+m.pair+"-sonra-"+m.s+".webp"; }
 function caPriceTxt(p){ var o=p.opt?caOpt(p.opt):null; if(!o) return "Rehber · size uygun bakım";
   if(p.from) return p.from.toLocaleString("tr-TR")+" TL'den";
   return fmtTL(o.p)+(o.d?" · "+o.d+" dk":""); }
 function caMedia(k,lazy){ var m=CM[k]; if(!m) return "";
-  if(m.img) return '<img src="m/ig/'+m.img+'-720.webp" srcset="m/ig/'+m.img+'-480.webp 480w, m/ig/'+m.img+'-720.webp 720w" sizes="(min-width:960px) 50vw, 100vw" alt="'+m.alt+'" width="720" height="900" decoding="async"'+(lazy?' loading="lazy"':'')+'>';
   if(m.v) return '<video class="'+(lazy?"ca-lv":"auto-vid")+'" muted playsinline loop preload="none" poster="m/ig/'+m.v+'-poster.webp" data-src="m/ig/'+m.v+'.mp4" aria-label="'+m.alt+'"></video>';
   var b="m/ig/"+m.pair+"-", rows=m.s!==480;
   return '<div class="ca-pair'+(rows?" rows":"")+'"><figure><img src="'+b+"once-"+m.s+'.webp" alt="Önce: '+m.alt+'" loading="lazy"><span class="cmp-tag">Önce</span></figure><figure><img src="'+b+"sonra-"+m.s+'.webp" alt="Sonra: '+m.alt+'" loading="lazy"><span class="cmp-tag">Sonra</span></figure></div>'; }
@@ -5201,8 +4950,8 @@ function caAtlasHTML(){ return CA_GROUPS.map(function(g){ var list=Object.keys(C
 function caInitHub(){ var a=$("#ciltAtlas"); if(a && !a.dataset.done){ a.dataset.done=1; a.innerHTML=caAtlasHTML(); }
   var s=$("#ciltHubStory"); if(s && !s.dataset.done){ s.dataset.done=1; s.innerHTML=caStoryHTML(CA_SEANS,["Bir bakımın içinden","Klasik bakım, <em>adım adım</em>."],"cilt").replace('class="sec gutter ca-story"','class="ca-story"'); hubStory(); } }
 function hubStory(){ var b=$("#ciltHubStory [data-ca-story]"); if(!b) return; var keep=CA.obs; CA.obs=[]; caStory(b); CA.hubObs=CA.obs; CA.obs=keep; }
-/* ---------- /CİLT ATLASI ---------- */
 
 boot();
 })();
 </script>
+
