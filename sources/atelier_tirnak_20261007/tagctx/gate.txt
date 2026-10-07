@@ -1,0 +1,171 @@
+TagCtx Artifact kapısı — önce: sürüm 1791389678-02bc (canlı), sonra: aynı sürüm + patch_renk_atolyesi_v3.py
+Ölçüm istekleri kaydedilip iptal edildi; hiçbir istek Google'a gitmedi.
+
+### tirnak22-360
+-- önce
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/jel-tirnak                    labels 311  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/tirnak-guclendirme            labels 309  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-modelleri       labels 313  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-fiyatlari-ankara labels 311  wa 10  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-randevu         labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-bakim-dolgu     labels 313  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-cikartma        labels 311  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/tirnak-uzatma                 labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/ayak-protez-tirnak            labels 311  wa 9  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/cayyolu-protez-tirnak         labels 315  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yasamkent-protez-tirnak       labels 315  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/manikur-ankara                labels 313  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/pedikur-ankara                labels 310  wa 9  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/medikal-pedikur               labels 310  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/manikur-pedikur-fiyatlari     labels 310  wa 10  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/el-ayak-bakimi                labels 310  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- sonra
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/jel-tirnak                    labels 311  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/tirnak-guclendirme            labels 309  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-modelleri       labels 313  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-fiyatlari-ankara labels 311  wa 10  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-randevu         labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-bakim-dolgu     labels 313  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak-cikartma        labels 311  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/tirnak-uzatma                 labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/ayak-protez-tirnak            labels 311  wa 9  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/cayyolu-protez-tirnak         labels 315  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yasamkent-protez-tirnak       labels 315  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/manikur-ankara                labels 313  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/pedikur-ankara                labels 310  wa 9  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/medikal-pedikur               labels 310  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/manikur-pedikur-fiyatlari     labels 310  wa 10  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/el-ayak-bakimi                labels 310  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- diff
+
+no newly failing checks
+exit=0
+
+### tirnak6-320
+-- önce
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- sonra
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- diff
+
+no newly failing checks
+exit=0
+
+### tirnak6-414
+-- önce
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- sonra
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- diff
+
+no newly failing checks
+exit=0
+
+### tirnak6-1366
+-- önce
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- sonra
+tirnak                               labels 323  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje                    labels 312  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/kalici-oje-fiyatlari          labels 310  wa 6  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/protez-tirnak                 labels 314  wa 8  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/yeni-nesil-tips               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+tirnak/nail-art-ankara               labels 314  wa 7  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- diff
+
+no newly failing checks
+exit=0
+
+### diger10-360
+-- önce
+salon                                labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kas                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kirpik                               labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lifting                              labels 299  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+pmu                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+cilt                                 labels 324  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lazer                                labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+lazer-fiyat                          labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+vucut                                labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+slimtone                             labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- sonra
+salon                                labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kas                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kirpik                               labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lifting                              labels 299  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+pmu                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+cilt                                 labels 324  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lazer                                labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+lazer-fiyat                          labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+vucut                                labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+slimtone                             labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- diff
+
+no newly failing checks
+exit=0
+
+### diger10-1366
+-- önce
+salon                                labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kas                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kirpik                               labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lifting                              labels 299  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+pmu                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+cilt                                 labels 324  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lazer                                labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+lazer-fiyat                          labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+vucut                                labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+slimtone                             labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- sonra
+salon                                labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kas                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+kirpik                               labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lifting                              labels 299  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+pmu                                  labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+cilt                                 labels 324  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+lazer                                labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+lazer-fiyat                          labels 300  wa 6  tel 1  W-code no   errors 0  broken 0  overflow 0  google 0
+vucut                                labels 301  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+slimtone                             labels 300  wa 5  tel 1  W-code yes  errors 0  broken 0  overflow 0  google 0
+-- diff
+
+no newly failing checks
+exit=0
+
