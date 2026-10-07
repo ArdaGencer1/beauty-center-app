@@ -1,0 +1,194 @@
+{
+ "cilt-led-dongu": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18617996404000518",
+  "alt": "LED ışık terapisi: yüz maskesinde yeşil, kırmızı, mor ve mavi ışık",
+  "mp4": "cilt-led-dongu.mp4",
+  "poster": "cilt-led-dongu-poster.webp",
+  "trim": [
+   0.55,
+   8.4
+  ],
+  "note": "#6, 0,53 ve 8,4 sn kesimleri arası",
+  "w": 720,
+  "h": 1280,
+  "dur": 7.9,
+  "bytes": 1194504
+ },
+ "cilt-kubbe": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18119195767718567",
+  "alt": "LED kubbe altında cilt bakımı",
+  "mp4": "cilt-kubbe.mp4",
+  "poster": "cilt-kubbe-poster.webp",
+  "trim": [
+   5.0,
+   17.0
+  ],
+  "note": "#10 elde çekim; vidstab ile sabitlendi",
+  "w": 720,
+  "h": 1280,
+  "dur": 12.0,
+  "bytes": 963930
+ },
+ "cilt-saten": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18192437785391754",
+  "alt": "Saten yüz germe başlığı yanak ve şakakta",
+  "mp4": "cilt-saten.mp4",
+  "poster": "cilt-saten-poster.webp",
+  "trim": [
+   1.7,
+   6.5
+  ],
+  "note": "#16 tek çekim (1,63–6,57 sn)",
+  "w": 720,
+  "h": 1280,
+  "dur": 4.8,
+  "bytes": 948786
+ },
+ "cilt-saten-yakin": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18192437785391754",
+  "alt": "Saten yüz germe başlığı alın ve göz çevresinde, yakın plan",
+  "mp4": "cilt-saten-yakin.mp4",
+  "poster": "cilt-saten-yakin-poster.webp",
+  "trim": [
+   6.62,
+   13.2
+  ],
+  "note": "#16 son iki çekim",
+  "w": 720,
+  "h": 1280,
+  "dur": 6.5,
+  "bytes": 897310
+ },
+ "cilt-analiz": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18122366353896732",
+  "alt": "Büyüteçli lamba altında cilt analizi",
+  "mp4": "cilt-analiz.mp4",
+  "poster": "cilt-analiz-poster.webp",
+  "trim": [
+   3.2,
+   6.65
+  ],
+  "note": "#17 lamba + büyüteç çekimleri",
+  "w": 720,
+  "h": 1280,
+  "dur": 3.47,
+  "bytes": 731581
+ },
+ "cilt-masaj": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18122366353896732",
+  "alt": "Uzman eldivenli ellerle yüze masaj yapıyor",
+  "mp4": "cilt-masaj.mp4",
+  "poster": "cilt-masaj-poster.webp",
+  "trim": [
+   0.0,
+   2.15
+  ],
+  "note": "#17 ilk çekim",
+  "w": 720,
+  "h": 1280,
+  "dur": 2.17,
+  "bytes": 612993
+ },
+ "cilt-kopuk": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18122366353896732",
+  "alt": "Temizleme süngeri ve köpük, yakın plan",
+  "mp4": "cilt-kopuk.mp4",
+  "poster": "cilt-kopuk-poster.webp",
+  "trim": [
+   2.24,
+   3.12
+  ],
+  "note": "#17 ikinci çekim; ileri-geri döngü",
+  "w": 720,
+  "h": 1280,
+  "dur": 1.87,
+  "bytes": 541482
+ },
+ "cilt-komedon": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18122366353896732",
+  "alt": "Steril uçla siyah nokta temizliği, yakın plan",
+  "mp4": "cilt-komedon.mp4",
+  "poster": "cilt-komedon-poster.webp",
+  "trim": [
+   6.74,
+   8.64
+  ],
+  "note": "#17 son çekim; en fazla 2 sn kuralı",
+  "w": 720,
+  "h": 1280,
+  "dur": 1.83,
+  "bytes": 537427
+ },
+ "cilt-darsonval": {
+  "kind": "video",
+  "fam": "cilt",
+  "id": "18025275239906179",
+  "alt": "Darsonval elektrodu akneli yanakta turuncu ışıkla",
+  "mp4": "cilt-darsonval.mp4",
+  "poster": "cilt-darsonval-poster.webp",
+  "trim": [
+   0.0,
+   10.08
+  ],
+  "note": "#9 tek çekim; hafif gürültü azaltma",
+  "w": 720,
+  "h": 1280,
+  "dur": 10.0,
+  "bytes": 961812
+ },
+ "cilt-saten-film": {
+  "kind": "film",
+  "fam": "cilt",
+  "id": "18192437785391754",
+  "sprite": "film/cilt-saten-film.webp",
+  "frames": 48,
+  "cols": 8,
+  "fw": 360,
+  "fh": 640,
+  "trim": [
+   1.7,
+   13.2
+  ],
+  "note": "#16 kaydırmalı film; siyah geçiş (0,7–1,6 sn) dışarıda",
+  "bytes": 430970
+ },
+ "yuz-cift-1": {
+  "kind": "image",
+  "fam": "cilt",
+  "id": "18039236768821035",
+  "alt": "Yüz bakımı öncesi ve sonrası: kızarıklık ve ton farkı, tam yüz",
+  "split": "v",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "yuz-cift-1-once-480.webp"
+   },
+   "w": 420,
+   "h": 914
+  },
+  "sonra": {
+   "files": {
+    "480": "yuz-cift-1-sonra-480.webp"
+   },
+   "w": 420,
+   "h": 914
+  },
+  "note": "#21; IG paylaşımı ters çekilmiş, 180° döndürüldü; ters kalan etiket iki yarımdan eşit kırpıldı"
+ }
+}

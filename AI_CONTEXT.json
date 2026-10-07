@@ -5,8 +5,18 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v4.html",
+    "repository_snapshot_version": 4,
+    "published_version_id": "1791383911-8f6e",
+    "pending_publish": {
+      "snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v5.html",
+      "version": 5,
+      "content": "v4 + Cilt Atlası (24 cilt alt sayfası)",
+      "blocked_by": "owner approval for Artifact publish",
+      "files_add": 21,
+      "files_remove": 14,
+      "build": "sources/atelier_cilt_20261007/a4_build.py"
+    }
   },
   "measurement": {
     "system": "TagCtx",
@@ -95,25 +105,26 @@
     },
     {
       "key": "cilt",
-      "status": "planned_mostly_unimplemented",
+      "status": "prototype_ready_publish_pending",
       "priority": 3,
       "path": "plans/claude/20261007/planlayal-m-mutable-rossum.md",
       "ready": [
-        "media research",
-        "page/media matrix",
-        "edit recipe",
-        "shoot list",
-        "wave plan",
-        "13 legacy manifest records"
+        "11 new skin media (9 videos, 1 film sprite, 1 rotated pair)",
+        "page engine (sources/atelier_cilt_20261007)",
+        "24 sub-pages at #cilt/<slug> + hub atlas",
+        "excluded frames removed",
+        "browser verification 50/50 + 18-view regression"
       ],
       "remaining": [
-        "media v2",
-        "page engine",
-        "25 pages in D1-D3",
-        "staff shoots",
-        "replace placeholders",
-        "verification"
-      ]
+        "G0 publish v5 to the same Artifact (owner approval)",
+        "G1 verify 5 new CRM items and area prices",
+        "G2 server-only stills (#1,#3,#4,#5,#7,#8,#12-#15,#18-#20,#22)",
+        "G3 staff shoots",
+        "G4 owner questions",
+        "G5 live site port",
+        "G6 TagCtx gate"
+      ],
+      "plan_v5": "plans/claude/20261007/cilt-atlasi-hikaye-v5.md"
     }
   ],
   "hard_rules": [
@@ -134,7 +145,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }

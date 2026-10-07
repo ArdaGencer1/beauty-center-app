@@ -1,159 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><style id="cilt-atlas">
-/* ---------- CİLT ATLASI v4 · 24 alt sayfa (ca-) ---------- */
-#ciltPage{display:block}
-.ca-crumb{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;cursor:pointer;font:600 11px/1.3 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink);text-decoration:none}
-.ca-crumb svg{width:14px;height:14px}
-.ca-hero .hero-media{aspect-ratio:4/5;overflow:hidden;background:var(--velvet)}
-.ca-hero .hero-media video,.ca-hero .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ca-hero .hero-media::before{content:"";position:absolute;inset:auto 0 0 0;height:38%;z-index:2;background:linear-gradient(180deg,transparent,rgba(14,13,12,.55));pointer-events:none}
-.ca-film-tag{position:absolute;z-index:4;left:12px;bottom:12px;right:60px;display:flex;align-items:center;gap:8px;color:#F7F1E4;font:600 10px/1.35 var(--body);letter-spacing:.16em;text-transform:uppercase}
-.ca-film-tag i{width:8px;height:8px;border-radius:50%;background:#E0533D;box-shadow:0 0 0 4px rgba(224,83,61,.25);flex:none;animation:caRec 1.6s infinite}
-@keyframes caRec{50%{opacity:.35}}
-.ca-type{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(90% 70% at 50% 40%,#5a2e2c,#1a1110 70%);color:#F3ECDD;overflow:hidden}
-.ca-type svg{width:62%;max-width:340px;opacity:.95}
-.ca-type b{position:absolute;bottom:14%;font:italic 400 clamp(40px,11vw,72px)/1 var(--display);color:#E2C98B;letter-spacing:-.01em}
-.ca-ctas{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.ca-ctas .btn-gold{flex:1 1 230px;max-width:420px}
-.ca-ctas .btn-line{flex:0 1 auto}
-.ca-split-chip{font-weight:650}
-
-/* hikâye: yapışkan sahne + perdeler */
-.ca-story .sec-head{margin-bottom:18px}
-.ca-scrolly{position:relative;display:grid;gap:0}
-.ca-stage{position:sticky;top:calc(var(--nav-h) + 10px);z-index:1;height:min(56svh,520px);border-radius:24px;overflow:hidden;background:var(--velvet);box-shadow:0 30px 70px -36px rgba(0,0,0,.7);border:1px solid var(--line)}
-.ca-layer{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--ease),transform 1.6s var(--ease);transform:scale(1.04)}
-.ca-layer.on{opacity:1;transform:none}
-.ca-layer video,.ca-layer img{width:100%;height:100%;object-fit:cover;display:block}
-.ca-layer .ca-pair{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#0e0d0c}
-.ca-layer .ca-pair img{height:100%}
-.ca-count{position:absolute;z-index:3;top:12px;left:12px;padding:6px 10px;border-radius:999px;background:rgba(14,13,12,.5);color:#F7F1E4;font:600 10px/1 var(--body);letter-spacing:.2em;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-.ca-cap{position:absolute;z-index:3;left:12px;right:12px;bottom:12px;color:#F7F1E4;font:500 12px/1.35 var(--body);text-shadow:0 1px 8px rgba(0,0,0,.6)}
-.ca-acts{list-style:none;margin:0;padding:0;position:relative;z-index:2}
-.ca-act{min-height:72svh;display:flex;align-items:flex-end;padding:0 0 10svh}
-.ca-act:first-child{margin-top:-12svh}
-.ca-card{width:100%;padding:20px 18px;border-radius:22px;background:var(--raised);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;gap:8px;opacity:.55;transform:translateY(16px);transition:opacity .5s var(--ease),transform .6s var(--ease)}
-.ca-act.on .ca-card{opacity:1;transform:none}
-.ca-num{font:italic 400 34px/1 var(--display);color:var(--gold)}
-.ca-card h3{margin:0;font:400 clamp(26px,7vw,34px)/1.05 var(--display);text-wrap:balance}
-.ca-card p{margin:0;color:var(--text-2);font-size:15.5px;line-height:1.55}
-.ca-card .ca-when{font:600 11px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
-
-/* kaydırmalı film */
-.ca-film{position:relative;height:240svh}
-.ca-film-pin{position:sticky;top:calc(var(--nav-h) + 10px);height:calc(100svh - var(--nav-h) - var(--bar-h) - 24px);display:grid;place-items:center}
-.ca-film-box{position:relative;height:100%;aspect-ratio:9/16;max-width:100%;border-radius:26px;overflow:hidden;background:#0e0d0c;box-shadow:0 30px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(233,215,165,.3)}
-.ca-film-box canvas,.ca-film-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ca-film-box canvas{opacity:0;transition:opacity .4s}
-.ca-film-cap{position:absolute;z-index:3;left:14px;right:14px;bottom:18px;display:grid;gap:6px;color:#F7F1E4}
-.ca-film-cap b{font:400 26px/1.05 var(--display);text-shadow:0 2px 14px rgba(0,0,0,.6)}
-.ca-film-cap span{font-size:13px;opacity:.85}
-.ca-film-bar{position:absolute;z-index:3;left:0;top:0;height:3px;width:0;background:var(--foil)}
-
-/* yüz haritası */
-.ca-map{display:grid;gap:18px;align-items:center}
-.ca-face{width:min(100%,360px);justify-self:center}
-.ca-face svg{width:100%;height:auto;display:block}
-.ca-face .z{fill:rgba(201,165,92,.08);stroke:var(--gold);stroke-width:1.2;stroke-dasharray:4 4;cursor:pointer;transition:fill .3s}
-.ca-face .z:hover,.ca-face .z[aria-pressed="true"]{fill:rgba(201,165,92,.32);stroke-dasharray:none}
-.ca-face .z:focus-visible{outline:none;stroke-width:3}
-.ca-face .ol{fill:none;stroke:var(--line-strong);stroke-width:1.4}
-.ca-face text{font:600 9px var(--body);letter-spacing:.12em;fill:var(--gold-ink);text-transform:uppercase;pointer-events:none}
-.ca-zone{min-height:150px;border-radius:22px;padding:20px 18px;background:var(--raised);border:1px solid var(--line);display:grid;gap:10px;align-content:start}
-.ca-zone h3{margin:0;font:400 28px/1.05 var(--display)}
-.ca-zone p{margin:0;color:var(--text-2)}
-
-/* seçici (alan / bölge) */
-.ca-pick{display:grid;gap:14px;border-radius:24px;padding:22px 18px;background:var(--raised);border:1px solid var(--line);box-shadow:var(--shadow)}
-.ca-pick h3{margin:0;font:400 28px/1.05 var(--display)}
-.ca-opts{display:flex;flex-wrap:wrap;gap:8px}
-.ca-opts button{min-height:46px;padding:8px 16px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--text);font:600 14px/1.2 var(--body);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
-.ca-opts button small{font-weight:500;color:var(--text-3)}
-.ca-opts button[aria-pressed="true"]{background:var(--foil);background-size:200% 100%;color:#1B1A18;border-color:transparent}
-.ca-opts button[aria-pressed="true"] small{color:#3a3020}
-.ca-pick .fine{font-size:12px;color:var(--text-3);margin:0}
-
-/* düello */
-.ca-duel{display:grid;gap:12px}
-.ca-duel article{border-radius:22px;padding:22px 18px;background:var(--raised);border:1px solid var(--line);display:grid;gap:8px;align-content:start;position:relative}
-.ca-duel article.here{border-color:var(--gold)}
-.ca-duel h3{margin:0;font:400 30px/1 var(--display)}
-.ca-duel .pr{font:500 26px/1 var(--display);color:var(--gold-ink)}
-.ca-duel .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.ca-duel .vs{justify-self:center;font:italic 400 28px/1 var(--display);color:var(--gold)}
-
-/* menü */
-.ca-menu{display:grid;gap:14px}
-.ca-filter{display:flex;gap:8px;flex-wrap:wrap}
-.ca-filter button{height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--text);font:600 13px/1 var(--body);cursor:pointer}
-.ca-filter button[aria-pressed="true"]{background:var(--text);color:var(--ground)}
-.ca-rows{display:grid;gap:8px}
-.ca-row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:14px 16px;border-radius:18px;background:var(--raised);border:1px solid var(--line);text-align:left;color:var(--text);cursor:pointer;font:inherit;width:100%}
-.ca-row b{font:500 20px/1.1 var(--display)}
-.ca-row .pr{font:500 20px/1 var(--display);color:var(--gold-ink);text-align:right}
-.ca-row small{color:var(--text-3);font-size:12.5px}
-.ca-row .pk{grid-column:1/-1;font-size:12.5px;color:var(--text-2)}
-.ca-row[hidden]{display:none}
-
-/* kanıt, alıntı, yönlendirme, fiyat */
-.ca-honest{border-radius:22px;padding:20px 18px;border:1px dashed var(--line-strong);display:grid;gap:8px;color:var(--text-2)}
-.ca-honest b{font:400 24px/1.1 var(--display);color:var(--text)}
-.ca-quote{margin:0;display:grid;gap:12px;max-width:760px}
-.ca-quote blockquote{margin:0;font:italic 400 clamp(26px,7vw,40px)/1.15 var(--display);text-wrap:balance}
-.ca-quote figcaption{font:600 11px/1.3 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
-.ca-routes{display:grid;gap:10px}
-.ca-route{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:10px 14px 10px 10px;border-radius:20px;background:var(--raised);border:1px solid var(--line);color:var(--text);text-decoration:none;cursor:pointer;text-align:left;font:inherit;width:100%}
-.ca-route img{width:64px;height:80px;border-radius:14px;object-fit:cover;background:var(--velvet)}
-.ca-route b{display:block;font:500 21px/1.1 var(--display)}
-.ca-route small{color:var(--text-3);font-size:12.5px}
-.ca-route em{font-style:normal;font:600 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
-.ca-price{display:grid;gap:12px}
-.ca-price .big{font:400 clamp(44px,12vw,64px)/1 var(--display)}
-.ca-price .big small{font-size:.42em;color:var(--text-2)}
-.ca-pkg{padding:12px 14px;border-radius:16px;background:var(--ground);border:1px solid var(--line);font-size:14px;color:var(--text-2)}
-.ca-pkg b{color:var(--text)}
-
-/* atlas ızgarası */
-.ca-atlas{display:grid;gap:26px}
-.ca-grp h3{margin:0 0 10px;font:600 11px/1.3 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-ink)}
-.ca-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.ca-tile{position:relative;display:block;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--velvet);border:0;padding:0;cursor:pointer;text-align:left;color:#F7F1E4;box-shadow:var(--shadow)}
-.ca-tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);display:block}
-.ca-tile:hover img{transform:scale(1.05)}
-.ca-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,12,0) 35%,rgba(14,13,12,.86) 100%)}
-.ca-tile span{position:absolute;z-index:2;left:12px;right:12px;bottom:11px;display:grid;gap:3px}
-.ca-tile b{font:500 20px/1.05 var(--display)}
-.ca-tile small{font-size:11.5px;opacity:.85}
-.ca-tile.mono img{object-fit:contain;padding:28%;opacity:.5}
-.ca-tile.here{outline:2px solid var(--gold);outline-offset:-2px}
-
-@media (min-width:960px){
-  .ca-scrolly{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
-  .ca-stage{height:calc(100svh - var(--nav-h) - 40px);top:calc(var(--nav-h) + 20px)}
-  .ca-acts{grid-column:2;grid-row:1}
-  .ca-stage{grid-column:1;grid-row:1}
-  .ca-act{min-height:86svh;align-items:center;padding:0}
-  .ca-act:first-child{margin-top:0}
-  .ca-map{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-  .ca-duel{grid-template-columns:1fr auto 1fr;align-items:stretch}
-  .ca-duel .vs{align-self:center}
-  .ca-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .ca-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ca-hero .hero-media{aspect-ratio:auto;height:calc(100svh - var(--nav-h))}
-}
-html[data-tier="C"] .ca-layer,html[data-tier="C"] .ca-card{transition:none}
-@media (prefers-reduced-motion:reduce){.ca-layer,.ca-card{transition:none}.ca-film-tag i{animation:none}}
-.half-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.half-stage .ca-film-tag{z-index:6}
-.ca-layer .ca-pair.rows{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
-.ca-pair figure{position:relative;margin:0;overflow:hidden}
-.ca-pair figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ca-pair .cmp-tag{left:10px;right:auto;top:10px}
-.ca-row{cursor:default}
-.ca-row button,.ca-row>span:first-child{background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
-.ca-row .pr{padding:9px 14px;border:1px solid var(--line-strong);border-radius:999px;font:500 19px/1 var(--display);color:var(--gold-ink);white-space:nowrap}
-#ciltHubStory{padding-top:0}
-</style>
-</head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Selda Gençer Atelier</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1065,7 +910,7 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
   <div class="row"><span>Salon ışığı (saate göre)</span><div class="seg" data-ctl="light"><button data-v="auto">Otomatik</button><button data-v="sabah">Sabah</button><button data-v="ogle">Öğle</button><button data-v="aksam">Akşam</button></div></div>
   <div class="row"><span>Cihaz kademesi</span><div class="seg" data-ctl="tier"><button data-v="auto">Otomatik</button><button data-v="A">A · tam şölen</button><button data-v="B">B · hafif</button><button data-v="C">C · statik</button></div></div>
   <div class="row"><span>Reklamdaki arama (kişiselleştirme)</span><div class="seg" data-ctl="semt"><button data-v="">Yok</button><button data-v="Çayyolu">çayyolu…</button><button data-v="Ümitköy">ümitköy…</button><button data-v="Yaşamkent">yaşamkent…</button><button data-v="Bağlıca">bağlıca…</button><button data-v="İncek">incek…</button></div></div>
-  <p>Fiyatlar canlı CRM menüsünden (6 Ekim 2026). Yorumlar gerçek Google yorumları. Boş saatler bu prototipte <b>örnek</b>; canlıda CRM'den gelir. Butonlar gerçek WhatsApp'ı açar, deneme mesajını göndermeyin. Bakış ve ton adları ile cilt testinin önerileri taslaktır; uzmanınızın onayı gerekir. Fiyatlar 7 Ekim 2026'da canlı CRM'den yeniden doğrulandı. <b>Cilt Atlası v4:</b> 24 cilt alt sayfası prototipte açılır (<code>#cilt/…</code>); yalnızca salonun gerçek medyası. Personel çekimi bekleyen sayfalar: leke, hollywood, paris, dermabrazyon, hydra elite, hassas cilt, antioksidan, dudak, kararma, sırt, koltuk altı, dirsek, anti aging, göz çevresi. Yeni 5 menü kalemi (ton, saten, dudak, sırt, koltuk altı) ile alan/bölge fiyatları planın CRM matrisinden alındı; canlıya almadan önce CRM'den yeniden doğrulanmalı. Vücut: bölgesel incelme, Slim Tone, G5 ve lenf drenaj gerçek salon medyasıyla; EM, heykeltraş ve popo temsilî görselle, pasif jimnastik ve çatlak temsilî çizimle (çekim bekliyor). Vücut fiyatları ön görüşmede.</p>
+  <p>Fiyatlar canlı CRM menüsünden (6 Ekim 2026). Yorumlar gerçek Google yorumları. Boş saatler bu prototipte <b>örnek</b>; canlıda CRM'den gelir. Butonlar gerçek WhatsApp'ı açar, deneme mesajını göndermeyin. Bakış ve ton adları ile cilt testinin önerileri taslaktır; uzmanınızın onayı gerekir. Fiyatlar 7 Ekim 2026'da canlı CRM'den yeniden doğrulandı. Vücut: bölgesel incelme, Slim Tone, G5 ve lenf drenaj gerçek salon medyasıyla; EM, heykeltraş ve popo temsilî görselle, pasif jimnastik ve çatlak temsilî çizimle (çekim bekliyor). Vücut fiyatları ön görüşmede.</p>
   <div class="row"><span>Buton sayacı · bu oturum (canlıda Sayfa Sağlığı'na gider)</span><div class="sig" id="sigList"><span>Henüz dokunuş yok.</span></div></div>
 </div>
 
@@ -1465,13 +1310,18 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
 
 <!-- ===================== CİLT BAKIMI ===================== -->
 <section data-view="cilt" hidden>
-<div id="ciltHub">
   <div class="hero">
     <div class="hero-split">
       <div class="hero-media lit">
-        <div class="half-stage" id="halfStage" style="view-transition-name:media-cilt"><video class="auto-vid" muted playsinline loop preload="none" poster="m/ig/cilt-led-dongu-poster.webp" data-src="m/ig/cilt-led-dongu.mp4" aria-label="LED ışık terapisi, salonumuzda çekildi"></video><span class="ca-film-tag"><i></i>Salonumuzda çekildi</span></div>
+        <div class="half-stage" id="halfStage" style="view-transition-name:media-cilt">
+          <img src="m/ig/cilt-yarim-1-1200.webp" alt="Cilt bakımı: yüzün sol yarısı bakım öncesi, sağ yarısı bakım sonrası" width="1200" height="1500" fetchpriority="high">
+          <div class="half-sweep"></div><i class="seam"></i>
+          <span class="cmp-tag b">Önce</span><span class="cmp-tag a">Sonra</span>
+          <canvas class="dust" data-dust></canvas>
+          <button class="zoom-btn bl" data-zoom="m/ig/cilt-yarim-1-1200.webp" aria-label="Yakından görün"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg></button>
+        </div>
       </div>
-      <div class="hero-copy"><span class="eyebrow" data-personal>Konutkent · Çankaya</span><h1>Ankara Cilt <em>Bakımı</em></h1><p class="lede">Cildiniz ne istiyor? Birlikte bakalım.</p><div class="chips"><span class="chip chip-in"><span class="star">★</span> 4,6 · 263 yorum</span><span class="chip chip-in price" style="animation-delay:.08s">1.000 TL'den</span><span class="chip chip-in" style="animation-delay:.16s" data-slot-chip="cilt"><span class="dot"></span> <span>Bugün müsait</span></span></div><div class="rings" data-rings="cilt"></div><p class="hero-note">LED ışık terapisi, salonumuzda çekildi. Aşağıda 24 sayfalık Cilt Atlası ve gerçek önce/sonra kareleri.</p></div>
+      <div class="hero-copy"><span class="eyebrow" data-personal>Konutkent · Çankaya</span><h1>Ankara Cilt <em>Bakımı</em></h1><p class="lede">Cildiniz ne istiyor? Birlikte bakalım.</p><div class="chips"><span class="chip chip-in"><span class="star">★</span> 4,6 · 263 yorum</span><span class="chip chip-in price" style="animation-delay:.08s">1.000 TL'den</span><span class="chip chip-in" style="animation-delay:.16s" data-slot-chip="cilt"><span class="dot"></span> <span>Bugün müsait</span></span></div><div class="rings" data-rings="cilt"></div><p class="hero-note">Aynı yüzün iki yarısı: solda bakımdan önce, sağda sonra. Fotoğraf salonumuzda çekildi.</p></div>
     </div>
   </div>
 
@@ -1482,13 +1332,10 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
     </div>
   </div>
 
-  <div class="sec gutter" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Cilt Atlası · 24 sayfa</span><h2>Derdinizi seçin, <em>hikâyesini</em> okuyun.</h2><p>Her bakımın kendi sayfası: nasıl geçtiği, salonumuzda çekilmiş videoları ve fiyatı.</p></div><div class="ca-atlas" id="ciltAtlas"></div></div>
-  <div class="sec gutter" id="ciltHubStory"></div>
-
   <div class="sec dark-band gutter">
     <div class="golden">
-      <div class="led-frame lit"><video class="auto-vid" muted playsinline loop preload="none" poster="m/ig/cilt-kubbe-poster.webp" data-src="m/ig/cilt-kubbe.mp4" aria-label="LED kubbe altında cilt bakımı, salonumuzda çekildi"></video></div>
-      <div class="sec-head" style="margin:0"><span class="eyebrow">LED ışık terapisi</span><h2>Işığın <em>renkleri</em>.</h2><p>Bakımlarımızın son adımı: LED kubbe altında birkaç dakika. Salonumuzda, elde çekildi.</p>
+      <div class="led-frame lit"><video class="auto-vid" muted playsinline loop preload="none" poster="m/ig/cilt-led-poster.webp" data-src="m/ig/cilt-led.mp4" aria-label="LED ışık terapisi, salonumuzda çekildi"></video></div>
+      <div class="sec-head" style="margin:0"><span class="eyebrow">LED ışık terapisi</span><h2>Işığın <em>renkleri</em>.</h2><p>Yeşil, kırmızı, mor ve mavi: cilt bakımlarımızda kullandığımız LED ışık terapisi, salonumuzda çekildi.</p>
         <div class="golden-actions"><button class="btn-line" data-story="cilt" data-story-i="1">Uygulamayı izleyin ▶</button></div></div>
     </div>
   </div>
@@ -1501,10 +1348,8 @@ html[data-tier="C"] .vb-art .pulse{opacity:.5}
     <div class="menu-card"><span class="eyebrow">Cilt bakımı menüsü</span><h3>Fiyatlar</h3><div class="mgroup">Ara bakım</div><div class="mrow"><span class="nm">Cilt temizliği<small>30 dk</small></span><span class="ld"></span><span class="pr">1.000 TL</span></div><div class="mrow"><span class="nm">Mini cilt bakımı<small>60 dk</small></span><span class="ld"></span><span class="pr">1.500 TL</span></div><div class="mrow"><span class="nm">Klasik cilt bakımı<small>90 dk</small></span><span class="ld"></span><span class="pr">2.000 TL</span></div><div class="mgroup">Ana bakım</div><div class="mrow"><span class="nm">Paris ışıltısı<small>120 dk</small></span><span class="ld"></span><span class="pr">4.500 TL</span></div><div class="mrow"><span class="nm">Akne bakımı<small>120 dk</small></span><span class="ld"></span><span class="pr">5.000 TL</span></div><div class="mrow"><span class="nm">Hollywood bakımı<small>120 dk</small></span><span class="ld"></span><span class="pr">5.500 TL</span></div><div class="mrow"><span class="nm">Leke bakımı<small>120 dk</small></span><span class="ld"></span><span class="pr">5.500 TL</span></div><div class="mrow"><span class="nm">Cilt yenileme bakımı<small>120 dk</small></span><span class="ld"></span><span class="pr">6.000 TL</span></div><div class="mrow"><span class="nm">Dermabrazyon yüz bakımı<small>90 dk</small></span><span class="ld"></span><span class="pr">6.500 TL</span></div><p class="menu-src">Randevu sistemindeki aktif menüden · 7 Ekim 2026</p></div>
     <div><div class="sec-head" style="margin-bottom:16px"><span class="eyebrow">Nasıl geçer</span><h2 style="font-size:40px">Önce bakarız, sonra bakım.</h2></div><ol class="how"><li><div><b>Cildinize bakarız</b><p>Cilt tipiniz, hassasiyetiniz ve şikâyetiniz birlikte değerlendirilir.</p></div></li><li><div><b>Bakımı seçeriz</b><p>Temizlikten ana bakımlara, ihtiyacınıza uygun olan önerilir.</p></div></li><li><div><b>Uygularız</b><p>Seçilen bakıma göre 30 dakikadan iki saate kadar.</p></div></li></ol></div>
   </div></div>
-  <div class="sec gutter faq" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Sık sorulanlar</span><h2>Aklınızdakiler</h2></div><details><summary>Hangi bakım bana uygun?</summary><p>Yukarıdaki üç soruluk test bir ön öneri verir. Kesin bakımı uzmanımız cildinize bakarak belirler.</p></details><details><summary>İlk kez yaptıracağım, nereden başlamalıyım?</summary><p>Çoğu danışanımız klasik cilt bakımıyla başlar (90 dk). Kısa bir zamanınız varsa cilt temizliği 30 dakika sürer.</p></details><details><summary>Paket var mı?</summary><p>Ana bakımların 5 seanslık paketleri var; paket fiyatı tek seans fiyatının 4,5 katıdır. Hepsini <a href="#cilt/cilt-bakimi-fiyatlari" data-go="cilt/cilt-bakimi-fiyatlari">fiyatlar sayfasında</a> görebilirsiniz.</p></details></div>
+  <div class="sec gutter faq" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Sık sorulanlar</span><h2>Aklınızdakiler</h2></div><details><summary>Hangi bakım bana uygun?</summary><p>Yukarıdaki üç soruluk test bir ön öneri verir. Kesin bakımı uzmanımız cildinize bakarak belirler.</p></details><details><summary>İlk kez yaptıracağım, nereden başlamalıyım?</summary><p>Çoğu danışanımız klasik cilt bakımıyla başlar (90 dk). Kısa bir zamanınız varsa cilt temizliği 30 dakika sürer.</p></details><details><summary>Paket var mı?</summary><p>Ana bakımların 5 seanslık paketleri var; fiyatları ön görüşmede iletiyoruz.</p></details></div>
   <div class="sec gutter" data-visit style="padding-top:0"></div>
-</div>
-<div id="ciltPage" hidden></div>
 </section>
 
 <!-- ===================== LAZER EPİLASYON ===================== -->
@@ -1753,7 +1598,7 @@ function card(g,a,b,label,wide){ var c=document.createElement("button"); c.class
 function initKasGallery(){ var g=$("#galKas"); KAS_PAIRS.forEach(function(p){ card(g,"m/ig/"+p[0]+"-sonra-800.webp","m/ig/"+p[0]+"-once-800.webp",p[1],true); }); }
 
 /* ---------- mosaic + living tiles ---------- */
-var MOSAIC=[["kirpik-makro-3","Mega volüm ipek kirpik"],["dudak-cift-1-sonra","Dudak renklendirme"],["tirnak-holo","Holografik nail art"],["kas-profil","Altın oran kaş"],["akne-cift-1-sonra","Akne bakımı sonrası"],["tirnak-3d","3D çiçek tırnak"],["ipek-kirpik-2","Klasik ipek kirpik"],["dudak-2","Doğal ton dudak"],["kirpik-makro-2","Volüm ipek kirpik"]];
+var MOSAIC=[["kirpik-makro-3","Mega volüm ipek kirpik"],["dudak-cift-1-sonra","Dudak renklendirme"],["tirnak-holo","Holografik nail art"],["kas-profil","Altın oran kaş"],["cilt-yarim-1","Cilt bakımı, önce ve sonra"],["tirnak-3d","3D çiçek tırnak"],["ipek-kirpik-2","Klasik ipek kirpik"],["dudak-2","Doğal ton dudak"],["kirpik-makro-2","Volüm ipek kirpik"]];
 function initMosaic(){ var m=$("#mosaic"); MOSAIC.forEach(function(p){ var b=document.createElement("button"); var src="m/ig/"+p[0]+"-800.webp"; b.innerHTML='<img src="'+src+'" alt="'+p[1]+'" loading="lazy">'; b.setAttribute("aria-label",p[1]+": yakından görün"); b.addEventListener("click",function(){ openLightbox(src); }); m.appendChild(b); }); }
 function initTileVideos(){ $$(".tile-vid").forEach(function(v){ if(S.tier==="C") return; var io=new IntersectionObserver(function(es){ var on=es[0].isIntersecting; if(on && v.dataset.src){ v.src=v.dataset.src; v.removeAttribute("data-src"); } if(on){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } else v.pause(); },{threshold:.35}); io.observe(v); }); }
 
@@ -1861,7 +1706,7 @@ function autoLabel(){
   $$("main > [data-view]").forEach(function(sec){ var v=sec.dataset.view;
     $$("[data-plan],[data-plan-look]",sec).forEach(function(b){ if(!b.hasAttribute("data-track-label")) lbl(b,"at-"+v+"-davetiye-ac"); });
     $$("[data-zoom],[data-zoom-look]",sec).forEach(function(b){ lbl(b,"at-"+v+"-yakindan"); });
-    $$("[data-go]",sec).forEach(function(b){ lbl(b,("at-"+v+"-git-"+b.dataset.go.replace(/[^a-z0-9_-]/g,"-")).slice(0,48)); });
+    $$("[data-go]",sec).forEach(function(b){ lbl(b,"at-"+v+"-git-"+b.dataset.go); });
     $$("[data-story]",sec).forEach(function(b){ lbl(b,"at-"+v+"-hikaye"); });
     $$("[data-look-pick]",sec).forEach(function(b){ lbl(b,"at-"+v+"-bakis"); });
     $$("[data-lz-g]",sec).forEach(function(b){ lbl(b,"at-lazer-cinsiyet"); });
@@ -1963,7 +1808,7 @@ function renderQuiz(step){ var body=$("#quizBody"); $$("#quizDots i").forEach(fu
     '<p class="hero-note">Bu bir ön öneri. Kesin bakımı uzmanımız cildinize bakarak belirler.</p>'+
     '<div class="row2"><button class="btn-gold shine" data-qplan data-track-label="at-cilt-test-davetiye"><span class="lbl">Bu bakım için saatimi seç</span></button>'+
     '<a class="btn-line" style="justify-content:center" href="'+waHref(msg)+'" target="_blank" rel="noopener" data-track-label="at-cilt-test-wa">WhatsApp\'tan sorayım</a></div>'+
-    (CA_OPT2SLUG[o.id]?'<button class="btn-line" style="justify-content:center;margin-top:8px" data-go="cilt/'+CA_OPT2SLUG[o.id]+'" data-track-label="at-cilt-test-sayfa">'+o.n+' sayfası →</button>':'')+'<button class="q-back" data-qagain data-track-label="at-cilt-test-yeniden">↺ Testi yeniden yap</button></div>';
+    '<button class="q-back" data-qagain data-track-label="at-cilt-test-yeniden">↺ Testi yeniden yap</button></div>';
   $("[data-qplan]",body).addEventListener("click",function(){ openPlanner("cilt",o.id); });
   $("[data-qagain]",body).addEventListener("click",function(){ QA={}; renderQuiz(0); });
   updateBar(); relead(); }
@@ -1986,7 +1831,7 @@ function initRegions(){ $$("[data-lz-g]").forEach(function(b){ b.addEventListene
 /* ---------- A2: galleries ---------- */
 var GAL={kirpik:[["ipek-kirpik-cift","İpek kirpik","pair"],["ipek-kirpik-2","Doğal bakış","one"],["ipek-kirpik-5","Dolgun bakış","one"],["ipek-kirpik-6","Yan açı","one"],["kirpik-makro-1","Makro","one"],["kirpik-makro-2","Volüm, yakın","one"],["kirpik-makro-4","Kahverengi ipek kirpik","one"]],
  pmu:[["dudak-cift-2","Dudak renklendirme","pair"],["dudak-cift-3","Dudak, yan açı","pair"],["pmu-kas-1","Kalıcı kaş","one"],["dudak-2","Mercan ton","one"]],
- cilt:[["yuz-cift-1","Yüz bakımı","pair480"],["akne-cift-1","Akne bakımı","pair"],["akne-cift-2","Akne bakımı","pair"]],
+ cilt:[["akne-cift-1","Akne bakımı","pair"],["akne-cift-2","Akne bakımı","pair"],["cilt-cift-1","Cilt bakımı","pair480"],["cilt-cift-3","Leke bakımı","pair480"],["cilt-cift-4","Nem ve parlaklık","pair480"],["cilt-cift-5","Kızarıklık bakımı","pair480"],["cilt-yarim-2","Yarım yüz","one"],["cilt-islem","Maske uygulaması","one"]],
  lazer:[["lazer-1","Uygulama","one"],["lazer-2","Diode lazer başlığı","one"],["lazer-3","Cihazımız","one"],["lazer-4","Kol bölgesi","one"]]};
 function initPairs(id,fam){ var g=$("#"+id); GAL[fam].forEach(function(p){ var b="m/ig/"+p[0];
   if(p[2]==="pair") card(g,b+"-sonra-800.webp",b+"-once-800.webp",p[1],true); else if(p[2]==="pair480") card(g,b+"-sonra-480.webp",b+"-once-480.webp",p[1],false); else card(g,b+"-800.webp",null,p[1]); }); }
@@ -1996,7 +1841,7 @@ var NAV=[["Kaş ve yüz", [["kas-alimi", "Kaş alımı", "kas"], ["kas-laminasyo
 var NAVN=NAV.reduce(function(n,g){ return n+g[1].length; },0);
 function fold(s){ return s.toLocaleLowerCase("tr-TR").replace(/[çğıöşüâîû]/g,function(c){ return {"ç":"c","ğ":"g","ı":"i","ö":"o","ş":"s","ü":"u","â":"a","î":"i","û":"u"}[c]; }); }
 var NAV_SYN={"Kirpik":"lash","Kalıcı makyaj":"pmu kalici kas dudak eyeliner","Tırnak":"nail oje manikur pedikur","Cilt":"yuz bakim","Lazer":"epilasyon laser tuy","Vücut":"incelme selulit zayiflama slimtone g5 lenf drenaj em heykeltras pasif jimnastik catlak popo","Kaş ve yüz":"kas agda iplik","Salon":"fiyat iletisim konum adres"};
-function openMenu(){ hideProto(); var cur=S.view==="tirnak"?tzRoute():(S.view==="cilt"?caRoute():S.view);
+function openMenu(){ hideProto(); var cur=S.view==="tirnak"?tzRoute():S.view;
   var h='<span class="eyebrow">Selda Gençer · '+NAVN+' sayfa</span><h2 id="sheetTitle">Menü</h2>'+
    '<label class="nav-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="navQ" type="search" placeholder="Ara: kaş, protez, lazer…" autocomplete="off" aria-label="Sayfalarda ara" data-track-label="at-menu-ara"></label>'+
    '<div class="nav-quick"><a class="wa" href="'+waHref("Merhaba, randevu almak istiyorum. "+visitCode())+'" target="_blank" rel="noopener" data-track-label="at-menu-wa">WhatsApp</a><a href="tel:+905330390076" data-track-label="at-menu-tel">Ara</a><a href="https://seldagencerbeauty.com/price-menu" target="_blank" rel="noopener" data-track-label="at-menu-fiyat">Fiyat listesi</a><a href="https://www.google.com/maps/search/?api=1&query=Selda+Gen%C3%A7er+Beauty+Center+Konutkent" target="_blank" rel="noopener" data-track-label="at-menu-yorumlar">Yorumlar ★4,6</a><a href="https://seldagencerbeauty.com/konum" target="_blank" rel="noopener" data-track-label="at-menu-konum">Konum</a><a href="https://www.instagram.com/seldagencerbeautycenter/" target="_blank" rel="noopener" data-track-label="at-menu-instagram">Instagram</a></div>'+
@@ -2043,12 +1888,11 @@ var STORIES={
       {t:"Kaş",th:"m/ig/pmu-kas-1-800.webp",fr:[{img:"m/ig/pmu-kas-2-800.webp",cap:"Microblading"},{img:"m/ig/pmu-kas-1-800.webp",cap:"Kalıcı kaş"}]},
       {t:"Yorumlar",th:"m/monogram.png",fr:"rv:pmu"},
       {t:"Fiyat",th:"m/ig/dudak-2-800.webp",fr:"price:pmu"}],
- cilt:[{t:"Önce / Sonra",th:"m/ig/yuz-cift-1-sonra-480.webp",fr:[{img:"m/ig/yuz-cift-1-once-480.webp",cap:"Önce"},{img:"m/ig/yuz-cift-1-sonra-480.webp",cap:"Sonra · yüz bakımı"},{img:"m/ig/akne-cift-1-once-800.webp",cap:"Önce"},{img:"m/ig/akne-cift-1-sonra-800.webp",cap:"Sonra · akne bakımı"}]},
-      {t:"Seans",th:"m/ig/cilt-analiz-poster.webp",fr:[{video:"m/ig/cilt-analiz.mp4",poster:"m/ig/cilt-analiz-poster.webp",cap:"Önce bakarız"},{video:"m/ig/cilt-kopuk.mp4",poster:"m/ig/cilt-kopuk-poster.webp",cap:"Arındırma"},{video:"m/ig/cilt-masaj.mp4",poster:"m/ig/cilt-masaj-poster.webp",cap:"Masaj"},{video:"m/ig/cilt-led-dongu.mp4",poster:"m/ig/cilt-led-dongu-poster.webp",cap:"LED ile kapanış"}]},
-      {t:"Akne",th:"m/ig/cilt-darsonval-poster.webp",fr:[{video:"m/ig/cilt-darsonval.mp4",poster:"m/ig/cilt-darsonval-poster.webp",cap:"Darsonval"},{img:"m/ig/akne-cift-2-once-800.webp",cap:"Önce"},{img:"m/ig/akne-cift-2-sonra-800.webp",cap:"Sonra"}]},
-      {t:"Saten",th:"m/ig/cilt-saten-poster.webp",fr:[{video:"m/ig/cilt-saten.mp4",poster:"m/ig/cilt-saten-poster.webp",cap:"Saten yüz germe"},{video:"m/ig/cilt-saten-yakin.mp4",poster:"m/ig/cilt-saten-yakin-poster.webp",cap:"Göz çevresi"}]},
+ cilt:[{t:"Yarım yüz",th:"m/ig/cilt-yarim-1-800.webp",fr:[{img:"m/ig/cilt-yarim-1-1200.webp",cap:"Solda önce, sağda sonra"},{img:"m/ig/cilt-yarim-2-800.webp",cap:"Bakım sonrası ışıltı"}]},
+      {t:"LED",th:"m/ig/cilt-led-poster.webp",fr:[{video:"m/ig/cilt-led.mp4",poster:"m/ig/cilt-led-poster.webp",cap:"LED ışık terapisi"},{video:"m/ig/cilt-video-3.mp4",poster:"m/ig/cilt-video-3-poster.webp",cap:"LED kubbe"}]},
+      {t:"Akne",th:"m/ig/akne-cift-1-sonra-800.webp",fr:[{img:"m/ig/akne-cift-1-once-800.webp",cap:"Önce"},{img:"m/ig/akne-cift-1-sonra-800.webp",cap:"Sonra"}]},
       {t:"Yorumlar",th:"m/monogram.png",fr:"rv:cilt"},
-      {t:"Fiyat",th:"m/ig/cilt-led-dongu-poster.webp",fr:"price:cilt"}],
+      {t:"Fiyat",th:"m/ig/cilt-yarim-2-800.webp",fr:"price:cilt"}],
  lazer:[{t:"Uygulama",th:"m/ig/lazer-1-800.webp",fr:[{img:"m/ig/lazer-5-1200.webp",cap:"Diode lazer"},{img:"m/ig/lazer-1-800.webp"},{img:"m/ig/lazer-4-800.webp",cap:"Kol bölgesi"}]},
       {t:"Yorumlar",th:"m/monogram.png",fr:"rv:lazer"},
       {t:"Salon",th:"m/ig/salon-tur-poster.webp",fr:[{video:"m/ig/salon-tur.mp4",poster:"m/ig/salon-tur-poster.webp",cap:"Salonumuz"}]},
@@ -2376,13 +2220,13 @@ function initView(v){ if(S.inited[v]) return; S.inited[v]=true;
   if(v==="kirpik"){ initLooks(); initPairs("galKirpik","kirpik"); }
   if(v==="lifting"){ initCompare($("#liftCmp"),true); initCurl(); }
   if(v==="pmu"){ initCompare($("#pmuCmp"),true); initCompare($("#gozCmp"),false); initTones(); initPairs("galPmu","pmu"); }
-  if(v==="cilt"){ initHalf(); initQuiz(); caInitHub(); initAutoVids($("main > [data-view='cilt']")); initPairs("galCilt","cilt"); }
+  if(v==="cilt"){ initHalf(); initQuiz(); initAutoVids($("main > [data-view='cilt']")); initPairs("galCilt","cilt"); }
   if(v==="lazer"){ initRegions(); initPairs("galLazer","lazer"); }
   if(VUCUT_BY[v]) initVucut(v);
   relead();
   $$("[data-view='"+v+"'] [data-dust]").forEach(initDust); }
 function go(v,noTrans){ var prm="", k=v.indexOf("/"); if(k>0){ prm=v.slice(k+1); v=v.slice(0,k); } if(!document.querySelector("[data-view='"+v+"']")){ v="salon"; prm=""; }
-  function apply(){ $$("main > [data-view]").forEach(function(s){ s.hidden=s.dataset.view!==v; }); S.view=v; S.route=v+(prm?"/"+prm:""); root.dataset.page=v; window.scrollTo({top:0,behavior:"instant"}); initView(v); if(v==="tirnak") tzShow(prm||"tirnak"); if(v==="cilt") ciltRoute(CP[prm]?prm:null); updateBar(); markSeg("view",v); onScroll(); }
+  function apply(){ $$("main > [data-view]").forEach(function(s){ s.hidden=s.dataset.view!==v; }); S.view=v; S.route=v+(prm?"/"+prm:""); root.dataset.page=v; window.scrollTo({top:0,behavior:"instant"}); initView(v); if(v==="tirnak") tzShow(prm||"tirnak"); updateBar(); markSeg("view",v); onScroll(); }
   if(!noTrans && document.startViewTransition && S.tier!=="C") document.startViewTransition(apply); else apply();
   try{ history.replaceState(null,"","#"+v+(prm?"/"+prm:"")); }catch(e){} }
 function markSeg(k,v){ $$('[data-ctl="'+k+'"] button').forEach(function(b){ b.setAttribute("aria-pressed",b.dataset.v===v); }); }
@@ -2595,422 +2439,6 @@ function boot(){
   setInterval(initLiveTick,60000);
 }
 function initLiveTick(){ var o=openState(); $$("[data-open-chip]").forEach(function(c){ c.innerHTML='<span class="dot'+(o.open?"":" closed")+'"></span> '+o.txt; }); if(S.light==="auto") setLight("auto"); }
-/* ---------- CİLT ATLASI · içerik (24 alt sayfa) ----------
-   Kurallar: yalnızca salonun gerçek medyası; önce/sonra yalnızca gerçek çiftlerle; fiyat yalnızca PLANS.cilt'ten
-   (CRM); ihtiyaç rehberi (İ) sayfaları başka bakımın fiyatını kendi fiyatıymış gibi göstermez; sonuç vaadi yok. */
-var CM={
- led:{v:"cilt-led-dongu",alt:"LED ışık terapisi: yüzde yeşil, mavi ve kırmızı ışık"},
- kubbe:{v:"cilt-kubbe",alt:"LED kubbe altında cilt bakımı"},
- saten:{v:"cilt-saten",alt:"Saten yüz germe başlığı yanak ve şakakta"},
- satenY:{v:"cilt-saten-yakin",alt:"Saten yüz germe başlığı alın ve göz çevresinde"},
- analiz:{v:"cilt-analiz",alt:"Büyüteçli lamba altında cilt analizi"},
- masaj:{v:"cilt-masaj",alt:"Eldivenli ellerle yüz masajı"},
- kopuk:{v:"cilt-kopuk",alt:"Temizleme süngeri ve köpük"},
- komedon:{v:"cilt-komedon",alt:"Steril uçla siyah nokta temizliği"},
- darsonval:{v:"cilt-darsonval",alt:"Darsonval elektrodu akneli yanakta"},
- yuz1:{pair:"yuz-cift-1",s:480,alt:"Yüz bakımı: kızarıklık ve ton farkı"},
- akne1:{pair:"akne-cift-1",s:800,alt:"Akne bakımı"},
- akne2:{pair:"akne-cift-2",s:800,alt:"Akne bakımı, ikinci danışan"}
-};
-var CA_GROUPS=[["akne","Sivilce, gözenek, siyah nokta"],["isilti","Işıltı ve nem"],["ton","Leke ve ton"],["yas","Sıkılık ve çizgi görünümü"],["vucut","Vücut ve dudak"],["rehber","Başlarken"]];
-var CA_SEANS=[
- {m:"analiz",w:"Adım 1",k:"Önce bakarız",h:"Büyüteçli lambanın altında.",p:"Gözenek, nem, hassasiyet ve şikâyetiniz birlikte değerlendirilir. Bakımın geri kalanı bu bakışa göre şekillenir."},
- {m:"kopuk",w:"Adım 2",k:"Arındırma",h:"Cildinize uygun köpükle.",p:"Makyaj, gün boyu biriken kir ve yağ yumuşak bir süngerle alınır."},
- {m:"komedon",w:"Adım 3",k:"Siyah nokta",h:"Gerekiyorsa tek tek.",p:"Siyah noktalar steril uçla, cildi zorlamadan temizlenir. Hassas bölgelerde daha nazik ilerlenir."},
- {m:"masaj",w:"Adım 4",k:"Masaj",h:"Ellerimizle, acele etmeden.",p:"Yüz masajı bakımın en sevilen anıdır; kan dolaşımı canlanır, yüz gevşer."},
- {m:"led",w:"Adım 5",k:"Işık",h:"LED ile kapanış.",p:"Bakımın sonunda LED ışık terapisiyle dinlenirsiniz. Işık rengini uzmanımız cildinize göre seçer."}];
-var CP={
-"cilt-bakimi-fiyatlari":{t:"Cilt bakımı fiyatları",code:"cfiyat",kind:"I",grp:"rehber",h1:["Cilt bakımı","fiyatları"],
- lede:"Her bakımın süresi ve fiyatı tek bakışta.",hero:"kubbe",heroNote:"LED kubbe, salonumuzda çekildi. Fiyatlar randevu sistemimizdeki aktif menüden.",
- scene:{type:"menu"},
- acts:[{m:"kubbe",k:"Nereden başlamalı?",h:"Yarım saatten iki saate.",p:"Kısa bir arada cilt temizliği, ilk kez geliyorsanız klasik bakım, belirli bir derdiniz varsa ana bakımlar."},
-   {m:"analiz",k:"Fiyat neye göre?",h:"Bakımın süresine ve adımlarına göre.",p:"Ana bakımlar iki saat sürer ve cihazla desteklenir. Ara bakımlar daha kısa ve daha sadedir."},
-   {m:"led",k:"Paketler",h:"Ana bakımlarda 5 seans.",p:"5 seanslık paket, tek seans fiyatının 4,5 katıdır. Hangi bakımın size uygun olduğunu ilk seansta birlikte konuşuruz."}],
- faq:[["Fiyatlar güncel mi?","Bu sayfadaki fiyatlar randevu sistemimizdeki aktif menüden alınır. Kesin fiyatı randevu onayında WhatsApp'tan da iletiriz."],["Ödemeyi nasıl yapıyorum?","Ödeme bakım günü salonda yapılır."]],
- route:["klasik-cilt-bakimi","cilt-temizligi","akne-bakimi","hollywood-bakimi"]},
-"klasik-cilt-bakimi":{t:"Klasik cilt bakımı",code:"cklasik",kind:"H",opt:"klasik",grp:"rehber",h1:["Klasik","cilt bakımı"],
- lede:"Doksan dakika, beş adım, tertemiz bir yüz.",hero:"analiz",heroNote:"Büyüteçli lamba altında cilt analizi, salonumuzda çekildi.",
- actsHead:["Bir bakımın içinden","90 dakika, adım adım."],acts:"seans",
- proof:["yuz1"],quote:"Burcu Ö.",
- faq:[["İlk kez yaptıracağım, uygun mu?","Evet. Çoğu danışanımız ilk bakımına klasik cilt bakımıyla başlar."],["Bakımdan sonra kızarıklık olur mu?","Siyah nokta temizliği yapılan bölgelerde kısa süreli hafif kızarıklık olabilir; genellikle aynı gün içinde geçer."],["Ne sıklıkla gelmeliyim?","Cildinize göre değişir; uzmanımız bakım sonunda önerir."]],
- route:["cilt-temizligi","akne-bakimi","paris-isiltisi-bakimi"]},
-"cilt-temizligi":{t:"Cilt temizliği",code:"ctemiz",kind:"H",opt:"temizlik",grp:"akne",h1:["Cilt","temizliği"],
- lede:"Yarım saatte arınmış, nefes alan bir cilt.",hero:"kopuk",heroNote:"Temizleme köpüğü, salonumuzda çekildi.",
- acts:[{m:"analiz",k:"Aynada",h:"Burun kenarında siyah noktalar mı?",p:"Gözenekler kirle dolunca cilt mat ve pürüzlü görünür. Kısa ama doğru bir temizlik çoğu zaman fark yaratır."},
-   {m:"kopuk",k:"Koltukta",h:"Önce köpük, sonra buhar.",p:"Cilt yumuşatılır, gözenekler temizliğe hazırlanır."},
-   {m:"komedon",k:"Siyah nokta",h:"Steril uçla, tek tek.",p:"Siyah noktalar cildi zorlamadan alınır. Sonrasında yatıştırıcı bir bakımla kapatılır."},
-   {m:"led",k:"Sonra",h:"Hafif, temiz, ferah.",p:"Temizlenen bölgelerdeki hafif kızarıklık kısa sürede geçer. Aynı gün işinize dönebilirsiniz."}],
- proof:["yuz1"],quote:"Berke S.",
- faq:[["Ne kadar sürer?","30 dakika."],["Klasik bakımdan farkı ne?","Cilt temizliği arındırmaya odaklanır. Klasik bakımda buna masaj, maske ve LED ile kapanış eklenir ve 90 dakika sürer."]],
- route:["klasik-cilt-bakimi","akne-bakimi"]},
-"akne-bakimi":{t:"Akne bakımı",code:"cakne",kind:"H",opt:"akne",grp:"akne",h1:["Akne","bakımı"],
- lede:"Sivilceye eğilimli cilt için iki saatlik özenli bakım.",hero:"darsonval",heroNote:"Darsonval uygulaması, salonumuzda çekildi.",
- acts:[{m:"akne1",k:"Aynada",h:"Her sabah yeni bir sivilce.",p:"Akneye eğilimli cilt hem görünüşle hem moralle ilgilidir. Önce dinleriz: ne zaman başladı, neler denediniz?"},
-   {m:"analiz",k:"Önce bakarız",h:"Hangi bölge, hangi tip?",p:"Siyah nokta, iltihaplı sivilce ve kızarıklık ayrı ayrı değerlendirilir. Bakım buna göre kurulur."},
-   {m:"komedon",k:"Temizlik",h:"Gözenekleri boşaltırız.",p:"Siyah noktalar steril uçla temizlenir; iltihaplı bölgelere dokunulmaz."},
-   {m:"darsonval",k:"Işıltılı elektrot",h:"Darsonval ile.",p:"Turuncu ışıyan cam elektrot cilt üzerinde gezdirilir. Bakımın yatıştırıcı adımlarından biridir."},
-   {m:"akne2",k:"Sonra",h:"Sabır ve düzen.",p:"Akne bakımında sonuç tek seansta değil, düzenli bakımla gelir. Görseller iki danışanımızın gerçek önce/sonrasıdır; her cilt farklıdır."}],
- dark:{m:"darsonval",k:"Seansın içinden",h:"Işığın <em>sakinliği</em>.",p:"Darsonval elektrodu akneli yanakta: tek çekim, kurgusuz, salonumuzda."},
- proof:["akne1","akne2"],quote:"Berke S.",
- faq:[["Kaç seans gerekir?","Cildinize göre değişir. Ana bakımların 5 seanslık paketleri vardır; uzmanımız ilk seansta önerir."],["Evde ne yapmalıyım?","Bakım sonunda cildinize uygun ev bakımı önerilir."],["Bu bir tedavi mi?","Hayır, profesyonel bir cilt bakımıdır. Yoğun ve ağrılı aknede dermatoloji muayenesi öneririz."]],
- route:["cilt-temizligi","klasik-cilt-bakimi","hassas-cilt"]},
-"cilt-yenileme":{t:"Cilt yenileme",code:"cyenile",kind:"H",opt:"yenileme",grp:"ton",h1:["Cilt","yenileme"],
- lede:"Mat ve yorgun görünen cilde yeniden ışık.",hero:"kubbe",heroNote:"LED kubbe altında bakım, salonumuzda çekildi.",
- acts:[{m:"yuz1",k:"Aynada",h:"Ton eşitsiz, cilt yorgun.",p:"Kızarıklık, lekelenme ve matlık birlikte olunca yüz olduğundan yorgun görünür."},
-   {m:"analiz",k:"Önce bakarız",h:"Hangi bölge, ne kadar?",p:"Yenileme tüm yüze ya da belirli bölgelere uygulanabilir. Bölgeyi birlikte seçeriz."},
-   {m:"kubbe",k:"Koltukta",h:"Yenileme ve ışık.",p:"Bakım LED ışık terapisiyle tamamlanır."},
-   {m:"yuz1",k:"Sonra",h:"Daha eşit, daha aydınlık görünüm.",p:"Görsel, salonumuzda bakım yaptıran bir danışanımızın gerçek önce/sonrasıdır. Sonuç kişiden kişiye değişir."}],
- pick:{h:"Kaç bölge?",o:[["1","1 bölge","3.500 TL"],["2","2 bölge","4.000 TL"],["3","Tüm yüz","6.000 TL"]],note:"Bölge fiyatları randevu sistemimizdeki menüden. Kesin fiyat cildinize bakıldıktan sonra onaylanır.",msg:"Merhaba, cilt yenileme bakımı ({x}) için uygun bir saat var mı?"},
- proof:["yuz1"],
- faq:[["Kaç seans önerirsiniz?","Ana bakımların 5 seanslık paketleri vardır; ihtiyacınızı ilk seansta birlikte belirleriz."],["Güneşe çıkabilir miyim?","Bakım sonrası güneş koruyucu kullanmanızı öneririz."]],
- route:["ton-esitleme","leke-bakimi","hollywood-bakimi"]},
-"ton-esitleme":{t:"Ton eşitleme",code:"cton",kind:"H",opt:"ton",from:4500,grp:"ton",h1:["Ton","eşitleme"],
- lede:"Kızarıklık ve renk farkı için hedefli bakım.",hero:"led",heroNote:"LED ışık terapisi, salonumuzda çekildi.",
- acts:[{m:"yuz1",k:"Aynada",h:"Yanakta kızarıklık, alında renk farkı.",p:"Ton farkı fondötenle kapatılır ama cilt hep yorgun görünür."},
-   {m:"analiz",k:"Önce bakarız",h:"Alanı ölçeriz.",p:"Bakım, ton farkının bulunduğu alanın büyüklüğüne göre planlanır."},
-   {m:"led",k:"Koltukta",h:"Bakım ve ışık.",p:"Ton eşitleyici bakım LED ışık terapisiyle tamamlanır."},
-   {m:"yuz1",k:"Sonra",h:"Daha eşit görünen bir ton.",p:"Görsel gerçek bir danışanımızın bakım öncesi ve sonrasıdır. Sonuç kişiden kişiye değişir."}],
- pick:{h:"Alan ne kadar?",o:[["kucuk","Küçük alan","4.500 TL"],["orta","Orta alan","5.500 TL"],["genis","Geniş alan","6.500 TL"]],note:"Alan fiyatları randevu sistemimizdeki menüden. Alanı uzmanımız cildinize bakarak kesinleştirir.",msg:"Merhaba, ton eşitleme ({x}) için uygun bir saat var mı?"},
- proof:["yuz1"],
- faq:[["Lekeler tamamen gider mi?","Söz veremeyiz; amaç tonu daha eşit göstermektir. Düzenli bakım ve güneş koruması fark yaratır."]],
- route:["leke-bakimi","cilt-yenileme","cilt-kararma-bakimi"]},
-"saten-yuz-germe":{t:"Saten yüz germe",code:"csaten",kind:"H",opt:"saten",grp:"yas",h1:["Saten","yüz germe"],
- lede:"İğnesiz, altmış dakikalık sıkı görünüm bakımı.",hero:"saten",heroNote:"Saten yüz germe başlığı, salonumuzda çekildi.",
- film:{k:"Seansın içinden",h:"Başlık yüzde nasıl gezer?",p:"Aşağı kaydırın: cihazın ekranından alın ve göz çevresine, tek bir seanstan kesitler."},
- acts:[{m:"satenY",k:"Aynada",h:"Göz kenarında çizgiler, yanakta gevşeklik.",p:"Yorgunluk önce yüzün çerçevesinde görünür."},
-   {m:"saten",k:"Koltukta",h:"Başlık yanaktan şakağa.",p:"Isıtan başlık cilt üzerinde yavaşça gezdirilir. Uygulama sırasında hafif bir sıcaklık hissedilir."},
-   {m:"satenY",k:"Göz çevresi",h:"Alında ve göz kenarında.",p:"İnce bölgelerde başlık daha küçük hareketlerle çalışır."},
-   {m:"led",k:"Sonra",h:"Aynı gün hayatınıza dönün.",p:"İğne yok, iz yok. Daha sıkı bir görünüm için seanslar uzmanımızın önerisiyle planlanır."}],
- faq:[["Acıtır mı?","Hafif bir sıcaklık hissedilir; çoğu danışanımız rahatlatıcı bulur."],["Ne kadar sürer?","60 dakika."]],
- route:["anti-aging-bakimi","goz-cevresi-bakimi","cilt-inceltme"]},
-"anti-aging-bakimi":{t:"Anti aging bakımı",code:"caging",kind:"I",grp:"yas",h1:["Anti aging","bakımı"],
- lede:"Çizgi ve sıkılık için hangi bakım? Doğru yolu birlikte seçelim.",hero:"satenY",heroNote:"Saten yüz germe uygulaması, salonumuzda çekildi.",
- acts:[{m:"satenY",k:"Aynada",h:"Gülerken kalan çizgiler.",p:"Göz kenarı, alın ve çene hattı zamanla değişir. Her biri farklı bir yaklaşım ister."},
-   {m:"analiz",k:"Önce bakarız",h:"Hangi bölge, hangi ihtiyaç?",p:"Sıkılık mı, nem mi, ton mu? Önceliği belirleyip doğru bakıma yönlendiririz."},
-   {m:"saten",k:"Yol 1",h:"Saten yüz germe.",p:"Sıkı görünüm için ısıtan başlıkla 60 dakikalık bakım."},
-   {m:"kubbe",k:"Yol 2",h:"Cilt yenileme.",p:"Matlık ve ton için bölgesel yenileme bakımı."}],
- faq:[["Bu sayfanın fiyatı ne?","Anti aging bir ihtiyaç başlığıdır; fiyat seçeceğiniz bakıma göre değişir. Aşağıdaki bakımların fiyatları kendi sayfalarında."]],
- route:["saten-yuz-germe","cilt-yenileme","goz-cevresi-bakimi"],shoot:true},
-"goz-cevresi-bakimi":{t:"Göz çevresi bakımı",code:"cgoz",kind:"I",grp:"yas",h1:["Göz çevresi","bakımı"],
- lede:"Yüzün en ince derisine en nazik dokunuş.",hero:"satenY",heroNote:"Göz çevresinde saten başlık, salonumuzda çekildi.",
- acts:[{m:"satenY",k:"Aynada",h:"Kaz ayağı, yorgun bakış.",p:"Göz çevresi yüzün en ince derisidir; ilk yorgunluk burada görünür."},
-   {m:"analiz",k:"Önce bakarız",h:"Çizgi mi, nem mi?",p:"İhtiyaca göre saten yüz germe ya da klasik bakım önerilir."},
-   {m:"saten",k:"Yol",h:"Küçük hareketlerle.",p:"Saten başlık göz kenarında daha küçük ve yavaş hareketlerle çalışır."}],
- faq:[["Göz çevresi için ayrı bir fiyat var mı?","Göz çevresi bir ihtiyaç başlığıdır; fiyat seçilen bakıma göredir."]],
- route:["saten-yuz-germe","klasik-cilt-bakimi"],shoot:true},
-"cilt-analizi":{t:"Cilt analizi",code:"canaliz",kind:"I",grp:"rehber",h1:["Cilt","analizi"],
- lede:"Her iyi bakım, doğru bir bakışla başlar.",hero:"analiz",heroNote:"Büyüteçli lamba altında, salonumuzda çekildi.",
- scene:{type:"map"},
- acts:[{m:"analiz",k:"Lambanın altında",h:"Gözle görmediğimizi büyüteçle.",p:"Gözenek, siyah nokta, kuruluk ve kızarıklık büyüteçli lamba altında değerlendirilir."},
-   {m:"masaj",k:"Dokunarak",h:"Cildin dokusu.",p:"Nem ve esneklik dokunarak anlaşılır."},
-   {m:"led",k:"Sonra",h:"Size uygun yol.",p:"Analiz ön görüşmedir; ardından ihtiyacınıza uygun bakım önerilir."}],
- faq:[["Analiz ücretli mi?","Cilt analizi bakımın başında yapılır. Yalnızca görüşme için gelmek isterseniz WhatsApp'tan yazın."]],
- route:["klasik-cilt-bakimi","akne-bakimi","cilt-yenileme","saten-yuz-germe"]},
-"yuz-bakimi":{t:"Yüz bakımı",code:"cyuz",kind:"I",grp:"rehber",h1:["Yüz","bakımı"],
- lede:"Yüzünüz için dört yol: hangisi size göre?",hero:"masaj",heroNote:"Yüz masajı, salonumuzda çekildi.",
- acts:[{m:"yuz1",k:"Aynada",h:"Yüzünüz ne anlatıyor?",p:"Kızarıklık, matlık, sivilce ya da sadece yorgunluk. Her biri farklı bir bakıma işaret eder."},
-   {m:"analiz",k:"Önce bakarız",h:"Doğru yol için.",p:"Kısa bir analizle başlarız."},
-   {m:"masaj",k:"Koltukta",h:"Ellerimizle.",p:"Hangi bakımı seçerseniz seçin, masaj ve özen her bakımın parçasıdır."},
-   {m:"yuz1",k:"Sonra",h:"Gerçek bir danışanımız.",p:"Görsel salonumuzda bakım yaptıran bir danışanımızın gerçek önce/sonrasıdır."}],
- proof:["yuz1"],
- route:["klasik-cilt-bakimi","cilt-temizligi","paris-isiltisi-bakimi","cilt-yenileme"]},
-"leke-bakimi":{t:"Leke bakımı",code:"cleke",kind:"H",opt:"leke",grp:"ton",h1:["Leke","bakımı"],
- lede:"Güneş ve zamanın bıraktığı izler için iki saat.",hero:"led",heroNote:"LED ışık terapisi, salonumuzda çekildi. Leke bakımına özel çekimimiz hazırlanıyor.",
- acts:[{m:"analiz",k:"Aynada",h:"Yanakta, alında koyu izler.",p:"Leke görünümü güneşle, hormonlarla ya da sivilce sonrası oluşabilir. Hangisi olduğunu önce anlamamız gerekir."},
-   {m:"kopuk",k:"Hazırlık",h:"Arındırma.",p:"Bakım temiz ve hazırlanmış bir ciltte başlar."},
-   {m:"led",k:"Koltukta",h:"Bakım ve ışık.",p:"Leke bakımı LED ışık terapisiyle tamamlanır."},
-   {m:"masaj",k:"Sonra",h:"Güneş koruması şart.",p:"Leke bakımında sonuç düzenli bakım ve güneş korumasıyla gelir. Kesin sonuç vaat etmeyiz."}],
- faq:[["Kaç seans?","Ana bakımların 5 seanslık paketleri vardır; ihtiyacı ilk seansta birlikte belirleriz."],["Yazın yaptırabilir miyim?","Uzmanımız mevsime ve cildinize göre önerir; güneş koruyucu her mevsim gerekir."]],
- route:["ton-esitleme","cilt-yenileme","cilt-kararma-bakimi"],shoot:true},
-"hollywood-bakimi":{t:"Hollywood bakımı",code:"cholly",kind:"H",opt:"hollywood",grp:"isilti",h1:["Hollywood","bakımı"],
- lede:"Özel bir günden önce iki saatlik ışıltı.",hero:"kubbe",heroNote:"LED kubbe, salonumuzda çekildi. Hollywood bakımına özel çekimimiz hazırlanıyor.",
- scene:{type:"duel",a:"hollywood-bakimi",b:"paris-isiltisi-bakimi"},
- acts:[{m:"masaj",k:"Aynada",h:"Düğün, nişan, fotoğraf günü.",p:"Önemli bir günden önce cildin dinlenmiş ve ışıltılı görünmesi istenir."},
-   {m:"kopuk",k:"Hazırlık",h:"Derin arındırma.",p:"Cilt temizlenir ve bakıma hazırlanır."},
-   {m:"kubbe",k:"Koltukta",h:"Maske ve ışık.",p:"Bakım LED kubbe altında tamamlanır."},
-   {m:"led",k:"Sonra",h:"Işıltılı görünüm.",p:"Özel günden birkaç gün önce planlamanızı öneririz."}],
- faq:[["Paris ışıltısından farkı ne?","İkisi de 120 dakikalık ışıltı bakımıdır; ürün ve adımları farklıdır. Hangisinin cildinize uygun olduğunu uzmanımız cildinize bakarak söyler."]],
- route:["paris-isiltisi-bakimi","klasik-cilt-bakimi"],shoot:true},
-"paris-isiltisi-bakimi":{t:"Paris ışıltısı",code:"cparis",kind:"H",opt:"paris",grp:"isilti",h1:["Paris","ışıltısı"],
- lede:"Mat cilde iki saatte canlı bir parıltı.",hero:"led",heroNote:"LED ışık terapisi, salonumuzda çekildi. Paris ışıltısına özel çekimimiz hazırlanıyor.",
- scene:{type:"duel",a:"paris-isiltisi-bakimi",b:"hollywood-bakimi"},
- acts:[{m:"analiz",k:"Aynada",h:"Mat, susuz, yorgun.",p:"Kış, stres ve uykusuzluk cildin parlaklığını alır."},
-   {m:"kopuk",k:"Hazırlık",h:"Arındırma.",p:"Cilt temizlenir ve bakıma hazırlanır."},
-   {m:"masaj",k:"Koltukta",h:"Bakım ve masaj.",p:"Işıltı bakımı yüz masajıyla devam eder."},
-   {m:"led",k:"Sonra",h:"Canlı görünüm.",p:"LED ışık terapisiyle kapanış."}],
- faq:[["Hollywood bakımından farkı ne?","İkisi de 120 dakikalık ışıltı bakımıdır; ürün ve adımları farklıdır. Uzmanımız cildinize bakarak önerir."]],
- route:["hollywood-bakimi","hydra-elite"],shoot:true},
-"dermabrazyon":{t:"Dermabrazyon",code:"cderma",kind:"H",opt:"derma",grp:"isilti",h1:["Dermabrazyon","yüz bakımı"],
- lede:"Pürüzlü dokuya doksan dakikalık yenilenme.",hero:"kubbe",heroNote:"LED kubbe, salonumuzda çekildi. Dermabrazyon cihazımızın çekimi hazırlanıyor.",
- acts:[{m:"analiz",k:"Aynada",h:"Gözenekler belirgin, doku pürüzlü.",p:"Makyaj oturmaz, cilt dokunca pürüzlü hissedilir."},
-   {m:"kopuk",k:"Hazırlık",h:"Arındırma.",p:"Cilt temizlenir."},
-   {m:"kubbe",k:"Koltukta",h:"Dermabrazyon ve ışık.",p:"Dermabrazyon uygulamasının ardından LED ile tamamlanır."},
-   {m:"led",k:"Sonra",h:"Daha pürüzsüz bir yüzey.",p:"Ana bakımların 5 seanslık paketleri vardır; uzmanımız önerir."}],
- faq:[["Ne kadar sürer?","90 dakika."]],
- route:["hydra-elite","cilt-yenileme","klasik-cilt-bakimi"],shoot:true},
-"hydra-elite":{t:"Hydra elite nem bakımı",code:"chydra",kind:"I",grp:"isilti",h1:["Hydra elite","nem bakımı"],
- lede:"Susuz cilt için nem odaklı yol.",hero:"kopuk",heroNote:"Temizleme köpüğü, salonumuzda çekildi. Hydra uygulamasının çekimi hazırlanıyor.",
- acts:[{m:"analiz",k:"Aynada",h:"Gerilen, pul pul olan cilt.",p:"Nem eksikliği makyajı da cildi de yorgun gösterir."},
-   {m:"kopuk",k:"Yol",h:"Nem için doğru bakım.",p:"İhtiyacınıza göre dermabrazyon ya da Paris ışıltısı önerilir."},
-   {m:"led",k:"Sonra",h:"Rahatlamış cilt.",p:"Bakım ışıkla tamamlanır."}],
- faq:[["Hydra elite'in fiyatı ne?","Nem bakımı bir ihtiyaç başlığıdır; uygulanacak bakımın fiyatı kendi sayfasında."]],
- route:["dermabrazyon","paris-isiltisi-bakimi"],shoot:true},
-"hassas-cilt":{t:"Hassas cilt bakımı",code:"chassas",kind:"I",grp:"akne",h1:["Hassas cilt","bakımı"],
- lede:"Çabuk kızaran cilt için nazik bir yol.",hero:"led",heroNote:"LED ışık terapisi, salonumuzda çekildi.",
- acts:[{m:"analiz",k:"Aynada",h:"Kızarıklık, yanma, gerginlik.",p:"Hassas cilt her ürüne tepki verir. Önce neye tepki verdiğini anlarız."},
-   {m:"kopuk",k:"Yol",h:"Nazik temizlik.",p:"Yumuşak arındırma ve sade adımlarla başlarız."},
-   {m:"led",k:"Işık",h:"Yatıştırıcı kapanış.",p:"LED ışık terapisi sakin bir kapanış sağlar."}],
- faq:[["Hassas cildim var, hangi bakımla başlamalıyım?","Genellikle cilt temizliği ya da klasik bakımla başlarız; uzmanımız cildinize bakarak karar verir."]],
- route:["cilt-temizligi","klasik-cilt-bakimi"],shoot:true},
-"antioksidan-bakimi":{t:"Antioksidan bakımı",code:"canti",kind:"I",grp:"isilti",h1:["Antioksidan","bakımı"],
- lede:"Şehir, güneş ve stres yorgunluğuna karşı canlandırıcı yol.",hero:"masaj",heroNote:"Yüz masajı, salonumuzda çekildi. Serum uygulamasının çekimi hazırlanıyor.",
- acts:[{m:"analiz",k:"Aynada",h:"Gri, yorgun bir ton.",p:"Şehir hayatı cildin canlılığını azaltır."},
-   {m:"masaj",k:"Yol",h:"Canlandırıcı bakımlar.",p:"Paris ışıltısı ve Hollywood bakımı bu ihtiyaca en yakın bakımlarımızdır."},
-   {m:"led",k:"Sonra",h:"Daha canlı görünüm.",p:"LED ile kapanış."}],
- route:["paris-isiltisi-bakimi","hollywood-bakimi","klasik-cilt-bakimi"],shoot:true},
-"dudak-bakimi":{t:"Dudak bakımı",code:"cdudak",kind:"H",opt:"dudak",from:1000,grp:"vucut",h1:["Dudak","bakımı"],
- lede:"Kuru, pürüzlü dudaklara yumuşaklık.",hero:"type:dudak",heroNote:"Dudak bakımına özel çekimimiz hazırlanıyor.",
- acts:[{m:"analiz",k:"Aynada",h:"Çatlayan, pul pul dudaklar.",p:"Soğuk, rüzgâr ve susuzluk en çok dudakları etkiler."},
-   {m:"masaj",k:"Koltukta",h:"Peeling ve maske.",p:"Dudaklar nazikçe arındırılır ve beslenir."},
-   {m:"led",k:"Sonra",h:"Yumuşak görünüm.",p:"Dudak bakımı 3 seviyede ve 3 seanslık paketlerle sunulur."}],
- levels:"1.000 · 1.500 · 2.000 TL (3 seviye)",
- faq:[["Kalıcı makyajla ilgisi var mı?","Hayır. Dudak bakımı bir cilt bakımıdır; renklendirme yapılmaz."]],
- route:["klasik-cilt-bakimi"],shoot:true},
-"cilt-inceltme":{t:"Sıkı görünüm bakımı",code:"csiki",kind:"I",grp:"yas",h1:["Sıkı görünüm","bakımı"],
- lede:"Gevşek görünen yüz hattı için doğru yol.",hero:"saten",heroNote:"Saten yüz germe başlığı, salonumuzda çekildi.",
- film:{k:"Seansın içinden",h:"Saten yüz germe nasıl uygulanır?",p:"Aşağı kaydırın: tek bir seanstan kesitler."},
- acts:[{m:"satenY",k:"Aynada",h:"Çene hattı eskisi gibi değil.",p:"Zamanla yüz hattı yumuşar."},
-   {m:"saten",k:"Yol 1",h:"Saten yüz germe.",p:"Isıtan başlıkla 60 dakikalık sıkı görünüm bakımı."},
-   {m:"kubbe",k:"Yol 2",h:"Cilt yenileme.",p:"Ton ve doku için bölgesel yenileme."}],
- route:["saten-yuz-germe","cilt-yenileme","anti-aging-bakimi"]},
-"cilt-kararma-bakimi":{t:"Kararma görünümü bakımı",code:"ckarar",kind:"I",grp:"ton",h1:["Kararma görünümü","bakımı"],
- lede:"Koyulaşan bölgeler için önce doğru tanı, sonra doğru bakım.",hero:"led",heroNote:"LED ışık terapisi, salonumuzda çekildi. Bölgesel çekimimiz hazırlanıyor.",
- acts:[{m:"analiz",k:"Aynada",h:"Çene, boyun ya da dirsekte koyulaşma.",p:"Kararma görünümünün nedeni farklı olabilir; önce bölgeye bakarız."},
-   {m:"kopuk",k:"Yol",h:"Ton ve leke bakımları.",p:"Bölgeye göre ton eşitleme ya da leke bakımı önerilir."},
-   {m:"led",k:"Sonra",h:"Düzenli bakım ve koruma.",p:"Sonuç kişiye göre değişir; güneş koruması önemlidir."}],
- route:["ton-esitleme","leke-bakimi","dirsek-bakimi"],shoot:true},
-"sirt-bakimi":{t:"Sırt bakımı",code:"csirt",kind:"H",opt:"sirt",from:3500,grp:"vucut",h1:["Sırt","bakımı"],
- lede:"Görmediğiniz ama hissettiğiniz bölge için.",hero:"type:Sırt",heroNote:"Sırt bakımına özel çekimimiz hazırlanıyor; sahte ya da başka salona ait görsel kullanmıyoruz.",
- acts:[{m:"analiz",k:"Aynada",h:"Sırtta sivilce ve siyah nokta.",p:"Sırt, kendi başınıza bakamadığınız bölgedir."},
-   {m:"kopuk",k:"Koltukta",h:"Arındırma ve bakım.",p:"Sırt yüz bakımına benzer adımlarla temizlenir."},
-   {m:"led",k:"Sonra",h:"Rahat bir sırt.",p:"Seans sayısı uzmanımızın önerisiyle belirlenir."}],
- pick:{h:"Hangi bölge?",o:[["yarim","Yarım sırt",""],["tam","Tam sırt",""],["emin","Emin değilim",""]],note:"Sırt bakımı bölgeye göre 3.500 TL'den başlar (randevu sistemimizdeki menü). Kesin fiyatı bölgenize göre iletiriz.",msg:"Merhaba, sırt bakımı ({x}) için fiyat ve uygun saat öğrenebilir miyim?"},
- route:["koltuk-alti-bakimi","akne-bakimi"],shoot:true},
-"koltuk-alti-bakimi":{t:"Koltuk altı bakımı",code:"ckoltuk",kind:"H",opt:"koltuk",grp:"vucut",h1:["Koltuk altı","bakımı"],
- lede:"Yarım saatlik bölgesel bakım.",hero:"type:Koltuk altı",heroNote:"Bölgesel çekimimiz hazırlanıyor; sahte ya da başka salona ait görsel kullanmıyoruz.",
- acts:[{m:"analiz",k:"Aynada",h:"Koyulaşma ve pürüz.",p:"Tıraş ve sürtünme bu bölgede ton farkı bırakabilir."},
-   {m:"kopuk",k:"Koltukta",h:"Arındırma ve bakım.",p:"Bölge temizlenir ve bakımla tamamlanır."},
-   {m:"led",k:"Sonra",h:"Düzenli bakım.",p:"Seans sayısını uzmanımız önerir."}],
- route:["sirt-bakimi","dirsek-bakimi","cilt-kararma-bakimi"],shoot:true},
-"dirsek-bakimi":{t:"Dirsek bakımı",code:"cdirsek",kind:"I",grp:"vucut",h1:["Dirsek","bakımı"],
- lede:"Koyu ve kuru dirsekler için doğru yol.",hero:"type:Dirsek",heroNote:"Bölgesel çekimimiz hazırlanıyor; sahte ya da başka salona ait görsel kullanmıyoruz.",
- acts:[{m:"analiz",k:"Aynada",h:"Kuru, koyu, pürüzlü.",p:"Dirsek yaslanmaktan ve kuruluktan en çok etkilenen bölgedir."},
-   {m:"kopuk",k:"Yol",h:"Bölgesel bakım.",p:"İhtiyaca göre ton eşitleme ya da kararma görünümü bakımı önerilir."},
-   {m:"led",k:"Sonra",h:"Düzenli bakım.",p:"Evde nemlendirme önemlidir."}],
- route:["ton-esitleme","cilt-kararma-bakimi","koltuk-alti-bakimi"],shoot:true}
-};
-/* ---------- CİLT ATLASI v4: alt sayfa motoru ----------
-   Yol: #cilt/<slug> (tabanın genel görünüm/parametre yolu).  Alt sayfalar cilt görünümünün içinde açılır; böylece S.view "cilt" kalır ve davetiye,
-   alt çubuk, [W-] kodu ve sayaç olduğu gibi çalışır.  Her buton data-track-label="at-<kod>-<yer>" taşır. */
-var CA={cur:null,film:null,obs:[]};
-var CA_PKG={paris:1,akne:1,hollywood:1,leke:1,yenileme:1,derma:1};
-var CA_ROMAN=["I","II","III","IV","V","VI"];
-PLANS.cilt.opts=PLANS.cilt.opts.concat([
- {id:"ton",n:"Ton eşitleme",p:null,d:null,s:"Alana göre 4.500 / 5.500 / 6.500 TL"},
- {id:"saten",n:"Saten yüz germe",p:4500,d:60},
- {id:"dudak",n:"Dudak bakımı",p:null,d:null,s:"3 seviye: 1.000 / 1.500 / 2.000 TL"},
- {id:"sirt",n:"Sırt bakımı",p:null,d:null,s:"Bölgeye göre 3.500 TL'den"},
- {id:"koltuk",n:"Koltuk altı bakımı",p:4500,d:30}]);
-var CA_OPT2SLUG={};
-Object.keys(CP).forEach(function(s){ if(CP[s].opt) CA_OPT2SLUG[CP[s].opt]=s; });
-NAV.forEach(function(g){ if(g[0]==="Cilt") g[1].forEach(function(it){ if(!it[2] && CP[it[0]]) it[2]="cilt/"+it[0]; }); });
-
-function caOpt(id){ return PLANS.cilt.opts.filter(function(x){ return x.id===id; })[0]||null; }
-function caRoute(){ return CA.cur?"cilt/"+CA.cur:"cilt"; }
-function caL(code,place){ return ' data-track-label="at-'+code+'-'+place+'"'; }
-function caPoster(k){ var m=CM[k]; if(!m) return "m/monogram.png"; return m.v?"m/ig/"+m.v+"-poster.webp":"m/ig/"+m.pair+"-sonra-"+m.s+".webp"; }
-function caPriceTxt(p){ var o=p.opt?caOpt(p.opt):null; if(!o) return "Rehber · size uygun bakım";
-  if(p.from) return p.from.toLocaleString("tr-TR")+" TL'den";
-  return fmtTL(o.p)+(o.d?" · "+o.d+" dk":""); }
-function caMedia(k,lazy){ var m=CM[k]; if(!m) return "";
-  if(m.v) return '<video class="'+(lazy?"ca-lv":"auto-vid")+'" muted playsinline loop preload="none" poster="m/ig/'+m.v+'-poster.webp" data-src="m/ig/'+m.v+'.mp4" aria-label="'+m.alt+'"></video>';
-  var b="m/ig/"+m.pair+"-", rows=m.s!==480;
-  return '<div class="ca-pair'+(rows?" rows":"")+'"><figure><img src="'+b+"once-"+m.s+'.webp" alt="Önce: '+m.alt+'" loading="lazy"><span class="cmp-tag">Önce</span></figure><figure><img src="'+b+"sonra-"+m.s+'.webp" alt="Sonra: '+m.alt+'" loading="lazy"><span class="cmp-tag">Sonra</span></figure></div>'; }
-function caWaMsg(p){ return p.kind==="H"?"Merhaba, sitede "+p.t.toLocaleLowerCase("tr-TR")+" sayfasındayım. Uygun bir saat var mı? "+visitCode()
-  :"Merhaba, "+p.t.toLocaleLowerCase("tr-TR")+" için hangi bakımın bana uygun olduğunu sormak istiyorum. "+visitCode(); }
-function caMainOpt(p){ if(p.opt) return p.opt; var r=(p.route||[]).filter(function(s){ return CP[s]&&CP[s].opt; })[0]; return r?CP[r].opt:"klasik"; }
-var CA_LIPS='<svg viewBox="0 0 200 110" aria-hidden="true"><path d="M8 52C40 40 62 14 84 18c8 1 12 8 16 8s8-7 16-8c22-4 44 22 76 34-30 6-48 48-92 50C52 100 38 58 8 52z" fill="#C46E66" opacity=".85"/><path d="M8 52c34 4 60 8 92 8s58-4 92-8" fill="none" stroke="#5a2e2c" stroke-width="3"/><path d="M60 30c10-4 22-2 30 4M140 30c-10-4-22-2-30 4" stroke="#F4E6BE" stroke-width="2" opacity=".6" fill="none"/></svg>';
-
-/* ---------- parçalar ---------- */
-function caHero(p){ var tag='<span class="ca-film-tag"><i></i>Salonumuzda çekildi</span>', media;
-  if(p.hero==="type:dudak") media='<div class="ca-type">'+CA_LIPS+'<b>Dudak bakımı</b></div>';
-  else if(/^type:/.test(p.hero)) media='<div class="ca-type"><img src="m/monogram.png" alt="" width="120" height="120" style="position:static;width:120px;height:120px;opacity:.55"><b>'+p.hero.slice(5)+'</b></div>';
-  else media=caMedia(p.hero,false)+tag;
-  var o=p.opt?caOpt(p.opt):null, wa=waHref(caWaMsg(p));
-  return '<div class="hero ca-hero"><div class="hero-split"><div class="hero-media lit">'+media+'</div>'+
-   '<div class="hero-copy"><button class="ca-crumb" data-go="cilt"'+caL(p.code,"geri")+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>Cilt Atlası</button>'+
-   '<span class="eyebrow">Konutkent · Çankaya</span><h1>'+p.h1[0]+' <em>'+p.h1[1]+'</em></h1><p class="lede">'+p.lede+'</p>'+
-   '<div class="chips"><span class="chip chip-in"><span class="star">★</span> 4,6 · 263 yorum</span><span class="chip chip-in price">'+caPriceTxt(p)+'</span>'+(o&&CA_PKG[o.id]?'<span class="chip chip-in">5 seans paketi</span>':'')+'</div>'+
-   '<div class="ca-ctas">'+(p.kind==="H"?'<button class="btn-gold shine" data-plan="cilt" data-opt="'+p.opt+'"'+caL(p.code,"hero-saat")+'><span class="lbl">Saatimi seç</span></button>':'<button class="btn-gold shine" data-plan="cilt" data-opt="'+caMainOpt(p)+'"'+caL(p.code,"hero-saat")+'><span class="lbl">Bakımımı seçip saat al</span></button>')+
-   '<a class="btn-line" href="'+wa+'" target="_blank" rel="noopener"'+caL(p.code,"hero-wa")+'>WhatsApp</a></div>'+
-   '<p class="hero-note">'+p.heroNote+'</p></div></div></div>'; }
-
-function caStoryHTML(acts,head,code){ var keys=[]; acts.forEach(function(a){ if(keys.indexOf(a.m)<0) keys.push(a.m); });
-  return '<div class="sec gutter ca-story"><div class="sec-head"><span class="eyebrow">'+head[0]+'</span><h2>'+head[1]+'</h2></div>'+
-   '<div class="ca-scrolly" data-ca-story><div class="ca-stage">'+keys.map(function(k){ return '<div class="ca-layer" data-k="'+k+'">'+caMedia(k,true)+'</div>'; }).join("")+
-   '<span class="ca-count">'+CA_ROMAN[0]+' / '+CA_ROMAN[acts.length-1]+'</span><span class="ca-cap"></span></div>'+
-   '<ol class="ca-acts">'+acts.map(function(a,i){ return '<li class="ca-act" data-i="'+i+'" data-k="'+a.m+'"><div class="ca-card"><span class="ca-num">'+CA_ROMAN[i]+'</span>'+(a.w?'<span class="ca-when">'+a.w+' · '+a.k+'</span>':'<span class="ca-when">'+a.k+'</span>')+'<h3>'+a.h+'</h3><p>'+a.p+'</p></div></li>'; }).join("")+'</ol></div></div>'; }
-
-function caFilmHTML(f){ return '<div class="sec gutter" style="padding-bottom:0"><div class="sec-head"><span class="eyebrow">'+f.k+'</span><h2>'+f.h+'</h2><p>'+f.p+'</p></div></div>'+
-  '<section class="ca-film" id="caFilm" data-n="48" data-cols="8" data-fw="360" data-fh="640"><div class="ca-film-pin"><div class="ca-film-box"><img src="m/ig/cilt-saten-poster.webp" alt="Saten yüz germe uygulaması, salonumuzda çekildi"><canvas width="360" height="640"></canvas><i class="ca-film-bar"></i>'+
-  '<div class="ca-film-cap"><b>Yanaktan şakağa</b><span>Başlık yavaşça gezdirilir.</span></div></div></div></section>'; }
-var CA_FILM_CAPS=[[0,"Yanaktan şakağa","Başlık yavaşça gezdirilir."],[.42,"Alın","Küçük, düzenli hareketlerle."],[.62,"Göz çevresi","En ince deriye en nazik dokunuş."]];
-
-var CA_ZONES={alin:["Alın","Alında en sık siyah nokta, matlık ve ince çizgiler görürüz.",["klasik-cilt-bakimi","cilt-temizligi","saten-yuz-germe"]],
- goz:["Göz çevresi","Yüzün en ince derisi: kaz ayağı ve yorgun görünüm.",["goz-cevresi-bakimi","saten-yuz-germe"]],
- burun:["Burun ve T bölgesi","Gözenek ve siyah noktanın en yoğun olduğu bölge.",["cilt-temizligi","klasik-cilt-bakimi"]],
- yanak:["Yanaklar","Kızarıklık, sivilce ve ton farkı en çok burada görünür.",["akne-bakimi","ton-esitleme","hassas-cilt"]],
- dudak:["Dudaklar","Kuruluk ve pürüz.",["dudak-bakimi"]],
- cene:["Çene hattı","Sivilce ve sıkılık kaybı sık görülür.",["akne-bakimi","cilt-inceltme"]]};
-function caMapHTML(code){ var z=function(id,shape){ return '<g class="z" data-z="'+id+'" tabindex="0" role="button" aria-pressed="false" aria-label="'+CA_ZONES[id][0]+'"'+caL(code,"harita")+'>'+shape+'</g>'; };
-  return '<div class="sec gutter"><div class="sec-head"><span class="eyebrow">Yüz haritası</span><h2>Bir bölgeye <em>dokunun</em>.</h2><p>Hangi bölgede ne sık görülür, hangi bakım yakındır? Bu bir yönlendirmedir; analizin yerini tutmaz.</p></div>'+
-   '<div class="ca-map"><div class="ca-face"><svg viewBox="0 0 200 270" role="group" aria-label="Yüz haritası"><ellipse class="ol" cx="100" cy="135" rx="80" ry="112"/><path class="ol" d="M52 92q18-10 36 0M112 92q18-10 36 0"/>'+
-   z("alin",'<ellipse cx="100" cy="58" rx="54" ry="24"/><text x="100" y="61" text-anchor="middle">Alın</text>')+
-   z("goz",'<ellipse cx="68" cy="110" rx="22" ry="11"/><ellipse cx="132" cy="110" rx="22" ry="11"/>')+
-   z("burun",'<ellipse cx="100" cy="138" rx="13" ry="26"/>')+
-   z("yanak",'<ellipse cx="58" cy="155" rx="22" ry="25"/><ellipse cx="142" cy="155" rx="22" ry="25"/>')+
-   z("dudak",'<ellipse cx="100" cy="193" rx="24" ry="10"/>')+
-   z("cene",'<ellipse cx="100" cy="226" rx="36" ry="13"/><text x="100" y="229" text-anchor="middle">Çene</text>')+
-   '</svg></div><div class="ca-zone" id="caZone" aria-live="polite"><h3>Yüzünüzde bir bölge seçin</h3><p>Seçtiğiniz bölgeye göre ilgili bakım sayfalarını gösterelim.</p></div></div></div>'; }
-
-function caRouteCard(s,code,place){ var q=CP[s]; if(!q) return "";
-  return '<button class="ca-route" data-go="cilt/'+s+'"'+caL(code,place)+'><img src="'+caPoster(q.hero)+'" alt="" loading="lazy"><span><b>'+q.t+'</b><small>'+caPriceTxt(q)+'</small></span><em>Sayfası →</em></button>'; }
-
-function caMenuHTML(code){ var rows=PLANS.cilt.opts.map(function(o){ var s=CA_OPT2SLUG[o.id];
-   return '<div class="ca-row" data-d="'+(o.d||0)+'">'+(s?'<button data-go="cilt/'+s+'"'+caL(code,"menu-sayfa")+'>':'<span>')+'<b>'+o.n+'</b><br><small>'+(o.d?o.d+" dk":(o.s||""))+(s?' · sayfası →':'')+'</small>'+(s?'</button>':'</span>')+
-    '<button class="pr" data-plan="cilt" data-opt="'+o.id+'"'+caL(code,"menu-saat")+'>'+(o.p?fmtTL(o.p):"Ön görüşme")+'</button>'+
-    (CA_PKG[o.id]?'<span class="pk">5 seans paketi: <b>'+fmtTL(o.p*4.5)+'</b> (tek seansın 4,5 katı)</span>':'')+'</div>'; }).join("");
-  return '<div class="sec gutter"><div class="sec-head"><span class="eyebrow">Bakım menüsü</span><h2>Süreye göre <em>seçin</em>.</h2><p>Fiyata dokunun, davetiyeniz o bakımla açılsın.</p></div><div class="ca-menu">'+
-   '<div class="ca-filter">'+[["0","Tümü"],["30","30 dk"],["60","60 dk"],["90","90 dk"],["120","120 dk"]].map(function(f,i){ return '<button data-caf="'+f[0]+'" aria-pressed="'+(i===0)+'"'+caL(code,"menu-filtre")+'>'+f[1]+'</button>'; }).join("")+'</div>'+
-   '<div class="ca-rows">'+rows+'</div><p class="menu-src">Randevu sistemindeki aktif menüden · 7 Ekim 2026</p></div></div>'; }
-
-function caDuelHTML(sc,code){ var side=function(s){ var q=CP[s], o=caOpt(q.opt), here=s===CA.cur;
-   return '<article class="'+(here?"here":"")+'"><span class="eyebrow">'+(here?"Bu sayfa":"Kardeşi")+'</span><h3>'+q.t+'</h3><span class="pr">'+fmtTL(o.p)+'</span><small class="muted">'+o.d+' dk · '+q.lede+'</small>'+
-    '<div class="row"><button class="btn-line" data-plan="cilt" data-opt="'+o.id+'"'+caL(code,"duello-saat")+'>Saatimi seç</button>'+(here?'':'<button class="btn-line" data-go="cilt/'+s+'"'+caL(code,"duello-git")+'>Sayfası →</button>')+'</div></article>'; };
-  return '<div class="sec gutter"><div class="sec-head"><span class="eyebrow">Işıltı düellosu</span><h2>Hollywood mu, <em>Paris</em> mi?</h2><p>İkisi de iki saatlik ışıltı bakımı; ürün ve adımları farklı. Hangisinin cildinize uygun olduğunu uzmanımız cildinize bakarak söyler.</p></div>'+
-   '<div class="ca-duel">'+side(sc.a)+'<span class="vs">ya da</span>'+side(sc.b)+'</div></div>'; }
-
-function caPickHTML(p){ var k=p.pick;
-  return '<div class="sec gutter"><div class="ca-pick"><span class="eyebrow">Size özel</span><h3>'+k.h+'</h3><div class="ca-opts">'+k.o.map(function(o,i){ return '<button data-cap="'+i+'" aria-pressed="false"'+caL(p.code,"secim")+'>'+o[1]+(o[2]?' <small>'+o[2]+'</small>':'')+'</button>'; }).join("")+'</div>'+
-   '<div class="ca-ctas"><a class="btn-gold shine" id="caPickWa" href="'+waHref(k.msg.replace("{x}","seçmedim")+" "+visitCode())+'" target="_blank" rel="noopener"'+caL(p.code,"secim-wa")+'><span class="lbl">Seçimimi WhatsApp\'ta gönder</span></a></div><p class="fine">'+k.note+'</p></div></div>'; }
-
-function caProofHTML(p){ if(p.proof&&p.proof.length) return '<div class="sec gutter" style="padding-bottom:0"><div class="sec-head"><span class="eyebrow">Gerçek sonuç</span><h2>Basılı tutun, <em>öncesini</em> görün.</h2><p>Salonumuzda bakım yaptıran danışanlarımız; Instagram hesabımızdan, düzenlenmeden. Sonuçlar kişiden kişiye değişir.</p></div><div class="gal" id="caGal"></div></div>';
-  if(p.kind!=="H") return "";
-  return '<div class="sec gutter" style="padding-bottom:0"><div class="ca-honest"><span class="eyebrow">Önce / sonra</span><b>Bu bakımın önce/sonra fotoğraflarını henüz yayınlamadık.</b><span>Sahte ya da başka salona ait görsel kullanmıyoruz. Danışanlarımızın izinli fotoğrafları hazırlanıyor; bu sayfadaki videolar salonumuzda çekilmiş gerçek uygulamalardır.</span></div></div>'; }
-
-function caQuoteHTML(p){ if(!p.quote) return ""; var r=REVIEWS.filter(function(x){ return x.f==="cilt"&&x.n===p.quote; })[0]; if(!r) return "";
-  return '<div class="sec gutter"><figure class="ca-quote"><span class="eyebrow">Bir danışanımız anlatıyor</span><blockquote>“'+r.t.replace(/</g,"&lt;")+'”</blockquote><figcaption>'+r.n+' · '+months(r.d)+' · Google ★★★★★</figcaption></figure></div>'; }
-
-function caPriceHTML(p){ var o=caOpt(p.opt); if(!o) return "";
-  var big=p.from?p.from.toLocaleString("tr-TR")+' TL<small>\'den</small>':fmtTL(o.p)+(o.d?' <small>· '+o.d+' dk</small>':'');
-  return '<div class="sec gutter"><div class="two"><div class="menu-card ca-price"><span class="eyebrow">Fiyat · aktif menü</span><div class="big">'+big+'</div>'+
-   (p.levels?'<div class="ca-pkg">'+p.levels+'; 3 seanslık paketler.</div>':(o.s?'<div class="ca-pkg">'+o.s+'</div>':''))+
-   (CA_PKG[o.id]?'<div class="ca-pkg">5 seanslık paket: <b>'+fmtTL(o.p*4.5)+'</b> · tek seans fiyatının 4,5 katı</div>':'')+
-   '<div class="ca-ctas"><button class="btn-gold shine" data-plan="cilt" data-opt="'+o.id+'"'+caL(p.code,"fiyat-saat")+'><span class="lbl">Bu bakım için saatimi seç</span></button></div><p class="menu-src">Randevu sistemindeki aktif menüden · 7 Ekim 2026</p></div>'+
-   '<div><div class="sec-head" style="margin-bottom:16px"><span class="eyebrow">Nasıl geçer</span><h2 style="font-size:40px">Önce bakarız, sonra bakım.</h2></div><ol class="how"><li><div><b>Cildinize bakarız</b><p>Cilt tipiniz, hassasiyetiniz ve şikâyetiniz birlikte değerlendirilir.</p></div></li><li><div><b>Bakımı uygularız</b><p>'+p.t+(o.d?', yaklaşık '+o.d+' dakika.':'.')+'</p></div></li><li><div><b>Ev bakımını konuşuruz</b><p>Sonraki seans ve evde yapılacaklar birlikte planlanır.</p></div></li></ol></div></div></div>'; }
-
-function caRoutesHTML(p){ var r=p.route||[]; if(!r.length) return "";
-  var head=p.kind==="H"?["Bunlara da bakın","Yakın <em>bakımlar</em>."]:["Bu ihtiyaç için","Size uygun <em>bakımlar</em>."];
-  return '<div class="sec gutter"><div class="sec-head"><span class="eyebrow">'+head[0]+'</span><h2>'+head[1]+'</h2>'+(p.kind==="I"?'<p>Bu sayfa bir rehberdir; fiyat seçtiğiniz bakıma göredir.</p>':'')+'</div><div class="ca-routes">'+r.map(function(s){ return caRouteCard(s,p.code,"git"); }).join("")+'</div>'+
-   '<p style="margin-top:16px"><button class="btn-line" data-go="cilt"'+caL(p.code,"atlas")+'>Tüm Cilt Atlası →</button></p></div>'; }
-
-function caFaqHTML(p){ if(!p.faq) return ""; return '<div class="sec gutter faq" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Sık sorulanlar</span><h2>Aklınızdakiler</h2></div>'+p.faq.map(function(f){ return '<details><summary'+caL(p.code,"sss")+'>'+f[0]+'</summary><p>'+f[1]+'</p></details>'; }).join("")+'</div>'; }
-
-function caEndHTML(p){ return '<div class="sec gutter"><div class="invite-teaser"><span class="eyebrow">Sizin hikâyeniz</span><h3>Cildiniz için bir saat ayırın.</h3><div class="steps-mini"><span>1 · Bakım</span><span>2 · Gün ve saat</span><span>3 · Davetiye → WhatsApp</span></div>'+
-  '<div class="ca-ctas"><button class="btn-gold shine" data-plan="cilt" data-opt="'+caMainOpt(p)+'"'+caL(p.code,"son-saat")+'><span class="lbl">Davetiyemi hazırla</span></button><a class="btn-line" href="'+waHref(caWaMsg(p))+'" target="_blank" rel="noopener"'+caL(p.code,"son-wa")+'>WhatsApp\'tan sor</a></div></div></div>'; }
-
-function caDarkHTML(d){ return '<div class="sec dark-band gutter"><div class="golden"><div class="led-frame lit">'+caMedia(d.m,false)+'</div><div class="sec-head" style="margin:0"><span class="eyebrow">'+d.k+'</span><h2>'+d.h+'</h2><p>'+d.p+'</p></div></div></div>'; }
-
-/* ---------- davranış ---------- */
-function caStory(box){ var acts=$$(".ca-act",box), layers=$$(".ca-layer",box), count=$(".ca-count",box), cap=$(".ca-cap",box), n=acts.length, cur=-1;
-  function vid(l){ return $("video",l); }
-  function set(i){ if(i===cur) return; cur=i; var k=acts[i].dataset.k;
-    acts.forEach(function(a,j){ a.classList.toggle("on",j===i); });
-    layers.forEach(function(l){ var on=l.dataset.k===k, v=vid(l); l.classList.toggle("on",on);
-      if(!v) return; if(on && S.tier!=="C"){ if(v.dataset.src){ v.src=v.dataset.src; v.removeAttribute("data-src"); } var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } else if(!on) v.pause(); });
-    count.textContent=CA_ROMAN[i]+" / "+CA_ROMAN[n-1]; cap.textContent=(CM[k]&&CM[k].alt?CM[k].alt+" · salonumuzda":""); }
-  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) set(+e.target.dataset.i); }); },{rootMargin:"-45% 0px -45% 0px"});
-  acts.forEach(function(a){ io.observe(a); }); CA.obs.push(io);
-  var vis=new IntersectionObserver(function(es){ if(!es[0].isIntersecting) layers.forEach(function(l){ var v=vid(l); if(v) v.pause(); }); else if(cur>=0){ var v=vid(layers.filter(function(l){ return l.classList.contains("on"); })[0]); if(v&&!v.dataset.src&&S.tier!=="C"){ var pr=v.play(); if(pr&&pr.catch) pr.catch(function(){}); } } });
-  vis.observe(box); CA.obs.push(vis); set(0); }
-
-function caFilm(sec){ var cv=$("canvas",sec), ctx=cv.getContext("2d"), bar=$(".ca-film-bar",sec), capB=$(".ca-film-cap b",sec), capS=$(".ca-film-cap span",sec),
-  N=+sec.dataset.n, C=+sec.dataset.cols, fw=+sec.dataset.fw, fh=+sec.dataset.fh, img=null, cur=-1, ci=-1;
-  function load(){ if(img||S.tier==="C") return; img=new Image(); img.decoding="async"; img.onload=function(){ cur=-1; update(); }; img.src="m/ig/film/cilt-saten-film.webp"; }
-  var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting) load(); },{rootMargin:"800px"}); io.observe(sec); CA.obs.push(io);
-  function update(){ if(!sec.isConnected||S.view!=="cilt"||S.tier==="C") return; var r=sec.getBoundingClientRect(), vh=innerHeight; if(r.bottom<0||r.top>vh) return;
-    var p=Math.min(1,Math.max(0,-r.top/(r.height-vh))), i=Math.min(N-1,Math.round(p*(N-1)));
-    bar.style.width=(p*100).toFixed(1)+"%";
-    var c=0; CA_FILM_CAPS.forEach(function(x,j){ if(p>=x[0]) c=j; }); if(c!==ci){ ci=c; capB.textContent=CA_FILM_CAPS[c][1]; capS.textContent=CA_FILM_CAPS[c][2]; }
-    if(img&&img.complete&&img.naturalWidth&&i!==cur){ cur=i; ctx.drawImage(img,(i%C)*fw,Math.floor(i/C)*fh,fw,fh,0,0,cv.width,cv.height); cv.style.opacity=1; } }
-  CA.film=update; update(); }
-
-function caMap(box){ var panel=$("#caZone",box);
-  function pick(g){ var id=g.dataset.z, z=CA_ZONES[id]; $$(".z",box).forEach(function(x){ x.setAttribute("aria-pressed",x===g); });
-    panel.innerHTML='<span class="eyebrow">Seçtiğiniz bölge</span><h3>'+z[0]+'</h3><p>'+z[1]+'</p><div class="ca-routes">'+z[2].map(function(s){ return caRouteCard(s,CP[CA.cur].code,"harita-git"); }).join("")+'</div>'; relead(); }
-  $$(".z",box).forEach(function(g){ g.addEventListener("click",function(){ pick(g); }); g.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); pick(g); } }); }); }
-
-function caMenu(box){ $$("[data-caf]",box).forEach(function(b){ b.addEventListener("click",function(){ var f=+b.dataset.caf;
-  $$("[data-caf]",box).forEach(function(x){ x.setAttribute("aria-pressed",x===b); });
-  $$(".ca-row",box).forEach(function(r){ r.hidden=!!f && +r.dataset.d!==f; }); }); }); }
-
-function caPick(p,box){ var k=p.pick, a=$("#caPickWa",box);
-  $$("[data-cap]",box).forEach(function(b){ b.addEventListener("click",function(){ var o=k.o[+b.dataset.cap];
-    $$("[data-cap]",box).forEach(function(x){ x.setAttribute("aria-pressed",x===b); });
-    a.href=waHref(k.msg.replace("{x}",o[1].toLocaleLowerCase("tr-TR"))+" "+visitCode()); }); }); }
-
-/* ---------- sayfa ---------- */
-function caRender(slug){ var p=CP[slug], box=$("#ciltPage");
-  var acts=p.acts==="seans"?CA_SEANS:p.acts, head=p.actsHead?[p.actsHead[0],p.actsHead[1].replace(/, (.*)\.$/,", <em>$1</em>.")]:["Bir bakımın hikâyesi","Aynadan <em>koltuğa</em>."];
-  var sc=p.scene||{}, h=caHero(p);
-  if(sc.type==="menu") h+=caMenuHTML(p.code);
-  if(sc.type==="map") h+=caMapHTML(p.code);
-  h+=caStoryHTML(acts,head,p.code);
-  if(p.film) h+=caFilmHTML(p.film);
-  if(p.dark) h+=caDarkHTML(p.dark);
-  if(sc.type==="duel") h+=caDuelHTML(sc,p.code);
-  if(p.pick) h+=caPickHTML(p);
-  h+=caProofHTML(p)+caQuoteHTML(p)+(p.kind==="H"?caPriceHTML(p):"")+caRoutesHTML(p)+caFaqHTML(p)+caEndHTML(p);
-  box.innerHTML=h;
-  $$("[data-ca-story]",box).forEach(caStory);
-  var f=$("#caFilm",box); if(f) caFilm(f);
-  if(sc.type==="map") caMap(box);
-  if(sc.type==="menu") caMenu(box);
-  if(p.pick) caPick(p,box);
-  var g=$("#caGal",box); if(g) p.proof.forEach(function(k){ var m=CM[k], b="m/ig/"+m.pair; card(g,b+"-sonra-"+m.s+".webp",b+"-once-"+m.s+".webp",m.alt,m.s!==480); });
-  initAutoVids(box);
-  $$("[data-dust]",box).forEach(initDust);
-  S.planOpt.cilt=caMainOpt(p);
-  try{ document.title=p.t+" · Selda Gençer Beauty Center"; }catch(e){}
-  relead(); }
-
-function ciltRoute(sub){ var hub=$("#ciltHub"), pg=$("#ciltPage");
-  CA.obs.forEach(function(o){ o.disconnect(); }); CA.obs=[]; CA.film=null;
-  $$("video",pg).forEach(function(v){ v.pause(); });
-  CA.cur=sub||null; S.route=caRoute();
-  if(!sub){ pg.hidden=true; pg.innerHTML=""; hub.hidden=false; try{ document.title=CA.title; }catch(e){} return; }
-  hub.hidden=true; pg.hidden=false; caRender(sub); }
-CA.title=document.title;
-scrollers.push(function(){ if(CA.film) CA.film(); });
-
-/* ---------- hub: atlas + seans hikâyesi ---------- */
-function caAtlasHTML(){ return CA_GROUPS.map(function(g){ var list=Object.keys(CP).filter(function(s){ return CP[s].grp===g[0]; }); if(!list.length) return "";
-  return '<div class="ca-grp"><h3>'+g[1]+'</h3><div class="ca-grid">'+list.map(function(s){ var q=CP[s], k=q.hero, mono=!CM[k];
-   return '<button class="ca-tile'+(mono?" mono":"")+'" data-go="cilt/'+s+'" data-track-label="at-cilt-atlas"><img src="'+caPoster(k)+'" alt="" loading="lazy"><span><b>'+q.t+'</b><small>'+caPriceTxt(q)+'</small></span></button>'; }).join("")+'</div></div>'; }).join(""); }
-function caInitHub(){ var a=$("#ciltAtlas"); if(a && !a.dataset.done){ a.dataset.done=1; a.innerHTML=caAtlasHTML(); }
-  var s=$("#ciltHubStory"); if(s && !s.dataset.done){ s.dataset.done=1; s.innerHTML=caStoryHTML(CA_SEANS,["Bir bakımın içinden","Klasik bakım, <em>adım adım</em>."],"cilt").replace('class="sec gutter ca-story"','class="ca-story"'); hubStory(); } }
-function hubStory(){ var b=$("#ciltHubStory [data-ca-story]"); if(!b) return; var keep=CA.obs; CA.obs=[]; caStory(b); CA.hubObs=CA.obs; CA.obs=keep; }
-
 boot();
 })();
 </script>
