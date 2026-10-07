@@ -6,7 +6,19 @@
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
     "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "repository_snapshot_version": 3,
+    "published_version_checked": {
+      "version": "1791383911-8f6e",
+      "checked_at": "2026-10-07",
+      "files": 291,
+      "index_bytes": 459418,
+      "differs_from_snapshot": [
+        "tirnak",
+        "salon",
+        "kas"
+      ],
+      "note": "build from the published version, not the v3 snapshot"
+    }
   },
   "measurement": {
     "system": "TagCtx",
@@ -66,15 +78,17 @@
         "render.py",
         "src/lazer.css",
         "src/lazer.js",
-        "CRM/navigation/review data"
+        "CRM/navigation/review data",
+        "wave 1 fixes (calendar, hotspots, proof strip)",
+        "wave 2: light-sweep hero, line-art map, Lazer Planım card"
       ],
       "remaining": [
-        "Artifact v4 build and publish to the same URL",
-        "live patch build.py",
-        "screenshots and checks",
-        "mobile/desktop and CTA tests",
-        "owner-approved live apply"
-      ]
+        "A: a3_build.py from the published artifact + 24 media files, publish v4 to the same URL",
+        "B: wave 3 (5 reels, reviews, device tour, journey, face zoom) -> v5",
+        "C: wave 4 + subpage identities + speed budget -> v6, owner approval",
+        "D: live patch build.py (needs live HTML/script.js access), --check, click test, owner --apply, TagCtx gates"
+      ],
+      "wow_plan": "plans/claude/20261007/lazer-wow-plan.md"
     },
     {
       "key": "pmu",
@@ -134,7 +148,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }

@@ -162,17 +162,22 @@ Artifact ve canlı site değişmedi).
 - Ekran fotoğrafına hafif yakınlaşma (Ken Burns) ve aktif noktanın etrafında
   odak halkası.
 
-**W6 · Salonumuzda çekildi: 6 video, hikâye oynatıcısı**
-- Şerit 2 videodan 6 videoya çıkar: jel, çene, bacak, bacak2, kol, yüz.
-  Hepsi FAZ L'de seçilmiş, işlenmiş ve `website/m/ig/` altında hazır.
+**W6 · Salonumuzda çekildi: 5 video, hikâye oynatıcısı**
+- Şerit 2 videodan 5 videoya çıkar: jel, çene, bacak, bacak2, yüz. Hepsi
+  işlenmiş ve `website/m/ig/` altında hazır.
+- Düzeltme (10-07): `lazer-film-kol` manifestte ve `website/m/ig/` altında
+  **yok**; FAZ L tablosunda adı geçse de işlenmemiş. 6. video istenirse
+  sunucuda `build_media.py` ile üretilir (§6.4).
 - Görünen video sessiz oynar; dokununca tam ekran Instagram tarzı hikâye
   açılır (üstte ilerleme çubukları, kaydırarak sonraki video).
 - Videolar yalnız görünürken yüklenir; C kademesinde poster.
 
 **W7 · Yorumlar canlansın**
 - “30 / 31” bölüm görününce 0'dan sayarak gelir.
-- Konu çipleri: Acı · Sonuç · İlgi · Hijyen. Bunlar yalnız kelimesi
-  kelimesine yorum metninde geçen sözcüklerle süzer.
+- Konu çipleri: Acı · Sonuç · İlgi. Bunlar yalnız kelimesi kelimesine yorum
+  metninde geçen sözcüklerle süzer. 12 yorumda sayım: Acı 2, Sonuç 7, İlgi 3,
+  Hijyen 1. Kural: bir çip ancak ≥ 2 yorum eşleşirse gösterilir; bu yüzden
+  Hijyen çıkarıldı.
 - Kartlar ekran kenarından kesik başlamaz; ilk kart hizalı, duvar yavaş
   kayar. Dokununca durur.
 - Yüzde ifadesi ve sonuç vaadi yok (FAZ L §6).
@@ -209,15 +214,16 @@ Aynı bileşenler her alt sayfanın kendi vurgusuyla çalışır (FAZ L §3):
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM> adresine.
 - Sahip onayı olmadan canlı `--apply`.
 
-## 4. Sıra
+## 4. Sıra (10-07 güncel; ayrıntı §7)
 
-1. Dalga 1 düzeltmeleri → yerel çekimle doğrula.
-2. Dalga 2 (W1–W3) → yerel çekim → **sahibe telefonda gösterilir.**
-3. Dalga 3–4.
-4. FAZ L §4: `a3_build.py` ile Artifact v4 derlenir ve aynı URL'ye yayınlanır;
-   yayınlanan sürüm geri okunur.
-5. FAZ L §5: canlı yama `build.py --out` + `--check`.
-6. Sahip `--apply` çalıştırır; ardından TagCtx kapıları.
+1. ~~Dalga 1~~ ✓ · ~~Dalga 2~~ ✓
+2. **Adım A — Artifact v4:** Dalga 1–2'yi aynı URL'de yayınla → sahip
+   telefonda bakar.
+3. **Adım B — Dalga 3** → Artifact v5.
+4. **Adım C — Dalga 4 + alt sayfa kimlikleri** → Artifact v6 → sahibin son
+   onayı.
+5. **Adım D — Canlı yama:** `build.py --out` + `--check` → sahip `--apply`
+   → TagCtx kapıları → 7./28. gün ölçümü.
 
 ## 5. Kabul kapıları
 
@@ -236,12 +242,109 @@ FAZ L §7'ye ek olarak:
 - Site koduna dokunulduğunda `TAGCTX_RUNBOOK.md`: `audit --record`, `diff`,
   runtime `verify`, `patches/verify_tags.sh`.
 
-## 6. Sahibin kararı gereken konular
+## 6. Sahibin kararları
 
-1. Merkez sayfa hero'su: **video (`lazer-film-jel`) önerilir**; fotoğrafta
-   kalmak da mümkün.
-2. Yeni çekim (isteğe bağlı, en büyük “vay” kaynağı): 6–8 sn'lik dikey,
+Karara bağlananlar (10-07):
+
+1. Merkez sayfa hero'su: **video (`lazer-film-jel`)**. Uygulandı.
+2. Rozet: **yalnız CRM'deki 4 bitiş garantili paket** (ve fiyat menüsündeki
+   garantili kalemler). Uygulandı.
+
+Açık olanlar:
+
+3. Yeni çekim (isteğe bağlı, en büyük “vay” kaynağı): 6–8 sn'lik dikey,
    ağır çekim yakın plan “pembe ışık” videosu ve cihaz ekranının temiz bir
-   fotoğrafı. Çekim günü planına eklenebilir; plan bu olmadan da çalışır.
-3. Plan kartında “bitiş garantili paket seçeneği” rozeti hangi bölgelerde
-   görünsün? CRM'deki 4 kalemle sınırlı tutulması önerilir.
+   fotoğrafı. Masaüstü hero'daki 720p yumuşaklığını da çözer. Plan bu
+   olmadan da çalışır.
+4. 6. video (`lazer-film-kol`, IG 18101999296585006): sunucuda işlensin mi?
+5. Canlı yama dosyalarına erişim (§7, Adım D0).
+
+## 7. Kalan adımlar — ayrıntılı plan (10-07)
+
+### Ölçülen yeni gerçekler (planı değiştiren)
+
+- **Yayındaki Artifact v3'ten ileride.** Sürüm `1791383911-8f6e`: 291 dosya,
+  `index.html` 459 KB. Depodaki `artifact-v3.html` 205 KB. Bölüm bölüm
+  karşılaştırma:
+  - `lazer`, `kirpik`, `lifting`, `pmu`, `cilt`: v3 ile **birebir aynı**.
+  - `tirnak`: 4 KB → 139 KB (Claude içinde büyük geliştirme yapılmış).
+  - `salon` ve `kas`: küçük farklar.
+
+  Sonuç: v4 derlemesi **depodaki v3'ten değil, yayındaki sürümden**
+  yapılmalı; yoksa tırnak çalışması silinir.
+- **Dosya bütçesi sorun değil.** Artifact sınırı sürüm başına 511 dosya,
+  yayın başına 255 dosya. Lazer için 24 yeni dosya gerekiyor (≈ 6,4 MB):
+  5 video + 5 poster + 14 görsel. Toplam 315 dosya olur. FAZ L §4'teki
+  sprite paketleme ve “tek boyut” kısıtı **gereksiz**; iptal.
+- Artifact `bindLeadTracking` tanımlamıyor, yalnız varsa çağırıyor. Tanım
+  canlı `script.js`'te; tekilleştirme davranışı orada doğrulanmalı (D2).
+- Canlı yama araçları (`lp_quality_20261006.py`/`LPQ`, `firstscreen_ovl.mjs`,
+  canlı 7 lazer HTML'i, `script.js`) **bu depoda yok**; yalnız sunucuda.
+
+### Adım A — Artifact v4 (Dalga 1–2 telefonda görünsün)
+
+| # | İş | Çıktı / kontrol |
+|---|---|---|
+| A1 | Yayındaki `index.html`'i depoya anlık görüntü olarak al. `AI_CONTEXT.json` ve `AI_HANDOFF.md` içindeki “son anlık görüntü v3” bilgisini güncelle. | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-1791383911.html` |
+| A2 | `sources/atelier_lazer_20261007/a3_build.py` yaz. Girdi: A1 anlık görüntüsü. `<section data-view="lazer">` yerine merkez vitrin. 5 yeni görünüm: `lazer-fiyat`, `lazer-erkek`, `lazer-yuz`, `lazer-hassas`, `lazer-bolgesel` (`kamp` prototipte yok; merkezle aynı). | Diğer 7 bölüm **bayt bayt aynı** kalır (betik bunu doğrular ve farkta durur). |
+| A3 | Bileşenler satır içine alınır: `lazer.css` + `lazer.js`. `render.page_html(key, "m/ig/", …)` aynen kullanılır, yani prototip ve canlı aynı kod. `fonts.css` alınmaz; sayfada Google Fonts Cormorant zaten var. | Tek kaynak: `render.py` + `src/`. |
+| A4 | Ev sahibi kancaları (`ATLZ.mount(root, host)`): `noFetch:true` (Artifact'te `/api` yok, derleme anı süreleri), `bar` (prototipin kendi barı), `tier` (prototip panelinden kademe), `code` (prototipin W-kodu), `hideProto`. | `window.ATLZ_NOAUTO = true`; görünüm açılınca mount. |
+| A5 | Yönlendirme ve menü: 6 lazer görünümü menüden ve `data-go` ile açılır. Salon karosu merkez sayfaya gider. Prototip paneline “Lazer ▸” alt seçimi. Eski lazer planlayıcısı (`lazer:{…regions…}`, “Saat de seçeyim”, örnek saatler) kaldırılır; yerine `ATLZ.plan` (gün + saat dilimi, uydurma saat yok). | Alt sayfa karoları (L11) prototip içinde görünüm değiştirir. |
+| A6 | Medya: 24 dosya tek `files` yayınında. | Kırık medya referansı 0. |
+| A7 | Yerel doğrulama (Playwright, yayından önce): 6 lazer görünümü + menü + davetiye, 320 / 390 / 430 / 1400 px. Dalga 2 testleri (`check2`), JS hatası 0, taşma 0. Diğer 7 görünüm için önce/sonra ekran görüntüsü karşılaştırması: fark 0. | `scratchpad` çekimleri + özet tablo plana yazılır. |
+| A8 | Aynı URL'ye yayın (`label: "v4 lazer"`). Yayın öncesi yayındaki sürüm yeniden okunur; arada değişmişse önce birleştirilir. Yayından sonra geri okunur: boyut + sha + dosya listesi. | Sahibe bağlantı → **telefon onayı**. |
+
+### Adım B — Dalga 3 (kanıt bölümleri) → Artifact v5
+
+Sıra: W6 → W7 → W5 → W4 → yüze yakınlaşma (etkisi en yüksekten).
+
+- **W6:** 5 video (§2 düzeltmesi). Hikâye oynatıcı `openStory` zaten var:
+  ilerleme çubukları, kaydırarak sonraki video, görünür olunca sessiz
+  oynatma (yalnız A kademesi). Kontrol: aynı anda en fazla 1 video yükleniyor.
+- **W7:** sayaçla gelen “30 / 31” (C kademesinde doğrudan son sayı). Konu
+  çipleri: Acı · Sonuç · İlgi (`yorum-konu`). İlk kart hizalı. Dokununca duran
+  duvar.
+- **W5:** otomatik cihaz turu: 6 nokta, 1,2 sn arayla, bir kez. Dokunuşla durur.
+  `cihaz-nokta` etiketi korunur. Noktalar Dalga 1'de yerine oturdu; tur
+  öncesi 390 ve 1400 px'te nokta–gösterge eşleşmesi tekrar kontrol edilir.
+- **W4:** yolculuk tek sahne. Adım kartları sahnenin üstünde cam kartlar
+  olarak akar; 755 / 808 / 1064 nm dokunuşu ışını o derinliğe indirir.
+  Hedef bölüm boyu ≤ 1,6 ekran.
+- **Yüze yakınlaşma** (Dalga 2'den kalan): başa dokununca figür → yüz
+  geçişi (View Transition; desteklenmezse mevcut solma).
+- Kapı: Dalga 2 testleri + yeni testler (çip süzgeci doğru yorumları
+  gösteriyor; tur dokunuşla duruyor; video sayısı) → Artifact v5.
+
+### Adım C — Dalga 4 + alt sayfa kimlikleri → Artifact v6
+
+- Işık çizgisi ayraçları; masaüstü imleç halesi (`pointer: fine`, A
+  kademesi); CTA parıltısı görünürken bir kez.
+- Mobil sayfa boyu ≤ 8.500 px (bugün 10.150). Önce ölçülür, sonra bölüm bölüm
+  kısaltılır; metin silinmez.
+- Alt sayfalar (§2 “Alt sayfalara yayılım”): erkek grafit teması; yüzde hero
+  altında yüz yakın planı; hassasta cilt tonu Plan kartına satır olarak;
+  bölgeselde 15 dk şeridi → Plan kartı; fiyat menüsündeki “+ Ekle” → Plan
+  kartı.
+- Hız bütçesi ölçümü (Lighthouse mobil lab, yerel): LCP ≤ 2,5 sn, CLS ≤ 0,05,
+  ilk ekran ≤ 180 KB, sayfa ≤ 1,5 MB, C kademesi ≤ 0,4 MB.
+- Artifact v6 → **sahibin son prototip onayı.** Canlı yama bu onaydan önce
+  başlamaz.
+
+### Adım D — Canlı yama (sunucu, sahip onaylı)
+
+| # | İş | Not |
+|---|---|---|
+| D0 | **Ön koşul, erişim.** Seçenek (a): sahip 7 canlı lazer HTML'ini, `script.js`'i, `lp_quality_20261006.py`'yi ve `ads-tracking.js`'i bu depoya (ya da oturuma) koyar; `build.py` burada yazılıp bu kopyalarla test edilir. Seçenek (b): `build.py` burada yazılır, `--out`/`--check` sunucuda çalıştırılır ve çıktısı geri getirilir. **Öneri: (a)**; test döngüsü burada kapanır. | Kişisel veri ve `.env` gelmez. |
+| D1 | `patches/atelier_lazer_20261007/build.py`: `--out DIR`, `--check`, `--apply`, `--rollback`. FAZ L §5'teki her kural: `<head>` korunur, H1 birebir, eski bölümler “Detaylı bilgi” altında, ATELİER barı, JSON-LD görseli, `sitemap-images.xml`, `.bak-20261007-atlz`, `.gz`. | `media_ig` yamasının işaretli sayfaları atlaması da dahil. |
+| D2 | `script.js` içinde `bindLeadTracking` tekrar çağrıya dayanıklı mı? Evetse dinamik çizimlerden sonra `relead()` serbest. Hayırsa yalnız ilk mount'ta çağrılır (bugünkü davranış). | Çift ölçüm riski. |
+| D3 | `--check`: H1/title/meta/canonical/robots aynı; eski H2'ler duruyor; “Yaşamkent” 0; yasak ifade 0 (§3); her `a`/`button` etiketli; “LazerMech” 0. | Metin taraması. |
+| D4 | Tıklama testi (ağ kapalı, `/api` 204): her WhatsApp/telefon CTA'sında 1 contact-ping (doğru `b`), 1 SGB_VISIT tap, [W-]'li href. Reddet senaryosunda dönüşüm yok. 7 sayfanın telefon + masaüstü ilk ekran çekimi. | FAZ L §7.2. |
+| D5 | **Sahip çalıştırır:** `./run patches/atelier_lazer_20261007/build.py --apply` (geri alma: `--rollback`). | Onaysız uygulama yok. |
+| D6 | Canlı sonrası: `./run tag_ctx.py audit --record` → `diff` (yeni kritik yok) → `verify --pages <7 sayfa>` → `patches/verify_tags.sh <7 sayfa>` → `page_health_check.sh` → `.gz` servis kontrolü. | Bu kapılar geçmeden “bitti” denmez. |
+| D7 | 7. ve 28. günde `ask pages` lazer satırları (öncesi/sonrası, Wilson aralığı). TL artışı iddia edilmez; reklamlar kapalı, okuma organik ve gürültülü. | Bellek/handoff güncellenir. |
+
+### Bağımlılıklar
+
+A → (sahip telefon onayı) → B → C → (sahibin son onayı) → D0 → D1–D4 →
+D5 (sahip) → D6 → D7. A1 her yayından önce tekrarlanır (yayındaki sürüm
+Claude içinde değişmiş olabilir).
