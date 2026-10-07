@@ -362,3 +362,32 @@ Lazer yamasının deseni kullanılır: `build.py --out / --check / --apply / --r
 | **Canlı** | §6.4, sahip onayından sonra | Sahip `--apply` çalıştırır |
 
 **Kanıt dosyaları:** `kanit/fotograflar-1.jpg`, `kanit/fotograflar-2.jpg` (22 fotoğraf + 3 video posteri + 5 still), `kanit/videolar-1…5.jpg` (21 aday video, her biri 8 kare, saniyeleriyle), `kanit/tam-kare-kontrol.jpg` (V16, V15, V04 ve V13'ün tam karesi; ses ikonu ölçüsü).
+
+---
+
+## 10. Uygulama durumu (2026-10-07, Artifact sürüm 4)
+
+D1 ve D2 birlikte yayınlandı. 22 sayfanın hepsi prototipte `#tirnak/<slug>` rotasıyla açılıyor.
+- 13 sayfa gerçek medyayla tam.
+- 3 sayfada medya ince (`jel-tirnak`, `protez-tirnak-bakim-dolgu`, `protez-tirnak-cikartma`).
+- 6 sayfa "çekim bekliyor" rozetiyle stand-in kullanıyor: `tirnak-guclendirme`, `yeni-nesil-tips`, `ayak-protez-tirnak`, `pedikur-ankara`, `medikal-pedikur`, `el-ayak-bakimi`.
+
+Yayın 1791382406-9153: 278 dosya. 43 dosya eklendi, 6 dosya kaldırıldı (`tirnak-video-1/2/3` ve posterleri). Anlık görüntü: `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v4-tirnak.html`.
+
+**Kod:** `sources/atelier_tirnak_20261007/`
+- `render.py`
+- `src/tirnak.css`
+- `src/tirnak.js`
+- `build_proto.py` (23 yama)
+- `data/`
+
+**Medya:** `sources/media_ig_20261007/build_tirnak.py` ve `manifest_tirnak.json`.
+
+**Plandan sapmalar:**
+- **Badem, Renk Atölyesi'nde yok.** `badem-bordo` maskesi çapraz duran tırnaklarda kompaktlık testini geçemiyor (doluluk 0,33 < 0,42). Parlak kenarlarda bordo şeritler kalıyor. Atölye şimdilik Uzun / Kare / Oval ile çalışıyor; davetiyede "Badem" seçeneği duruyor. Badem için elle çizilmiş bir maske gerekiyor. O gelince yalnız `TZ_LREF` ve `SHAPES` güncellenir.
+- **Kartelada numara yerine ton adı var.** Numaralar videodan güvenle okunamıyor ve sahibin onayı gerekiyor (§7-4). 22 nokta ton adıyla çalışıyor ("Mercan", "Gül Kurusu"…). 4K kartela çekimi (P1) gelince `data/kartela.json` güncellenir.
+- **Film kare sayıları:** `tirnak-giris` 48 kare / 4 atlas (plan 60), aralıklar 0,1–3,2 ve 5,2–6,4 sn. `tirnak-firca` 36 kare / 3 atlas, aralık 5,2–9,8 sn.
+- **H1'ler canlı sayfalarla henüz eşitlenmedi.** `live_pages.json` (§6.1) sunucudan alınmadı. Canlıya taşımadan (§6.4) önce yapılmalı.
+- **Doğrulama:** Test Chromium'u H.264 oynatamıyor. Bu yüzden videolar poster yedeğiyle (`.tz-vp`) doğrulandı. Gerçek tarayıcıda oynatma ayrıca bakılmalı.
+
+**Kapsam dışı bulgu:** Kaş vitrini hâlâ `kas-cift-3` çiftini kullanıyor. Bu görselde yabancı filigran var.

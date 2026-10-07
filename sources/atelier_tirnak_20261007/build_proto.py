@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""TIRNAK ATELYESİ -- put the 22 nail pages into the ATELİER prototype (the Claude Artifact's page).
+
+Reads the prototype source (default: the v3 snapshot), applies counted, verified replacements, writes the page.
+Only nail code is touched: the tırnak <section>, the nail rows of NAV, SHAPES' kare label, the old nail-only
+functions (initAtelier, initGallery, IG_NAILS, STORIES.tirnak), and the small hooks the nail pages need in shared
+code (go() takes "#view/param", the planner prints the tz extras, the bar asks tz for its label). --check then
+confirms that everything outside those spots is byte-for-byte the source.
+
+  python3 sources/atelier_tirnak_20261007/build_proto.py [--src FILE] [--out FILE]
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[1]
+sys.path.insert(0, str(HERE))
+import render  # noqa: E402
+
+SRC = REPO / "prototypes" / "claude-artifact" / "WmsLiPPTLdnrjSrdYSXcLM" / "artifact-v3.html"
+OUT = REPO / "website" / "index.html"
+GROUPS = [("Merkez ve nail art", ["tirnak", "nail-art-ankara"]),
+          ("Kalıcı oje", ["kalici-oje", "kalici-oje-fiyatlari", "jel-tirnak", "tirnak-guclendirme"]),
+          ("Protez tırnak", ["protez-tirnak", "protez-tirnak-modelleri", "protez-tirnak-fiyatlari-ankara", "protez-tirnak-randevu",
+                             "protez-tirnak-bakim-dolgu", "protez-tirnak-cikartma", "tirnak-uzatma", "yeni-nesil-tips", "ayak-protez-tirnak",
+                             "cayyolu-protez-tirnak", "yasamkent-protez-tirnak"]),
+          ("Manikür ve pedikür", ["manikur-ankara", "pedikur-ankara", "medikal-pedikur", "manikur-pedikur-fiyatlari", "el-ayak-bakimi"])]
+
+
+class Patch:
+    def __init__(self, text: str):
+        self.s = text
+        self.log: list[str] = []
+
+    def rep(self, old: str, new: str, n: int = 1, what: str = "") -> None:
+        c = self.s.count(old)
+        if c != n:
+            raise SystemExit(f"patch '{what or old[:60]}': expected {n} match(es), found {c}")
+        self.s = self.s.replace(old, new)
+        self.log.append(what or old[:60])
+
+    def sub(self, pattern: str, new: str, what: str, flags: int = re.S) -> None:
+        s2, c = re.subn(pattern, lambda m: new, self.s, flags=flags)
+        if c != 1:
+            raise SystemExit(f"patch '{what}': expected 1 match, found {c}")
+        self.s = s2
+        self.log.append(what)
+
+
+def js_json(obj) -> str:
+    return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def section() -> str:
+    pages = "\n".join(f'  <template data-tz-page="{p["slug"]}">{render.page_html(p["slug"])}</template>' for p in render.PAGES)
+    incs = "\n".join(f'  <template data-tz-inc-tpl="{k}">{fn()}</template>' for k, fn in render.INCLUDES.items())
+    return (f'<!-- ===================== TIRNAK ATELYESİ · 22 sayfa (sources/atelier_tirnak_20261007) ===================== -->\n'
+            f'<section data-view="tirnak" hidden>\n  <div id="tzMount"></div>\n{pages}\n{incs}\n</section>\n\n')
+
+
+def proto_row() -> str:
+    meta = render.page_meta()
+    tag = {"tam": "", "ince": " · ince", "cekim": " · çekim bekliyor"}
+    groups = "".join(f'<optgroup label="{g}">' + "".join(f'<option value="{s}">{meta[s]["nav"]}{tag[meta[s]["status"]]}</option>' for s in slugs) + "</optgroup>"
+                     for g, slugs in GROUPS)
+    return ('  <div class="row"><span>Tırnak sayfası · 22</span><select id="tzSel" class="tz-sel" aria-label="Tırnak sayfası" data-track-label="at-proto-tirnak">'
+            f'{groups}</select><p>Tırnak: “çekim bekliyor” sayfalarda gerçek salon görselleriyle dürüst stand-in var. Fiyatı doğrulanmamış kalemler '
+            '“Fiyatı sorun” olarak WhatsApp\'a gider. Hijyen adımlarının dili salonun kendi videosundan, kartela ton adları fotoğraftan; ikisi de sahip onayı bekliyor.</p></div>\n')
+
+
+def build(src: str) -> str:
+    P = Patch(src)
+    nav_slugs = {s for _, ss in GROUPS for s in ss}
+    assert nav_slugs == set(render.BY_SLUG), "GROUPS and PAGES differ"
+
+    css = (HERE / "src" / "tirnak.css").read_text(encoding="utf-8")
+    P.rep('}\n</style>\n\n<div class="wrap" lang="tr">', '}\n' + css + '.tz-sel{height:40px;border-radius:12px;border:1px solid var(--line-strong);background:var(--raised);color:var(--text);padding:0 10px;font:14px var(--body);max-width:100%}\n</style>\n\n<div class="wrap" lang="tr">', what="css")
+    P.rep('<button data-v="lazer">Lazer</button></div></div>\n', '<button data-v="lazer">Lazer</button></div></div>\n' + proto_row(), what="proto row")
+    P.sub(r'<!-- ===================== TIRNAK ===================== -->\n<section data-view="tirnak" hidden>.*?</section>\n\n(?=<!-- ===================== İPEK KİRPİK)',
+          section(), "tirnak section")
+    P.rep('alt:"Kırmızı kare kalıcı oje"}', 'alt:"Kırmızı kare protez tırnak"}', what="SHAPES kare alt")
+    P.sub(r'function initAtelier\(\)\{\n.*?\n\}\n(?=\n/\* ---------- gallery ---------- \*/)', '', "drop initAtelier")
+    P.sub(r'var IG_NAILS=\[.*?\];\n', '', "drop IG_NAILS", flags=0)
+    P.sub(r'function initGallery\(\)\{ var g=\$\("#gal"\);.*?\n', '', "drop initGallery", flags=0)
+    # planner: tz price strings, shape label without a colour, tz message and invitation extras
+    P.rep('var priceOf=function(x){ return plan.custom?"Kişiye özel":fmtTL(x.p); };',
+          'var priceOf=function(x){ return x.ps||(plan.custom?"Kişiye özel":fmtTL(x.p)); }, tz=/^tz-/.test(P.fam);', what="planner priceOf")
+    P.rep("'</i> Şekil · renk: '+colorName+'</span>", "'</i> Şekil'+(colorName?' · renk: '+colorName:'')+'</span>", what="planner shape label")
+    P.rep('\n  P.msg=msg;\n', '\n  if(tz) msg=tzMsg(o,day,P.time,plan.shapes?P.shape:null,P.code);\n  P.msg=msg;\n', what="planner tz msg")
+    P.rep("(colorName?' · '+colorName+(P.shape?' · '+P.shape:''):'')+'<br>Konutkent",
+          "(colorName?' · '+colorName+(P.shape?' · '+P.shape:''):'')+(tz?tzMeta(plan.shapes?P.shape:null,o):'')+'<br>Konutkent", what="planner tz meta")
+    P.rep("'+fmtTL(x.p)+'</b></div>'", "'+(x.ps||fmtTL(x.p))+'</b></div>'", what="priceCard ps")
+    P.sub(r' tirnak:\[\{t:"Tasarımlar".*?fr:"price:tirnak"\}\],\n', '', "drop STORIES.tirnak")
+    # NAV: every nail page is a vitrine route now
+    m = re.search(r'var NAV=(\[.*?\]);\n', P.s)
+    nav = json.loads(m.group(1))
+    assert json.dumps(nav, ensure_ascii=False) == m.group(1), "NAV does not round-trip"
+    grp = [g for g in nav if g[0] == "Tırnak"][0]
+    assert {it[0] for it in grp[1]} == nav_slugs, "NAV nail slugs differ from PAGES"
+    grp[1] = [[it[0], it[1], "tirnak" if it[0] == "tirnak" else "tirnak/" + it[0]] for it in grp[1]]
+    P.rep(m.group(0), "var NAV=" + json.dumps(nav, ensure_ascii=False) + ";\n", what="NAV routes")
+    P.rep('function openMenu(){ hideProto(); var cur=S.view;', 'function openMenu(){ hideProto(); var cur=S.view==="tirnak"?tzRoute():S.view;', what="menu here")
+    js = (HERE / "src" / "tirnak.js").read_text(encoding="utf-8")
+    js = (js.replace("__TZ_PAGES__", js_json(render.page_meta()))
+            .replace("__TZ_REVIEWS__", js_json(render.REVIEWS))
+            .replace("__TZ_QUOTES__", js_json(render.QUOTES))
+            .replace("__TZ_PLANS__", js_json(render.plans_js())))
+    assert "__TZ_" not in js
+    P.rep('\n/* ---------- views ---------- */\n', '\n' + js + '\n/* ---------- views ---------- */\n', what="tz js")
+    P.rep('if(v==="tirnak"){ var s=SW.filter(function(x){return x.id===S.color})[0]; l.textContent=(s?s.name:"Rengim")+" · saatimi seç"; }',
+          'if(v==="tirnak"){ l.textContent=tzBarLabel(); }', what="bar label")
+    P.rep('lbl($("#barCta"),"at-"+v+"-bar-saat"); lbl($("#callBtn"),"at-"+v+"-bar-tel"); }',
+          'var bk=v==="tirnak"?tzKey():v; lbl($("#barCta"),"at-"+bk+"-bar-saat"); lbl($("#callBtn"),"at-"+bk+"-bar-tel"); }', what="bar labels")
+    P.rep('if(v==="tirnak"){ initAtelier(); initGallery(); }', 'if(v==="tirnak"){ tzBoot(); }', what="initView")
+    P.rep('function go(v,noTrans){ if(!document.querySelector("[data-view=\'"+v+"\']")) v="salon";\n'
+          '  function apply(){ $$("main > [data-view]").forEach(function(s){ s.hidden=s.dataset.view!==v; }); S.view=v; root.dataset.page=v; window.scrollTo({top:0,behavior:"instant"}); initView(v); updateBar(); markSeg("view",v); onScroll(); }\n'
+          '  if(!noTrans && document.startViewTransition && S.tier!=="C") document.startViewTransition(apply); else apply();\n'
+          '  try{ history.replaceState(null,"","#"+v); }catch(e){} }',
+          'function go(v,noTrans){ var prm="", k=v.indexOf("/"); if(k>0){ prm=v.slice(k+1); v=v.slice(0,k); } if(!document.querySelector("[data-view=\'"+v+"\']")){ v="salon"; prm=""; }\n'
+          '  function apply(){ $$("main > [data-view]").forEach(function(s){ s.hidden=s.dataset.view!==v; }); S.view=v; S.route=v+(prm?"/"+prm:""); root.dataset.page=v; window.scrollTo({top:0,behavior:"instant"}); initView(v); if(v==="tirnak") tzShow(prm||"tirnak"); updateBar(); markSeg("view",v); onScroll(); }\n'
+          '  if(!noTrans && document.startViewTransition && S.tier!=="C") document.startViewTransition(apply); else apply();\n'
+          '  try{ history.replaceState(null,"","#"+v+(prm?"/"+prm:"")); }catch(e){} }', what="go() routes")
+    P.rep('go(VIEWS.indexOf(h)>0?h:"salon",true);', 'go(VIEWS.indexOf(h.split("/")[0])>0?h:"salon",true);', what="boot route")
+    P.rep('if(VIEWS.indexOf(h)>=0 && h!==S.view) go(h);', 'if(VIEWS.indexOf(h.split("/")[0])>=0 && h!==S.route) go(h);', what="hashchange route")
+    P.rep('$("#barCta").addEventListener("click",function(){ openPlanner(S.view,S.planOpt[S.view]); });',
+          '$("#barCta").addEventListener("click",function(){ if(S.view==="tirnak"&&TZ.pg) return openPlanner(TZ.pg.fam,TZ.pg.opt||null); openPlanner(S.view,S.planOpt[S.view]); });', what="bar cta")
+    print(f"{len(P.log)} patches applied")
+    return P.s
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--src", default=str(SRC))
+    ap.add_argument("--out", default=str(OUT))
+    a = ap.parse_args()
+    src = Path(a.src).read_text(encoding="utf-8")
+    out = build(src)
+    Path(a.out).write_text(out, encoding="utf-8")
+    print(f"{a.out}: {len(out.encode()):,} bytes (source {len(src.encode()):,})")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

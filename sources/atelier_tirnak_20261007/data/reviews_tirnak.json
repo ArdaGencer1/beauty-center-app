@@ -1,0 +1,111 @@
+{
+ "_doc": "Nail-related Google reviews, verbatim, copied from the prototype's REVIEWS (GBP API export used for ATELIER v3). tags pick where a review is shown; text is never edited. Staff names stay as the reviewers wrote them.",
+ "source": "website/index.html REVIEWS (GBP, 2026-10-06)",
+ "reviews": [
+  {
+   "n": "Nihal Y.",
+   "d": "2026-08",
+   "t": "İlk kez deneyimledim. Kalıcı manikür ve pedikür, ayrıca kaş alımı yaptırdım. Çok memnun kaldım. Kaş alımında Ebru hanım, manikür ve pedikürde Zelal hanım harikalar.Tüm işlemler başarılı oldu. Çok temiz bir işletme. Artık ayda bir kez sizdeyim. Teşekkürler",
+   "tags": [
+    "bakim",
+    "hijyen"
+   ]
+  },
+  {
+   "n": "Meryem İ.",
+   "d": "2026-08",
+   "t": "Cilt bakımı, altın oran kaş alımı,manikür, pedikür, protez tırnak, nail art ve ipek kirpik yaptırdım. Hepsinden oldukça memnun kaldım. Kaş alımında Ebru hanım ve manikür, pedikür ve protez tırnakta Zelal hanım harikalar.",
+   "tags": [
+    "bakim",
+    "protez",
+    "art"
+   ]
+  },
+  {
+   "n": "Zelal E.",
+   "d": "2026-08",
+   "t": "Dün ilk kez bu işletmede protez tırnak yaptırdım ve gerçekten çok memnun kaldım. İşlemimi Ceren Hanım yaptı. Tırnak etlerim çok hassas olmasına rağmen tüm işlem boyunca hiç acı hissetmedim. Hem çok özenli hem de oldukça nazik çalıştı.",
+   "tags": [
+    "protez"
+   ]
+  },
+  {
+   "n": "Gaye H.",
+   "d": "2026-07",
+   "t": "Bugün ilk defa salonunuza gittim. Kalıcı oje yaptırdım. Ceren hanım benimle ilgilendi. Güler yüzü, samimiyeti ve elinin hem çabuk oluşu hem de titizlikle işlem yapmış olması beni çok memnun etti. Melek hanım da karşılama olsun güler yüzü olsun çok ilgilendi.",
+   "tags": [
+    "oje"
+   ]
+  },
+  {
+   "n": "Gülseren A.",
+   "d": "2026-06",
+   "t": "Girişten itibaren personelin güler yüzlü ilgisi temizliği ve ceren hanımın ekstra el emeğinden çok memnun kaldım kesinlikle tavsiye ediyorum ve bir daha geleceğim protez Tırnak hakkındaki ön yargılarım değişti Değiştirdi 🥰🤍",
+   "tags": [
+    "protez",
+    "hijyen"
+   ]
+  },
+  {
+   "n": "Büşra o.",
+   "d": "2026-06",
+   "t": "Manikür pedikür için gittim.Çok temiz bir yer öncelikle.Melisa Hanım harika bir hizmet sundu bana.Hem bilgilendirdi hem tertemiz bir manikür pedikür yaptı.Ankara’da tırnak için aradığım bilinçli ve temiz yeri buldum.",
+   "tags": [
+    "bakim",
+    "hijyen"
+   ]
+  },
+  {
+   "n": "Öykü A.",
+   "d": "2026-03",
+   "t": "Protez tırnak yaptırmak için gittim özellikle Pelin hanımı tercih ettim incecik ama sağlam çok güzel bir çalışma yaptı işini bu kadar güzel yapması, güler yüzü ve nazikliğinden dolayı kendisine çok teşekkür ederim ayrıca tüm çalışanlar güler yüzlü ve…",
+   "tags": [
+    "protez"
+   ]
+  },
+  {
+   "n": "Itır Ç.",
+   "d": "2026-02",
+   "t": "Kalıcı oje uygulamamı Pelinsu Hanım gerçekleştirdi; güler yüzü, samimiyeti, alanına hâkimliği ve çalışma titizliğiyle ortaya çok güzel bir sonuç çıktı. Ayrıca mekânın güzelliği ve ferahlığı da çok iyi hissettiriyor.",
+   "tags": [
+    "oje"
+   ]
+  },
+  {
+   "n": "Pelin G.",
+   "d": "2026-02",
+   "t": "kalıcı oje hizmeti aldım, o kadar hızlı ve başarılıydı ki hayran kaldım, üstelik çok nazik ve güler yüzlüler",
+   "tags": [
+    "oje"
+   ]
+  },
+  {
+   "n": "Fato P.",
+   "d": "2026-01",
+   "t": "Gerçekten her gelişimde iyi ki diyorum 🤍 Hem hijyen, hem ilgi, hem de ortaya çıkan tırnaklar efsane! Ne istediğimi hemen anlayıp harika bir sonuç çıkarıyor. Gönül rahatlığıyla herkese tavsiye ederim ✨💅Tamay’cım emeğine sağlık tekrardan iyi ki❤️🙏🏻",
+   "tags": [
+    "oje",
+    "hijyen",
+    "art"
+   ]
+  },
+  {
+   "n": "Merve S.",
+   "d": "2025-12",
+   "t": "Çok güzel ve kaliteli bir işletme Çalışanlar inanılmaz ilgili. Ben başka işletmelerde de tırnak işlemleri yaptırdım bu zamana kadar , ama hiç burada yapılan kadar uzun kullandığım olmadı ve hiçbir atma vs.sorun yaşamadım .",
+   "tags": [
+    "protez",
+    "oje"
+   ]
+  },
+  {
+   "n": "Gülbeyaz G.",
+   "d": "2025-08",
+   "t": "Selda Gençer Beauty Center'da hem kalıcı makyaj hem de kaş ve pedikür hizmeti aldım. İşini bilen, güler yüzlü ve ilgili bir ekip vardı. Uygulamalar sırasında hem hijyen kurallarına dikkat edildi hem de kendimi çok rahat hissettim. Sonuçlar gerçekten beklentimin üstündeydi! Herkese gönül rahatlığıyla tavsiye ediyorum. Güzellikte profesyonelliği burada buldum.",
+   "tags": [
+    "bakim",
+    "hijyen"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "_doc": "Nail rows of the live CRM price menu as shown in prototype v3 (menu card 'Randevu sistemindeki aktif menüden · 6 Ekim 2026'). Only these four are verified; every other nail service is shown as 'fiyatı sorun' until /api/public/price-menu is read on the server (plan §5, §7 soru 5).",
+ "as_of": "2026-10-06",
+ "rows": [
+  {
+   "id": "oje",
+   "n": "Kalıcı oje",
+   "p": 1000,
+   "d": 75,
+   "b": "Kampanya"
+  },
+  {
+   "id": "mko",
+   "n": "Manikür + kalıcı oje",
+   "p": 1100,
+   "d": 75,
+   "b": "Kampanya"
+  },
+  {
+   "id": "mjk",
+   "n": "Manikür + jel güçlendirme + kalıcı oje",
+   "p": 1300,
+   "d": 90,
+   "b": "Kampanya"
+  },
+  {
+   "id": "mpk",
+   "n": "Manikür + protez tırnak + kalıcı oje",
+   "p": 1500,
+   "d": 120,
+   "b": "Kampanya"
+  }
+ ],
+ "ask": [
+  {
+   "id": "art",
+   "n": "Nail art",
+   "s": "Desene göre"
+  },
+  {
+   "id": "manikur",
+   "n": "Manikür"
+  },
+  {
+   "id": "pedikur",
+   "n": "Pedikür"
+  },
+  {
+   "id": "mp",
+   "n": "Manikür + pedikür"
+  },
+  {
+   "id": "medped",
+   "n": "Medikal pedikür"
+  },
+  {
+   "id": "elayak",
+   "n": "El ve ayak bakımı"
+  },
+  {
+   "id": "dolgu",
+   "n": "Protez tırnak bakım ve dolgu"
+  },
+  {
+   "id": "cikar",
+   "n": "Protez tırnak çıkarma"
+  },
+  {
+   "id": "tips",
+   "n": "Yeni nesil tips"
+  },
+  {
+   "id": "ayak",
+   "n": "Ayak protez tırnak"
+  },
+  {
+   "id": "uzatma",
+   "n": "Tırnak uzatma"
+  }
+ ]
+}
