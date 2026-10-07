@@ -2257,5 +2257,393 @@
    "frames": 48
   },
   "split": null
+ },
+ "lazer-film-kol": {
+  "fam": "lazer",
+  "kind": "video",
+  "alt": "Kol bölgesinde lazer epilasyon, salonumuzda çekildi",
+  "id": "18101999296585006",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "lazer-film-kol.mp4",
+  "poster": "lazer-film-kol-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 8.2,
+  "bytes": 1113782,
+  "split": null
+ },
+ "cilt-darsonval": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Darsonval: turuncu ışıyan elektrot akneli yanakta, salonumuzda çekildi",
+  "id": "18025275239906179",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-darsonval.mp4",
+  "poster": "cilt-darsonval-poster.webp",
+  "dur": 9.2,
+  "bytes": 770540,
+  "split": null
+ },
+ "cilt-saten": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Saten yüz germe başlığı kaş ve göz çevresinde, salonumuzda çekildi",
+  "id": "18192437785391754",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-saten.mp4",
+  "poster": "cilt-saten-poster.webp",
+  "dur": 9.2,
+  "bytes": 1292157,
+  "film": {
+   "dir": "film/saten-film",
+   "frames": 45
+  },
+  "split": null
+ },
+ "cilt-saten-ekran": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Saten yüz germe cihazının ekranı, salonumuzda",
+  "id": "18192437785391754",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-saten-ekran-480.webp",
+    "720": "cilt-saten-ekran-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-analiz": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Büyüteç lambası altında cilt analizi, salonumuzda çekildi",
+  "id": "18122366353896732",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-analiz.mp4",
+  "poster": "cilt-analiz-poster.webp",
+  "dur": 3.4,
+  "bytes": 512925,
+  "split": null
+ },
+ "cilt-hydra": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Hydra başlığıyla uygulama, salonumuzda çekildi",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-hydra.mp4",
+  "poster": "cilt-hydra-poster.webp",
+  "dur": 5.0,
+  "bytes": 735099,
+  "split": null
+ },
+ "cilt-led-kubbe": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "LED kubbe altında renk döngüsü, salonumuzda çekildi",
+  "id": "18106634948074733",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-led-kubbe.mp4",
+  "poster": "cilt-led-kubbe-poster.webp",
+  "dur": 3.5,
+  "bytes": 533307,
+  "split": null
+ },
+ "cilt-film": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "LED kubbe yüzün üzerinde, elde çekim, salonumuzda",
+  "id": "18119195767718567",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-film.mp4",
+  "poster": "cilt-film-poster.webp",
+  "dur": 12.0,
+  "bytes": 1089346,
+  "film": {
+   "dir": "film/cilt-film",
+   "frames": 54
+  },
+  "split": null
+ },
+ "cilt-maske": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Bakım maskesinin hazırlanıp uygulanması, salonumuzda çekildi",
+  "id": "18106634948074733",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-maske.mp4",
+  "poster": "cilt-maske-poster.webp",
+  "dur": 2.9,
+  "bytes": 513826,
+  "split": null
+ },
+ "cilt-komedon": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Detaylı temizlik: komedon temizliği, salonumuzda çekildi",
+  "id": "18088219433120497",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-komedon.mp4",
+  "poster": "cilt-komedon-poster.webp",
+  "dur": 2.0,
+  "bytes": 290894,
+  "split": null
+ },
+ "cilt-sunger": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Altın lavabo ve temizleme süngerleri, salonumuzda çekildi",
+  "id": "18455967805112572",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-sunger.mp4",
+  "poster": "cilt-sunger-poster.webp",
+  "dur": 2.6,
+  "bytes": 326593,
+  "split": null
+ },
+ "cilt-cihaz": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Salonumuzdaki çok başlıklı hydra cilt bakım cihazı",
+  "id": "18014729837423154",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-cihaz-480.webp",
+    "720": "cilt-cihaz-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-buyutec": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Büyüteç altında cilt, bakım öncesi analiz",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-buyutec-480.webp",
+    "720": "cilt-buyutec-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-urun": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Salonda kullanılan Dermaplus bakım ürünü",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-urun-480.webp",
+    "720": "cilt-urun-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-led-mavi": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Mavi LED ışığı, bakımın son adımı",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-led-mavi-480.webp",
+    "720": "cilt-led-mavi-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-uygulama": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Hydra başlığıyla uygulama, salonumuzda",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-uygulama-480.webp",
+    "720": "cilt-uygulama-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-hazirlik": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Maskenin kâsede hazırlanması",
+  "id": "18106634948074733",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-hazirlik-480.webp",
+    "720": "cilt-hazirlik-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-lamba": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Büyüteç lambası altında bakıma hazırlık",
+  "id": "18455967805112572",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-lamba-480.webp",
+    "720": "cilt-lamba-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-kirmizi-led": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Kırmızı ışıklı uygulama, sakin ve karanlık oda",
+  "id": "18455967805112572",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-kirmizi-led-480.webp",
+    "720": "cilt-kirmizi-led-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-ters": {
+  "fam": "cilt",
+  "kind": "derive",
+  "alt": "Cilt bakımı: kızarıklık ve matlıktan daha eşit bir tona",
+  "id": "cilt-cift-1",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "cilt-ters-once-480.webp"
+   },
+   "w": 480,
+   "h": 938
+  },
+  "sonra": {
+   "files": {
+    "480": "cilt-ters-sonra-480.webp"
+   },
+   "w": 480,
+   "h": 938
+  },
+  "split": null
+ },
+ "akne-a": {
+  "fam": "cilt",
+  "kind": "derive",
+  "alt": "Akne bakımı: iltihaplı görünümden daha sakin bir cilde",
+  "id": "akne-cift-2",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "once": {
+   "files": {
+    "800": "akne-a-once-800.webp",
+    "1200": "akne-a-once-1200.webp"
+   },
+   "w": 1200,
+   "h": 495
+  },
+  "sonra": {
+   "files": {
+    "800": "akne-a-sonra-800.webp",
+    "1200": "akne-a-sonra-1200.webp"
+   },
+   "w": 1200,
+   "h": 495
+  },
+  "split": null
+ },
+ "akne-b": {
+  "fam": "cilt",
+  "kind": "derive",
+  "alt": "Akne bakımı: yoğun sivilceden hafif kızarıklığa",
+  "id": "akne-cift-1",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "once": {
+   "files": {
+    "800": "akne-b-once-800.webp",
+    "1200": "akne-b-once-1200.webp"
+   },
+   "w": 1200,
+   "h": 495
+  },
+  "sonra": {
+   "files": {
+    "800": "akne-b-sonra-800.webp",
+    "1200": "akne-b-sonra-1200.webp"
+   },
+   "w": 1200,
+   "h": 495
+  },
+  "split": null
  }
 }

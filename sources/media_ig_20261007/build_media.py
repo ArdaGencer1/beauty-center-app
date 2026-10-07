@@ -25,6 +25,14 @@ Item keys added for the PMU vitrines (2026-10-07; all optional, older items buil
   vignette        true: a soft vignette (single images only, never on a before/after half)
   sizes, film_w   output widths; film frame width
 
+Item keys added for the Cilt Atlası (2026-10-07; --manifest manifest_cilt.json, older items unchanged):
+  kind "still"    one frame of a video as an image: {"id", "t": sec, "box": [x0,y0,x1,y1], "rotate": 0|90|180|270}
+  kind "derive"   re-cut an already built web pair/image: {"from": slug, "size": 1200, "box": [...], "rotate": ...};
+                  the same box and rotation go to both halves (label pills cut, upside-down photos turned)
+  video keys      vbox [x0,y0,x1,y1] crop · denoise (hqdn3d) · sharpen (cas strength) · stab (vidstab 2-pass) ·
+                  loop "boomerang" (forward + reverse) · crf · film_trim [t0,t1] for scroll frames
+  The grade is the same chain for every frame and both halves; nothing is retouched locally.
+
 Nothing under public_html is touched; the site patch copies OUT into place.
 
   ./run patches/media_ig_20261007/build_media.py [--out DIR] [--avif] [--only slug,slug]
@@ -47,6 +55,13 @@ GRADE = "eq=contrast=1.03:saturation=1.03:gamma=1.01"
 # PMU: a touch more contrast and micro-contrast; no hue shift, so pigment colour stays as photographed
 GRADES = {"pmu": "eq=contrast=1.05:saturation=1.02:gamma=0.985,unsharp=5:5:0.45:5:5:0"}
 SIZES = (480, 800, 1200)
+
+
+def video_file(vdir: Path | None, mid: str) -> Path | None:
+    if not vdir:
+        return None
+    hits = sorted(vdir.glob(f"*_{mid}.mp4"))
+    return hits[0] if hits else None
 
 
 def run(*args: str) -> str:
@@ -364,33 +379,154 @@ def video(src: Path, it: dict, outdir: Path) -> dict:
     return res
 
 
+CILT_VIDEO_KEYS = {"vbox", "denoise", "sharpen", "stab", "loop", "crf", "film_trim"}
+ROT = {0: "", 90: "transpose=1", 180: "transpose=1,transpose=1", 270: "transpose=2"}
+
+
+def still(src: Path, it: dict, outdir: Path, avif: bool) -> dict:
+    """A single frame of a video, cropped (box) and turned (rotate), as a webp set."""
+    with tempfile.TemporaryDirectory() as tmp:
+        png = Path(tmp) / "f.png"
+        run("ffmpeg", "-loglevel", "error", "-y", "-ss", str(it["t"]), "-i", str(src), "-frames:v", "1", str(png))
+        chain = [box_crop(it["box"])] if it.get("box") else []
+        if it.get("rotate"):
+            chain.append(ROT[it["rotate"]])
+        w, h, _ = probe(png)
+        if it.get("box"):
+            w, h = it["box"][2] - it["box"][0], it["box"][3] - it["box"][1]
+        if it.get("rotate") in (90, 270):
+            w, h = h, w
+        return webp_chain(png, ",".join(chain), w, h, outdir / it["slug"], avif, GRADES.get(it.get("grade"), GRADE),
+                          tuple(it.get("sizes", (480, 800))))
+
+
+def derive(src_slug: Path, it: dict, outdir: Path) -> dict:
+    """Re-cut an already built image or pair (same box + rotation on both halves, no second grade)."""
+    web, slug, size = src_slug.parent, src_slug.name, it.get("size", 1200)
+    res = {}
+    halves = [("once", f"{slug}-once-{size}.webp"), ("sonra", f"{slug}-sonra-{size}.webp")]
+    if not (web / halves[0][1]).exists():
+        halves = [("full", f"{slug}-{size}.webp")]
+    for key, name in halves:
+        p = web / name
+        if not p.exists():
+            raise SystemExit(f"derive: {p} missing")
+        w, h, _ = probe(p)
+        chain = []
+        if it.get("rotate"):
+            chain.append(ROT[it["rotate"]])
+            if it["rotate"] in (90, 270):
+                w, h = h, w
+        if it.get("box"):
+            chain.append(box_crop(it["box"]))
+            w, h = it["box"][2] - it["box"][0], it["box"][3] - it["box"][1]
+        base = outdir / (f"{it['slug']}-{key}" if key != "full" else it["slug"])
+        res[key] = webp_chain(p, ",".join(chain), w, h, base, False, "null", tuple(it.get("sizes", (480, 800, 1200))))
+    return res
+
+
+def video2(src: Path, it: dict, outdir: Path) -> dict:
+    """Cilt loops: crop, denoise, stabilise, sharpen, boomerang; one grade for every frame."""
+    w, h, dur = probe(src)
+    t0, t1 = it.get("trim", [0, dur])
+    t1 = min(t1, dur)
+    pre = []
+    if it.get("vbox"):
+        pre.append(box_crop(it["vbox"]))
+    if it.get("denoise"):
+        pre.append("hqdn3d=2:1.5:4:3")
+    with tempfile.TemporaryDirectory() as tmp:
+        cut = Path(tmp) / "cut.mp4"
+        run("ffmpeg", "-loglevel", "error", "-y", "-ss", str(t0), "-to", str(t1), "-i", str(src), "-an",
+            "-vf", ",".join(pre + ["scale=trunc(iw/2)*2:trunc(ih/2)*2"]), "-c:v", "libx264", "-crf", "16", "-preset", "fast", str(cut))
+        if it.get("stab"):
+            trf = Path(tmp) / "t.trf"
+            run("ffmpeg", "-loglevel", "error", "-y", "-i", str(cut), "-vf", f"vidstabdetect=shakiness=6:accuracy=12:result={trf}", "-f", "null", "-")
+            stab = Path(tmp) / "stab.mp4"
+            run("ffmpeg", "-loglevel", "error", "-y", "-i", str(cut), "-vf", f"vidstabtransform=input={trf}:smoothing=24:zoom=4,unsharp=5:5:0.4",
+                "-c:v", "libx264", "-crf", "16", "-preset", "fast", str(stab))
+            cut = stab
+        post = ["scale=-2:1280" if h >= w else "scale=1280:-2", "fps=30", GRADES.get(it.get("grade"), GRADE)]
+        if max(w, h) <= 1280 and not it.get("vbox"):
+            post[0] = "scale=trunc(iw/2)*2:trunc(ih/2)*2"
+        elif it.get("vbox"):
+            post[0] = "scale=720:-2" if h >= w else "scale=-2:720"
+        if it.get("sharpen"):
+            post.append(f"cas={it['sharpen']}")
+        mp4 = outdir / f"{it['slug']}.mp4"
+        vf = ",".join(post)
+        crf = str(it.get("crf", 27))
+        if it.get("loop") == "boomerang":
+            fc = f"[0:v]{vf},split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1:a=0[v]"
+            run("ffmpeg", "-loglevel", "error", "-y", "-i", str(cut), "-filter_complex", fc, "-map", "[v]", "-c:v", "libx264",
+                "-preset", "slow", "-crf", crf, "-pix_fmt", "yuv420p", "-profile:v", "high", "-an", "-movflags", "+faststart", str(mp4))
+        else:
+            run("ffmpeg", "-loglevel", "error", "-y", "-i", str(cut), "-vf", vf, "-c:v", "libx264", "-preset", "slow", "-crf", crf,
+                "-pix_fmt", "yuv420p", "-profile:v", "high", "-an", "-movflags", "+faststart", str(mp4))
+        poster = outdir / f"{it['slug']}-poster.webp"
+        pt = max(0.0, it.get("poster_t", t0 + 0.4) - t0)
+        run("ffmpeg", "-loglevel", "error", "-y", "-ss", str(pt), "-i", str(cut), "-frames:v", "1",
+            "-vf", ",".join([post[0], post[2]]), "-c:v", "libwebp", "-quality", "74", str(poster))
+        res = {"mp4": mp4.name, "poster": poster.name, "dur": round((t1 - t0) * (2 if it.get("loop") == "boomerang" else 1), 2),
+               "bytes": mp4.stat().st_size}
+        n = it.get("film")
+        if n:
+            f0, f1 = it.get("film_trim", [t0, t1])
+            fd = outdir / "film" / it.get("film_dir", it["slug"])
+            fd.mkdir(parents=True, exist_ok=True)
+            for old in fd.glob("f*.webp"):
+                old.unlink()
+            fw = it.get("film_w", 540)
+            run("ffmpeg", "-loglevel", "error", "-y", "-ss", str(f0 - t0), "-to", str(f1 - t0), "-i", str(cut), "-vf",
+                f"fps={n}/{max(0.1, f1 - f0):.3f},scale={fw}:-2,{GRADES.get(it.get('grade'), GRADE)}", "-frames:v", str(n),
+                "-c:v", "libwebp", "-quality", "60", str(fd / "f%02d.webp"))
+            res["film"] = {"dir": f"film/{fd.name}", "frames": len(list(fd.glob('f*.webp')))}
+    return res
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", type=Path, default=HERE / "out")
     ap.add_argument("--avif", action="store_true")
     ap.add_argument("--only", default="")
+    ap.add_argument("--manifest", type=Path, default=HERE / "manifest.json")
+    ap.add_argument("--videos", type=Path, default=None, help="local raw videos (<time>_<id>.mp4) when instagram.db is absent")
+    ap.add_argument("--web", type=Path, default=None, help="built web media dir, source for kind 'derive' items")
     args = ap.parse_args()
-    man = json.loads((HERE / "manifest.json").read_text(encoding="utf-8"))
+    man = json.loads(args.manifest.read_text(encoding="utf-8"))
     only = {s for s in args.only.split(",") if s}
     outdir = args.out / "images" / "ig"
     outdir.mkdir(parents=True, exist_ok=True)
     idx_path = outdir / "media_index.json"
     index = json.loads(idx_path.read_text(encoding="utf-8")) if idx_path.exists() else {}
-    db = sqlite3.connect(f"file:{LIB / 'instagram.db'}?mode=ro", uri=True)
+    dbp = LIB / "instagram.db"
+    db = sqlite3.connect(f"file:{dbp}?mode=ro", uri=True) if dbp.exists() else None
     for it in man["items"]:
         if only and it["slug"] not in only:
             continue
-        if it.get("file"):
+        perm = None
+        if it["kind"] == "derive":
+            src = args.web / f"{it['from']}"
+        elif it.get("file"):
             src = Path(it["file"]) if Path(it["file"]).is_absolute() else ROOT / it["file"]
-            perm = None
+        elif db is None or (it["kind"] in ("video", "still") and video_file(args.videos, it["id"])):
+            src = video_file(args.videos, it["id"])
+            if not src:
+                raise SystemExit(f"no instagram.db and no local video for {it['slug']} ({it.get('id')}); pass --videos")
         else:
-            src = asset(db, it["id"], it["kind"], it.get("item"))
+            src = asset(db, it["id"], "video" if it["kind"] == "still" else it["kind"], it.get("item"))
             perm = db.execute("select permalink, timestamp from media where id=?", (it["id"],)).fetchone()
         rec = {k: it[k] for k in ("fam", "kind", "alt") if k in it}
-        rec.update({"id": it.get("id") or it["file"], "permalink": perm[0] if perm else None,
+        rec.update({"id": it.get("id") or it.get("file") or it.get("from"), "permalink": perm[0] if perm else None,
                     "date": (perm[1] or "")[:10] if perm else None, "yuz": bool(it.get("yuz"))})
         new_keys = {"file", "crop", "once_box", "delogo", "align", "pair_crop", "grade", "vignette", "sizes"}
-        if it["kind"] == "video":
+        if it["kind"] == "still":
+            rec["full"] = still(src, it, outdir, args.avif)
+        elif it["kind"] == "derive":
+            rec.update(derive(src, it, outdir))
+        elif it["kind"] == "video" and CILT_VIDEO_KEYS & it.keys():
+            rec.update(video2(src, it, outdir))
+        elif it["kind"] == "video":
             rec.update(video(src, it, outdir))
         elif new_keys & it.keys():
             w, h, _ = probe(src)

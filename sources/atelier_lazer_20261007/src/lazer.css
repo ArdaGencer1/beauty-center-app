@@ -413,7 +413,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .lz-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:calc(100svh - var(--lz-top));align-items:center}
   .lz-stage{height:calc(100svh - var(--lz-top));min-height:620px;order:2}
   .lz-copy{margin:0;padding:40px 48px;order:1;max-width:640px;justify-self:end}
-  .lz-proof{top:auto;bottom:22px}
+  .lz-proof{top:22px;bottom:auto;left:22px;right:auto;width:min(420px,calc(100% - 44px))}
   .lz-scrim{background:linear-gradient(90deg,var(--lz-bg) 0%,rgba(11,9,9,.2) 18%,transparent 40%),linear-gradient(180deg,transparent 60%,rgba(11,9,9,.6))}
   .lz-sec{padding:96px var(--lz-g)}
   .lz-sec>*{max-width:1180px;margin-left:auto;margin-right:auto}
@@ -448,3 +448,11 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 @media (prefers-reduced-motion:reduce){
   .lz *,.lz *::before,.lz *::after,.lz-layer *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* ---------- live page: old content under "Detaylı bilgi" ---------- */
+.lz-more{margin:0 auto;max-width:1100px;padding:8px var(--lz-g,18px) 40px;border-top:1px solid rgba(156,122,53,.25)}
+.lz-more>summary{cursor:pointer;list-style:none;padding:18px 0;font:500 22px/1.2 "Cormorant Garamond",Georgia,serif;display:flex;justify-content:space-between;align-items:center}
+.lz-more>summary::after{content:"+";font-size:26px;transition:transform .3s}
+.lz-more[open]>summary::after{transform:rotate(45deg)}
+.lz-more>summary::-webkit-details-marker{display:none}
+.lz-oldh1{font-weight:600}

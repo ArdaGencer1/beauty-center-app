@@ -367,23 +367,23 @@ def journey_svg(code: str = "lz") -> str:
 
 # --------------------------------------------------------------------------------------------- pages
 PAGES = {
-    "hub": {"slug": "laser-signature", "code": "lazer", "g": "kadin", "hero": ("img", "lazer-5", None), "focal": "64% 58%",
+    "hub": {"slug": "laser-signature", "code": "lazer", "g": "kadin", "hero": ("video", "lazer-film-jel", "lazer-5"), "focal": "64% 58%",
             "lede": "Lasermach, 3 dalga boyu, soğutmalı başlık. Bölgenizi seçin, planı birlikte yapalım.",
             "order": ["map", "journey", "cal", "device", "reels", "reviews", "hygiene", "price", "family", "visit"]},
-    "kamp": {"slug": "laser-signature-kampanya", "code": "lzkamp", "g": "kadin", "hero": ("img", "lazer-5", None), "focal": "64% 58%",
+    "kamp": {"slug": "laser-signature-kampanya", "code": "lzkamp", "g": "kadin", "hero": ("video", "lazer-film-jel", "lazer-5"), "focal": "64% 58%",
              "lede": "Lasermach, 3 dalga boyu, soğutmalı başlık. Bölgenizi seçin, planı birlikte yapalım.",
              "order": ["map", "journey", "cal", "device", "reels", "reviews", "hygiene", "price", "family", "visit"]},
     "fiyat": {"slug": "lazer-epilasyon-fiyatlari-ankara", "code": "lzfiyat", "g": "kadin", "hero": ("img", "lazer-ekran", None), "focal": "42% 32%",
               "lede": "Fiyat; bölgenize, seans sayısına ve pakete göre belirlenir. Bölgeleri seçin, size özel fiyat WhatsApp'ta.",
               "cta": ("Bölge menüsünü aç", "#lz-menu"),
               "order": ["menu", "factors", "map", "reviews", "cal", "device", "reels", "family", "visit"]},
-    "erkek": {"slug": "erkek-lazer-epilasyon", "code": "lzerkek", "g": "erkek", "hero": ("img", "lazer-2", None), "focal": "50% 40%",
+    "erkek": {"slug": "erkek-lazer-epilasyon", "code": "lzerkek", "g": "erkek", "hero": ("video", "lazer-film-kol", None), "focal": "50% 40%",
               "lede": "Sakal hattından sırta; erkek bölgeleri, kişiye özel plan.",
               "order": ["map", "reviews", "cal", "journey", "device", "reels", "price", "hygiene", "family", "visit"]},
     "yuz": {"slug": "yuz-lazer", "code": "lzyuz", "g": "kadin", "face": True, "hero": ("video", "lazer-film-cene", None),
             "lede": "Dudak üstü, çene, gıdı: yüzde ince ayar, koruyucu gözlükle.",
             "order": ["map", "cal", "hygiene", "journey", "device", "reels", "reviews", "price", "family", "visit"]},
-    "hassas": {"slug": "hassas-cilt-lazer", "code": "lzhassas", "g": "kadin", "tone": True, "hero": ("img", "lazer-yuz-gozluk", None), "focal": "45% 55%",
+    "hassas": {"slug": "hassas-cilt-lazer", "code": "lzhassas", "g": "kadin", "tone": True, "hero": ("video", "lazer-film-yuz", "lazer-yuz-gozluk"), "focal": "45% 55%",
                "lede": "Soğutmalı başlık ve cilt tonunuza göre ayar. Önce cildinizi tanıyoruz.",
                "order": ["tone", "device", "map", "journey", "hygiene", "cal", "reviews", "reels", "price", "family", "visit"]},
     "bolge": {"slug": "bolgesel-lazer", "code": "lzbolge", "g": "kadin", "quick": True, "hero": ("img", "lazer-koltuk", None), "focal": "58% 62%",
@@ -392,7 +392,7 @@ PAGES = {
 }
 FAMILY = [("hub", "Lazer epilasyon", "lazer-film-jel-poster.webp", "Merkez sayfa"),
           ("fiyat", "Fiyatlar ve bölge menüsü", "lazer-ekran-800.webp", "Tüm bölgeler, süreleriyle"),
-          ("erkek", "Erkek lazer", "lazer-film-bacak-poster.webp", "Sakal üstünden sırta"),
+          ("erkek", "Erkek lazer", "lazer-film-kol-poster.webp", "Sakal üstünden sırta"),
           ("yuz", "Yüz lazer", "lazer-film-cene-poster.webp", "Dudak üstü, çene, gıdı"),
           ("hassas", "Hassas cilt", "lazer-film-yuz-poster.webp", "Soğutmalı başlık"),
           ("bolge", "Bölgesel lazer", "lazer-koltuk-800.webp", "Tek bölge, kısa seans")]
@@ -407,6 +407,7 @@ HERO_MEDIA = {
     "lazer-film-cene": "Çene ve gıdı bölgesinde lazer epilasyon, salonumuzda çekildi",
     "lazer-film-bacak": "Bacakta lazer epilasyon uygulaması, salonumuzda çekildi",
     "lazer-film-yuz": "Koruyucu gözlükle yüz bölgesinde lazer epilasyon, salonumuzda çekildi",
+    "lazer-film-kol": "Kol bölgesinde lazer epilasyon, salonumuzda çekildi",
     "lazer-ekran": "Lasermach lazer cihazının ekranı: enerji, atım süresi, cilt tonu ve başlık sıcaklığı",
     "lazer-koltuk": "Koltuk altına Lasermach başlığıyla lazer epilasyon, salonumuzda",
 }
@@ -431,8 +432,8 @@ HYGIENE = [("lazer-kilif-800.webp", "Kılıflı başlık", "Başlık koruyucu k�
            ("lazer-uzman-800.webp", "Eldivenli uygulama", "Uzmanımız eldivenle çalışır."),
            ("lazer-yuz-gozluk-800.webp", "Koruyucu gözlük", "Yüz bölgesinde gözler kapatılır."),
            ("lazer-film-bacak2-poster.webp", "Soğutucu jel", "Işık, jel katmanının üzerinden verilir.")]
-REELS = [("lazer-film-jel", "Jel, ışık, kayış"), ("lazer-film-cene", "Çene ve gıdı"), ("lazer-film-bacak", "Bacak"),
-         ("lazer-film-yuz", "Yüz, gözlükle"), ("lazer-film-bacak2", "Diz altı")]
+REELS = [("lazer-film-jel", "Jel, ışık, kayış"), ("lazer-film-cene", "Çene ve gıdı"), ("lazer-film-kol", "Kol"),
+         ("lazer-film-bacak", "Bacak"), ("lazer-film-yuz", "Yüz, gözlükle"), ("lazer-film-bacak2", "Diz altı")]
 TONES = [("1", "#F3DCCB", "Çok açık"), ("2", "#E9C6A7", "Açık"), ("3", "#D6A57E", "Buğday"),
          ("4", "#B57E55", "Esmer"), ("5", "#8A5634", "Koyu esmer"), ("6", "#5A3622", "Koyu")]
 FACTORS = [("Bölge", "Koltuk altı 15 dakika, tüm bacak 45 dakika; bölge büyüdükçe süre ve fiyat değişir."),

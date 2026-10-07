@@ -1,0 +1,394 @@
+{
+ "_doc": "Cilt Atlası media v2 (plan 2026-10-07). Only the salon's own media: Instagram videos (stills cut from them) and already built real pairs. No price/claim posters, no burned-in text (boxes cut above subtitles), no foreign stock. Both halves of a pair get one crop and one grade. 'cekim' lists what is still waiting for the staff shoot (manifest D3: add the new items here and rebuild).",
+ "items": [
+  {
+   "slug": "cilt-darsonval",
+   "id": "18025275239906179",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    0.4,
+    9.6
+   ],
+   "poster_t": 4.1,
+   "denoise": true,
+   "sharpen": 0.25,
+   "crf": 28,
+   "alt": "Darsonval: turuncu ışıyan elektrot akneli yanakta, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-saten",
+   "id": "18192437785391754",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    3.6,
+    12.8
+   ],
+   "poster_t": 7.0,
+   "stab": true,
+   "crf": 28,
+   "film": 45,
+   "film_dir": "saten-film",
+   "film_trim": [
+    3.6,
+    12.8
+   ],
+   "alt": "Saten yüz germe başlığı kaş ve göz çevresinde, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-saten-ekran",
+   "id": "18192437785391754",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 1.15,
+   "box": [
+    0,
+    120,
+    720,
+    1020
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Saten yüz germe cihazının ekranı, salonumuzda"
+  },
+  {
+   "slug": "cilt-analiz",
+   "id": "18122366353896732",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    4.9,
+    6.6
+   ],
+   "poster_t": 6.2,
+   "loop": "boomerang",
+   "crf": 27,
+   "alt": "Büyüteç lambası altında cilt analizi, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-hydra",
+   "id": "18406447750155831",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    15.0,
+    20.0
+   ],
+   "poster_t": 16.2,
+   "crf": 28,
+   "alt": "Hydra başlığıyla uygulama, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-led-kubbe",
+   "id": "18106634948074733",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    6.4,
+    9.9
+   ],
+   "poster_t": 7.8,
+   "crf": 28,
+   "alt": "LED kubbe altında renk döngüsü, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-film",
+   "id": "18119195767718567",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    5.0,
+    17.0
+   ],
+   "poster_t": 10.0,
+   "stab": true,
+   "crf": 29,
+   "film": 54,
+   "film_dir": "cilt-film",
+   "film_trim": [
+    5.0,
+    17.0
+   ],
+   "alt": "LED kubbe yüzün üzerinde, elde çekim, salonumuzda"
+  },
+  {
+   "slug": "cilt-maske",
+   "id": "18106634948074733",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    2.2,
+    5.1
+   ],
+   "poster_t": 3.4,
+   "crf": 28,
+   "alt": "Bakım maskesinin hazırlanıp uygulanması, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-komedon",
+   "id": "18088219433120497",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    9.4,
+    11.4
+   ],
+   "poster_t": 9.6,
+   "crf": 28,
+   "alt": "Detaylı temizlik: komedon temizliği, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-sunger",
+   "id": "18455967805112572",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    3.0,
+    5.6
+   ],
+   "poster_t": 3.2,
+   "crf": 28,
+   "alt": "Altın lavabo ve temizleme süngerleri, salonumuzda çekildi"
+  },
+  {
+   "slug": "cilt-cihaz",
+   "id": "18014729837423154",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 16.1,
+   "box": [
+    0,
+    160,
+    720,
+    1060
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Salonumuzdaki çok başlıklı hydra cilt bakım cihazı"
+  },
+  {
+   "slug": "cilt-buyutec",
+   "id": "18406447750155831",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 6.2,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Büyüteç altında cilt, bakım öncesi analiz"
+  },
+  {
+   "slug": "cilt-urun",
+   "id": "18406447750155831",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 28.6,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Salonda kullanılan Dermaplus bakım ürünü"
+  },
+  {
+   "slug": "cilt-led-mavi",
+   "id": "18406447750155831",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 36.1,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Mavi LED ışığı, bakımın son adımı"
+  },
+  {
+   "slug": "cilt-uygulama",
+   "id": "18406447750155831",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 16.2,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "yuz": true,
+   "alt": "Hydra başlığıyla uygulama, salonumuzda"
+  },
+  {
+   "slug": "cilt-hazirlik",
+   "id": "18106634948074733",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 3.4,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Maskenin kâsede hazırlanması"
+  },
+  {
+   "slug": "cilt-lamba",
+   "id": "18455967805112572",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 2.2,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "yuz": true,
+   "alt": "Büyüteç lambası altında bakıma hazırlık"
+  },
+  {
+   "slug": "cilt-kirmizi-led",
+   "id": "18455967805112572",
+   "fam": "cilt",
+   "kind": "still",
+   "t": 10.2,
+   "box": [
+    0,
+    190,
+    720,
+    1090
+   ],
+   "sizes": [
+    480,
+    720
+   ],
+   "alt": "Kırmızı ışıklı uygulama, sakin ve karanlık oda"
+  },
+  {
+   "slug": "cilt-ters",
+   "from": "cilt-cift-1",
+   "fam": "cilt",
+   "kind": "derive",
+   "size": 480,
+   "rotate": 180,
+   "box": [
+    0,
+    250,
+    480,
+    1188
+   ],
+   "sizes": [
+    480
+   ],
+   "yuz": true,
+   "alt": "Cilt bakımı: kızarıklık ve matlıktan daha eşit bir tona"
+  },
+  {
+   "slug": "akne-a",
+   "from": "akne-cift-2",
+   "fam": "cilt",
+   "kind": "derive",
+   "size": 1200,
+   "box": [
+    0,
+    0,
+    1200,
+    495
+   ],
+   "sizes": [
+    800,
+    1200
+   ],
+   "yuz": true,
+   "alt": "Akne bakımı: iltihaplı görünümden daha sakin bir cilde"
+  },
+  {
+   "slug": "akne-b",
+   "from": "akne-cift-1",
+   "fam": "cilt",
+   "kind": "derive",
+   "size": 1200,
+   "box": [
+    0,
+    0,
+    1200,
+    495
+   ],
+   "sizes": [
+    800,
+    1200
+   ],
+   "yuz": true,
+   "alt": "Akne bakımı: yoğun sivilceden hafif kızarıklığa"
+  }
+ ],
+ "cekim": {
+  "P1": [
+   "leke-bakimi: leke yakın planı önce/sonra + uygulama klibi",
+   "dermabrazyon, hydra-elite: başlık çalışırken 10 sn, su ve vakum görünsün; tankta toplanan kir",
+   "hollywood, paris: maske ve LED klibi; yandan ışıkla ışıltı sonrası yanak",
+   "hepsi: cilt uzmanı portresi (izinle)"
+  ],
+  "P2": [
+   "sırt, koltuk altı, dirsek, kararma: bölge önce/sonra (rızalı) + uygulama eli",
+   "antioksidan, dudak: serum/ampul yakın planı; dudak maske ve peeling önce/sonra",
+   "hassas cilt: kırmızı LED altında sakin cilt"
+  ],
+  "P3": [
+   "b-roll: 60 fps buhar, altın lavaboya dökülen su, havlu katlama, LED kubbe yandan, oda geniş açı"
+  ]
+ },
+ "excluded": [
+  {
+   "id": "17991567131670070",
+   "why": "360p (hydra + LED kubbe, güzel ama çözünürlük düşük)"
+  },
+  {
+   "id": "18059851076581437",
+   "why": "360p ve ÖNCESİ/SONRASI yazısı basılı"
+  },
+  {
+   "id": "18084203987184570",
+   "why": "0,4 sn'de bir kesilen zayıf montaj (cilt-video-2)"
+  },
+  {
+   "id": "18125536198504862",
+   "why": "hydra başlığı, tüm süre yazılı"
+  }
+ ]
+}

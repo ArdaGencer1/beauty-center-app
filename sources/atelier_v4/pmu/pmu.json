@@ -1,0 +1,95 @@
+{
+ "pairs": {
+  "pmu-dudak-a": {
+   "w": 795,
+   "h": 1600,
+   "file": "m/ig/pmu/pmu-dudak-a-pair.webp"
+  },
+  "pmu-dudak-b": {
+   "w": 800,
+   "h": 532,
+   "file": "m/ig/pmu/pmu-dudak-b-pair.webp"
+  },
+  "pmu-dudak-c": {
+   "w": 411,
+   "h": 802,
+   "file": "m/ig/pmu/pmu-dudak-c-pair.webp"
+  },
+  "dudak-cift-5": {
+   "w": 480,
+   "h": 1200,
+   "file": "m/ig/pmu/dudak-cift-5-pair.webp"
+  },
+  "dudak-cift-1": {
+   "w": 800,
+   "h": 400,
+   "file": "m/ig/pmu/dudak-cift-1-pair.webp"
+  },
+  "pmu-kas-cift-a": {
+   "w": 800,
+   "h": 498,
+   "file": "m/ig/pmu/pmu-kas-cift-a-pair.webp"
+  },
+  "pmu-kas-cift-b": {
+   "w": 800,
+   "h": 488,
+   "file": "m/ig/pmu/pmu-kas-cift-b-pair.webp"
+  },
+  "pmu-goz-a": {
+   "w": 795,
+   "h": 1600,
+   "file": "m/ig/pmu/pmu-goz-a-pair.webp"
+  },
+  "goz-cizgisi-cift": {
+   "w": 800,
+   "h": 500,
+   "file": "m/ig/pmu/goz-cizgisi-cift-pair.webp"
+  }
+ },
+ "tones": [
+  {
+   "id": "gulpembe",
+   "n": "Gül pembe",
+   "c": "#9A4A58",
+   "i": 0
+  },
+  {
+   "id": "visne",
+   "n": "Vişne",
+   "c": "#923B2E",
+   "i": 1
+  },
+  {
+   "id": "gulkurusu",
+   "n": "Gül kurusu",
+   "c": "#91484B",
+   "i": 2
+  },
+  {
+   "id": "kiremit",
+   "n": "Kiremit",
+   "c": "#AB4D54",
+   "i": 3
+  },
+  {
+   "id": "mercan",
+   "n": "Mercan",
+   "c": "#A3514F",
+   "i": 4
+  }
+ ],
+ "kartela": {
+  "cell": [
+   600,
+   800
+  ],
+  "cols": 3,
+  "file": "m/ig/pmu/kartela.webp",
+  "rows": 2
+ },
+ "oda": {
+  "file": "m/ig/pmu/oda.webp",
+  "w": 680,
+  "h": 906
+ }
+}

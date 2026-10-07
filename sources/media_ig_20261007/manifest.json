@@ -1129,6 +1129,18 @@
    "fam": "lazer",
    "kind": "image",
    "alt": "Koruyucu kılıflı lazer başlığıyla koltuk altı uygulaması"
+  },
+  {
+   "slug": "lazer-film-kol",
+   "id": "18101999296585006",
+   "fam": "lazer",
+   "kind": "video",
+   "trim": [
+    2.4,
+    10.6
+   ],
+   "poster_t": 7.6,
+   "alt": "Kol bölgesinde lazer epilasyon, salonumuzda çekildi"
   }
  ],
  "excluded": [
