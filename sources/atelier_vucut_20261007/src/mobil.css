@@ -1,0 +1,35 @@
+/* ---------- MOBİL katmanı (2026-10-07): bütün sayfalar ----------
+   Görünümü değiştirmeden dokunma alanlarını büyütür ve uzun basma etkileşimini iPhone'da korur.
+   Denetim: 320, 360 ve 390 px; ayrıntı plans/claude/20261007/vucut-inceltme-sayfalari.md §10. */
+
+/* SSS: tabanda summary 26 px yüksekti ve details'in iç boşluğu ölü alandı; boşluk summary'ye taşınır (görünüm aynı) */
+.faq details{padding:0}
+.faq summary{padding:16px 0}
+.faq details[open]{padding-bottom:16px}
+.faq details[open]>p{margin-top:-6px}
+
+/* galeri "basılı tutun, öncesini görün": iPhone'da uzun basış resim menüsünü (kaydet/paylaş) açmasın */
+.gcard,.gcard img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+
+/* menü: bulunulan sayfanın grubu kısayollarda işaretli */
+.nav-jump button.here{background:var(--gold-ink);border-color:var(--gold-ink);color:var(--ground)}
+
+@media (pointer:coarse){
+  /* menü grup kısayolları ve lazer "Kadın / Erkek" seçicisi: 28 px ve 25 px yerine 38 px üstü */
+  .nav-jump button{padding:13px 14px}
+  [data-view="lazer"] .ba-toggle.inline button{padding:14px 16px}
+}
+
+/* alt çubuk: 320 px'te 6 sayfada, 360 px'te tırnakta düğme yazısı kesiliyordu ("Ön görüşme · saatim…").
+   Dar ekranda boşluk, telefon düğmesi ve yazı biraz küçülür; yazı kısaltılmaz. Yatay kısa ekran kuralı ayrı (mobil-duzen). */
+@media (max-width:389px){
+  .bar{gap:8px;padding-left:10px;padding-right:10px}
+  .bar .btn-round{width:50px;height:50px}
+  .bar .btn-gold{font-size:14.5px;gap:8px}
+  .bar .btn-gold .lbl{max-width:calc(100% - 30px)}
+}
+@media (max-width:339px){
+  .bar .btn-gold{font-size:13.5px;gap:6px}
+  .bar .btn-gold svg{width:18px;height:18px}
+  .bar .btn-gold .lbl{max-width:calc(100% - 26px)}
+}

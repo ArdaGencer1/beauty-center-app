@@ -5,16 +5,16 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v7.html",
-    "repository_snapshot_version": 7,
-    "published_version_id": "1791383911-8f6e",
-    "snapshot_base": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v6-tirnak-taban.html",
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v17.html",
+    "repository_snapshot_version": 17,
+    "published_version_id": "1791389678-02bc",
+    "snapshot_base": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-taban-1791388726-c3e0.html",
     "file_limits": {
       "per_publish": 255,
-      "per_version": 511,
-      "files_in_version_7": 291
+      "per_version": 511
     },
-    "snapshot_base_note": "Artifact version 6 (1791383614-b96f, another session's nail T13 update) with the body additions removed; build.py without KAS_PATCHES reproduces version 6 byte for byte"
+    "snapshot_base_note": "Artifact version 16 (1791388726-c3e0: nail, brow 'perde', 5 laser subpages, Cilt Atlasi and 'mobil-duzen' sessions) with the body additions removed; build.py without the mobile layer reproduces version 16 byte for byte",
+    "rebase": "Several sessions publish this Artifact. Before publishing body/mobile changes: read the live index.html, then python3 sources/atelier_vucut_20261007/rebase.py LIVE.html --rev $(git log -1 --format=%h -- sources/atelier_vucut_20261007) --out prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-taban-<id>.html, point build.py BASE at it, build, test, publish"
   },
   "media": {
     "selected_items": 111,
@@ -115,17 +115,18 @@
     },
     {
       "key": "vucut",
-      "status": "published_artifact_v7_server_pending",
+      "status": "published_artifact_v17_server_pending",
       "priority": 4,
       "path": "plans/claude/20261007/vucut-inceltme-sayfalari.md",
       "ready": [
         "74 raw videos triaged (triage_videos.tsv)",
         "10 body media items in website/m/ig (fam vucut); 15 files published",
         "owner decisions 2026-10-07: black roller head = G5, tower device = Slim Tone, program = Slim Tone + G5 + lymph drainage",
-        "9 body pages in the Artifact since version 5; current version 7 (sources/atelier_vucut_20261007/build.py)",
-        "kas page: excluded kas-cift-3 (another artist) replaced by kas-kina-sonra-800 in the golden-ratio mirror, gallery 3 pairs, kas-cift-3 files removed from the Artifact (owner approved 2026-10-07)",
+        "9 body pages in the Artifact since version 5; current version 17 (sources/atelier_vucut_20261007/build.py)",
         "QA: 0 overflow, 0 script errors, CTA/W-code verified locally",
-        "published page read back and byte-identical to build (version 7)"
+        "published page read back and byte-identical to build (version 17)",
+        "kas-cift-3 removed in version 7 (owner approved); the brow session later rebuilt the golden mirror on kas-perde-alim-800",
+        "mobile audit and fixes (320/360/390 px, portrait and landscape): see mobile_layer"
       ],
       "remaining": [
         "owner answered 'tam bilmiyorum' (2026-10-07) to: EM = Slim Tone?, cart device, heykeltras, pasif jimnastik, CRM prices, catlak protocol; stand-ins stay until salon records or staff confirm",
@@ -153,5 +154,26 @@
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
     "live patch dry-run/check passed"
-  ]
+  ],
+  "mobile_layer": {
+    "source": [
+      "sources/atelier_vucut_20261007/src/mobil.css",
+      "sources/atelier_vucut_20261007/build.py (MOBIL_PATCHES, lazy_hidden)"
+    ],
+    "scope": "all views; tirnak untouched; compatible with another session's <style id=\"mobil-duzen\">",
+    "done": [
+      "hidden-view images loading=lazy (except salon, tirnak): first load vucut 767->207 KB, salon 1651->1091 KB",
+      "FAQ whole row tappable (summary padding), same look",
+      "gallery hold-to-peek: -webkit-touch-callout none (iPhone)",
+      "menu: current group chip marked (aria-current); jump chips and laser gender toggle >=38px on touch",
+      "bottom bar label fits at 320-390px on every page",
+      "body map: invisible 14-unit hit strips for thin regions; WhatsApp glyph; invite label; 11px stand-in tags; hero fits mobil-duzen heights (no overflow at 320px portrait or landscape)"
+    ],
+    "recommendations": [
+      "laser session: 6 pages embed the same ~39 KB body-map SVG (~230 KB HTML); clone from one copy in JS",
+      "new hero stage classes must join mobil-duzen height:100% rules",
+      "new hidden views: add loading=lazy to hero images"
+    ],
+    "plan": "plans/claude/20261007/vucut-inceltme-sayfalari.md section 10"
+  }
 }

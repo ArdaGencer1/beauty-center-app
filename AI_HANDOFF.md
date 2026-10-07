@@ -10,7 +10,7 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v7**'dir (`artifact-v7.html`, Artifact sürüm id `1791383911-8f6e`, yayındakiyle bayt bayt aynı). İçeriği: başka oturumun 22 tırnak sayfası ve T13 bakım randevusu (sürüm 6) + 9 vücut sayfası + kaş galerisinde dışlanan fotoğrafın değişimi. Tabanı `artifact-v6-tirnak-taban.html`. v3 yalnızca tarihçe için durur. Artifact üzerinde bu
+- Depodaki son kaynak anlık görüntüsü **Artifact v17**'dir (`artifact-v17.html`, Artifact sürüm id `1791389678-02bc`, yayındakiyle bayt bayt aynı). İçeriği: tırnak, kaş "beş perde", 5 lazer alt sayfası, Cilt Atlası ve "mobil düzen" oturumlarının işleri (sürüm 8–16) + 9 vücut sayfası + ortak mobil katmanı. Tabanı `artifact-taban-1791388726-c3e0.html`. Aynı Artifact'i birden çok oturum sık yayınlıyor: yayından hemen önce yayındaki sürümü okuyun. v3 yalnızca tarihçe için durur. Artifact üzerinde bu
   anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
   olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
@@ -35,8 +35,8 @@ inceleyerek token harcamasını önlemektir.
 | Vücut medyası | `sources/media_vucut_20261007/` | `manifest_vucut.json` (10 kalem), `build_vucut.py` (depodaki ham videolardan üretir), `triage_videos.tsv` (74 sınıflandırılmamış ham videonun ön elemesi; bu videolar yeniden taranmaz). |
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
-| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v7.html` | Yayındaki sürüm 7 (vücut + kaş düzeltmesi + tırnak T13). Tabanı `artifact-v6-tirnak-taban.html` (sürüm 6'dan vücut eklemeleri çıkarılmış hâli); eski: `artifact-v5.html`, `artifact-v4-tirnak.html`, ilk sürüm `artifact-v3.html`. |
-| Vücut sayfaları | `sources/atelier_vucut_20261007/` | `build.py` (tabana yama + `src/vucut.css` + `src/vucut.js` + kaş yaması, `--check`, `--publish DIR`). Başka oturum yeni sürüm yayınlarsa: yayındakini oku, `git merge-file` ile tırnak farkını tabana taşı, `KAS_PATCHES` olmadan derlemenin yayındakiyle birebir aynı olduğunu doğrula, sonra yayınla. |
+| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v17.html` | Yayındaki sürüm 17. Tabanı `artifact-taban-1791388726-c3e0.html` (sürüm 16'dan vücut eklemeleri çıkarılmış hâli); eski: `artifact-v7.html`, `artifact-v5.html`, `artifact-v6-tirnak-taban.html`, `artifact-v4-tirnak.html`, ilk sürüm `artifact-v3.html`. |
+| Vücut sayfaları + mobil katmanı | `sources/atelier_vucut_20261007/` | `build.py` (tabana yama + `src/vucut.css` + `src/vucut.js` + `src/mobil.css` + `lazy_hidden()`, `--check`, `--publish DIR`). Başka oturum yeni sürüm yayınlarsa: yayındakini oku (`index.html`), `rebase.py YAYINDAKI.html --rev $(git log -1 --format=%h -- sources/atelier_vucut_20261007) --out .../artifact-taban-<id>.html` ile yeni taban yaz (betik, o revizyonla yeniden derlemenin yayındakiyle bayt bayt aynı olduğunu doğrular), `BASE`'i çevir, derle, test et, yayınla. |
 | Güncel planlar | `plans/claude/20261007/` | Lazer, PMU, Cilt Atlası ve Vücut planları. |
 
 ### Sunucudaki asıl yollar
@@ -140,7 +140,7 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-### 4. Vücut atölyesi — 9 sayfa Artifact'te (sürüm 7), sunucu adımları bekliyor
+### 4. Vücut atölyesi — 9 sayfa Artifact'te (sürüm 17), sunucu adımları bekliyor
 
 Plan: `plans/claude/20261007/vucut-inceltme-sayfalari.md`
 (önizleme: `plans/claude/20261007/vucut-medya-onizleme.jpg`)
@@ -154,7 +154,7 @@ vücut kalemi / 20 dosya (`vucut-g5`, `vucut-slimtone-kol`,
 Sahip kararları (2026-10-07): siyah başlık = G5; kule cihaz = Slim Tone;
 bölgesel incelme = Slim Tone + G5 + lenf drenaj programı; medyası olmayan
 sayfalara temsilî görsel/çizim, sunucu en son. V1 ve V2 aynı Artifact'te
-yayında (sürüm 5'ten beri; güncel sürüm 7).
+yayında (sürüm 5'ten beri; güncel sürüm 17). Mobil denetim ve düzeltmeler planın 10. bölümünde.
 
 Kalanlar: açık sahip soruları (EM = Slim Tone mu, sehpadaki cihaz, heykeltraş,
 pasif jimnastik, CRM fiyatları, çatlak protokolü). Sahip 2026-10-07'de "tam
@@ -162,6 +162,25 @@ bilmiyorum" dedi: bu sayfalar teyide kadar temsilî görsel/çizimle kalır; cev
 salon kayıtlarından veya personelden alınmalı. Sunucuda IG başlık araması,
 540 px tam çözünürlük ve canlı sayfa denetimi; çekimler; canlı için dry-run ve
 sahip onayı.
+
+### 5. Ortak mobil katmanı — bütün sayfalar (sürüm 17)
+
+Kaynak: `sources/atelier_vucut_20261007/src/mobil.css`, `build.py` (`MOBIL_PATCHES`, `lazy_hidden()`).
+Ayrıntı ve ölçümler: `plans/claude/20261007/vucut-inceltme-sayfalari.md` §10. Başka bir oturumun
+`<style id="mobil-duzen">` bloğu (yön, çentik, kahraman yüksekliği) ayrıdır ve onunla uyumludur.
+
+- Gizli görünümlerdeki görseller `loading="lazy"` alır (salon ve tırnak hariç). İlk yüklemede inen veri
+  vücutta 767 → 207 KB, salonda 1,65 → 1,09 MB oldu. **Yeni görünüm ekleyen oturumlar:** ana görsele
+  `fetchpriority="high"` tek başına yetmez, gizli görünümde her sayfa açılışında iner; `loading="lazy"`
+  ekleyin (görünüm açılınca hemen iner) ya da derlemeyi bu katmanla yapın.
+- SSS satırının tamamı dokunulabilir (`.faq summary` iç boşluğu); görünüm aynı.
+- Galeri "basılı tutun" iPhone'da resim menüsünü açmaz (`-webkit-touch-callout:none`).
+- Menüde bulunulan grubun kısayolu işaretli; kısayollar ve lazer "Kadın / Erkek" dokunmatikte ≥ 38 px.
+- Alt çubuk yazısı 320 px'te sığar (dar ekranda boşluk ve yazı küçülür). Yeni çubuk metni ≤ 29 karakter olsun.
+- Öneri (lazer oturumu): 6 lazer sayfası aynı ~39 KB'lık vücut haritası SVG'sini ayrı ayrı gömüyor
+  (~230 KB HTML); tek kopyadan JS ile çoğaltmak telefonda sayfayı belirgin hafifletir.
+- Yeni bir kahraman sahne sınıfı eklenirse "mobil düzen"in dikey/yatay `height:100%` kuralına da eklenmeli
+  (vücut `.vb-stage`/`.vb-split` için `src/vucut.css` içinde eklendi; eklenmezse 320 px'te ve yatayda taşar).
 
 Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası → Vücut**.
 
@@ -195,14 +214,14 @@ Vücut planında verilen kararlar:
 - `18089498999286039`: el bakımı (gümüş eldiven); vücut değil.
 - `vucut-cihaz-masa` sahip teyidi olmadan yayınlanmaz. Önce/sonra sonucu yalnızca
   Slim Tone + G5 + lenf drenaj programının sonucu olarak etiketlenir.
-- Artifact dosya sınırı: bir yayında en çok 255 dosya, bir sürümde 511. Sürüm 7'de
-  291 dosya var; güncellemede yalnızca yeni/değişen dosyaları gönderin.
+- Artifact dosya sınırı: bir yayında en çok 255 dosya, bir sürümde 511. Dosya sayısı
+  başka oturumların medyasıyla artıyor (`Artifact list scope=files`); güncellemede yalnızca
+  yeni/değişen dosyaları gönderin.
 - Kaş sayfası artık `kas-cift-3` kullanmıyor (manifest bunu başka uzmana ait diye
-  dışlamıştı, `18516297502030856`). Sahip onayıyla (2026-10-07) Altın Oran aynası
-  salonun kendi kına sonrası fotoğrafına (`kas-kina-sonra-800.webp`, 800×534)
-  geçti; ölçü noktaları o kaşa göre yeniden yerleştirildi. Galeride 3 çift kaldı
-  (`kas-cift-2`, `kas-kina`, `kas-laminasyon`). İki `kas-cift-3` dosyası
-  Artifact'ten silindi. Canlı sitede bu fotoğrafın kullanılıp kullanılmadığı
+  dışlamıştı, `18516297502030856`). Sahip onayıyla (2026-10-07) sürüm 7'de çıkarıldı;
+  iki `kas-cift-3` dosyası Artifact'ten silindi. Kaş oturumu Altın Oran aynasını
+  sonra kendi `kas-perde-alim-800.webp` fotoğrafına geçirdi ("beş perde" bölümü);
+  `kas-cift-3` geri gelmedi. Canlı sitede bu fotoğrafın kullanılıp kullanılmadığı
   sunucudaki sayfa denetiminde kontrol edilmeli; değişiklik canlıya yalnızca sahip
   onayıyla uygulanır.
 

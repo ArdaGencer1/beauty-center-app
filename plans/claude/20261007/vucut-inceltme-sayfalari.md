@@ -249,3 +249,36 @@ Vücuda özel kapılar:
 - `yuz: true` kayıtlar (`vucut-slimtone`) için rıza notu var.
 - Videolar poster önce yüklüyor (`preload="none"` + `data-src`), kahraman ≤ 1,2 MB.
 - `python3 scripts/ai_media_lookup.py search "" --family vucut` 10 kayıt döndürüyor; `media_index.json`'daki her `vucut-*` dosyası diskte var.
+
+---
+
+## 10. Mobil geliştirmeler (2026-10-07, dördüncü tur)
+
+Sahip: "devam et, geliştireceğin şeyleri geliştir ve mobil geliştirmeleri yap". Yalnızca Artifact; canlı siteye dokunulmadı.
+
+**Denetim** (Playwright, telefon kipi `isMobile`/`hasTouch`, 320, 360 ve 390 px; 9 vücut + salon, kaş, kirpik, lifting, kalıcı makyaj, cilt, lazer): yatay taşma ve betik hatası yoktu. Bulunanlar ve yapılanlar:
+
+| Bulgu | Ölçüm | Düzeltme | Kapsam |
+|---|---|---|---|
+| Her sayfa açılışta başka sayfaların ana görsellerini indiriyor | vücut sayfası ilk yüklemede 767 KB, salon 1,65 MB | Gizli görünümlerdeki görsellere `loading="lazy"` (`build.py` → `lazy_hidden()`; salon ve tırnak hariç) | Bütün sayfalar: vücut 767 → 207 KB, salon 1651 → 1091, lifting 806 → 291, lazer 816 → 290 KB |
+| SSS satırı dokunma alanı | `summary` 26 px; satırın üst/alt boşluğu ölü alan | Boşluk `summary`'ye taşındı, görünüm aynı (ekran görüntüsüyle karşılaştırıldı) | Bütün sayfalar (`src/mobil.css`) |
+| "Basılı tutun, öncesini görün" iPhone'da resim menüsünü açıyor | `-webkit-touch-callout` yok | `.gcard` ve görselinde kapatıldı | Bütün galeriler |
+| Menü grup kısayolları küçük, bulunulan grup belli değil | 28 px | Dokunmatik ekranda 38 px; bulunulan grup altın dolgulu (`aria-current`) | Menü |
+| Lazer "Kadın / Erkek" seçicisi | 25 px | Dokunmatik ekranda 39 px | Lazer |
+| Bölge haritasında kol ve bacak ince | kol 19 × 66 px (360 px'te) | Her bölgenin altına görünmez 14 birimlik kenar şeridi (`.vb-hit`); silüet dokunuşu geçirir. Kolun 2 px dışına dokunuş kolu seçiyor | Vücut haritası |
+| Davetiye düğmesi kesiliyor | "Ön görüşme davetiyemi ha…" (360 px) | Diğer sayfalarla aynı: "Davetiyemi hazırla" | 9 vücut sayfası |
+| Harita WhatsApp düğmesinde simge leke gibi | — | Alt çubuktaki gerçek WhatsApp simgesi | Vücut haritası |
+| "Temsilî görsel/çizim" etiketi okunmuyor | 9,5 px | 11 px; video altyazısı, harita "Ön/Arka", önce/sonra etiketleri 11 px | 9 vücut sayfası |
+| Program kartlarında "Sayfayı açın →" | 38 px | 44 px | 9 vücut sayfası |
+| Alt çubuk yazısı kesiliyor | 320 px'te 6 sayfada ("Ön görüşme · saatim…"), 360 px'te tırnakta | ≤ 389 px'te boşluk ve telefon düğmesi, ≤ 339 px'te yazı biraz küçülür; yazı kısaltılmaz. 320–390 px'te kesik yok | Bütün sayfalar |
+| Vücut ana görseli kutusundan taşıyor ("mobil düzen" katmanı geldikten sonra) | 320 px dikeyde 400 px'lik sahne 340 px'lik kutuda (KONUTKENT satırını örtüyor); yatay telefonda 528 / 332 px | Vücut sahneleri o katmanın yüksekliğini doldurur; yatayda önce/sonra kolajı tam görünür (`contain`) | 9 vücut sayfası |
+
+**Bilerek bırakılanlar:**
+- Önce/sonra galerisindeki 480 px yarımlar telefonda büyütülerek gösteriliyor (oran 0,5–0,75). Çözüm sunucudaki 1080 px orijinaller (bkz. 7.2); depoda daha büyük kaynak yok, büyütme yapılmaz.
+- Lazer oturumunun 6 lazer sayfası aynı ~39 KB'lık vücut haritası SVG'sini ayrı ayrı gömüyor (~230 KB HTML). O oturumun alanı; tek kopyadan JS ile çoğaltılması önerilir.
+- Kaydırıcı düğmesi (`.cmp-knob`) ölçümde 28 px görünür, ancak sürükleme bütün görselde çalışır; sorun değil.
+- Tırnak bölümüne dokunulmadı (başka oturum geliştiriyor; görselleri `<template>` içinde, zaten erken inmez).
+
+**Yayın:** Aynı Artifact'e **sürüm 17** (`1791389678-02bc`); geri okundu, `artifact-v17.html` ile bayt bayt aynı. Doğrulama: 20 görünüm × telefon/masaüstü, yeni derleme ile yayındaki 16. sürüm yan yana; taşma 0, betik hatası 0, başlıklar aynı, sayfa başına medya isteği 27–37'den 12–23'e indi.
+
+**Birlikte çalışma:** Bu sırada kaş ("beş perde", Altın Oran aynası), lazer (5 alt sayfa), Cilt Atlası ve "mobil düzen" (yön, çentik, kahraman yüksekliği; `<style id="mobil-duzen">`) oturumları da yayınladı (sürüm 8–16). Yeni taban `artifact-taban-1791388726-c3e0.html` yayındaki 16. sürümden vücut eklemeleri geri çıkarılarak yazıldı; mobil katmanı olmadan derleme yayındakiyle bayt bayt aynı. Bundan sonraki taşımalar için `sources/atelier_vucut_20261007/rebase.py` (yayındaki vücut kodunu üreten revizyonla yeniden derleyip bayt bayt doğrular). Kaş yamaları (`KAS_PATCHES`) kaldırıldı: kaş oturumu Altın Oran aynasını 7. sürümün üstüne kurdu, `kas-cift-3` geri gelmedi. Yamalar artık başka oturumların değiştirdiği satırlara bağlı değil (`VIEWS` dizinin sonuna eklenir, panel cümlesi paragrafın sonuna girer, `initVucut` `relead()` satırından önce çağrılır).

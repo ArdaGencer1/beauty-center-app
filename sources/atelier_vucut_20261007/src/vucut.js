@@ -8,7 +8,7 @@
 var VM="m/ig/", VB_IG="https://www.instagram.com/p/DMxmJ7QshoE/";
 var VB_ZOOM='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8v6M8 11h6"/></svg>';
 var VB_ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-var VB_WA='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20l1.4-4.2A8.5 8.5 0 1 1 7.6 19L3 20z"/></svg>';
+var VB_WA='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.7.7 2.3.7 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>';
 var VB_MEDIA={
  split:{img:VM+"vucut-cift-tam-960.webp",alt:"Bölgesel incelme programı: kol arkası ve göbek, solda önce, sağda sonra; aynı danışan"},
  g5:{mp4:VM+"vucut-g5.mp4",poster:VM+"vucut-g5-poster.webp",alt:"Bacak arkasında G5 masajı, salonumuzda çekildi"},
@@ -122,7 +122,7 @@ function vbPage(p){ var h='<div class="hero"><div class="hero-split"><div class=
   if(p.link) h+=vbLink();
   h+=vbTrio(p);
   h+='<div class="live" data-live="'+p.id+'"></div>';
-  h+='<div class="sec gutter"><div class="invite-teaser"><span class="eyebrow">Randevu davetiyesi</span><h3>'+p.inv+'</h3><div class="steps-mini"><span>1 · Bakım</span><span>2 · Gün ve saat</span><span>3 · Davetiye → WhatsApp</span></div><button class="btn-gold shine" data-plan="'+p.id+'"><span class="lbl">Ön görüşme davetiyemi hazırla</span>'+VB_ARROW+'</button></div></div>';
+  h+='<div class="sec gutter"><div class="invite-teaser"><span class="eyebrow">Randevu davetiyesi</span><h3>'+p.inv+'</h3><div class="steps-mini"><span>1 · Bakım</span><span>2 · Gün ve saat</span><span>3 · Davetiye → WhatsApp</span></div><button class="btn-gold shine" data-plan="'+p.id+'"><span class="lbl">Davetiyemi hazırla</span>'+VB_ARROW+'</button></div></div>';
   if(p.reviews) h+='<div class="sec gutter" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Salonumuz için yazılanlar</span><h2>“Kendimi iyi hissettiğim bir yer.”</h2><p>Google\'daki beş yıldızlı yorumlardan seçildi.</p></div></div><div class="reviews" data-reviews="salon"></div>';
   h+='<div class="sec gutter"><div class="two"><div class="menu-card"><span class="eyebrow">'+p.nav+'</span><h3>Fiyat neden yazmıyor?</h3><p class="muted" style="text-align:center;margin:0 0 6px">Program; bölgeye, seans sayısına ve hedefinize göre kişiye özel hazırlanır. Planı ve fiyatı ön görüşmede birlikte netleştiririz.</p><p class="menu-src">Fiyat ön görüşmede, programla birlikte iletilir.</p></div>'+
    '<div><div class="sec-head" style="margin-bottom:16px"><span class="eyebrow">Nasıl geçer</span><h2 style="font-size:40px">'+p.how.h+'</h2></div><ol class="how">'+p.how.steps.map(function(s){ return '<li><div><b>'+s[0]+'</b><p>'+s[1]+'</p></div></li>'; }).join("")+'</ol></div></div></div>';
@@ -159,6 +159,7 @@ function initVbMap(sec){ var box=$("[data-vb-map]",sec); if(!box) return; var ch
     var a=$("[data-vb-wa]",box); a.href=waHref(vbMsg()); $(".lbl",a).textContent=n?"Bölgelerimi WhatsApp'ta gönder":"WhatsApp'tan ön görüşme iste"; }
   $$(".vb-part",box).forEach(function(p){ var k=p.getAttribute("data-part"); p.addEventListener("click",function(){ toggle(k,p); });
     p.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); toggle(k,p); } }); });
+  $$(".vb-hit",box).forEach(function(h){ var k=h.getAttribute("data-hit"); h.addEventListener("click",function(){ toggle(k,$('.vb-part[data-part="'+k+'"]',h.ownerSVGElement)); }); });
   $$("[data-vb-rg]",chips).forEach(function(b){ b.addEventListener("click",function(){ var k=b.dataset.vbRg; toggle(k,$('.vb-part[data-part="'+k+'"]',box)); }); });
   sync(); }
 function initVucut(v){ var sec=$("main > [data-view='"+v+"']"), p=VUCUT_BY[v]; if(!sec) return;

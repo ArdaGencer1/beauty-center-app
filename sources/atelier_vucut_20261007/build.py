@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""ATELİER · Vücut ailesi -- yayındaki Artifact'e 9 vücut sayfasını ekler; kaş sayfasındaki dışlanmış fotoğrafı çıkarır (Artifact 7. sürüm).
+"""ATELİER · Vücut ailesi -- yayındaki Artifact'e 9 vücut sayfasını ekler; kaş sayfasındaki dışlanmış fotoğrafı çıkarır;
+bütün sayfalara mobil katmanı ekler (Artifact 17. sürüm).
 
-Girdi : prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v6-tirnak-taban.html
-        (yayındaki 6. sürüm 1791383614-b96f'den vücut eklemeleri çıkarılmış hâli: v3 + başka bir oturumun 22 tırnak
-        sayfası ve T13 bakım randevusu. artifact-v4-tirnak.html (1791382406-9153) ile farkı yalnızca o oturumun
-        tırnak değişiklikleridir; KAS_PATCHES olmadan derlenen çıktı 1791383614-b96f ile birebir aynıdır.)
+Girdi : prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-taban-1791388726-c3e0.html
+        (yayındaki 1791388726-c3e0 sürümünden vücut eklemeleri geri çıkarılmış hâli: tırnak, kaş "beş perde",
+        5 lazer alt sayfası, Cilt Atlası ve "mobil düzen" (yön/çentik) oturumlarının işleri dahil. Mobil katmanı
+        olmadan derlenen çıktı 1791388726-c3e0 ile birebir aynıdır. Eski tabanlar:
+        artifact-v6-tirnak-taban.html, artifact-v4-tirnak.html.)
+        Başka bir oturum yeniden yayınlarsa: rebase.py ile yeni taban yaz (17. sürüm ve sonrası için).
 Çıktı : website/index.html                   açılabilir site (tam belge)
-        prototypes/.../artifact-v7.html      yayınlanan 7. sürümün depodaki anlık görüntüsü (v5 = kaş düzeltmesinden önceki kendi yayınımız)
+        prototypes/.../artifact-v17.html      yayınlanan 17. sürümün depodaki anlık görüntüsü (v7 = mobil katmanından önceki kendi yayınımız)
         --publish DIR                        Artifact'e yüklenecek gövde (yayın iskeleti çıkarılmış)
 
 Yaptıkları:
@@ -15,6 +18,8 @@ Yaptıkları:
   * vücut haritası (ön/arka) ve iki temsilî çizim, lazer ailesinin kadın silüetinden (render.SHAPES) üretilir;
   * küçük yamalar: NAV "Vücut" grubu vitrinlere bağlanır, VIEWS, prototip paneli, salon kartı, canlı şerit
     etiketi, hikâyede `fit`, boot'ta buildVucut(), initView'da initVucut();
+  * mobil katmanı: src/mobil.css (SSS dokunma alanı, iPhone uzun basma, menü ve lazer seçicisi), MOBIL_PATCHES
+    (menüde geçerli grup), lazy_hidden() (gizli görünümlerin ana görselleri yalnızca açılınca iner);
   * her yama tam bir kez eşleşmek zorundadır; m/ig referanslarının hepsi diskte olmalıdır (--check).
 
   python3 sources/atelier_vucut_20261007/build.py [--check] [--publish DIR]
@@ -30,7 +35,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 SNAP = REPO / "prototypes" / "claude-artifact" / "WmsLiPPTLdnrjSrdYSXcLM"
-BASE = SNAP / "artifact-v6-tirnak-taban.html"
+BASE = SNAP / "artifact-taban-1791388726-c3e0.html"
 SITE = REPO / "website"
 sys.path.insert(0, str(REPO / "sources" / "atelier_lazer_20261007"))
 import render as LZ  # noqa: E402  (yalnızca SHAPES / HAIR / smooth / mirror kullanılır)
@@ -60,18 +65,21 @@ def head(side: str, cls: str) -> list[str]:
 
 
 def map_svg(side: str) -> str:
-    base, hits = head(side, "vb-shape"), []
+    # Üç katman: en altta bölgelerin görünmez geniş kenar şeridi (.vb-hit; telefonda ince kol ve bacağa dokunmayı
+    # kolaylaştırır, yalnızca boşluğa taşan kısmı dokunuş alır), ortada silüet (dokunuşu geçirir), üstte bölgeler.
+    base, parts, pads = head(side, "vb-shape"), [], []
     for name, part, both in PARTS[side]:
         for pts in ([SH[name], LZ.mirror(SH[name])] if both else [SH[name]]):
             d = LZ.smooth(pts)
             if part is None:
                 base.append(f'<path class="vb-shape" d="{d}"/>')
             else:
-                hits.append(f'<path class="vb-part" data-part="{part}" d="{d}" tabindex="0" role="button" aria-pressed="false" '
-                            f'aria-label="{REG_NAME[part]}" data-track-label="at-vucut-harita-bolge"/>')
+                pads.append(f'<path class="vb-hit" data-hit="{part}" d="{d}"/>')
+                parts.append(f'<path class="vb-part" data-part="{part}" d="{d}" tabindex="0" role="button" aria-pressed="false" '
+                             f'aria-label="{REG_NAME[part]}" data-track-label="at-vucut-harita-bolge"/>')
     label = "ön" if side == "on" else "arka"
     return (f'<svg viewBox="30 0 180 500" role="group" aria-label="Vücut haritası, {label} görünüm">'
-            f'<g>{"".join(base)}</g><g>{"".join(hits)}</g></svg>')
+            f'<g aria-hidden="true">{"".join(pads)}</g><g>{"".join(base)}</g><g>{"".join(parts)}</g></svg>')
 
 
 def silhouette() -> str:
@@ -117,15 +125,14 @@ PATCHES = [
     # menü: dokuz vücut sayfası vitrine gider
     (VUCUT_NAV_OLD, VUCUT_NAV_NEW),
     ('"Vücut":"incelme selulit zayiflama"', '"Vücut":"incelme selulit zayiflama slimtone g5 lenf drenaj em heykeltras pasif jimnastik catlak popo"'),
-    # hash yönlendirme
-    ('var VIEWS=["salon","kas","tirnak","kirpik","lifting","pmu","cilt","lazer"];',
-     'var VIEWS=["salon","kas","tirnak","kirpik","lifting","pmu","cilt","lazer",' + ",".join(f'"{v}"' for v in VIEW_IDS) + '];'),
     # prototip paneli
     ('<button data-v="lazer">Lazer</button></div></div>',
      '<button data-v="lazer">Lazer</button><button data-v="vucut">Vücut</button></div></div>'),
-    ("Fiyatlar 7 Ekim 2026'da canlı CRM'den yeniden doğrulandı.</p>",
-     "Fiyatlar 7 Ekim 2026'da canlı CRM'den yeniden doğrulandı. Vücut: bölgesel incelme, Slim Tone, G5 ve lenf drenaj gerçek salon medyasıyla; "
-     "EM, heykeltraş ve popo temsilî görselle, pasif jimnastik ve çatlak temsilî çizimle (çekim bekliyor). Vücut fiyatları ön görüşmede.</p>"),
+    # (başka oturumlar bu paragrafa kendi cümlelerini ekliyor; vücut cümlesi paragrafın sonuna girer)
+    ('</p>\n  <div class="row"><span>Buton sayacı',
+     " Vücut: bölgesel incelme, Slim Tone, G5 ve lenf drenaj gerçek salon medyasıyla; "
+     "EM, heykeltraş ve popo temsilî görselle, pasif jimnastik ve çatlak temsilî çizimle (çekim bekliyor). Vücut fiyatları ön görüşmede."
+     '</p>\n  <div class="row"><span>Buton sayacı'),
     # salon: Bölgesel İncelme kartı vitrine gider ve canlı oynar
     ('<button class="tile" data-plan="salon" data-opt="bolgesel"><img src="m/ig/bolgesel-cift-sonra-480.webp" alt="Bölgesel incelme sonrası" loading="lazy" width="480" height="1200"><span class="tile-txt"><b>Bölgesel İncelme</b><span>Kişiye özel paket</span></span></button>',
      '<a class="tile" href="#vucut" data-go="vucut"><video class="tile-vid" muted playsinline loop preload="none" poster="m/ig/vucut-g5-poster.webp" data-src="m/ig/vucut-g5.mp4" aria-label="G5 masajı, salonumuzda çekildi"></video><span class="tile-tag">Vitrin · canlı</span><span class="tile-txt"><b>Bölgesel İncelme</b><span>Slim Tone · G5 · Lenf drenaj</span></span></a>'),
@@ -135,48 +142,75 @@ PATCHES = [
     ('else if(f.img){ m=document.createElement("img"); m.src=f.img; m.alt=f.cap||""; }',
      'else if(f.img){ m=document.createElement("img"); m.src=f.img; m.alt=f.cap||""; if(f.fit) m.style.objectFit=f.fit; }'),
     # görünüm başlatma ve boot
-    ('  if(v==="lazer"){ initRegions(); initPairs("galLazer","lazer"); }\n',
-     '  if(v==="lazer"){ initRegions(); initPairs("galLazer","lazer"); }\n  if(VUCUT_BY[v]) initVucut(v);\n'),
+    ('  relead();\n  $$("[data-view=\'"+v+"\'] [data-dust]").forEach(initDust); }',
+     '  if(VUCUT_BY[v]) initVucut(v);\n  relead();\n  $$("[data-view=\'"+v+"\'] [data-dust]").forEach(initDust); }'),
     ("function boot(){\n  S.world=", "function boot(){\n  buildVucut();\n  S.world="),
 ]
-# Kaş sayfası (sahip onayı 2026-10-07): manifestin "başka uzmana ait" diye dışladığı kas-cift-3 (IG 18516297502030856)
-# Altın Oran Aynası'ndan ve galeriden çıkar. Aynanın yerine salonun kendi "altın oran · kına" sonucu gelir; kaşın yönü aynı
-# (baş sağda, kuyruk solda), ölçü noktaları bu fotoğrafın 800x500 kapak kırpımına göre yeniden konumlandı.
-KAS_PATCHES = [
-    ('<img src="m/ig/kas-cift-3-sonra-800.webp" alt="Altın oran ölçü çizgileriyle kaş" width="800" height="500" loading="lazy">',
-     '<img src="m/ig/kas-kina-sonra-800.webp" alt="Altın oran ölçü çizgileriyle kaş, salonumuzda yapıldı" width="800" height="534" loading="lazy">'),
-    ('<path class="g-line" pathLength="1" d="M830 900 L602 209"/>', '<path class="g-line" pathLength="1" d="M830 900 L715 194"/>'),
-    ('<path class="g-line" pathLength="1" d="M830 900 L300 50"/>', '<path class="g-line" pathLength="1" d="M830 900 L452 59"/>'),
-    ('<path class="g-line" pathLength="1" d="M830 900 L-5 188"/>', '<path class="g-line" pathLength="1" d="M830 900 L-17 224"/>'),
-    ('<circle class="g-ring d1" cx="615" cy="248" r="13"/><circle class="g-ring d2" cx="330" cy="98" r="13"/><circle class="g-ring d3" cx="42" cy="228" r="13"/>',
-     '<circle class="g-ring d1" cx="722" cy="238" r="13"/><circle class="g-ring d2" cx="470" cy="100" r="13"/><circle class="g-ring d3" cx="18" cy="252" r="13"/>'),
-    ('<circle class="g-dot d1" cx="615" cy="248" r="9"/><circle class="g-dot d2" cx="330" cy="98" r="9"/><circle class="g-dot d3" cx="42" cy="228" r="9"/>',
-     '<circle class="g-dot d1" cx="722" cy="238" r="9"/><circle class="g-dot d2" cx="470" cy="100" r="9"/><circle class="g-dot d3" cx="18" cy="252" r="9"/>'),
-    ('<text class="g-lbl d1" x="640" y="214" text-anchor="end">BAŞLANGIÇ</text>', '<text class="g-lbl d1" x="760" y="296" text-anchor="end">BAŞLANGIÇ</text>'),
-    ('<text class="g-lbl d2" x="352" y="70">KAVİS</text>', '<text class="g-lbl d2" x="494" y="74">KAVİS</text>'),
-    ('<text class="g-lbl d3" x="30" y="300">BİTİŞ</text>', '<text class="g-lbl d3" x="24" y="306">BİTİŞ</text>'),
-    ('var KAS_PAIRS=[["kas-cift-2","Kaş alımı"],["kas-cift-3","Kaş tasarımı"],["kas-kina","Altın oran · kına"],["kas-laminasyon","Kaş laminasyonu"]];',
-     'var KAS_PAIRS=[["kas-cift-2","Kaş alımı"],["kas-kina","Altın oran · kına"],["kas-laminasyon","Kaş laminasyonu"]];'),
+# Kaş sayfası: kas-cift-3'ün çıkarılması (sahip onayı 2026-10-07) 7. sürümde yayınlandı. Kaş oturumu Altın Oran aynasını
+# ve "beş perde" bölümünü o sürümün üstüne kurdu; bu bölüm artık tabanın parçasıdır ve burada yamalanmaz.
+# Mobil katmanı (bütün sayfalar; src/mobil.css ile birlikte). Menüde bulunulan sayfanın grubu kısayollarda işaretlenir.
+MOBIL_PATCHES = [
+    ("""'<button data-nj="'+i+'" data-track-label="at-menu-grup">'+g[0]+'</button>'""",
+     """'<button data-nj="'+i+'"'+(g[1].some(function(it){ return it[2]&&it[2]===cur; })?' class="here" aria-current="true"':'')+' data-track-label="at-menu-grup">'+g[0]+'</button>'"""),
 ]
+# Gizli görünümlerin görselleri: tabanda eager (çoğu fetchpriority="high") olduğu için hangi sayfa açılırsa açılsın
+# başka sayfaların görselleri de iniyordu (vücut sayfasında 767 KB'ın ~560 KB'ı). loading="lazy" ile yalnızca görünüm
+# açılınca iner. Salon (varsayılan görünüm, ilk açılışta görünür) ve tırnak (görselleri <template> içinde, zaten inmez)
+# dokunulmaz; başka oturumların yeni eklediği görünümler (kaş perde, lazer alt sayfaları) kendiliğinden kapsanır.
+LAZY_SKIP = ("salon", "tirnak")
+LAZY_MIN = 11
+
+
+def lazy_hidden(html: str) -> str:
+    out, n = [], 0
+    s, e = html.index("<main>"), html.index("</main>")
+    if '<img loading="lazy" ' in html[s:e]:
+        raise SystemExit('lazy_hidden: tabanda zaten "<img loading=\"lazy\" " var; rebase.py geri alamaz')
+    parts = re.split(r'(?=<section data-view=")', html[s:e])
+    for part in parts:
+        m = re.match(r'<section data-view="([a-z-]+)"', part)
+        if m and m.group(1) not in LAZY_SKIP:
+            def add(t: re.Match) -> str:
+                nonlocal n
+                if "loading=" in t.group(0):
+                    return t.group(0)
+                n += 1
+                return t.group(0).replace("<img ", '<img loading="lazy" ', 1)
+            part = re.sub(r"<img\b[^>]*>", add, part)
+        out.append(part)
+    if n < LAZY_MIN:
+        raise SystemExit(f"lazy_hidden: {n} görsel (en az {LAZY_MIN} beklenir); tabanı kontrol edin")
+    print(f"  gizli görünümlerde loading=lazy: {n} görsel")
+    return html[:s] + "".join(out) + html[e:]
+
+
 CSS_ANCHOR = '</style>\n\n<div class="wrap" lang="tr">'
 JS_ANCHOR = "/* ---------- boot ---------- */"
 
 
+def views_patch(html: str) -> tuple[str, str]:
+    m = re.search(r'var VIEWS=\[[^\]]*\];', html)
+    if not m:
+        raise SystemExit("VIEWS bulunamadı")
+    line = m.group(0)
+    return line, line[:-2] + "," + ",".join(f'"{v}"' for v in VIEW_IDS) + "];"
+
+
 def build() -> str:
     html = BASE.read_text(encoding="utf-8")
-    for old, new in PATCHES + KAS_PATCHES:
+    for old, new in PATCHES + MOBIL_PATCHES + [views_patch(html)]:
         n = html.count(old)
         if n != 1:
             raise SystemExit(f"yama {n} kez eşleşti (1 olmalı): {old[:80]}")
         html = html.replace(old, new)
-    css = (HERE / "src" / "vucut.css").read_text(encoding="utf-8")
+    css = (HERE / "src" / "vucut.css").read_text(encoding="utf-8") + (HERE / "src" / "mobil.css").read_text(encoding="utf-8")
     js = (HERE / "src" / "vucut.js").read_text(encoding="utf-8").replace("/*__VB_SVG__*/", svg_js())
     for anchor in (CSS_ANCHOR, JS_ANCHOR):
         if html.count(anchor) != 1:
             raise SystemExit(f"çapa bulunamadı: {anchor}")
     html = html.replace(CSS_ANCHOR, css + CSS_ANCHOR)
     html = html.replace(JS_ANCHOR, js + "\n" + JS_ANCHOR)
-    return html
+    return lazy_hidden(html)
 
 
 def check(html: str) -> list[str]:
@@ -201,8 +235,8 @@ def main() -> int:
     if a.check:
         return 0
     (SITE / "index.html").write_text(html, encoding="utf-8")
-    (SNAP / "artifact-v7.html").write_text(html, encoding="utf-8")
-    print(f"  -> {SITE / 'index.html'}\n  -> {SNAP / 'artifact-v7.html'}")
+    (SNAP / "artifact-v17.html").write_text(html, encoding="utf-8")
+    print(f"  -> {SITE / 'index.html'}\n  -> {SNAP / 'artifact-v17.html'}")
     if a.publish:
         head_end = html.index("</head><body>\n") + len("</head><body>\n")
         body = html[head_end:].rstrip()
