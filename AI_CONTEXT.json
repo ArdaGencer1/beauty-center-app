@@ -1,12 +1,16 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "updated_at": "2026-10-07",
   "read_first": "AI_HANDOFF.md",
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "archived_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
+    "archived_snapshot_version": 3,
+    "canonical_website": "website/index.html",
+    "canonical_working_copy": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-current.html",
+    "builder": "sources/atelier_lazer_20261007/build_artifact.py",
+    "published_to_artifact_url": false
   },
   "measurement": {
     "system": "TagCtx",
@@ -58,7 +62,7 @@
   "plans": [
     {
       "key": "lazer",
-      "status": "partial_advanced",
+      "status": "repository_build_complete_publish_pending",
       "priority": 1,
       "path": "plans/claude/20261007/https-panel-seldagencerbeauty-com-new-cu-wiggly-adleman.md",
       "ready": [
@@ -66,13 +70,15 @@
         "render.py",
         "src/lazer.css",
         "src/lazer.js",
-        "CRM/navigation/review data"
+        "CRM/navigation/review data",
+        "deterministic merged Artifact build",
+        "website/index.html integration",
+        "mobile and desktop browser verification"
       ],
       "remaining": [
-        "Artifact v4 build and publish to the same URL",
+        "publish current build to the same Artifact URL and read it back",
         "live patch build.py",
-        "screenshots and checks",
-        "mobile/desktop and CTA tests",
+        "live --check and TagCtx verification",
         "owner-approved live apply"
       ]
     },
