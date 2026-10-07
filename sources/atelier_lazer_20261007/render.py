@@ -651,14 +651,31 @@ def reels_section(code, media):
 </section>'''
 
 
+# Review topics: a card joins a topic only when its verbatim text contains one of these phrases.
+# A chip is shown only when >= 2 cards match (10-07: Acı 2, Sonuç 8, İlgi 4; Hijyen had 1 and was dropped).
+TOPICS = [("aci", "Acı", ("acı",)),
+          ("sonuc", "Sonuç", ("sonuç", "fark", "çıkmıyor", "etkisini", "dökülme")),
+          ("ilgi", "İlgi", ("güler yüz", "ilgili", "samimi", "yardımcı"))]
+
+
+def topics_of(text: str) -> list[str]:
+    lo = text.replace("I", "ı").replace("İ", "i").lower()
+    return [k for k, _n, words in TOPICS if any(w in lo for w in words)]
+
+
 def reviews_section(code, rev, P):
     st = rev["stats"]
     items = rev["items"]
     if P["g"] == "erkek":
         items = sorted(items, key=lambda r: 0 if r.get("g") == "m" else 1)
-    cards = "".join(f'<article class="lz-rv"><span class="lz-stars" aria-label="5 yıldız">★★★★★</span><p>{esc(r["t"])}</p><footer><b>{esc(r["n"])}</b><span>{month_tr(r["d"])} · Google</span></footer></article>' for r in items)
+    cards = "".join(f'<article class="lz-rv" data-tp="{" ".join(topics_of(r["t"]))}"><span class="lz-stars" aria-label="5 yıldız">★★★★★</span><p>{esc(r["t"])}</p><footer><b>{esc(r["n"])}</b><span>{month_tr(r["d"])} · Google</span></footer></article>' for r in items)
+    counts = {k: sum(k in topics_of(r["t"]) for r in items) for k, _n, _w in TOPICS}
+    chips = "".join(f'<button type="button" data-tpc="{k}" aria-pressed="false" data-track-label="at-{code}-yorum-konu">{n}<small>{counts[k]}</small></button>'
+                    for k, n, _w in TOPICS if counts[k] >= 2)
+    chips = (f'<div class="lz-tpc" role="group" aria-label="Yorum konusu"><button type="button" data-tpc="" aria-pressed="true" data-track-label="at-{code}-yorum-konu">Tümü<small>{len(items)}</small></button>{chips}</div>') if chips else ""
     return f'''<section class="lz-sec lz-reviews" id="lz-yorumlar">
-  <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b>{st["five"]}</b><span>/ {st["mentions"]}</span></div><p>Google'da lazer geçen {st["mentions"]} yorumun {st["five"]}'u 5 yıldız.</p></div>
+  <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b data-lz-count="{st["five"]}">{st["five"]}</b><span>/ {st["mentions"]}</span></div><p>Google'da lazer geçen {st["mentions"]} yorumun {st["five"]}'u 5 yıldız.</p></div>
+  {chips}
   <div class="lz-rvrow" data-lz-rv><div class="lz-rvtrack">{cards}</div></div>
   <p class="lz-fine">Google yorumlarından aynen alıntı; “…” kısaltmayı gösterir. Sonuç kişiye göre değişir. <a href="{MAPS}" target="_blank" rel="noopener" data-track-label="at-{code}-yorumlar-google">Tüm yorumlar ↗</a></p>
 </section>'''

@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 """ATELIER · FAZ L -- build the prototype Artifact with the laser family.
 
-Input is the *published* Artifact's index.html (saved under prototypes/claude-artifact/...), never the old v3
+Input is the *published* Artifact's index.html -- the old single-view page (first build) or a page this
+script already built (later builds: only the laser blocks are swapped, so edits made inside Claude elsewhere
+on the page survive) (saved under prototypes/claude-artifact/...), never the old v3
 snapshot: the published page carries work done inside Claude (the nail family) that the snapshot lacks.
 
 What it does, and nothing else:
@@ -46,10 +48,15 @@ MARK = "<!-- ATELIER FAZ L · lazer ailesi (a3_build.py) -->"
 
 
 def sections(html: str) -> dict:
+    """Top-level views: each runs to the next <section data-view=...> or </main>.  (Laser views nest
+    <section class="lz-sec"> inside, so the first </section> is not the end of a view.)  The build marker
+    comment is left out so a view's text compares equal before and after."""
+    starts = [(m.start(), m.group(1)) for m in re.finditer(r'<section data-view="([a-z-]+)"', html)]
+    stop = html.index("</main>")
     out = {}
-    for m in re.finditer(r'<section data-view="([a-z-]+)"', html):
-        end = html.index("</section>", m.start())
-        out[m.group(1)] = html[m.start():end + len("</section>")]
+    for k, (a, v) in enumerate(starts):
+        b = starts[k + 1][0] if k + 1 < len(starts) else stop
+        out[v] = html[a:b].replace(MARK + "\n", "")
     return out
 
 
@@ -129,12 +136,36 @@ def wire(html: str) -> str:
     return html
 
 
+def rebuild(base: str) -> str:
+    """Base already carries the laser family (v4+): swap only the laser blocks, keep everything else as published."""
+    html = base
+    before = sections(html)
+    i = html.index(MARK)
+    starts = [(m.start(), m.group(1)) for m in re.finditer(r'<section data-view="([a-z-]+)"', html)]
+    j = next((a for a, v in starts if a > i and v not in VIEW.values()), html.index("</main>"))
+    html = html[:i] + laser_views() + "\n" + html[j:]
+    a = html.index('<style id="lz-css">\n'); b = html.index("\n</style>", a)
+    html = html[:a] + '<style id="lz-css">\n' + (HERE / "src/lazer.css").read_text() + html[b:]
+    a = html.index("<script>window.ATLZ_NOAUTO=true;"); b = html.index("<script>\n(function(){\n\"use strict\";", a)
+    html = html[:a] + laser_data() + "\n<script>\n" + (HERE / "src/lazer.js").read_text() + "\n</script>\n" + html[b:]
+    if "function lzMount(v)" not in html:
+        raise SystemExit("a3_build: base has laser views but no host wiring")
+    after = sections(html)
+    for v, sec in before.items():
+        if v not in VIEW.values() and after.get(v) != sec:
+            raise SystemExit(f"a3_build: section {v!r} changed -- refusing")
+    return html
+
+
 def build(base: str) -> str:
+    if MARK in base:
+        return rebuild(base)
     html = base
     before = sections(html)
     if "lazer" not in before or "lazer-fiyat" in before:
         raise SystemExit("a3_build: base must be a published page with the old single laser view")
-    html = rep(html, before["lazer"], laser_views())
+    old = before["lazer"]
+    html = rep(html, old, laser_views() + "\n" + old[old.rstrip().rfind("</section>") + len("</section>"):].lstrip("\n"))
     # styles after the page's last head stylesheet; scripts before the page script
     css = (HERE / "src/lazer.css").read_text()
     html = rep(html, '<header class="nav">', '<style id="lz-css">\n' + css + '\n</style>\n<header class="nav">')

@@ -27,7 +27,7 @@ Playwright ile çekildi.
 | B3 | Mobilde kanıt çipleri (3 dalga boyu · 10 °C · 30/31) fotoğrafın en üstünde, logoyla çakışıyor ve okunması zor. Masaüstünde yapışkan WhatsApp barı kanıt çiplerinin üstüne biniyor. | L1 | Kanıt değerini kaybediyor. |
 | B4 | “Işığın Yolculuğu” adımları arasında mobilde ~400–500 px'lik boş siyah alanlar var; bölüm toplam ~3 ekran. | L3 | Kaydırma yorucu; sahne boş görünüyor. |
 | B5 | Vücut haritası silüeti manken gibi; “DOKUNUN” etiketi kalça hizasında gövdeye biniyor. Haritanın altındaki “Listeden seçmek isterim” bölümü kapalıyken ~150 px boşluk bırakıyor. | L2 | Merkez imza deneyimi sıradan duruyor. |
-| B6 | “Salonumuzda çekildi” şeridinde yalnız 2 video var; elde 6 hazır video var. | L6 | Gerçek videoların gücü kullanılmıyor. |
+| B6 | ~~“Salonumuzda çekildi” şeridinde yalnız 2 video var.~~ **Düzeltme:** şeritte 5 video var; telefonda yatay kaydırıldığı için ekrana 2'si sığıyor. Asıl eksik: her videonun ayrı açılması ve aynı anda birden çok video yüklenmesi. | L6 | Dalga 3'te çözüldü. |
 | B7 | Yorum duvarı kartları ekranın solundan kesik başlıyor; büyük “30/31” sayısı durağan. | L7 | Sosyal kanıt sönük. |
 
 Not: Hijyen ve alt sayfa karolarındaki boş kareler tam sayfa çekimdeki
@@ -343,6 +343,35 @@ Sıra: W6 → W7 → W5 → W4 → yüze yakınlaşma (etkisi en yüksekten).
   geçişi (View Transition; desteklenmezse mevcut solma).
 - Kapı: Dalga 2 testleri + yeni testler (çip süzgeci doğru yorumları
   gösteriyor; tur dokunuşla duruyor; video sayısı) → Artifact v5.
+
+**Durum (10-07): Adım B tamamlandı — Artifact Version 11 = “v5 lazer dalga 3”**
+(`1791386228-c5b1`, geri okunan `index.html` sha256 yerel derlemeyle aynı).
+
+- W6: şeritteki 5 video tek hikâye oynatıcıda (“Salonumuzda çekildi”, 5
+  ilerleme çubuğu), dokunulan videodan açılır. A kademesinde yalnız ekranda en
+  çok görünen video yüklenip oynar (test: 5'ten 1'i yüklü).
+- W7: duvar bölüm görününce başlar (ilk kart hizalı), dokununca durur. “30”
+  0'dan sayar (1,2 sn). Konu çipleri Tümü 12 · Acı 2 · Sonuç 8 · İlgi 4 —
+  `render.TOPICS` ifadeleriyle, yalnız yorum metninde geçen sözcüklerden;
+  çip ≥ 2 eşleşmede görünür. Etiket `yorum-konu`.
+- W5: cihaz turu bölüm yarı görününce bir kez, 1,2 sn arayla; dokunuşla durur;
+  turda fotoğrafa hafif yakınlaşma ve aktif noktada odak halkası.
+- W4: adım metinleri cam kart; adımlar 26 svh (masaüstü 40 svh). Kartlar
+  sahnenin **altından** geçer (üstten geçince kök çizimini kapatıyordu).
+  Bölüm 3,5 → 2,24 ekran; **≤ 1,6 hedefine ulaşılmadı**: daha kısası
+  kaydırarak anlatımı bozuyor (kart sahneye yetişmeden sonraki adıma geçiyor).
+- Yüze yakınlaşma: “Yüz”e geçişte figür başa dalar, “Ön/Arka”ya dönüşte geri
+  çıkar (View Transition; desteklenmezse doğrudan geçiş, C kademesinde yok).
+- Doğrulama: 7 sayfa × 4 genişlik (`check2`) temiz; Dalga 3 testi (`w3`):
+  tur sırası, dokunuşla durma, 1/5 video, 5 çubuklu hikâye, sayaç 20→30,
+  çip sayıları, yüz/ön geçişi, JS hatası 0. Artifact'te 6 görünüm × 4 genişlik
+  ve akışlar temiz; diğer 9 ekran piksel olarak aynı (bilinen animasyon farkı
+  hariç).
+- Yayın sırasında paralel oturum iki kez yayın yaptı; ikisi de cilt/tırnak.
+  `a3_build.py`'ye yeniden derleme kipi eklendi (yalnız lazer blokları değişir).
+  Ayrıca `sections()` hatası düzeltildi: lazer görünümleri iç içe `<section>`
+  taşıdığı için ilk `</section>` görünüm sonu değildi. Düzeltilmiş betik v4
+  kaynaklarıyla v4'ü bayt bayt yeniden üretiyor (sha256 aynı).
 
 ### Adım C — Dalga 4 + alt sayfa kimlikleri → Artifact v6
 

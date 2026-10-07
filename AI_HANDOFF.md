@@ -22,6 +22,12 @@ inceleyerek token harcamasını önlemektir.
   `a3_build.py` ile `artifact-1791383911.html` tabanından derlendi; geri
   okunan `index.html` sha256 eşleşti. Artifact başka bir organizasyondan
   düzenleme yetkisiyle paylaşılmıştır (bu hesabın “mine” listesinde yok).
+- **Paralel çalışma (10-07):** aynı Artifact'te başka bir oturum cilt ve tırnak
+  üzerinde yayın yapıyor (v4'ten sonra iki kez). Lazer yayınları her seferinde
+  **o anki yayındaki sürümden** derlenir: `a3_build.py` yeniden derleme kipi
+  yalnız lazer bloklarını (görünümler, `#lz-css`, veri + `lazer.js`) değiştirir,
+  gerisini bayt bayt korur. Reddedilen yayın yeni tabanı verir; onunla yeniden
+  derlenir. Son yayın: Version 11 = “v5 lazer dalga 3” (`1791386228-c5b1`).
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.

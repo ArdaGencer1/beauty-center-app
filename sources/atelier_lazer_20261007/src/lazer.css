@@ -197,8 +197,9 @@
 .lz-sess i.on{background:var(--lz-pink);border-color:var(--lz-pink);box-shadow:0 0 6px var(--lz-pink)}
 .lz-jfig[data-step="4"] .lz-sess{opacity:1}
 .lz-jsteps{position:relative;z-index:1}
-.lz-jstep{min-height:56svh;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:0 4px 9svh}
-.lz-jstep:first-child{min-height:50svh}
+.lz-jstep{min-height:26svh;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:0 4px 9svh}
+.lz-jstep:first-child{min-height:26svh}
+.lz-jtxt{display:grid;gap:8px;padding:16px 16px 18px;border-radius:20px;background:rgba(18,10,14,.74);border:1px solid rgba(255,211,234,.18);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 24px 50px -30px rgba(0,0,0,.9)}
 .lz-jn{font:600 11px/1 var(--lz-body);letter-spacing:.22em;color:var(--lz-pink)}
 .lz-jstep b{font:400 34px/1.02 var(--lz-display);color:var(--lz-text);text-wrap:balance}
 .lz-jstep p{max-width:42ch}
@@ -208,7 +209,7 @@
 .lz-waves small{font-size:11px!important;line-height:1.3;color:var(--lz-text3)!important}
 .lz-waves button[aria-pressed="true"]{border-color:var(--lz-pink);background:rgba(255,79,163,.1)}
 .lz[data-lz-tier="C"] .lz-jfig{position:relative;top:0}
-.lz[data-lz-tier="C"] .lz-jstep{min-height:0;padding:22px 4px 0}
+.lz[data-lz-tier="C"] .lz-jstep{min-height:0;padding:16px 0 0}
 
 /* ---------- L4 calendar ---------- */
 .lz-cal{border-radius:26px;padding:22px 16px 18px;background:linear-gradient(180deg,var(--lz-raised),var(--lz-bg2));border:1px solid var(--lz-line)}
@@ -250,7 +251,9 @@
 /* ---------- L5 device ---------- */
 .lz-dev-grid{display:grid;gap:16px}
 .lz-devfig{position:relative;margin:0;border-radius:24px;overflow:hidden;aspect-ratio:3/4;background:#2a2320;box-shadow:0 30px 80px -36px rgba(0,0,0,.9)}
-.lz-devfig img{width:100%;height:100%;object-fit:cover}
+.lz-devfig img{width:100%;height:100%;object-fit:cover;transform-origin:45% 35%;transition:transform 8s var(--lz-ease)}
+.lz-devfig.touring img{transform:scale(1.06)}
+.lz-devfig.touring .lz-hot[aria-pressed="true"]{box-shadow:0 0 0 6px rgba(255,79,163,.25),0 0 0 14px rgba(255,79,163,.12)}
 .lz .lz-hot{position:absolute;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;border:0;padding:0;background:rgba(255,79,163,.25);cursor:pointer;display:grid;place-items:center}
 .lz-hot i{width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px rgba(255,79,163,.85),0 0 14px 4px rgba(255,79,163,.7)}
 .lz-hot::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,211,234,.9);animation:lzPulse 2.2s var(--lz-ease) infinite}
@@ -281,7 +284,16 @@
 .lz-rvrow{overflow:hidden;margin-inline:calc(var(--lz-g) * -1);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
 .lz-rvtrack{display:flex;gap:12px;width:max-content;padding:0 var(--lz-g)}
 .lz[data-lz-tier="A"] .lz-rvtrack.run,.lz[data-lz-tier="B"] .lz-rvtrack.run{animation:lzMarq var(--dur,90s) linear infinite}
-.lz-rvrow:hover .lz-rvtrack,.lz-rvrow:active .lz-rvtrack{animation-play-state:paused}
+.lz-rvrow:hover .lz-rvtrack,.lz-rvrow:active .lz-rvtrack,.lz-rvtrack.paused{animation-play-state:paused}
+.lz .lz-rvrow.filtered{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;mask-image:none;-webkit-mask-image:none}
+.lz-rvrow.filtered::-webkit-scrollbar{display:none}
+.lz-rvrow.filtered .lz-rv{scroll-snap-align:start}
+.lz .lz-rv[hidden]{display:none}
+.lz-tpc{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.lz-tpc button{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--lz-line2);background:rgba(255,255,255,.03);cursor:pointer;font:600 13px/1 var(--lz-body);color:var(--lz-text)}
+.lz-tpc small{font-size:11px;color:var(--lz-text3)}
+.lz-tpc button[aria-pressed="true"]{background:var(--lz-pink-hi);border-color:var(--lz-pink-hi);color:#1B1A18}
+.lz-tpc button[aria-pressed="true"] small{color:#6b4d58}
 @keyframes lzMarq{to{transform:translateX(-50%)}}
 .lz[data-lz-tier="C"] .lz-rvrow{overflow-x:auto;mask-image:none;-webkit-mask-image:none}
 .lz-rv{width:min(80vw,340px);flex:none;padding:18px;border-radius:22px;background:var(--lz-raised);border:1px solid var(--lz-line);display:grid;gap:10px;align-content:start}
@@ -437,6 +449,15 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 .lz-tier-c *,.lz[data-lz-tier="C"] *{animation:none!important;transition:none!important}
 .lz[data-lz-tier="C"] .lz-h1a{color:var(--lz-text)!important;background:none}
 
+/* ---------- face zoom ---------- */
+::view-transition-group(lz-fig){animation-duration:.55s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+.lz-vt-in::view-transition-old(lz-fig){animation:lzDiveOut .55s cubic-bezier(.4,0,.2,1) both;transform-origin:50% 8%}
+.lz-vt-in::view-transition-new(lz-fig){animation:lzDiveIn .55s cubic-bezier(.2,.8,.2,1) both}
+.lz-vt-out::view-transition-old(lz-fig){animation:lzDiveIn .45s cubic-bezier(.4,0,.2,1) reverse both}
+.lz-vt-out::view-transition-new(lz-fig){animation:lzDiveOut .5s cubic-bezier(.2,.8,.2,1) reverse both;transform-origin:50% 8%}
+@keyframes lzDiveOut{to{transform:scale(3.2);opacity:0}}
+@keyframes lzDiveIn{from{transform:scale(.4) translateY(-40%);opacity:0}to{transform:none;opacity:1}}
+
 /* ---------- small phones (≤360 px): gold labels fit without ellipsis ---------- */
 @media (max-width:360px){
   .lz-btn-gold{padding:0 14px;gap:8px;font-size:14px}
@@ -462,7 +483,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
   .lz-actions .lz-btn-gold,.lz-actions .lz-btn-line{width:auto;min-width:240px}
   .lz-jwrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:start}
   .lz-jfig{top:calc(var(--lz-top) + 40px)}
-  .lz-jstep,.lz-jstep:first-child{min-height:70svh;justify-content:center;padding-bottom:0}
+  .lz-jstep,.lz-jstep:first-child{min-height:40svh;justify-content:center;padding-bottom:0}
   .lz-waves{max-width:640px}
   .lz-cal{max-width:860px}
   .lz-dev-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
