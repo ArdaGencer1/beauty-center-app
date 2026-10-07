@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-07T16:29:14+03:00",
+  "runtime": {
+    "consent": "granted",
+    "checked": 5,
+    "failed": 0,
+    "page_errors": 0,
+    "required_ads_destination": "AW-11538067972",
+    "pages": [
+      "index.html",
+      "protez-tirnak.html",
+      "erkek-lazer-epilasyon.html",
+      "konum.html",
+      "price-menu.html"
+    ]
+  },
+  "audit": {
+    "pages_scanned": 107,
+    "actions_scanned": 33,
+    "counts": {
+      "critical": 2,
+      "warn": 3,
+      "info": 1
+    },
+    "known_critical_ids": [
+      "dead_primary::7766869428",
+      "unreachable_endpoint::seldagencerbeauty.com/api/meta-conversions"
+    ]
+  },
+  "note": "This is a regression baseline, not proof of current health. Re-run tag_ctx.py audit and verify."
+}
