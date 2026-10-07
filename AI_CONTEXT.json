@@ -8,6 +8,26 @@
     "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
     "repository_snapshot_version": 3
   },
+  "measurement": {
+    "system": "TagCtx",
+    "runbook": "TAGCTX_RUNBOOK.md",
+    "cli": "tag_ctx.py",
+    "deploy_gate": "patches/verify_tags.sh",
+    "baseline": "tagctx-baseline.json",
+    "required_after_changes_to": [
+      "HTML or JavaScript",
+      "CTA, forms, WhatsApp or phone links",
+      "Consent Mode",
+      "GTM",
+      "conversion and attribution code"
+    ],
+    "completion_commands": [
+      "./run tag_ctx.py audit --record",
+      "./run tag_ctx.py diff",
+      "./run tag_ctx.py verify --pages CHANGED_PAGES",
+      "patches/verify_tags.sh CHANGED_PAGES"
+    ]
+  },
   "media": {
     "selected_items": 111,
     "processed_files": 548,
@@ -103,7 +123,8 @@
     "Use instagram.db, never media.json",
     "Do not invent before/after results, prices, guarantees or claims",
     "Do not commit secrets, personal data or instagram.db",
-    "Do not apply to the live site without explicit owner approval"
+    "Do not apply to the live site without explicit owner approval",
+    "Do not declare a site or tracking change complete until TagCtx passes"
   ],
   "completion_gates": [
     "published same Artifact URL and read back",
@@ -114,5 +135,6 @@
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
     "live patch dry-run/check passed"
+    ,"TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }
