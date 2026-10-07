@@ -10,5 +10,6 @@ Bu klasörde 7 Ekim 2026 tarihinde oluşturulan üç güncel planın değiştiri
 1. Lazer epilasyon ailesi
 2. Kalıcı makyaj sayfaları
 3. Cilt Atlası
+4. Kaş ve yüz "Hikâye" (`kas-yuz-hikaye-scroll.md`, sonradan eklendi; değiştirilmemiş kopya değil)
 
 Web için seçilmiş ve işlenmiş medya `patches/media_ig_20261007/out/` altında; üretim betiği ve manifest aynı patch klasöründedir. Ham Instagram dışa aktarımı boyutu ve kaynak-veri niteliği nedeniyle Git deposuna eklenmemiştir.

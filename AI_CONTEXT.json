@@ -114,6 +114,28 @@
         "replace placeholders",
         "verification"
       ]
+    },
+    {
+      "key": "kas_yuz",
+      "status": "planned",
+      "priority": 4,
+      "path": "plans/claude/20261007/kas-yuz-hikaye-scroll.md",
+      "ready": [
+        "visual review of 6 brow items",
+        "page/media matrix",
+        "edit recipe",
+        "shoot list",
+        "wave plan"
+      ],
+      "remaining": [
+        "K0 remove kas-cift-3 from Artifact",
+        "server IG text search for brow/face videos",
+        "CRM prices for face/chin/upper-lip and henna",
+        "media v2",
+        "initScrolly and pages",
+        "staff shoots",
+        "verification"
+      ]
     }
   ],
   "hard_rules": [
@@ -134,7 +156,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }

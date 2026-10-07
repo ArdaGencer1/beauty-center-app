@@ -139,6 +139,20 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
+### 4. Kaş ve yüz "Hikâye" — planlandı
+
+Plan: `plans/claude/20261007/kas-yuz-hikaye-scroll.md`
+
+Kapsam: `kas-alimi`, `kas-laminasyonu`, `yuz-alimi`, `cene-alimi`,
+`dudakustu-alimi` (storytelling scroll).
+
+Hazır olanlar: 6 kaş öğesinin görsel incelemesi, sayfa-medya matrisi, edit
+reçetesi, çekim listesi, dalga planı.
+
+Kalanlar: K0 `kas-cift-3` acil çıkarma; sunucuda IG metin araması (kaş/yüz
+videoları); CRM fiyatları (yüz/çene/dudak üstü, kına); medya v2; `initScrolly`
+ve sayfalar; çekimler; doğrulama.
+
 Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
 
 ## Bilinen dışlamalar ve doğruluk kararları
@@ -151,6 +165,20 @@ Manifestte açıkça dışlanan PMU/kaş içerikleri:
 - `18104556860143186`: stok görünümlü kalem posteri.
 - `17986864907913512`: brow lamination/lash lift; PMU değil.
 - `18284646271254855`: 360p microblading videosu.
+
+Kaş incelemesi (2026-10-07, 6 öğe görsel doğrulandı; ayrıntı kaş/yüz planında):
+
+- `kas-altin-oran` (`17969532135076932`): kahraman; etiket ve alt şerit ortak kırpılır.
+- `kas-cift-2` (`18092748737430504`): en güçlü dönüşüm; iki yarı hizalanmalı.
+- `kas-kina` (`18196341943375941`): sol yarı gerçek "önce" değil, haritalama macunu.
+- `kas-profil` (`17879042364617421`): mobil kahraman; kaş üstündeki monogram kalır.
+- `kas-laminasyon` (`18088049695997551`): 1080×540, ince; büyütülmez.
+- `kas-3-adim` (`18040684901410337`): **kullanılmaz**; 3. bantta yabancı hesap filigranı.
+  Manifestten çıkarılması sahip onayını bekliyor.
+- Prototip v3 `kas` vitrini hâlâ dışlanmış `kas-cift-3` görselini kullanıyor
+  (Altın Oran Aynası ve `KAS_PAIRS`); kaş/yüz planının K0 adımı bunu kaldırır.
+- `kas-yakin` (`18037699223717361`) PMU planında `pmu-kas-pudra` olarak da geçiyor;
+  sahip netleştirene kadar kaş alımı sayfasında kullanılmaz.
 
 Cilt planında çıkarılması kararlaştırılan eski seçimler:
 
