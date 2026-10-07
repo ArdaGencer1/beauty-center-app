@@ -21,8 +21,9 @@ manifest ve medya indeksinden en fazla 3–6 görsel ya da 1–3 video kısa lis
 - `sources/media_ig_20261007/` — medya üretim betiği ve manifest
 - `sources/atelier_lazer_20261007/` — lazer sayfaları prototip kaynakları
 - `sources/media_vucut_20261007/` — vücut/incelme medya manifesti, üretim betiği ve ham video ön elemesi
+- `sources/atelier_vucut_20261007/` — 9 vücut sayfasının Artifact derleyicisi
 - `plans/claude/20261007/` — lazer, kalıcı makyaj, Cilt Atlası ve Vücut planları
-- `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüsü
+- `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüleri (güncel: `artifact-v5.html`)
 
 ## Aktif Artifact
 

@@ -2258,72 +2258,6 @@
   },
   "split": null
  },
- "vucut-roller": {
-  "fam": "vucut",
-  "kind": "video",
-  "alt": "Bacak arkasında silindir başlıklı vücut cihazıyla uygulama, salonumuzda çekildi",
-  "id": "18127469881839748",
-  "permalink": null,
-  "date": "2026-08-27",
-  "yuz": false,
-  "mp4": "vucut-roller.mp4",
-  "poster": "vucut-roller-poster.webp",
-  "w": 720,
-  "h": 1280,
-  "dur": 10.0,
-  "bytes": 1082542,
-  "split": null
- },
- "vucut-em": {
-  "fam": "vucut",
-  "kind": "video",
-  "alt": "Kol arkasında EM vücut cihazı başlığıyla uygulama; altın işlemeli Selda Gençer havlusu, salonumuzda çekildi",
-  "id": "18194252941391360",
-  "permalink": null,
-  "date": "2026-08-18",
-  "yuz": false,
-  "mp4": "vucut-em.mp4",
-  "poster": "vucut-em-poster.webp",
-  "w": 720,
-  "h": 1280,
-  "dur": 8.6,
-  "bytes": 1131486,
-  "split": null
- },
- "vucut-em-cihaz": {
-  "fam": "vucut",
-  "kind": "image",
-  "alt": "Salonumuzdaki EM vücut cihazı: dokunmatik ekran ve iki başlık",
-  "id": "18194252941391360",
-  "permalink": null,
-  "date": "2026-08-18",
-  "yuz": false,
-  "full": {
-   "files": {
-    "480": "vucut-em-cihaz-480.webp",
-    "720": "vucut-em-cihaz-720.webp"
-   },
-   "w": 720,
-   "h": 900
-  },
-  "split": null
- },
- "vucut-slimtone": {
-  "fam": "vucut",
-  "kind": "video",
-  "alt": "Slim Tone başlığıyla yanak ve çene hattında uygulama, salonumuzda çekildi",
-  "id": "18057972044799856",
-  "permalink": null,
-  "date": "2026-10-06",
-  "yuz": true,
-  "mp4": "vucut-slimtone.mp4",
-  "poster": "vucut-slimtone-poster.webp",
-  "w": 720,
-  "h": 900,
-  "dur": 10.0,
-  "bytes": 969656,
-  "split": null
- },
  "vucut-lenf": {
   "fam": "vucut",
   "kind": "video",
@@ -2440,6 +2374,72 @@
    "w": 360,
    "h": 636
   },
+  "split": null
+ },
+ "vucut-g5": {
+  "fam": "vucut",
+  "kind": "video",
+  "alt": "Bacak arkasında G5 masaj cihazıyla uygulama, salonumuzda çekildi",
+  "id": "18127469881839748",
+  "permalink": null,
+  "date": "2026-08-27",
+  "yuz": false,
+  "mp4": "vucut-g5.mp4",
+  "poster": "vucut-g5-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 10.0,
+  "bytes": 1082542,
+  "split": null
+ },
+ "vucut-slimtone-kol": {
+  "fam": "vucut",
+  "kind": "video",
+  "alt": "Kol arkasında Slim Tone başlığıyla uygulama; altın işlemeli Selda Gençer havlusu, salonumuzda çekildi",
+  "id": "18194252941391360",
+  "permalink": null,
+  "date": "2026-08-18",
+  "yuz": false,
+  "mp4": "vucut-slimtone-kol.mp4",
+  "poster": "vucut-slimtone-kol-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 8.6,
+  "bytes": 1131486,
+  "split": null
+ },
+ "vucut-slimtone-cihaz": {
+  "fam": "vucut",
+  "kind": "image",
+  "alt": "Salonumuzdaki Slim Tone cihazı: dokunmatik ekran ve iki başlık",
+  "id": "18194252941391360",
+  "permalink": null,
+  "date": "2026-08-18",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "vucut-slimtone-cihaz-480.webp",
+    "720": "vucut-slimtone-cihaz-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "vucut-slimtone-yuz": {
+  "fam": "vucut",
+  "kind": "video",
+  "alt": "Slim Tone yüz başlığıyla yanak ve çene hattında uygulama, salonumuzda çekildi",
+  "id": "18057972044799856",
+  "permalink": null,
+  "date": "2026-10-06",
+  "yuz": true,
+  "mp4": "vucut-slimtone-yuz.mp4",
+  "poster": "vucut-slimtone-yuz-poster.webp",
+  "w": 720,
+  "h": 900,
+  "dur": 10.0,
+  "bytes": 969656,
   "split": null
  }
 }

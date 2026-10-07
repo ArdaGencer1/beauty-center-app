@@ -10,7 +10,7 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
+- Depodaki son kaynak anlık görüntüsü **Artifact v5**'tir (`artifact-v5.html` = başka oturumun yayınladığı tırnak sürümü `artifact-v4-tirnak.html` + 9 vücut sayfası; Artifact sürüm id `1791382773-9c80`). v3 yalnızca tarihçe için durur. Artifact üzerinde bu
   anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
   olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
@@ -35,7 +35,8 @@ inceleyerek token harcamasını önlemektir.
 | Vücut medyası | `sources/media_vucut_20261007/` | `manifest_vucut.json` (10 kalem), `build_vucut.py` (depodaki ham videolardan üretir), `triage_videos.tsv` (74 sınıflandırılmamış ham videonun ön elemesi; bu videolar yeniden taranmaz). |
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
-| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html` | Mevcut Artifact'in depodaki v3 tabanı. |
+| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v5.html` | Yayındaki sürüm 5 (vücut). Tabanı `artifact-v4-tirnak.html`; ilk sürüm `artifact-v3.html`. |
+| Vücut sayfaları | `sources/atelier_vucut_20261007/` | `build.py` (tabana yama + `src/vucut.css` + `src/vucut.js`, `--check`, `--publish DIR`). |
 | Güncel planlar | `plans/claude/20261007/` | Lazer, PMU, Cilt Atlası ve Vücut planları. |
 
 ### Sunucudaki asıl yollar
@@ -139,7 +140,7 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-### 4. Vücut atölyesi — medya v1 hazır, sayfalar planlandı
+### 4. Vücut atölyesi — 9 sayfa Artifact'te (sürüm 5), sunucu adımları bekliyor
 
 Plan: `plans/claude/20261007/vucut-inceltme-sayfalari.md`
 (önizleme: `plans/claude/20261007/vucut-medya-onizleme.jpg`)
@@ -150,9 +151,15 @@ vücut kalemi / 20 dosya (`vucut-gobek`, `vucut-kol`, `vucut-roller`,
 `vucut-gobek-yan`, `vucut-cift-tam`, `vucut-cihaz-masa`); `build_vucut.py`;
 9 sayfalık sayfa-medya matrisi, çekim listesi ve dalga planı.
 
-Kalanlar: sahip teyitleri (cihaz adları, sonuç-hizmet eşlemesi, CRM);
-V1 sayfa motoru + 4 sayfa; V2 kalan 5 sayfa; sunucuda IG başlık araması,
-540 px tam çözünürlük ve canlı sayfa denetimi; çekimler; doğrulama.
+Sahip kararları (2026-10-07): siyah başlık = G5; kule cihaz = Slim Tone;
+bölgesel incelme = Slim Tone + G5 + lenf drenaj programı; medyası olmayan
+sayfalara temsilî görsel/çizim, sunucu en son. V1 ve V2 aynı Artifact'te
+yayında (sürüm 5).
+
+Kalanlar: açık sahip soruları (EM = Slim Tone mu, sehpadaki cihaz, heykeltraş,
+pasif jimnastik, CRM fiyatları, çatlak protokolü); sunucuda IG başlık araması,
+540 px tam çözünürlük ve canlı sayfa denetimi; çekimler; canlı için dry-run ve
+sahip onayı.
 
 Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası → Vücut**.
 
@@ -184,8 +191,12 @@ Vücut planında verilen kararlar:
   kırpımları kullanılır (2×2 kolaj; sütunlarda monogram çeyreği kalıyordu).
 - `17883457215458159`: LASERMACH bacak videosu; lazer, vücut incelme değil.
 - `18089498999286039`: el bakımı (gümüş eldiven); vücut değil.
-- `vucut-cihaz-masa` ve `vucut-roller`'ın G5/heykeltraş/popo kullanımı sahip
-  teyidi olmadan yayınlanmaz. Önce/sonra sonucu teyitsiz bir cihaza bağlanmaz.
+- `vucut-cihaz-masa` sahip teyidi olmadan yayınlanmaz. Önce/sonra sonucu yalnızca
+  Slim Tone + G5 + lenf drenaj programının sonucu olarak etiketlenir.
+- Artifact dosya sınırı: bir yayında en çok 255 dosya, bir sürümde 511. Sürüm 5'te
+  293 dosya var; güncellemede yalnızca yeni/değişen dosyaları gönderin.
+- Kaş sayfası hâlâ `kas-cift-3-sonra-800.webp` kullanıyor; manifest bunu başka
+  uzmana ait diye dışlamıştı (`18516297502030856`). Sahip onayıyla değiştirilmeli.
 
 Manifest eski kayıtları hâlâ içerebilir. Cilt geliştirmesinde planın son kararı
 manifestteki eski varlıktan üstündür. Lazer için gerçek “önce/sonra” yoktur;

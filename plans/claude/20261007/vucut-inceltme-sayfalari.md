@@ -22,6 +22,36 @@ Sahibin isteği: Vücut menüsündeki **bütün incelme türleri** için salonun
 
 ---
 
+## 0. Sahip kararları ve yayın durumu (2026-10-07, ikinci tur)
+
+Sahip planı onayladı ve şunları söyledi:
+- **"g5 o makine siyah olan"** → siyah silindir başlıklı cihaz **G5** (`vucut-roller` → `vucut-g5`).
+- **"3 vücut em cihaz slim tone"** → EM sandığımız kule cihaz **Slim Tone** (`vucut-em` → `vucut-slimtone-kol`, `vucut-em-cihaz` → `vucut-slimtone-cihaz`; yüz videosu `vucut-slimtone-yuz`).
+- **"işlemlerde hem slimtone hem g5 hem lenf drenaj 3 içinde"** → bölgesel incelme programı Slim Tone + G5 + lenf drenajın birlikte kullanılmasıdır; kol/göbek önce-sonrası bu üçlü programın sonucu olarak etiketlenir.
+- **"sen oralara orijinal olmayanları koy, en son sunucuya geçireceğiz"** → kendi çekimi olmayan sayfalara temsilî görsel/çizim konur ("Temsilî görsel / Temsilî çizim" etiketiyle); sunucu adımları (540 px, IG başlık araması, canlı) en sona kalır.
+- Yüzü kısmen görünen Slim Tone yüz videosu, sahibin 2026-10-06 tarihli genel izniyle ("en iyilerini kullan sıkıntı yok") kullanıldı.
+
+**Yayın:** Aynı Artifact'e **sürüm 5** (`1791382773-9c80`) yayınlandı ve geri okundu (yayınlanan gövde yerel derlemeyle bayt bayt aynı).
+Taban, bu sırada başka bir oturumun yayınladığı tırnak sürümüdür (`artifact-v4-tirnak.html`, 22 tırnak sayfası); vücut değişiklikleri onun üstüne birleştirildi, tırnak sayfaları korunarak test edildi.
+Kaynak: `sources/atelier_vucut_20261007/` (`build.py`, `src/vucut.css`, `src/vucut.js`); anlık görüntü `prototypes/.../artifact-v5.html`.
+Ekran görüntüleri: `plans/claude/20261007/vucut-sayfalar-mobil.jpg`.
+
+| Görünüm | Canlı slug | Kahraman | Durum |
+|---|---|---|---|
+| `vucut` | bolgesel-incelme | kol+göbek önce/sonra kolajı (altın dikiş) + Bölge Haritası | gerçek medya |
+| `slimtone` | slim-tone | Slim Tone kol videosu; cihaz + yüz başlığı ikilisi | gerçek medya |
+| `g5` | g5-masaji | G5 bacak videosu | gerçek medya |
+| `lenf` | lenf-drenaj | lenf giysileri videosu | gerçek medya (giyili çekim bekliyor) |
+| `em` | emler | Slim Tone cihazı | temsilî görsel |
+| `heykeltras` | heykeltras | G5 karesi | temsilî görsel |
+| `popo` | popo-bakimi | G5 bacak videosu | temsilî görsel |
+| `pasif` | pasif-jimnastik | ped yerleşimi çizimi | temsilî çizim |
+| `catlak` | catlak-protokolu-ince-ton | ince çizgili silüet | temsilî çizim |
+
+Doğrulama (yerel, Playwright, 390 px ve 1440 px): 9 vücut + salon, kaş, cilt, lazer ve 3 tırnak görünümünde yatay taşma 0, betik hatası 0; harita → WhatsApp metni (bölgeler + `[W-]`), randevu sayfası, menüde 9 vitrin, hikâye, salon kartı → hub, buton sayacı çalışıyor. Kırık referans: vücut dosyalarının 15'i de Artifact'te.
+
+---
+
 ## 1. Medya seçimi
 
 ### 1a. Kadro (gerçek medya, "randevu aldırır" sırasıyla)
@@ -32,10 +62,10 @@ Hepsi işlendi ve `website/m/ig/` altında. Kayıtlar `media_index.json` içinde
 |---|---|---|---|---|---|---|
 | 1 | `vucut-gobek` | 18319579426235256 | Göbek önden, önce → sonra (aynı danışan, 2×2 kolajın alt çeyrekleri) | Bölgesel incelme kahramanı | Yarımlardan **aynı kutu** `[0,660,480,1050]`; ortadaki SG monogramı ve alttaki imza dışarıda kalır; ek renk ayarı yok | `-once-480`, `-sonra-480` (480×390) |
 | 2 | `vucut-kol` | 18319579426235256 | Kol arkası, önce → sonra (aynı kolajın üst çeyrekleri) | Bölgesel incelme galerisi; EM teyit edilirse EM | Aynı kutu `[0,0,480,460]`, monogramın üstünde biter | `-once-480`, `-sonra-480` (480×460) |
-| 3 | `vucut-roller` | 18127469881839748 | Bacak arkasında siyah silindir başlıklı cihaz, yağlı ciltte kayıyor; tek çekim | Süreç filmi; cihaz teyidine göre G5 / heykeltraş / popo | 0,3–10,3 sn; `hqdn3d` + `cas` + temel GRADE; 720×1280; poster 5. sn | `.mp4` 1,08 MB, `-poster` |
-| 4 | `vucut-em` | 18194252941391360 | Kol arkasında EM başlığı (ekranlı gri aplikatör); arada altın işlemeli Selda Gençer havlusu | EM kahramanı, bölgesel süreç filmi | 6,8–15,4 sn (ilk saniyelerdeki cephe çekimi atıldı); CRF 29; poster 9. sn (ekran görünür) | `.mp4` 1,13 MB, `-poster` |
-| 5 | `vucut-em-cihaz` | 18194252941391360 | EM cihazı: dokunmatik ekran, düğmeler, iki başlık | EM "cihazımız" karesi | 4,9. sn tek kare; 4:5 kırpım `720:900:0:380` | `-480`, `-720` |
-| 6 | `vucut-slimtone` | 18057972044799856 | Slim Tone başlığı yanak ve çene hattında | Slim tone kahramanı (yüz) | 3–13 sn; 4:5 kırpım `720:900:0:330` → üstteki "SELDA GENÇER BEAUTY / SLIMTONE" yazı katmanı tamamen dışarıda; yüz kısmen (göz yok) → `yuz: true` | `.mp4` 0,97 MB, `-poster` (720×900) |
+| 3 | `vucut-g5` | 18127469881839748 | Bacak arkasında **G5** (siyah silindir başlık), yağlı ciltte; tek çekim | G5 kahramanı; temsilî: heykeltraş, popo | 0,3–10,3 sn; `hqdn3d` + `cas` + temel GRADE; 720×1280; poster 5. sn | `.mp4` 1,08 MB, `-poster` |
+| 4 | `vucut-slimtone-kol` | 18194252941391360 | Kol arkasında **Slim Tone** başlığı (ekranlı gri aplikatör); arada altın işlemeli havlu | Slim Tone kahramanı, üçlü program kartı | 6,8–15,4 sn (ilk saniyelerdeki cephe çekimi atıldı); CRF 29; poster 9. sn (ekran görünür) | `.mp4` 1,13 MB, `-poster` |
+| 5 | `vucut-slimtone-cihaz` | 18194252941391360 | **Slim Tone** cihazı: dokunmatik ekran, düğmeler, iki başlık | Slim Tone "cihazımız"; temsilî: EM | 4,9. sn tek kare; 4:5 kırpım `720:900:0:380` | `-480`, `-720` |
+| 6 | `vucut-slimtone-yuz` | 18057972044799856 | Slim Tone başlığı yanak ve çene hattında | Slim tone kahramanı (yüz) | 3–13 sn; 4:5 kırpım `720:900:0:330` → üstteki "SELDA GENÇER BEAUTY / SLIMTONE" yazı katmanı tamamen dışarıda; yüz kısmen (göz yok) → `yuz: true` | `.mp4` 0,97 MB, `-poster` (720×900) |
 | 7 | `vucut-lenf` | 18364153699186351 | Lenf drenaj (presoterapi) giysileri uygulama yatağında | Lenf drenaj kahramanı | Salon turundan 22,85–25,85 sn; 4:5 kırpım `720:900:0:90` → gömülü "Lenf Drenaj hizmeti de mevcut" alt yazısı dışarıda | `.mp4` 0,18 MB, `-poster` |
 | 8 | `vucut-gobek-yan` | 17976687788747656 | Göbek yandan, önce (üst) → sonra (alt); kaynak 360p durağan kolaj videosu | Bölgesel incelme galerisi (küçük kart) | Bölünmedi: monogram dikişte göbeğin altına biniyor, kırpmak "önce" göbeğini keserdi. Tam kare, büyütülmeden 360 px; monogram ve imza yerinde | `-360` (360×636) |
 | 9 | `vucut-cift-tam` | 18319579426235256 | Orijinal 2×2 kolaj, monogram ve imza yerinde | "Orijinal paylaşımı gör" lightbox'ı + IG bağlantısı | İki yarım yeniden yan yana; ek renk ayarı yok | `-480`, `-800`, `-960` |
@@ -87,7 +117,7 @@ Durum: **tam** = gerçek süreç ya da sonuç medyası var · **ince** = yalnız
 **Yeniden üretim:**
 ```bash
 python3 sources/media_vucut_20261007/build_vucut.py              # hepsi
-python3 sources/media_vucut_20261007/build_vucut.py --only vucut-em
+python3 sources/media_vucut_20261007/build_vucut.py --only vucut-g5
 python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 ```
 
@@ -127,7 +157,7 @@ python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 **Veri yapısı:** Cilt planındaki `CILT_PAGES` ile aynı biçimde tek bir `VUCUT_PAGES` dizisi:
 ```js
 { id: "emler", nav: "EM vücut bakımı", tur: "H", durum: "tam",
-  hero: { slug: "vucut-em", kind: "video" },
+  hero: { slug: "vucut-slimtone-kol", kind: "video" },
   scene: "seans",                       // "harita" | "seans" | "koyu-bant" | "tipografi"
   gallery: ["vucut-kol"],               // yalnız sahip teyidiyle
   cta: { wa: "Merhaba, EM vücut bakımı için ön görüşme almak istiyorum.", plan: "bolgesel" },
@@ -142,7 +172,7 @@ python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 - **Önce/sonra:** Yeni yan yana kart: iki yarım, altta "ÖNCE · SONRA" etiketi ve "Aynı danışan · sonuç kişiden kişiye değişir" notu. `.cmp` kaydırıcısı kullanılmaz (bkz. 2).
 - **CTA:** Mevcut `waHref` + `visitCode()` + `[W-]` izleme. Randevu sihirbazında `bolgesel` seçeneği "Ön görüşme" olarak kalır.
 
-**Salon vitrini:** "Bölgesel İncelme" kutucuğu `bolgesel-cift-sonra-480.webp` yerine `vucut-gobek-sonra-480.webp` (ya da `vucut-roller` posteri) kullanır ve `bolgesel-incelme` vitrinine gider.
+**Salon vitrini:** "Bölgesel İncelme" kutucuğu `bolgesel-cift-sonra-480.webp` yerine `vucut-gobek-sonra-480.webp` yerine G5 videosunu ("Vitrin · canlı") oynatır ve `vucut` vitrinine gider (uygulandı).
 
 **Artifact dosya sınırı:** Vücut en çok 20 dosya ekler. Lazer, PMU ve Cilt ile birlikte toplam 255 sınırı derlemeden önce sayılır.
 
@@ -153,8 +183,8 @@ python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 | Dalga | İçerik | Yayın |
 |---|---|---|
 | **V0** (bu çalışma, **tamam**) | Ham video ön elemesi (74), medya v1 (10 kalem / 20 dosya), `build_vucut.py`, `manifest_vucut.json`, `triage_videos.tsv`, `ai_media_lookup.py` vücut desteği, bu plan | Depo |
-| **V1** | Sayfa motoru + gerçek medyalı 4 sayfa: `bolgesel-incelme` (hub, Bölge Haritası), `emler`, `lenf-drenaj`, `slim-tone`; salon kutucuğu güncellemesi | Aynı Artifact |
-| **V2** | Kalan 5 sayfa: teyide göre `heykeltras` / `g5-masaji` / `popo-bakimi` (#3 ile ya da stand-in), `pasif-jimnastik` ve `catlak` dürüst stand-in + "çekim bekliyor" rozeti | Aynı Artifact |
+| **V1** (**tamam**, sürüm 5) | Sayfa motoru + gerçek medyalı 4 sayfa: `bolgesel-incelme` (hub, Bölge Haritası), `emler`, `lenf-drenaj`, `slim-tone`; salon kutucuğu güncellemesi | Aynı Artifact |
+| **V2** (**tamam**, sürüm 5; temsilî görsel/çizimle) | Kalan 5 sayfa: teyide göre `heykeltras` / `g5-masaji` / `popo-bakimi` (#3 ile ya da stand-in), `pasif-jimnastik` ve `catlak` dürüst stand-in + "çekim bekliyor" rozeti | Aynı Artifact |
 | **V3** | Sunucu adımları (bkz. 7) + çekimler geldikçe yalnız `manifest_vucut.json` güncellenir → yeniden derle → yayınla | Aynı Artifact |
 | Canlı | Sahip onayı + dry-run / `--check`; onaysız `--apply` yok | Canlı site |
 
@@ -162,7 +192,9 @@ python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 
 ---
 
-## 6. Sahibe sorulacaklar (V1'i bekletmez; ilgili sahnede yer tutucu kalır)
+## 6. Sahibe sorulacaklar
+
+Yanıtlananlar (2026-10-07): 1 (siyah başlık = G5), 3 (sonuç = Slim Tone + G5 + lenf drenaj programı), 6 (genel izin 2026-10-06). Açık kalanlar: 2, 4, 5, 7, 8 ve **EM vücut bakımı Slim Tone ile aynı cihaz mı?**
 
 1. `vucut-roller`'daki siyah silindir başlıklı cihazın adı ne: G5 mi, vakumlu roller mı, heykeltraş mı? Hangi sayfalarda gösterilebilir (G5, heykeltraş, popo)?
 2. Sehpadaki cihaz (`vucut-cihaz-masa`) Slim Tone mu? Slim Tone vücutta da uygulanıyor mu?
@@ -209,7 +241,7 @@ Handoff'taki ortak kapılar:
 Vücuda özel kapılar:
 - Her önce/sonra kartında "aynı danışan" ve "sonuç kişiden kişiye değişir" notu var. Kart, sahip teyidi olmadan bir cihaza ya da hizmete bağlanmamış.
 - "Garanti", "x cm", "yağ yakar", "selülit yok eder" gibi ifadeler sayfa metinlerinde yok (`rg -i 'garanti|cm incel|yağ yak|yok eder'`).
-- Teyit bekleyen medya (`vucut-cihaz-masa`; teyitsizse `vucut-roller`'ın G5/heykeltraş/popo kullanımı) yayında değil.
+- Teyit bekleyen medya (`vucut-cihaz-masa`) yayında değil. Heykeltraş, popo ve EM sayfalarındaki G5/Slim Tone görselleri "Temsilî görsel" etiketli.
 - `yuz: true` kayıtlar (`vucut-slimtone`) için rıza notu var.
 - Videolar poster önce yüklüyor (`preload="none"` + `data-src`), kahraman ≤ 1,2 MB.
 - `python3 scripts/ai_media_lookup.py search "" --family vucut` 10 kayıt döndürüyor; `media_index.json`'daki her `vucut-*` dosyası diskte var.

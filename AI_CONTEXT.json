@@ -5,8 +5,15 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v5.html",
+    "repository_snapshot_version": 5,
+    "published_version_id": "1791382773-9c80",
+    "snapshot_base": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v4-tirnak.html",
+    "file_limits": {
+      "per_publish": 255,
+      "per_version": 511,
+      "files_in_version_5": 293
+    }
   },
   "media": {
     "selected_items": 111,
@@ -107,25 +114,22 @@
     },
     {
       "key": "vucut",
-      "status": "media_ready_pages_planned",
+      "status": "published_artifact_v5_server_pending",
       "priority": 4,
       "path": "plans/claude/20261007/vucut-inceltme-sayfalari.md",
       "ready": [
         "74 raw videos triaged (triage_videos.tsv)",
-        "10 body media items / 20 files in website/m/ig (fam vucut)",
-        "build_vucut.py + manifest_vucut.json",
-        "page/media matrix for 9 pages",
-        "shoot list",
-        "wave plan V0-V3",
-        "owner preview image"
+        "10 body media items in website/m/ig (fam vucut); 15 files published",
+        "owner decisions 2026-10-07: black roller head = G5, tower device = Slim Tone, program = Slim Tone + G5 + lymph drainage",
+        "9 body pages in Artifact version 5 (sources/atelier_vucut_20261007/build.py)",
+        "QA: 0 overflow, 0 script errors, CTA/W-code verified locally",
+        "published page read back and byte-identical to build"
       ],
       "remaining": [
-        "owner confirmations: device names, result-to-service mapping, CRM items, face consent",
-        "V1 page engine + bolgesel-incelme, emler, lenf-drenaj, slim-tone",
-        "V2 remaining 5 pages with honest stand-ins",
+        "owner: EM = Slim Tone?, cart device, heykeltras, pasif jimnastik, CRM prices, catlak protocol",
         "server: instagram_context.py caption search, 540px pair rebuild, live page audit",
-        "staff shoots",
-        "Artifact publish and verification"
+        "staff shoots for pasif, catlak, popo, heykeltras, lenf (worn)",
+        "live patch dry-run/check and owner-approved apply"
       ]
     }
   ],
