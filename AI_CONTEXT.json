@@ -6,7 +6,18 @@
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
     "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "repository_snapshot_version": 3,
+    "live_version_checked": {
+      "version": "1791387535-eead",
+      "checked_at": "2026-10-07",
+      "files": 335,
+      "index_bytes": 1117539,
+      "note": "Live Artifact is far ahead of the v3 repository snapshot; build from the live version."
+    },
+    "file_limits": {
+      "per_publish": 255,
+      "per_version": 511
+    }
   },
   "measurement": {
     "system": "TagCtx",
@@ -114,6 +125,30 @@
         "replace placeholders",
         "verification"
       ]
+    },
+    {
+      "key": "salon",
+      "status": "planned",
+      "priority": 4,
+      "path": "plans/claude/20261007/salon-sayfalari-storytelling.md",
+      "ready": [
+        "media cast S1-S13 with measurements",
+        "edit recipe (salon grade, sprite films per shot)",
+        "page-by-page story plan for 8 pages",
+        "shoot list",
+        "waves D0-D3",
+        "verification"
+      ],
+      "remaining": [
+        "D0: refresh repo snapshot from live, provenance hash check for walk/cert/still, owner questions",
+        "manifest_salon.json media v2",
+        "initSalonStory engine",
+        "D1 home revision + guzellik-merkezi + konum + iletisim",
+        "D2 tum-hizmetler + fiyat + kvkk",
+        "D3 ozel-gun-makyaji",
+        "verification and TagCtx gate"
+      ],
+      "blocking_first": "Home page walk-06..10 and cert-* images have no traceable source; resolve in D0 regardless of priority"
     }
   ],
   "hard_rules": [
@@ -134,7 +169,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }

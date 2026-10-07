@@ -38,7 +38,7 @@ inceleyerek token harcamasını önlemektir.
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
 | Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html` | Mevcut Artifact'in depodaki v3 tabanı. |
-| Güncel planlar | `plans/claude/20261007/` | Lazer, PMU ve Cilt Atlası planları. |
+| Güncel planlar | `plans/claude/20261007/` | Lazer, PMU, Cilt Atlası ve Salon sayfaları planları. |
 
 ### Sunucudaki asıl yollar
 
@@ -139,7 +139,24 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
+### 4. Salon sayfaları — planlandı (storytelling scroll)
+
+Plan: `plans/claude/20261007/salon-sayfalari-storytelling.md`
+
+Kapsam: menüdeki Salon grubunun 8 sayfası (ana sayfa revizyonu, güzellik
+merkezi, tüm hizmetler, fiyat listesi, özel gün makyajı, iletişim, konum,
+KVKK).
+
+Hazır olanlar: medya kadrosu (S1–S13) ölçümlerle, edit reçetesi, sayfa
+kurgusu, çekim listesi, dalgalar ve doğrulama.
+
+Kalanlar: D0 kapıları (anlık görüntü yenileme, kaynak hash kontrolü, sahip
+soruları), `manifest_salon.json` ile medya v2, `initSalonStory` motoru,
+D1–D3 dalgaları ve doğrulama.
+
+Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**. Salon planının
+D0 adımı (kaynağı kanıtlanamayan ana sayfa kareleri) bu sıradan bağımsız
+olarak önce kapanmalıdır.
 
 ## Bilinen dışlamalar ve doğruluk kararları
 
@@ -167,6 +184,23 @@ Manifest eski kayıtları hâlâ içerebilir. Cilt geliştirmesinde planın son 
 manifestteki eski varlıktan üstündür. Lazer için gerçek “önce/sonra” yoktur;
 gerçek işlem videoları ve dürüst süreç anlatımı kullanılır.
 
+Salon incelemesi kararları (2026-10-07; ayrıntı ve ölçümler salon planında):
+
+- Canlı Artifact sürümü `1791387535-eead`: 335 dosya, `index.html` 1,1 MB.
+  Depodaki v3 anlık görüntüsü bunun çok gerisinde. v3'te hâlâ duran
+  `kas-cift-3` ve `cilt-yarim-1` canlıda temizlenmiş.
+- `m/walk-06…10.webp`, `m/cert-wall.webp`, `m/cert-trophy.webp`: hiçbir IG
+  kaynağına izlenemedi (100 ham video ve 124 işlenmiş fotoğrafa karşı NCC
+  ≤ 0,69). Sunucuda hash kontrolü yapılana kadar yeni yerde kullanılmaz.
+- `still-altin` (`17880458079585542`) ve `still-kutu` (`18104790091800124`):
+  üretilmiş ya da stok görünümlü. Kanıt olarak kullanılmaz; sahibe sorulur.
+- `salon-cephe` (`17877211629689213`): 5 temiz çekim, gerçek sertifika duvarı
+  dahil. Salon sayfalarının ana kaynağı.
+- `salon-giris` (`17877053286496908`): 10,0–11,54 sn bulanık. Film 0–10 sn
+  olarak üretilir.
+- `acilis` (`18032788969913973`): afişte "12 Mayıs"; video 2 Nisan 2024'te
+  paylaşılmış. Açılış yılı doğrulanana kadar yazılmaz.
+
 ## “Tamamlandı” demeden önce zorunlu kapılar
 
 - Aynı Artifact URL'sine yayınlandı ve yayınlanan sürüm tekrar okundu.
@@ -175,7 +209,8 @@ gerçek işlem videoları ve dürüst süreç anlatımı kullanılır.
 - Mobil yatay taşma: 0.
 - İlgili planın mobil ve masaüstü ekran görüntüleri kontrol edildi.
 - WhatsApp/telefon CTA ve `[W-]` izleme davranışı doğrulandı.
-- Artifact dosya sınırı aşılmadı; PMU planındaki bilinen sınır 255 dosyadır.
+- Artifact dosya sınırı aşılmadı: tek yayında en fazla 255, sürümde en
+  fazla 511 dosya. Canlıda 335 dosya var (2026-10-07).
 - Canlı site için önce dry-run/`--check`; açık sahip onayı olmadan `--apply` yok.
 - Site/tracking değiştiyse TagCtx `audit --record`, `diff` ve runtime `verify`
   geçti; yeni kritik ölçüm bulgusu yok.

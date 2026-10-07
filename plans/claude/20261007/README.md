@@ -5,10 +5,11 @@ Mevcut Artifact geliştirilmeye devam edilir; yeni bir Artifact oluşturulmaz:
 - Artifact: https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM
 - Kaynak anlık görüntüsü: `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html`
 
-Bu klasörde 7 Ekim 2026 tarihinde oluşturulan üç güncel planın değiştirilmemiş kopyaları bulunur:
+Bu klasörde 7 Ekim 2026 tarihinde oluşturulan güncel planlar bulunur. İlk üçü değiştirilmemiş kopyadır; dördüncüsü doğrudan bu depoda yazıldı:
 
 1. Lazer epilasyon ailesi
 2. Kalıcı makyaj sayfaları
 3. Cilt Atlası
+4. Salon sayfaları, storytelling scroll (`salon-sayfalari-storytelling.md`)
 
 Web için seçilmiş ve işlenmiş medya `patches/media_ig_20261007/out/` altında; üretim betiği ve manifest aynı patch klasöründedir. Ham Instagram dışa aktarımı boyutu ve kaynak-veri niteliği nedeniyle Git deposuna eklenmemiştir.
