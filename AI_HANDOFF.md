@@ -10,7 +10,8 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
+- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür; yayındaki Artifact
+  2026-10-07 itibarıyla sürüm 13'tür ve v3'ten çok farklıdır. Artifact üzerinde bu
   anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
   olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
@@ -139,7 +140,7 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-### 4. Kaş ve yüz "Hikâye" — plan sahip onaylı
+### 4. Kaş ve yüz "Hikâye" — K1 ilk kısım yayında (Artifact sürüm 13)
 
 Plan: `plans/claude/20261007/kas-yuz-hikaye-scroll.md`
 
@@ -149,7 +150,10 @@ Kapsam: `kas-alimi`, `kas-laminasyonu`, `yuz-alimi`, `cene-alimi`,
 Hazır olanlar: 6 kaş öğesinin görsel incelemesi, sayfa-medya matrisi, edit
 reçetesi, çekim listesi, dalga planı.
 
-Kalanlar: K0 `kas-cift-3` acil çıkarma; sunucuda IG metin araması (kaş/yüz
+Yayında: "Beş Perde" kaydırmalı bölümü, etiketsiz Altın Oran Aynası ve kapanış
+(ayrıntı planın 9. bölümünde). K0 başka oturumca zaten yapılmıştı.
+
+Kalanlar: sunucuda IG metin araması (kaş/yüz
 videoları) ve 17986864907913512 kontrolü; CRM fiyatları (yüz/çene/dudak üstü,
 kına); `kas-yakin` sorusu; medya v2; `initScrolly`
 ve sayfalar; çekimler; doğrulama.

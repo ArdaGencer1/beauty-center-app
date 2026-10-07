@@ -313,6 +313,29 @@ altyapıyı bu faz yazar, PMU kullanır).
 
 Hâlâ CRM'den okunacak: yüz, çene ve dudak üstü alımı fiyat ve süreleri; kına ayrı kalem mi?
 
+## 9. Uygulama durumu (2026-10-07)
+
+- **K0 — tamam.** Yayındaki Artifact'te `kas-cift-3` zaten başka bir oturumca
+  kaldırılmıştı (Ayna `kas-kina` kullanıyordu, `KAS_PAIRS` 3 kart).
+- **K1 — ilk kısım yayında, Artifact sürüm 13** (`1791386645-72f7`):
+  - "Bir Kaş, Beş Perde" kaydırmalı bölümü (`#perde`, `initPerde`): 6 kare, 5 adım,
+    aynı danışan geçişlerinde altın dikişli süpürme, kademe C ve reduced-motion'da
+    alt alta statik kartlar.
+  - Altın Oran Aynası: etiketsiz `kas-perde-alim-800` ile; SVG noktaları +17 px
+    kaydırıldı, "1 : 1,618" sol üste alındı.
+  - Kaş davetiye bloğu yerine "Aynada ilk bakış" kapanışı (`kas-profil-4x5`,
+    `data-plan="kas" data-opt="ilk"`, `at-kas-perde-davetiye`).
+  - Görseller: `sources/kas_perde_20261007/kas_perde.py` (işlenmiş 1200w yarımlardan,
+    ortak kırpım ve renk ayarı). HTML değişiklikleri:
+    `sources/kas_perde_20261007/kasyuz_build.py` (sayılı `rep()`; yayındaki HTML'e uygulanır).
+  - Doğrulama: Playwright 390 ve 1440 genişlik; konsol hatası 0, yatay taşma 0,
+    kaş medyası eksik 0; reduced-motion'da statik görünüm.
+- **K1 kalan:** Uyanış ayrı bölüm olarak yapılmadı (dönüşümler Beş Perde ve mevcut
+  galeride); kına bandı CRM'de kına kalemi netleşince.
+- **K2, K3:** başlanmadı.
+- **Not:** Artifact'e aynı anda başka oturum (lazer) da yayın yapıyor; her yayından
+  önce en yeni sürüm okunup `kasyuz_build.py` onun üstüne uygulanmalı.
+
 ## 8. Dalgalar
 
 | Dalga | İçerik | Yayın |
