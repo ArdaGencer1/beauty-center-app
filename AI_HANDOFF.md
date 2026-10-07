@@ -10,9 +10,10 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
-  anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
-  olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
+- Korunan kaynak anlık görüntüsü **Artifact v3**'tür. Repo içindeki geliştirilmiş
+  ana sürüm `website/index.html`; aynı içeriğin Artifact çalışma kopyası
+  `artifact-current.html`'dir. Artifact URL'sine henüz geri yayınlanmadığı için
+  URL'deki sürümü doğrulamadan “tam eşleşiyor” deme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.
@@ -38,6 +39,9 @@ inceleyerek token harcamasını önlemektir.
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
 | Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html` | Mevcut Artifact'in depodaki v3 tabanı. |
+| Geliştirilmiş Artifact çalışma kopyası | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-current.html` | `website/index.html` ile byte-byte aynı ana sürüm. |
+| Birleşik site üreticisi | `sources/atelier_lazer_20261007/build_artifact.py` | v3 + doğruluk düzeltmeleri + gelişmiş lazer CSS/JS/verisini deterministik birleştirir. |
+| Build durumu | `WEBSITE_BUILD_STATUS.md` | Tamamlananlar, test kanıtı ve bilerek açık bırakılan işler. |
 | Güncel planlar | `plans/claude/20261007/` | Lazer, PMU ve Cilt Atlası planları. |
 
 ### Sunucudaki asıl yollar
@@ -55,6 +59,9 @@ inceleyerek token harcamasını önlemektir.
   → `delta.tsv` → `instagram_context.py --search "hizmet"`
 - Ana Instagram veritabanı:
   `/var/www/seldagencerbeauty.com/all_api_meta/instagram.db`
+- Birleşik site üreticisi:
+  `patches/atelier_lazer_20261007/build_artifact.py`
+- Ana HTML: `website/index.html`
 
 ## Token tasarruflu medya inceleme protokolü
 
@@ -107,17 +114,17 @@ envanteridir.
 
 ## Planların gerçek durumu
 
-### 1. Lazer epilasyon ailesi — ileri aşamada, yarım
+### 1. Lazer epilasyon ailesi — repo birleşimi tamam, yayın/canlı bekliyor
 
 Plan:
 `plans/claude/20261007/https-panel-seldagencerbeauty-com-new-cu-wiggly-adleman.md`
 
 Hazır olanlar: 15 lazer medya kaydı; `render.py`; `src/lazer.css`;
-`src/lazer.js`; CRM, navigasyon ve yorum veri dosyaları.
+`src/lazer.js`; CRM, navigasyon ve yorum veri dosyaları; birleşik Artifact/site
+üreticisi; `website/index.html` entegrasyonu; mobil/masaüstü tarayıcı testi.
 
-Kalanlar: plandaki `a3_build.py`/Artifact v4 derlemesi ve aynı Artifact'e yayın;
-canlı yama `build.py`; tam sayfa paketi; ekran görüntüleri, `--check`, mobil/
-masaüstü ve CTA testleri; sahip onayından sonra canlı `--apply`.
+Kalanlar: aynı Artifact URL'sine yayın ve geri okuma; canlı yama `build.py` ve
+tam sayfa paketi; canlı `--check`/TagCtx; sahip onayından sonra canlı `--apply`.
 
 ### 2. Kalıcı Makyaj “Şölen” — medya ileri, arayüz yarım
 
