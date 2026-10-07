@@ -1,0 +1,61 @@
+name: Sync canonical website
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "sources/atelier_lazer_20261007/**"
+      - "patches/atelier_lazer_20261007/**"
+      - "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html"
+      - ".github/workflows/sync-canonical-website.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-canonical-website
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build merged website
+        run: |
+          builder="sources/atelier_lazer_20261007/build_artifact.py"
+          if [ ! -f "$builder" ]; then
+            builder="patches/atelier_lazer_20261007/build_artifact.py"
+          fi
+          python3 "$builder"
+
+      - name: Verify canonical copies and media
+        run: |
+          cmp website/index.html prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-current.html
+          node <<'NODE'
+          const fs = require('fs');
+          const html = fs.readFileSync('website/index.html', 'utf8');
+          const refs = [...new Set([...html.matchAll(/(?:src|poster|data-src|href)=["']m\/([^"'#?]+)/g)].map(m => m[1]))];
+          const missing = refs.filter(ref => !fs.existsSync('website/m/' + ref));
+          if (missing.length) {
+            console.error('Missing media:', missing);
+            process.exit(1);
+          }
+          console.log(`Verified ${refs.length} local media references.`);
+          NODE
+
+      - name: Commit generated canonical files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/index.html prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-current.html
+          if git diff --cached --quiet; then
+            echo "Canonical files already synchronized."
+          else
+            git commit -m "Sync generated canonical website"
+            git push
+          fi
