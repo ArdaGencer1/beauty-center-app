@@ -22,6 +22,10 @@ INDEX_CANDIDATES = (
     ROOT / "website/m/ig/media_index.json",
     ROOT / "patches/media_ig_20261007/out/images/ig/media_index.json",
 )
+# Aile bazlı ek manifestler: (yol, varsayılan aile). Kayıtlar ana manifestin ardına eklenir.
+EXTRA_MANIFESTS = (
+    (ROOT / "sources/media_vucut_20261007/manifest_vucut.json", "vucut"),
+)
 
 
 def existing(candidates: tuple[Path, ...], label: str) -> Path:
@@ -40,7 +44,16 @@ def load_json(path: Path) -> Any:
 def catalog() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     manifest = load_json(existing(MANIFEST_CANDIDATES, "manifest"))
     media_index = load_json(existing(INDEX_CANDIDATES, "media index"))
-    return manifest.get("items", []), media_index
+    items = list(manifest.get("items", []))
+    for path, family in EXTRA_MANIFESTS:
+        if not path.is_file():
+            continue
+        for item in load_json(path).get("items", []):
+            # ek manifestlerde kind bir edit türüdür (still, pair...); aramada video/image olarak görünür
+            kind = item.get("kind")
+            items.append({**item, "fam": item.get("fam", family),
+                          "kind": "video" if kind == "video" else "image", "edit": kind})
+    return items, media_index
 
 
 def slim(item: dict[str, Any], media_index: dict[str, Any]) -> dict[str, Any]:

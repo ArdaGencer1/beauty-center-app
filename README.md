@@ -12,7 +12,7 @@ Web sitesi, Claude Artifact prototipi, geliştirme planları, medya kütüphanes
 - Ölçüm koruma sistemi: [TAGCTX_RUNBOOK.md](TAGCTX_RUNBOOK.md)
 - Claude slash-skill: [/.claude/skills/tagctx/SKILL.md](.claude/skills/tagctx/SKILL.md)
 
-Ajanlar 548 işlenmiş dosyayı veya 100 ham videoyu topluca incelememeli. Önce
+Ajanlar 568 işlenmiş dosyayı veya 100 ham videoyu topluca incelememeli. Önce
 manifest ve medya indeksinden en fazla 3–6 görsel ya da 1–3 video kısa listelemeli.
 
 HTML/JS, CTA, form, Consent Mode, GTM veya dönüşüm kodu değişirse TagCtx deploy
@@ -22,12 +22,14 @@ kapısı zorunludur. `audit --record`, `diff`, runtime `verify` ve
 ## Yapı
 
 - `website/index.html` — geliştirilebilir ve tarayıcıda açılabilir ATELİER prototipi
-- `website/m/ig/` — web için seçilmiş/işlenmiş 548 fotoğraf, video, poster ve film karesi
+- `website/m/ig/` — web için seçilmiş/işlenmiş 568 fotoğraf, video, poster ve film karesi
 - `originals/instagram/videos/` — Instagram dışa aktarımından 100 ham video
 - `sources/media_ig_20261007/` — medya üretim betiği ve manifest
 - `sources/atelier_lazer_20261007/` — lazer sayfaları prototip kaynakları
-- `plans/claude/20261007/` — lazer, kalıcı makyaj ve Cilt Atlası planları
-- `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüsü
+- `sources/media_vucut_20261007/` — vücut/incelme medya manifesti, üretim betiği ve ham video ön elemesi
+- `sources/atelier_vucut_20261007/` — 9 vücut sayfasının Artifact derleyicisi
+- `plans/claude/20261007/` — lazer, kalıcı makyaj, Cilt Atlası ve Vücut planları
+- `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüleri (güncel: `artifact-v17.html`)
 - `tag_ctx.py`, `adsai/tag_*.py`, `tagtools/` — TagCtx ölçüm denetimi
 - `patches/verify_tags.sh` — deploy sonrası ölçüm kapısı
 - `.github/workflows/tagctx-live.yml` — günlük ve push sonrası canlı runtime monitörü

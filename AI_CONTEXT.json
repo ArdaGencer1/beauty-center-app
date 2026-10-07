@@ -5,8 +5,16 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v17.html",
+    "repository_snapshot_version": 17,
+    "published_version_id": "1791389678-02bc",
+    "snapshot_base": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-taban-1791388726-c3e0.html",
+    "file_limits": {
+      "per_publish": 255,
+      "per_version": 511
+    },
+    "snapshot_base_note": "Artifact version 16 (1791388726-c3e0: nail, brow 'perde', 5 laser subpages, Cilt Atlasi and 'mobil-duzen' sessions) with the body additions removed; build.py without the mobile layer reproduces version 16 byte for byte",
+    "rebase": "Several sessions publish this Artifact. Before publishing body/mobile changes: read the live index.html, then python3 sources/atelier_vucut_20261007/rebase.py LIVE.html --rev $(git log -1 --format=%h -- sources/atelier_vucut_20261007) --out prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-taban-<id>.html, point build.py BASE at it, build, test, publish"
   },
   "measurement": {
     "system": "TagCtx",
@@ -30,7 +38,7 @@
   },
   "media": {
     "selected_items": 111,
-    "processed_files": 548,
+    "processed_files": 568,
     "raw_videos": 100,
     "repository_manifest": "sources/media_ig_20261007/manifest.json",
     "repository_index": "website/m/ig/media_index.json",
@@ -48,12 +56,22 @@
       "salon": 9,
       "kas": 7,
       "still": 5,
-      "bolgesel": 1
+      "bolgesel": 1,
+      "vucut": 10
     },
     "visual_review_limit": {
       "images": 6,
       "videos": 3
-    }
+    },
+    "extra_manifests": [
+      {
+        "family": "vucut",
+        "path": "sources/media_vucut_20261007/manifest_vucut.json",
+        "items": 10,
+        "builder": "sources/media_vucut_20261007/build_vucut.py",
+        "raw_video_triage": "sources/media_vucut_20261007/triage_videos.tsv"
+      }
+    ]
   },
   "plans": [
     {
@@ -114,6 +132,28 @@
         "replace placeholders",
         "verification"
       ]
+    },
+    {
+      "key": "vucut",
+      "status": "published_artifact_v17_server_pending",
+      "priority": 4,
+      "path": "plans/claude/20261007/vucut-inceltme-sayfalari.md",
+      "ready": [
+        "74 raw videos triaged (triage_videos.tsv)",
+        "10 body media items in website/m/ig (fam vucut); 15 files published",
+        "owner decisions 2026-10-07: black roller head = G5, tower device = Slim Tone, program = Slim Tone + G5 + lymph drainage",
+        "9 body pages in the Artifact since version 5; current version 17 (sources/atelier_vucut_20261007/build.py)",
+        "QA: 0 overflow, 0 script errors, CTA/W-code verified locally",
+        "published page read back and byte-identical to build (version 17)",
+        "kas-cift-3 removed in version 7 (owner approved); the brow session later rebuilt the golden mirror on kas-perde-alim-800",
+        "mobile audit and fixes (320/360/390 px, portrait and landscape): see mobile_layer"
+      ],
+      "remaining": [
+        "owner answered 'tam bilmiyorum' (2026-10-07) to: EM = Slim Tone?, cart device, heykeltras, pasif jimnastik, CRM prices, catlak protocol; stand-ins stay until salon records or staff confirm",
+        "server: instagram_context.py caption search, 540px pair rebuild, live page audit (incl. whether the live kas page uses kas-cift-3)",
+        "staff shoots for pasif, catlak, popo, heykeltras, lenf (worn)",
+        "live patch dry-run/check and owner-approved apply"
+      ]
     }
   ],
   "hard_rules": [
@@ -134,7 +174,28 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
-  ]
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
+  ],
+  "mobile_layer": {
+    "source": [
+      "sources/atelier_vucut_20261007/src/mobil.css",
+      "sources/atelier_vucut_20261007/build.py (MOBIL_PATCHES, lazy_hidden)"
+    ],
+    "scope": "all views; tirnak untouched; compatible with another session's <style id=\"mobil-duzen\">",
+    "done": [
+      "hidden-view images loading=lazy (except salon, tirnak): first load vucut 767->207 KB, salon 1651->1091 KB",
+      "FAQ whole row tappable (summary padding), same look",
+      "gallery hold-to-peek: -webkit-touch-callout none (iPhone)",
+      "menu: current group chip marked (aria-current); jump chips and laser gender toggle >=38px on touch",
+      "bottom bar label fits at 320-390px on every page",
+      "body map: invisible 14-unit hit strips for thin regions; WhatsApp glyph; invite label; 11px stand-in tags; hero fits mobil-duzen heights (no overflow at 320px portrait or landscape)"
+    ],
+    "recommendations": [
+      "laser session: 6 pages embed the same ~39 KB body-map SVG (~230 KB HTML); clone from one copy in JS",
+      "new hero stage classes must join mobil-duzen height:100% rules",
+      "new hidden views: add loading=lazy to hero images"
+    ],
+    "plan": "plans/claude/20261007/vucut-inceltme-sayfalari.md section 10"
+  }
 }

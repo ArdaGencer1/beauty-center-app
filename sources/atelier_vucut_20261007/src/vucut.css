@@ -1,0 +1,108 @@
+/* ---------- VÜCUT: bölgesel incelme ailesi (9 sayfa) ----------
+   ATELİER belirteçleriyle yazılır (--gold, --line, --velvet, --display...). Mermer ve Gece dünyalarında
+   yalnızca aşağıdaki üç harita tonu yeniden tanımlanır. */
+:root{--vb-fig:rgba(156,122,53,.07);--vb-fig2:rgba(156,122,53,.17);--vb-hover:rgba(156,122,53,.32)}
+html[data-world="gece"]{--vb-fig:rgba(233,215,165,.06);--vb-fig2:rgba(233,215,165,.15);--vb-hover:rgba(233,215,165,.3)}
+
+/* sahne: video, durağan kare ya da çizim; 4:5 */
+.vb-stage{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--velvet)}
+.vb-stage video,.vb-stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-stage .tile-tag{z-index:6}
+/* "Temsilî görsel / çizim" ve "Buradasınız" etiketleri telefonda okunur olsun (taban 9,5 px) */
+.vb-stage .tile-tag,.vb-card .tile-tag{font-size:11px;padding:7px 10px}
+.vb-cap{position:absolute;z-index:6;left:12px;right:60px;bottom:14px;color:#F7F1E4;font:600 11px/1.3 var(--body);letter-spacing:.2em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.65)}
+.vb-stage::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(14,13,12,0) 62%,rgba(14,13,12,.55) 100%)}
+html[data-tier="A"] .vb-stage.kb>img,html[data-tier="B"] .vb-stage.kb>img{animation:kb 16s ease-in-out infinite alternate;transform-origin:50% 40%}
+
+/* önce/sonra kolajı: solda önce, sağda sonra; altın dikiş */
+.vb-split{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:#2a2320}
+.vb-split img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-split .seam{position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;z-index:5;background:linear-gradient(180deg,#F6EACB,#C9A55C 50%,#F6EACB);box-shadow:0 0 10px 1px rgba(246,234,203,.9),0 0 30px 6px rgba(201,165,92,.4);transform-origin:top;transform:scaleY(0)}
+.vb-split.on .seam{transition:transform 1.2s var(--ease) .3s;transform:scaleY(1)}
+.vb-split .cmp-tag{opacity:1;top:auto;bottom:14px;font-size:11px}
+.vb-split .cmp-tag.b{left:12px;right:auto}.vb-split .cmp-tag.a{right:12px;left:auto}
+.vb-split .zoom-btn{bottom:auto;top:12px}
+html[data-tier="C"] .vb-split .seam{transform:none}
+
+/* temsilî çizim (çekimi olmayan sayfalar) */
+.vb-art{background:radial-gradient(80% 60% at 50% 42%,rgba(201,165,92,.2),transparent 70%),var(--velvet)}
+.vb-art svg{position:absolute;inset:6% 10%;width:80%;height:88%;overflow:visible}
+.vb-art .sil path,.vb-art .sil ellipse,.vb-art .sil circle{fill:rgba(233,215,165,.05);stroke:rgba(233,215,165,.55);stroke-width:.8}
+.vb-art .pad{fill:rgba(201,165,92,.28);stroke:#E9D7A5;stroke-width:.9}
+.vb-art .pulse{fill:none;stroke:#F4E6BE;stroke-width:1;transform-box:fill-box;transform-origin:center;opacity:0}
+html[data-tier="A"] .vb-art .pulse,html[data-tier="B"] .vb-art .pulse{animation:vbpulse 2.4s var(--ease) infinite}
+.vb-art .pulse.d2{animation-delay:.8s}.vb-art .pulse.d3{animation-delay:1.6s}
+@keyframes vbpulse{0%{transform:scale(.4);opacity:.9}100%{transform:scale(2.2);opacity:0}}
+.vb-art .line{fill:none;stroke:#F4E6BE;stroke-width:.7;stroke-linecap:round;opacity:.85}
+html[data-tier="A"] .vb-art .line,html[data-tier="B"] .vb-art .line{animation:vbfade 5s ease-in-out infinite alternate}
+.vb-art .line:nth-child(2n){animation-delay:1.2s}.vb-art .line:nth-child(3n){animation-delay:2.4s}
+@keyframes vbfade{from{opacity:.85}to{opacity:.18}}
+html[data-tier="C"] .vb-art .pulse{opacity:.5}
+
+/* bölge haritası */
+.vb-map{display:grid;gap:18px}
+.vb-figs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:440px;width:100%;justify-self:center}
+.vb-fig{display:grid;gap:6px;justify-items:center;margin:0}
+.vb-fig svg{width:100%;height:auto;max-height:440px;overflow:visible}
+.vb-fig figcaption{font:600 11px/1 var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--text-3)}
+.vb-shape{fill:var(--vb-fig);stroke:var(--line-strong);stroke-width:.6;pointer-events:none}
+/* görünmez dokunma şeridi: bölgenin kenarından 7 birim dışarı taşar; içi üstteki bölgeye aittir */
+.vb-hit{fill:none;stroke:transparent;stroke-width:14;stroke-linejoin:round;pointer-events:stroke;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.vb-part{fill:var(--vb-fig2);stroke:var(--line-strong);stroke-width:.8;cursor:pointer;transition:fill .3s var(--ease),stroke .3s;outline:0;-webkit-tap-highlight-color:transparent}
+.vb-part:hover{fill:var(--vb-hover)}
+.vb-part:focus-visible{stroke:var(--gold);stroke-width:2}
+.vb-part.on{fill:var(--gold);fill-opacity:.85;stroke:var(--gold-hi);filter:drop-shadow(0 0 4px rgba(201,165,92,.9))}
+.vb-ping{fill:none;stroke:var(--gold);stroke-width:1.6;transform-box:fill-box;transform-origin:center;animation:vbping .9s var(--ease) forwards;pointer-events:none}
+@keyframes vbping{from{transform:scale(.3);opacity:.95}to{transform:scale(2.6);opacity:0}}
+.vb-sug{display:grid;gap:8px;padding:14px 16px;border-radius:18px;border:1px dashed var(--line-strong);font-size:14px;color:var(--text-2)}
+.vb-sug b{font:500 20px/1.15 var(--display);color:var(--text)}
+.vb-sug .chips a{text-decoration:none}
+
+/* üçlü program kartları */
+.vb-trio{display:grid;grid-auto-flow:column;grid-auto-columns:min(72vw,290px);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  margin-inline:calc(var(--gutter) * -1);padding:4px var(--gutter) 10px}
+.vb-trio::-webkit-scrollbar{display:none}
+.vb-card{position:relative;scroll-snap-align:center;border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#1a1713;color:#F7F1E4;border:1px solid rgba(233,215,165,.25);box-shadow:var(--shadow)}
+.vb-card video,.vb-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,13,12,.1) 30%,rgba(14,13,12,.88) 100%);pointer-events:none}
+.vb-card .tile-tag{z-index:3}
+.vb-card .tx{position:absolute;z-index:3;left:14px;right:14px;bottom:14px;display:grid;gap:6px}
+.vb-card .tx b{font:400 30px/1 var(--display)}
+.vb-card .tx span{font-size:13px;line-height:1.35;color:#E2D8C5}
+.vb-card .tx a{justify-self:start;margin-top:4px;height:44px;padding:0 14px;font-size:12.5px;color:#F7F1E4;border-color:rgba(233,215,165,.5)}
+.vb-card.here{border-color:#F4E6BE;box-shadow:0 0 0 1px rgba(244,230,190,.5),var(--shadow)}
+
+/* galeri ve cihaz */
+.gcard.vb{width:min(84vw,380px);aspect-ratio:6/5}
+.gcard.vb-tall img{object-fit:contain}
+.vb-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.vb-duo{display:grid;gap:12px}
+.vb-duo figure{margin:0;border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/5;max-width:100%;border:1px solid rgba(233,215,165,.25);background:#1a1713}
+.vb-duo img,.vb-duo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vb-duo figcaption{position:absolute;z-index:2;left:12px;right:12px;bottom:10px;color:#F7F1E4;font:500 18px/1.1 var(--display);text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.vb-link{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center;padding:10px;border-radius:18px;border:1px solid var(--line);background:var(--raised);text-decoration:none;color:var(--text)}
+.vb-link img{width:96px;height:120px;border-radius:12px;object-fit:cover}
+.vb-link span{display:grid;gap:4px;min-width:0}
+.vb-link small{font:600 11px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-ink)}
+.vb-link b{font:400 24px/1.05 var(--display)}
+.vb-link i{font-style:normal;font-size:13px;color:var(--text-2)}
+
+/* "mobil düzen" katmanıyla uyum (başka oturum, <style id="mobil-duzen">): dikey telefonda ve yatay kısa ekranda kahraman
+   medyaya açık yükseklik verilir; vücut sahneleri 4:5 oranını bırakıp o yüksekliği doldurur (taşmaz, daralmaz). */
+@media (max-width:959px) and (orientation:portrait){
+  .hero-split .hero-media > .vb-stage,.hero-split .hero-media > .vb-split{aspect-ratio:auto;height:100%}
+}
+@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
+  .hero-split .hero-media > .vb-stage,.hero-split .hero-media > .vb-split{aspect-ratio:auto;height:100%}
+  .hero-split .vb-split{background:var(--velvet)}.hero-split .vb-split img{object-fit:contain}
+}
+
+@media (min-width:960px){
+  .hero-split .vb-stage,.hero-split .vb-split{aspect-ratio:auto;height:calc(100svh - var(--nav-h))}
+  .hero-split .vb-split{background:var(--velvet)}.hero-split .vb-split img{object-fit:contain}
+  .vb-trio{grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-columns:auto;overflow:visible;margin:0;padding:0}
+  .vb-map{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head figs" "ctl figs";column-gap:40px;align-items:center;max-width:980px}
+  .vb-map>.sec-head{grid-area:head}.vb-map>.vb-figs{grid-area:figs}.vb-map>.vb-ctl{grid-area:ctl;align-self:start}
+  .vb-duo{grid-template-columns:1fr 1fr;max-width:820px}
+  .vb-link{max-width:560px}
+}
