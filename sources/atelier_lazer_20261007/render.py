@@ -515,13 +515,13 @@ def page_html(key: str, media: str, h1: str, link) -> str:
     # ---------------------------------------------------------------- L1 hero
     h.append(f'''<header class="lz-hero" id="lz-ust">
   <div class="lz-stage">{stage}<div class="lz-scan" aria-hidden="true"></div><div class="lz-glow" aria-hidden="true"></div><div class="lz-scrim" aria-hidden="true"></div>
-    <div class="lz-proof" aria-label="Kısa bilgiler"><span><b>3</b> dalga boyu<small>755·808·1064 nm</small></span><span><b>10 °C</b> başlık<small>soğutmalı</small></span><span><b>{st["five"]}/{st["mentions"]}</b> lazer yorumu<small>Google · 5 yıldız</small></span></div>
   </div>
   <div class="lz-copy">
     <span class="lz-over">Konutkent · Çankaya · Lasermach diode</span>
     <h1 class="lz-h1"><span class="lz-h1a">{esc(big)}</span>{h1b}</h1>
     <div class="lz-chips"><span class="lz-chip"><b class="lz-star">★</b> 4,6 · 263 yorum</span><span class="lz-chip">Kişiye özel fiyat</span><span class="lz-chip" data-lz-open><i class="lz-dot"></i>Salı–Pazar 10.00–20.00</span></div>
     <div class="lz-cta-row"><a class="lz-btn-gold lz-shine" href="{cta_href}" data-lz-scroll data-track-label="at-{code}-hero-bolge"><span class="lz-lbl">{cta_txt}</span>{ICON["down"]}</a>{hero_wa}</div>
+    <div class="lz-proof" aria-label="Kısa bilgiler"><span><b>3</b> dalga boyu<small>755·808·1064 nm</small></span><span><b>10 °C</b> başlık<small>soğutmalı</small></span><span><b>{st["five"]}/{st["mentions"]}</b> lazer yorumu<small>Google · 5 yıldız</small></span></div>
     <p class="lz-lede">{P["lede"]}</p>
     <div class="lz-rings" data-lz-rings></div>
     <p class="lz-fine">Videolar ve fotoğraflar salonumuzda çekildi.</p>

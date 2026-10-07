@@ -609,6 +609,12 @@
       '<a class="lz-btn-round" href="tel:+905330390076" data-track-label="at-' + this.code + '-bar-tel" aria-label="Arayın">' + TELI + "</a>";
     document.body.appendChild(bar); document.body.classList.add("lz-page");
     this.bar = { el: bar, wa: $("a", bar) };
+    /* desktop: the hero already carries both CTAs and its proof strip; the floating bar joins once it is passed */
+    var hero = $(".lz-hero", this.root);
+    if (hero && "IntersectionObserver" in window && matchMedia("(min-width:960px)").matches) {
+      bar.classList.add("hide");
+      new IntersectionObserver(function (es) { bar.classList.toggle("hide", es[0].intersectionRatio >= 0.5); }, { threshold: [0, 0.5, 1] }).observe(hero);
+    }
     $("button", bar).addEventListener("click", function () { self.openPlan(); });
     relead();
   };

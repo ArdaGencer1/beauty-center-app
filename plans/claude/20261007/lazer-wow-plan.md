@@ -62,6 +62,21 @@ yorumlar ve hijyen.
 | D1.3 | B5: “DOKUNUN” etiketi silüetin dışına, nabız atan bir el ikonu olarak alınır. Kapalı liste boşluğu kaldırılır. | `lazer.css` |
 | D1.4 | B4: adım aralıkları kısaltılır (bölüm ≤ 2 ekran). | `lazer.css` (L3) |
 
+**Durum (10-07): Dalga 1 tamamlandı** (yalnız `sources/atelier_lazer_20261007/`;
+Artifact ve canlı site değişmedi).
+
+- Kök neden: `.lz ol` / `.lz button` sıfırlamaları (özgüllük 0-1-1) tek sınıflı
+  kuralları eziyordu. Etkilenenler: `.lz-track` (takvim çakışması),
+  `.lz-hot` (cihaz noktaları 17 px sağa-aşağı kaymıştı), `.lz-allpages`,
+  `.lz-how`. Hepsi `.lz .lz-…` ile düzeltildi.
+- Kanıt şeridi fotoğraftan çıkarıldı, CTA'nın altına alındı. Masaüstünde
+  yapışkan bar hero'nun yarısı görünürken gizli.
+- “Dokunun” ipucu figürün altına alındı. Yolculuk adımları 66→56 svh,
+  bölüm iç boşluğu 72→60 px.
+- Doğrulama: 7 sayfa × 320/390/430/1400 px'te JS hatası 0, yatay taşma 0,
+  takvim metin çakışması 0 (aynı test eski kodda 12–13 çakışma buluyor).
+  `data-track-label` ve `href` değişmedi. Mobil sayfa boyu 10.481 → 10.150 px.
+
 ### Dalga 2 — “Vay” çekirdeği (3 an)
 
 **W1 · Işık Açılışı (hero)**
