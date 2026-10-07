@@ -15,3 +15,7 @@ Continue the existing Artifact at
 `https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM`; never create a replacement.
 Use `instagram.db` as the Instagram source of truth and never use `media.json`.
 Do not claim a plan is complete unless every gate in `AI_CONTEXT.json` passes.
+
+For any HTML/JavaScript, CTA, form, Consent Mode, GTM, attribution or conversion
+change, read `TAGCTX_RUNBOOK.md` and run the TagCtx deploy gate. A clean account
+inventory alone is not proof that measurement fires.
