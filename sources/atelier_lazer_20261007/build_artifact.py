@@ -100,6 +100,33 @@ def main() -> None:
     for old, new in salon_replacements.items():
         html = html.replace(old, new)
 
+    # Ship one clear presentation: A-tier "tam şölen". Prototype performance
+    # selectors are development controls and must not appear in the canonical
+    # visitor experience. Preserve the existing colour system unchanged.
+    html, count = re.subn(
+        r'\n\s*<button class="nav-btn proto-btn" id="protoBtn".*?</button>',
+        "",
+        html,
+        count=1,
+    )
+    if count != 1:
+        raise RuntimeError(f"prototype button: expected one match, found {count}")
+    html, count = re.subn(
+        r'\n<div class="proto" id="proto" hidden>.*?</div>\n\n<main>',
+        "\n\n<main>",
+        html,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if count != 1:
+        raise RuntimeError(f"prototype panel: expected one match, found {count}")
+    html = replace_once(
+        html,
+        '<div>ATELİER prototipi · canlı siteye dokunmaz · 2026</div>',
+        '<div>ATELİER · Tam Şölen · 2026</div>',
+        "footer edition",
+    )
+
     laser_html = render.page_html(
         "hub",
         "m/ig/",
@@ -144,6 +171,22 @@ def main() -> None:
         'if(v==="lazer"){ /* Advanced laser mounts after shared boot. */ }',
         "legacy laser initializer",
     )
+    old_boot_theme = '''  S.world=store("world")||"mermer"; root.dataset.world=S.world; markSeg("world",S.world);
+  setLight("auto"); markSeg("light","auto");
+  S.tierPick="auto"; setTier(detectTier()); markSeg("tier","auto");
+  if(S.tier==="A") probeFrames(function(ms){ if(ms>24 && S.tierPick==="auto") setTier("B"); });
+  setSemt(""); markSeg("semt","");'''
+    new_boot_theme = '''  S.world=store("world")||"mermer"; root.dataset.world=S.world;
+  setLight("auto");
+  S.tierPick="A"; setTier("A");
+  setSemt("");'''
+    html = replace_once(html, old_boot_theme, new_boot_theme, "single theme boot")
+    html = replace_once(
+        html,
+        '  $("#protoBtn").addEventListener("click",function(){ var p=$("#proto"); p.hidden=!p.hidden; this.setAttribute("aria-expanded",!p.hidden); if(!p.hidden){ closeSheet(); renderSig(); } });\n',
+        "",
+        "prototype listener",
+    )
     old_bar = '$("#barCta").addEventListener("click",function(){ openPlanner(S.view,S.planOpt[S.view]); });'
     new_bar = (
         '$("#barCta").addEventListener("click",function(){ '
@@ -165,6 +208,7 @@ window.ATLZ_NOAUTO=true;
     window.ATLZ.mount(r,{
       data:JSON.parse(document.getElementById("lz-data").textContent),
       noFetch:true,
+      tier:function(){return "A";},
       menu:function(){var b=document.getElementById("menuBtn");if(b)b.click();},
       bar:function(label){var el=document.getElementById("barLbl");if(el&&document.documentElement.dataset.page==="lazer")el.textContent=label;}
     });
