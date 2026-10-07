@@ -1079,20 +1079,9 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
     <span><b>Selda Gençer</b><small>Beauty Center</small></span>
   </a>
   <span class="nav-sp"></span>
-  <button class="nav-btn proto-btn" id="protoBtn" aria-expanded="false" aria-controls="proto">Prototip</button>
   <button class="nav-btn" id="menuBtn" aria-label="Tüm sayfalar menüsü" data-track-label="at-nav-menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Menü</button>
 </header>
 
-<div class="proto" id="proto" hidden>
-  <h3>Prototip ayarları</h3>
-  <div class="row"><span>Sayfa</span><div class="seg" data-ctl="view"><button data-v="salon">Salon (ana sayfa)</button><button data-v="kas">Kaş</button><button data-v="tirnak">Tırnak</button><button data-v="kirpik">İpek kirpik</button><button data-v="lifting">Lifting</button><button data-v="pmu">Kalıcı makyaj</button><button data-v="cilt">Cilt</button><button data-v="lazer">Lazer</button></div></div>
-  <div class="row"><span>Sanat yönü</span><div class="seg" data-ctl="world"><button data-v="mermer">Mermer ve Altın</button><button data-v="gece">Gece ve Altın</button></div></div>
-  <div class="row"><span>Salon ışığı (saate göre)</span><div class="seg" data-ctl="light"><button data-v="auto">Otomatik</button><button data-v="sabah">Sabah</button><button data-v="ogle">Öğle</button><button data-v="aksam">Akşam</button></div></div>
-  <div class="row"><span>Cihaz kademesi</span><div class="seg" data-ctl="tier"><button data-v="auto">Otomatik</button><button data-v="A">A · tam şölen</button><button data-v="B">B · hafif</button><button data-v="C">C · statik</button></div></div>
-  <div class="row"><span>Reklamdaki arama (kişiselleştirme)</span><div class="seg" data-ctl="semt"><button data-v="">Yok</button><button data-v="Çayyolu">çayyolu…</button><button data-v="Ümitköy">ümitköy…</button><button data-v="Yaşamkent">yaşamkent…</button><button data-v="Bağlıca">bağlıca…</button><button data-v="İncek">incek…</button></div></div>
-  <p>Fiyatlar canlı CRM menüsünden (6 Ekim 2026). Yorumlar gerçek Google yorumları. Boş saatler bu prototipte <b>örnek</b>; canlıda CRM'den gelir. Butonlar gerçek WhatsApp'ı açar, deneme mesajını göndermeyin. Bakış ve ton adları ile cilt testinin önerileri taslaktır; uzmanınızın onayı gerekir. Fiyatlar 7 Ekim 2026'da canlı CRM'den yeniden doğrulandı.</p>
-  <div class="row"><span>Buton sayacı · bu oturum (canlıda Sayfa Sağlığı'na gider)</span><div class="sig" id="sigList"><span>Henüz dokunuş yok.</span></div></div>
-</div>
 
 <main>
 <!-- ===================== SALON / ANA SAYFA ===================== -->
@@ -1679,7 +1668,7 @@ body.lz-page{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 <footer class="site">
   <img src="m/monogram.svg" alt="" width="46" height="46">
   <div>Selda Gençer Beauty Center · Konutkent, Çankaya / Ankara</div>
-  <div>ATELİER prototipi · canlı siteye dokunmaz · 2026</div>
+  <div>ATELİER · Tam Şölen · 2026</div>
 </footer>
 </div>
 
@@ -2269,17 +2258,15 @@ function markSeg(k,v){ $$('[data-ctl="'+k+'"] button').forEach(function(b){ b.se
 /* ---------- boot ---------- */
 var VIEWS=["salon","kas","tirnak","kirpik","lifting","pmu","cilt","lazer"];
 function boot(){
-  S.world=store("world")||"mermer"; root.dataset.world=S.world; markSeg("world",S.world);
-  setLight("auto"); markSeg("light","auto");
-  S.tierPick="auto"; setTier(detectTier()); markSeg("tier","auto");
-  if(S.tier==="A") probeFrames(function(ms){ if(ms>24 && S.tierPick==="auto") setTier("B"); });
-  setSemt(""); markSeg("semt","");
+  S.world=store("world")||"mermer"; root.dataset.world=S.world;
+  setLight("auto");
+  S.tierPick="A"; setTier("A");
+  setSemt("");
   initReviews(); initRings(); initLive();
   var h=(location.hash||"").replace("#",""); go(VIEWS.indexOf(h)>0?h:"salon",true); autoLabel();
   document.addEventListener("click",function(e){ var t=e.target.closest("[data-track-label]"); if(t) sigHit(t.getAttribute("data-track-label")); },true);
   addEventListener("hashchange",function(){ var h=(location.hash||"").replace("#",""); if(VIEWS.indexOf(h)>=0 && h!==S.view) go(h); });
   addEventListener("scroll",onScroll,{passive:true}); addEventListener("resize",onScroll);
-  $("#protoBtn").addEventListener("click",function(){ var p=$("#proto"); p.hidden=!p.hidden; this.setAttribute("aria-expanded",!p.hidden); if(!p.hidden){ closeSheet(); renderSig(); } });
   $$("[data-ctl] button").forEach(function(b){ b.addEventListener("click",function(){ var k=b.parentNode.dataset.ctl, v=b.dataset.v;
     if(k==="view") go(v); if(k==="world"){ S.world=v; root.dataset.world=v; store("world",v); }
     if(k==="light") setLight(v); if(k==="tier"){ S.tierPick=v; setTier(v==="auto"?detectTier():v); dusts.forEach(function(f){f();}); onScroll(); }
@@ -2937,6 +2924,7 @@ window.ATLZ_NOAUTO=true;
     window.ATLZ.mount(r,{
       data:JSON.parse(document.getElementById("lz-data").textContent),
       noFetch:true,
+      tier:function(){return "A";},
       menu:function(){var b=document.getElementById("menuBtn");if(b)b.click();},
       bar:function(label){var el=document.getElementById("barLbl");if(el&&document.documentElement.dataset.page==="lazer")el.textContent=label;}
     });
