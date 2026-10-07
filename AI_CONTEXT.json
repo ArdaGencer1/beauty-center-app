@@ -10,7 +10,7 @@
   },
   "media": {
     "selected_items": 111,
-    "processed_files": 548,
+    "processed_files": 568,
     "raw_videos": 100,
     "repository_manifest": "sources/media_ig_20261007/manifest.json",
     "repository_index": "website/m/ig/media_index.json",
@@ -28,12 +28,22 @@
       "salon": 9,
       "kas": 7,
       "still": 5,
-      "bolgesel": 1
+      "bolgesel": 1,
+      "vucut": 10
     },
     "visual_review_limit": {
       "images": 6,
       "videos": 3
-    }
+    },
+    "extra_manifests": [
+      {
+        "family": "vucut",
+        "path": "sources/media_vucut_20261007/manifest_vucut.json",
+        "items": 10,
+        "builder": "sources/media_vucut_20261007/build_vucut.py",
+        "raw_video_triage": "sources/media_vucut_20261007/triage_videos.tsv"
+      }
+    ]
   },
   "plans": [
     {
@@ -93,6 +103,29 @@
         "staff shoots",
         "replace placeholders",
         "verification"
+      ]
+    },
+    {
+      "key": "vucut",
+      "status": "media_ready_pages_planned",
+      "priority": 4,
+      "path": "plans/claude/20261007/vucut-inceltme-sayfalari.md",
+      "ready": [
+        "74 raw videos triaged (triage_videos.tsv)",
+        "10 body media items / 20 files in website/m/ig (fam vucut)",
+        "build_vucut.py + manifest_vucut.json",
+        "page/media matrix for 9 pages",
+        "shoot list",
+        "wave plan V0-V3",
+        "owner preview image"
+      ],
+      "remaining": [
+        "owner confirmations: device names, result-to-service mapping, CRM items, face consent",
+        "V1 page engine + bolgesel-incelme, emler, lenf-drenaj, slim-tone",
+        "V2 remaining 5 pages with honest stand-ins",
+        "server: instagram_context.py caption search, 540px pair rebuild, live page audit",
+        "staff shoots",
+        "Artifact publish and verification"
       ]
     }
   ],

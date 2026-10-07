@@ -1,0 +1,115 @@
+{
+ "_doc": "Vücut / incelme ailesi (plan: plans/claude/20261007/vucut-inceltme-sayfalari.md). Kaynaklar yalnızca salonun kendi Instagram'ı. kind: video = kırpılmış/trim edilmiş döngü + poster; still = videodan tek kare; pair = önce/sonra yarımlarından aynı kutuyla kırpılmış çift; join = iki yarım yeniden yan yana (orijinal kolaj, monogram ve imza yerinde); frame = videodan tam kare (kolaj videosu). crop = ffmpeg crop w:h:x:y kaynak pikseli. box = [x0,y0,x1,y1] yarım pikseli (480 yerel kopya); server_once_box/server_sonra_box = aynı kutunun 1080x1350 IG orijinalindeki karşılığı (build_media.py once_box/sonra_box). Önce ve sonra yarımına AYNI kutu ve AYNI filtre uygulanır; sonra yarımı ayrıca parlatılmaz.",
+ "items": [
+  {
+   "slug": "vucut-roller",
+   "id": "18127469881839748",
+   "kind": "video",
+   "trim": [0.3, 10.3],
+   "poster_t": 5.0,
+   "alt": "Bacak arkasında silindir başlıklı vücut cihazıyla uygulama, salonumuzda çekildi",
+   "pages": ["bolgesel-incelme", "heykeltras?", "popo-bakimi?", "g5-masaji?"],
+   "teyit": "Cihaz adı sahipten teyit edilecek (vakumlu roller / G5 / heykeltraş?)"
+  },
+  {
+   "slug": "vucut-em",
+   "id": "18194252941391360",
+   "kind": "video",
+   "trim": [6.8, 15.4],
+   "poster_t": 9.0,
+   "crf": 29,
+   "alt": "Kol arkasında EM vücut cihazı başlığıyla uygulama; altın işlemeli Selda Gençer havlusu, salonumuzda çekildi",
+   "pages": ["emler", "bolgesel-incelme", "pasif-jimnastik?"]
+  },
+  {
+   "slug": "vucut-em-cihaz",
+   "id": "18194252941391360",
+   "kind": "still",
+   "t": 4.9,
+   "crop": "720:900:0:380",
+   "alt": "Salonumuzdaki EM vücut cihazı: dokunmatik ekran ve iki başlık",
+   "pages": ["emler"]
+  },
+  {
+   "slug": "vucut-slimtone",
+   "id": "18057972044799856",
+   "kind": "video",
+   "trim": [3.0, 13.0],
+   "crop": "720:900:0:330",
+   "poster_t": 9.0,
+   "yuz": true,
+   "alt": "Slim Tone başlığıyla yanak ve çene hattında uygulama, salonumuzda çekildi",
+   "pages": ["slim-tone"],
+   "note": "Üstteki 'SELDA GENÇER BEAUTY / SLIMTONE' yazı katmanı 4:5 kırpımla dışarıda kalır; yüz kısmen görünür (göz yok)."
+  },
+  {
+   "slug": "vucut-lenf",
+   "id": "18364153699186351",
+   "kind": "video",
+   "trim": [22.85, 25.85],
+   "crop": "720:900:0:90",
+   "poster_t": 24.4,
+   "alt": "Lenf drenaj (presoterapi) giysileri uygulama yatağında, salonumuzda çekildi",
+   "pages": ["lenf-drenaj"],
+   "note": "Salon turu videosundan; alttaki gömülü 'Lenf Drenaj hizmeti de mevcut' alt yazısı 4:5 kırpımla dışarıda kalır."
+  },
+  {
+   "slug": "vucut-cihaz-masa",
+   "id": "18364153699186351",
+   "kind": "still",
+   "t": 13.9,
+   "crop": "720:900:0:60",
+   "alt": "Altın tekerlekli sehpada başlıklı bakım cihazı, salonumuzda çekildi",
+   "pages": ["slim-tone?"],
+   "teyit": "Cihazın Slim Tone olup olmadığı sahipten teyit edilecek; teyitsiz yayınlanmaz"
+  },
+  {
+   "slug": "vucut-kol",
+   "id": "18319579426235256",
+   "kind": "pair",
+   "src_once": "bolgesel-cift-once-480.webp",
+   "src_sonra": "bolgesel-cift-sonra-480.webp",
+   "box": [0, 0, 480, 460],
+   "server_once_box": [0, 0, 540, 518],
+   "server_sonra_box": [540, 0, 1080, 518],
+   "alt": "Kol arkası, bölgesel incelme öncesi ve sonrası",
+   "pages": ["bolgesel-incelme", "emler"]
+  },
+  {
+   "slug": "vucut-gobek",
+   "id": "18319579426235256",
+   "kind": "pair",
+   "src_once": "bolgesel-cift-once-480.webp",
+   "src_sonra": "bolgesel-cift-sonra-480.webp",
+   "box": [0, 660, 480, 1050],
+   "server_once_box": [0, 743, 540, 1181],
+   "server_sonra_box": [540, 743, 1080, 1181],
+   "alt": "Göbek bölgesi önden, bölgesel incelme öncesi ve sonrası",
+   "pages": ["bolgesel-incelme"]
+  },
+  {
+   "slug": "vucut-cift-tam",
+   "id": "18319579426235256",
+   "kind": "join",
+   "src_once": "bolgesel-cift-once-480.webp",
+   "src_sonra": "bolgesel-cift-sonra-480.webp",
+   "alt": "Bölgesel incelme öncesi (solda) ve sonrası (sağda): kol arkası ve göbek, orijinal paylaşım",
+   "pages": ["bolgesel-incelme"]
+  },
+  {
+   "slug": "vucut-gobek-yan",
+   "id": "17976687788747656",
+   "kind": "frame",
+   "t": 1.0,
+   "crop": "360:636:0:2",
+   "alt": "Göbek bölgesi yandan, bölgesel incelme öncesi (üstte) ve sonrası (altta)",
+   "pages": ["bolgesel-incelme"],
+   "note": "Kaynak 360x640 durağan kolaj videosu; büyütülmez. Sunucuda aynı paylaşımın görsel sürümü aranacak."
+  }
+ ],
+ "excluded": [
+  {"id": "17883457215458159", "why": "LASERMACH başlığı bacakta: lazer epilasyon, vücut incelme değil (lazer ailesine aday)"},
+  {"id": "18089498999286039", "why": "el/manikür alanında gümüş eldiven ve mavi başlık; vücut sayfası değil"},
+  {"id": "18194252941391360@0-2s", "why": "aynı videonun ilk saniyeleri salon cephesi; vucut-em yalnızca 6,8 sn'den sonrasını kullanır"}
+ ]
+}

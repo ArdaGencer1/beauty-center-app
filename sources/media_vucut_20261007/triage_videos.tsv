@@ -1,0 +1,78 @@
+# Ham video ön elemesi (2026-10-07, vücut planı için). Her videodan %45'te tek küçük kare; vücut adaylarında ek kareler.
+# kategori kaba ve tek kareye dayanır: vücut DIŞI kayıtlar için yeniden tarama gerekmez, ama kendi ailelerinde kullanmadan önce kısa doğrulama yapılır.
+# manifestte zaten olan 16 video ve planlarda adı geçen 10 video bu listeye alınmadı.
+id	tarih	boyut	sure_sn	kategori	not
+17889732312052881	2024-11-27	1080x608	32.0	salon	drone/konum montajı, bina ve şehir
+18364153699186351	2024-12-23	720x1280	44.4	salon	salon turu, gömülü alt yazılı; 10,2-11,5 lazer odası; 13,5-14,3 sehpada başlıklı cihaz; 22,8-25,9 lenf drenaj giysileri → vucut-lenf, vucut-cihaz-masa
+18094209241532965	2025-02-27	360x640	5.7	tirnak	beyaz önlüklü personel, el ve cihaz
+18172308562331022	2025-05-01	720x1280	11.8	tirnak	french tırnak
+18329057545206235	2025-06-27	360x640	30.8	cilt	BAKIM yazılı yüz montajı, 360p
+18070756631048768	2025-07-01	360x640	7.1	afis	KAMPANYA protez/kalıcı oje, fiyatlı
+18081909172768075	2025-07-01	360x640	7.1	afis	KAMPANYA protez/kalıcı oje, fiyatlı
+18068255600028901	2025-07-03	360x640	7.7	afis	ŞOK KAMPANYA siyah nokta/hydrafacial, fiyatlı
+17991567131670070	2025-07-10	360x640	12.4	cilt	burunda hydrafacial başlığı
+18073422469819192	2025-07-19	360x640	1.5	afis	İpek kirpik işlemi, fiyatlı
+18125319967457903	2025-07-23	360x450	4.5	tirnak	beyaz badem tırnak
+18061712294192321	2025-07-30	720x1280	12.4	pmu	eyeliner/yüz yakın plan
+17976687788747656	2025-07-30	360x640	5.0	vucut	göbek yandan önce/sonra kolajı, 360p durağan → vucut-gobek-yan
+18059851076581437	2025-08-01	360x640	10.5	cilt	erkek yüz SONRASI yazılı
+18075468244791708	2025-08-03	720x1280	37.1	kas	kaş montajı
+18120129067487574	2025-08-09	720x1280	5.0	kirpik	kirpik yakın plan
+18056711009453399	2025-08-22	720x1280	8.7	tirnak	nail art
+18101614873594373	2025-11-13	360x640	13.2	salon	tırnak barı / iç mekân
+18068318789279034	2026-03-15	360x640	15.9	cilt	ürün kutuları
+18366027481207794	2026-03-18	360x640	8.9	salon	koridor, yürüyen kişi
+18131222230544550	2026-03-24	360x640	7.2	afis	göz bakımı metin afişi
+17862898971613759	2026-03-28	360x640	28.8	afis	serum siluet afişi
+17937329310179938	2026-03-28	360x640	15.4	afis	VIP hizmet metin afişi
+18097957492821256	2026-04-02	720x1280	15.9	salon	tırnak barında personel ve danışanlar
+18541473997069666	2026-04-07	720x1280	16.5	afis	Sağlıklı cilt için 6 adım metin afişi
+18071572313265868	2026-04-07	720x1280	24.0	afis	serum afişi
+18346810036246415	2026-04-21	720x1280	43.9	tirnak	tırnak freze montajı
+18092939279582706	2026-04-22	720x1280	34.6	kas	kaş montajı
+18136144333541571	2026-04-26	720x1280	12.0	kas	erkek kaş
+18097064327155859	2026-05-05	480x854	11.1	afis	Anneler günü kaş alımı kampanyası
+18083355800421217	2026-05-12	720x1280	8.0	kirpik	göz ve kirpik ART
+18111889372854649	2026-05-12	720x1280	19.3	kirpik	ipek kirpik uygulaması
+17891641968475852	2026-06-02	720x1280	11.4	kirpik	kirpik lifting yazılı
+18266395774295538	2026-06-02	720x1280	11.4	kirpik	kirpik lifting yazılı
+18101659015864183	2026-06-06	360x640	15.1	afis	cilt bakım adımları tablo afişi
+18178567621398104	2026-06-06	360x640	23.4	afis	Temizlik metin afişi
+18406447750155831	2026-06-09	720x1280	39.8	cilt	yüz bakım montajı
+17949731982000790	2026-06-09	360x640	22.9	kirpik	göz çevresi, cımbız
+18107391466770319	2026-06-13	720x1280	5.1	afis	Protez tırnak 700 TL
+18125591554728667	2026-06-13	720x1280	10.2	afis	Protez tırnak 700 TL
+18011957690713082	2026-06-13	720x1280	8.9	afis	Protez tırnak 700 TL yazılı uygulama
+18100751945014092	2026-06-13	720x1280	12.5	afis	Protez tırnak 700 TL yazılı uygulama
+18180626833402501	2026-06-13	720x1280	7.3	afis	Protez tırnak 700 TL, mor tırnak
+17971149837066309	2026-06-13	720x1280	6.1	tirnak	eller, tırnak
+18106595869806319	2026-06-19	720x1280	20.2	cilt	pamuk pedli yüz, konum etiketi
+18093406391262864	2026-06-19	720x1280	20.2	cilt	yüzde cımbız/komedon
+18126120175637645	2026-06-23	720x1280	19.3	still	örtü üzerinde aletler
+18187340608376469	2026-06-23	720x1280	16.7	salon	sterilizasyon cihazı, yazılı
+18380338273207488	2026-06-24	720x1280	14.8	cilt	buhar, 'Ciltte gerçek temizlik' yazılı
+18002751545949371	2026-06-24	720x1280	9.4	cilt	büyüteç lamba, yazılı
+18101811266125816	2026-06-25	716x1274	10.9	kirpik	göz çevresi, yazılı
+18063427700719634	2026-06-25	720x1280	12.4	cilt	'Leke, hassasiyet, nem' yazılı
+18455967805112572	2026-06-26	720x1280	14.2	cilt	yüzde maske fırçası
+18005579276752333	2026-06-28	720x1280	10.4	kas	kaş, yazılı
+18106634948074733	2026-06-30	720x1280	10.0	cilt	altın kase, yüz
+17883457215458159	2026-07-17	720x1280	7.1	lazer	LASERMACH başlığı bacakta (vücut incelme değil)
+18119159627503106	2026-07-19	720x1280	15.9	kas	kaş önce/sonra yüz
+18018169883920417	2026-07-19	720x1280	15.9	kas	Altın oran kaş yazılı
+18374798185224149	2026-08-07	720x1280	10.0	tirnak	tırnak
+17930306856379485	2026-08-09	720x1280	9.3	tirnak	kırmızı tırnak
+18118642289477894	2026-08-13	720x1280	8.3	tirnak	kırmızı tırnak, alet
+18187785991403175	2026-08-13	720x1280	8.1	tirnak	tırnak masası
+18124896217778836	2026-08-16	720x1280	8.3	tirnak	folyo + freze
+18194252941391360	2026-08-18	720x1280	15.5	vucut	salon cephesi 0-2 sn; EM cihazı 4,5-5,3 sn; kol arkasında EM başlığı 6,8-15,4 sn → vucut-em, vucut-em-cihaz
+18099335882258707	2026-08-21	720x1280	5.5	tirnak	badem tırnak
+18095299652309480	2026-08-22	720x1280	10.3	kas	iplikle kaş
+18089498999286039	2026-08-23	720x1280	42.6	tirnak	el bakımı: gümüş eldiven + mavi başlık (vücut değil)
+18226291744323491	2026-08-26	720x1280	16.0	tirnak	tırnak
+18127469881839748	2026-08-27	720x1280	13.7	vucut	bacak arkasında siyah silindir başlık, tek çekim → vucut-roller
+18113851687819193	2026-09-17	720x1280	8.3	kas	kaş, yüz
+18189264124407162	2026-10-06	720x1280	10.3	afis	Protez tırnak metin afişi
+18126861529876312	2026-10-06	720x1280	11.3	kirpik	kirpik lifting & kaş laminasyon, yazılı
+18018564617734758	2026-10-06	720x1280	13.7	kirpik	kirpik lifting & kaş laminasyon, yazılı
+18057972044799856	2026-10-06	720x1280	33.7	vucut	SLIMTONE yazılı yüz uygulaması (yazı üstte) → vucut-slimtone

@@ -28,14 +28,15 @@ inceleyerek token harcamasını önlemektir.
 | İçerik | Yol | Not |
 |---|---|---|
 | Açılabilir site | `website/index.html` | İşlenmiş medyayı `website/m/ig/` altından kullanır. |
-| İşlenmiş medya | `website/m/ig/` | 548 dosya; topluca açma. |
-| Medya indeksi | `website/m/ig/media_index.json` | 111 slug; dosya, poster, boyut, süre, Instagram ID ve permalink bilgisi. İlk bakılacak medya kaynağı. |
+| İşlenmiş medya | `website/m/ig/` | 568 dosya (20'si `vucut-*`); topluca açma. |
+| Medya indeksi | `website/m/ig/media_index.json` | 121 slug (10'u `fam: "vucut"`); dosya, poster, boyut, süre, Instagram ID ve permalink bilgisi. İlk bakılacak medya kaynağı. |
 | Seçim manifesti | `sources/media_ig_20261007/manifest.json` | 111 seçilmiş kayıt ve açık dışlama nedenleri. |
 | Medya üreticisi | `sources/media_ig_20261007/build_media.py` | Crop, hizalama, poster, video ve varyant üretim kuralları. |
+| Vücut medyası | `sources/media_vucut_20261007/` | `manifest_vucut.json` (10 kalem), `build_vucut.py` (depodaki ham videolardan üretir), `triage_videos.tsv` (74 sınıflandırılmamış ham videonun ön elemesi; bu videolar yeniden taranmaz). |
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
 | Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html` | Mevcut Artifact'in depodaki v3 tabanı. |
-| Güncel planlar | `plans/claude/20261007/` | Lazer, PMU ve Cilt Atlası planları. |
+| Güncel planlar | `plans/claude/20261007/` | Lazer, PMU, Cilt Atlası ve Vücut planları. |
 
 ### Sunucudaki asıl yollar
 
@@ -85,7 +86,8 @@ yerine önce bu dosyayı kullanabilir.
 
 ## Mevcut seçilmiş medya özeti
 
-Manifestte toplam **111** kayıt vardır:
+Ana manifestte toplam **111** kayıt, vücut ek manifestinde **10** kayıt vardır
+(`ai_media_lookup.py` ikisini birlikte okur):
 
 | Aile | Kayıt |
 |---|---:|
@@ -98,6 +100,7 @@ Manifestte toplam **111** kayıt vardır:
 | Kaş | 7 |
 | Still-life | 5 |
 | Bölgesel incelme | 1 |
+| Vücut (ek manifest `manifest_vucut.json`) | 10 |
 
 Bu sayı “sayfa tamamlandı” anlamına gelmez; yalnızca medya seçimi/işleme
 envanteridir.
@@ -136,7 +139,22 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
+### 4. Vücut atölyesi — medya v1 hazır, sayfalar planlandı
+
+Plan: `plans/claude/20261007/vucut-inceltme-sayfalari.md`
+(önizleme: `plans/claude/20261007/vucut-medya-onizleme.jpg`)
+
+Hazır olanlar: 74 ham videonun ön elemesi (`triage_videos.tsv`); 10 işlenmiş
+vücut kalemi / 20 dosya (`vucut-gobek`, `vucut-kol`, `vucut-roller`,
+`vucut-em`, `vucut-em-cihaz`, `vucut-slimtone`, `vucut-lenf`,
+`vucut-gobek-yan`, `vucut-cift-tam`, `vucut-cihaz-masa`); `build_vucut.py`;
+9 sayfalık sayfa-medya matrisi, çekim listesi ve dalga planı.
+
+Kalanlar: sahip teyitleri (cihaz adları, sonuç-hizmet eşlemesi, CRM);
+V1 sayfa motoru + 4 sayfa; V2 kalan 5 sayfa; sunucuda IG başlık araması,
+540 px tam çözünürlük ve canlı sayfa denetimi; çekimler; doğrulama.
+
+Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası → Vücut**.
 
 ## Bilinen dışlamalar ve doğruluk kararları
 
@@ -159,6 +177,15 @@ Cilt planında çıkarılması kararlaştırılan eski seçimler:
 - `cilt-cift-5` (`18091846780704413`)
 - `cilt-islem` (`18394257022142297`)
 - `cilt-video-2` (`18084203987184570`)
+
+Vücut planında verilen kararlar:
+
+- `bolgesel-cift` sütun bölmesi yerine `vucut-gobek` / `vucut-kol` çeyrek
+  kırpımları kullanılır (2×2 kolaj; sütunlarda monogram çeyreği kalıyordu).
+- `17883457215458159`: LASERMACH bacak videosu; lazer, vücut incelme değil.
+- `18089498999286039`: el bakımı (gümüş eldiven); vücut değil.
+- `vucut-cihaz-masa` ve `vucut-roller`'ın G5/heykeltraş/popo kullanımı sahip
+  teyidi olmadan yayınlanmaz. Önce/sonra sonucu teyitsiz bir cihaza bağlanmaz.
 
 Manifest eski kayıtları hâlâ içerebilir. Cilt geliştirmesinde planın son kararı
 manifestteki eski varlıktan üstündür. Lazer için gerçek “önce/sonra” yoktur;

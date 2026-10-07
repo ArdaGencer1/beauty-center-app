@@ -10,17 +10,18 @@ Web sitesi, Claude Artifact prototipi, geliştirme planları ve medya kütüphan
 - Codex/diğer ajan kuralları: [AGENTS.md](AGENTS.md)
 - Medyayı açmadan sorgulama: `python3 scripts/ai_media_lookup.py summary`
 
-Ajanlar 548 işlenmiş dosyayı veya 100 ham videoyu topluca incelememeli. Önce
+Ajanlar 568 işlenmiş dosyayı veya 100 ham videoyu topluca incelememeli. Önce
 manifest ve medya indeksinden en fazla 3–6 görsel ya da 1–3 video kısa listelemeli.
 
 ## Yapı
 
 - `website/index.html` — geliştirilebilir ve tarayıcıda açılabilir ATELİER prototipi
-- `website/m/ig/` — web için seçilmiş/işlenmiş 548 fotoğraf, video, poster ve film karesi
+- `website/m/ig/` — web için seçilmiş/işlenmiş 568 fotoğraf, video, poster ve film karesi
 - `originals/instagram/videos/` — Instagram dışa aktarımından 100 ham video
 - `sources/media_ig_20261007/` — medya üretim betiği ve manifest
 - `sources/atelier_lazer_20261007/` — lazer sayfaları prototip kaynakları
-- `plans/claude/20261007/` — lazer, kalıcı makyaj ve Cilt Atlası planları
+- `sources/media_vucut_20261007/` — vücut/incelme medya manifesti, üretim betiği ve ham video ön elemesi
+- `plans/claude/20261007/` — lazer, kalıcı makyaj, Cilt Atlası ve Vücut planları
 - `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüsü
 
 ## Aktif Artifact

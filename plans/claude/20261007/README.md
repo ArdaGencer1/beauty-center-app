@@ -11,4 +11,8 @@ Bu klasörde 7 Ekim 2026 tarihinde oluşturulan üç güncel planın değiştiri
 2. Kalıcı makyaj sayfaları
 3. Cilt Atlası
 
+Aynı gün bu depoda eklenen dördüncü plan:
+
+4. Vücut / incelme sayfaları — `vucut-inceltme-sayfalari.md` (önizleme: `vucut-medya-onizleme.jpg`; medya `sources/media_vucut_20261007/`)
+
 Web için seçilmiş ve işlenmiş medya `patches/media_ig_20261007/out/` altında; üretim betiği ve manifest aynı patch klasöründedir. Ham Instagram dışa aktarımı boyutu ve kaynak-veri niteliği nedeniyle Git deposuna eklenmemiştir.
