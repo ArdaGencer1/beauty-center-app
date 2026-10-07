@@ -12,3 +12,8 @@ Bu klasörde 7 Ekim 2026 tarihinde oluşturulan üç güncel planın değiştiri
 3. Cilt Atlası
 
 Web için seçilmiş ve işlenmiş medya `patches/media_ig_20261007/out/` altında; üretim betiği ve manifest aynı patch klasöründedir. Ham Instagram dışa aktarımı boyutu ve kaynak-veri niteliği nedeniyle Git deposuna eklenmemiştir.
+
+Ek plan (aynı gün, sonradan eklendi):
+
+- `lazer-wow-plan.md`: FAZ L'nin üstüne lazer “vay” planı. Ölçülmüş
+  bulgular (takvim çakışması, durağan hero vb.), 4 dalga ve kabul kapıları.

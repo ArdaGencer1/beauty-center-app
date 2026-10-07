@@ -367,10 +367,10 @@ def journey_svg(code: str = "lz") -> str:
 
 # --------------------------------------------------------------------------------------------- pages
 PAGES = {
-    "hub": {"slug": "laser-signature", "code": "lazer", "g": "kadin", "hero": ("img", "lazer-5", None), "focal": "64% 58%",
+    "hub": {"slug": "laser-signature", "code": "lazer", "g": "kadin", "hero": ("video", "lazer-film-jel", None), "focal": "50% 72%",
             "lede": "Lasermach, 3 dalga boyu, soğutmalı başlık. Bölgenizi seçin, planı birlikte yapalım.",
             "order": ["map", "journey", "cal", "device", "reels", "reviews", "hygiene", "price", "family", "visit"]},
-    "kamp": {"slug": "laser-signature-kampanya", "code": "lzkamp", "g": "kadin", "hero": ("img", "lazer-5", None), "focal": "64% 58%",
+    "kamp": {"slug": "laser-signature-kampanya", "code": "lzkamp", "g": "kadin", "hero": ("video", "lazer-film-jel", None), "focal": "50% 72%",
              "lede": "Lasermach, 3 dalga boyu, soğutmalı başlık. Bölgenizi seçin, planı birlikte yapalım.",
              "order": ["map", "journey", "cal", "device", "reels", "reviews", "hygiene", "price", "family", "visit"]},
     "fiyat": {"slug": "lazer-epilasyon-fiyatlari-ankara", "code": "lzfiyat", "g": "kadin", "hero": ("img", "lazer-ekran", None), "focal": "42% 32%",
@@ -499,8 +499,8 @@ def page_html(key: str, media: str, h1: str, link) -> str:
     if kind == "video":
         poster = f"{media}{slug}-poster.webp"
         first = still_img(still, "lz-poster lz-kb") if still else (
-            f'<img class="lz-poster" src="{poster}" alt="{esc(HERO_MEDIA[slug])}" width="720" height="1280" fetchpriority="high" decoding="async">')
-        stage = first + f'<video class="lz-hero-vid" muted playsinline loop preload="none" data-src="{media}{slug}.mp4" aria-hidden="true"></video>'
+            f'<img class="lz-poster" style="object-position:{P.get("focal", "50% 50%")}" src="{poster}" alt="{esc(HERO_MEDIA[slug])}" width="720" height="1280" fetchpriority="high" decoding="async">')
+        stage = first + f'<video class="lz-hero-vid" style="object-position:{P.get("focal", "50% 50%")}" muted playsinline loop preload="none" data-src="{media}{slug}.mp4" aria-hidden="true"></video>'
         hero_img = f"{media}{still}-800.webp" if still else poster
     else:
         stage = still_img(slug, "lz-poster lz-kb")
@@ -514,14 +514,14 @@ def page_html(key: str, media: str, h1: str, link) -> str:
     h.append(f'<div class="lz" data-lz-page="{key}" data-lz-code="{code}" data-lz-g="{g}" data-lz-media="{media}">')
     # ---------------------------------------------------------------- L1 hero
     h.append(f'''<header class="lz-hero" id="lz-ust">
-  <div class="lz-stage">{stage}<div class="lz-scan" aria-hidden="true"></div><div class="lz-glow" aria-hidden="true"></div><div class="lz-scrim" aria-hidden="true"></div>
-    <div class="lz-proof" aria-label="Kısa bilgiler"><span><b>3</b> dalga boyu<small>755·808·1064 nm</small></span><span><b>10 °C</b> başlık<small>soğutmalı</small></span><span><b>{st["five"]}/{st["mentions"]}</b> lazer yorumu<small>Google · 5 yıldız</small></span></div>
+  <div class="lz-stage">{stage}<div class="lz-veil" aria-hidden="true"></div><div class="lz-scan" aria-hidden="true"></div><div class="lz-glow" aria-hidden="true"></div><div class="lz-scrim" aria-hidden="true"></div>
   </div>
   <div class="lz-copy">
     <span class="lz-over">Konutkent · Çankaya · Lasermach diode</span>
     <h1 class="lz-h1"><span class="lz-h1a">{esc(big)}</span>{h1b}</h1>
     <div class="lz-chips"><span class="lz-chip"><b class="lz-star">★</b> 4,6 · 263 yorum</span><span class="lz-chip">Kişiye özel fiyat</span><span class="lz-chip" data-lz-open><i class="lz-dot"></i>Salı–Pazar 10.00–20.00</span></div>
     <div class="lz-cta-row"><a class="lz-btn-gold lz-shine" href="{cta_href}" data-lz-scroll data-track-label="at-{code}-hero-bolge"><span class="lz-lbl">{cta_txt}</span>{ICON["down"]}</a>{hero_wa}</div>
+    <div class="lz-proof" aria-label="Kısa bilgiler"><span><b>3</b> dalga boyu<small>755·808·1064 nm</small></span><span><b>10 °C</b> başlık<small>soğutmalı</small></span><span><b>{st["five"]}/{st["mentions"]}</b> lazer yorumu<small>Google · 5 yıldız</small></span></div>
     <p class="lz-lede">{P["lede"]}</p>
     <div class="lz-rings" data-lz-rings></div>
     <p class="lz-fine">Videolar ve fotoğraflar salonumuzda çekildi.</p>
@@ -602,12 +602,25 @@ def journey_section(code):
 
 def cal_section(code):
     return f'''<section class="lz-sec lz-calsec" id="lz-takvim">
-  {sec_head("Seans takvimi", "8 seanslık <em>yolculuğunuz</em>", "Seçtiğiniz bölgelere göre tahmini takvim. Yüz bölgelerinde 4–6, vücutta 6–8 hafta arayla.")}
-  <div class="lz-cal" data-lz-cal>
+  {sec_head("Lazer planım", "8 seanslık <em>planınız</em>", "Haritada seçtiğiniz bölgeler burada plana dönüşür. Yüz bölgelerinde 4–6, vücutta 6–8 hafta arayla.")}
+  <div class="lz-cal lz-plancard" data-lz-cal>
+    <div class="lz-pc-top"><span class="lz-pc-brand">Lazer Planım</span><span class="lz-pc-sub">Selda Gençer Beauty Center · Konutkent</span></div>
+    <dl class="lz-pc-rows">
+      <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-{code}-plan-harita">Haritadan bölge seçin</a></dd></div>
+      <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
+      <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
+      <div data-lz-pc-tonerow hidden><dt>Cilt</dt><dd data-lz-pc-tone></dd></div>
+    </dl>
+    <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
+    <span class="lz-pc-lab">Başlangıç</span>
     <div class="lz-seg lz-start" role="group" aria-label="Başlangıç"><button type="button" data-start="0" aria-pressed="true" data-track-label="at-{code}-takvim-baslangic">Bu ay</button><button type="button" data-start="1" aria-pressed="false" data-track-label="at-{code}-takvim-baslangic">Gelecek ay</button><button type="button" data-start="2" aria-pressed="false" data-track-label="at-{code}-takvim-baslangic">2 ay sonra</button></div>
     <ol class="lz-track" data-lz-track></ol>
     <p class="lz-calsum" data-lz-calsum>8 seans, vücut bölgelerinde 6–8 hafta arayla.</p>
-    <p class="lz-fine">Tahminidir; uzmanınız cilt ve kıl yapınıza göre ayarlar.</p>
+    <div class="lz-actions">
+      {wa_link(code, "plan-wa", "Merhaba, lazer epilasyon için fiyat ve plan almak istiyorum.", "lz-btn-gold lz-shine", "WhatsApp'tan plan iste")}
+      <button type="button" class="lz-btn-line" data-lz-plan data-track-label="at-{code}-plan-gun">{ICON["cal"]}<span>Gün de seçeyim</span></button>
+    </div>
+    <p class="lz-fine">Tahminidir; uzmanınız cilt ve kıl yapınıza göre ayarlar. Fiyatı bölgelerinize göre WhatsApp'tan iletiyoruz.</p>
   </div>
 </section>'''
 
@@ -631,7 +644,7 @@ def device_section(code, media):
 def reels_section(code, media):
     items = "".join(
         f'<button type="button" class="lz-reel" data-reel="{s}" data-track-label="at-{code}-film-ac" aria-label="{esc(c)}: videoyu açın">'
-        f'<video muted playsinline loop preload="none" poster="{media}{s}-poster.webp" data-src="{media}{s}.mp4" aria-hidden="true"></video>'
+        f'<video muted playsinline loop preload="none" data-poster="{media}{s}-poster.webp" data-src="{media}{s}.mp4" aria-hidden="true"></video>'
         f'<span class="lz-reel-t"><i>{ICON["play"]}</i>{esc(c)}</span></button>' for s, c in REELS)
     return f'''<section class="lz-sec lz-reels" id="lz-film">
   {sec_head("Salonumuzda çekildi", "Işığı <em>iş başında</em> görün", "Gerçek uygulamalar, Instagram hesabımızdan. Dokunun, tam ekran izleyin.")}
@@ -639,14 +652,31 @@ def reels_section(code, media):
 </section>'''
 
 
+# Review topics: a card joins a topic only when its verbatim text contains one of these phrases.
+# A chip is shown only when >= 2 cards match (10-07: Acı 2, Sonuç 8, İlgi 4; Hijyen had 1 and was dropped).
+TOPICS = [("aci", "Acı", ("acı",)),
+          ("sonuc", "Sonuç", ("sonuç", "fark", "çıkmıyor", "etkisini", "dökülme")),
+          ("ilgi", "İlgi", ("güler yüz", "ilgili", "samimi", "yardımcı"))]
+
+
+def topics_of(text: str) -> list[str]:
+    lo = text.replace("I", "ı").replace("İ", "i").lower()
+    return [k for k, _n, words in TOPICS if any(w in lo for w in words)]
+
+
 def reviews_section(code, rev, P):
     st = rev["stats"]
     items = rev["items"]
     if P["g"] == "erkek":
         items = sorted(items, key=lambda r: 0 if r.get("g") == "m" else 1)
-    cards = "".join(f'<article class="lz-rv"><span class="lz-stars" aria-label="5 yıldız">★★★★★</span><p>{esc(r["t"])}</p><footer><b>{esc(r["n"])}</b><span>{month_tr(r["d"])} · Google</span></footer></article>' for r in items)
+    cards = "".join(f'<article class="lz-rv" data-tp="{" ".join(topics_of(r["t"]))}"><span class="lz-stars" aria-label="5 yıldız">★★★★★</span><p>{esc(r["t"])}</p><footer><b>{esc(r["n"])}</b><span>{month_tr(r["d"])} · Google</span></footer></article>' for r in items)
+    counts = {k: sum(k in topics_of(r["t"]) for r in items) for k, _n, _w in TOPICS}
+    chips = "".join(f'<button type="button" data-tpc="{k}" aria-pressed="false" data-track-label="at-{code}-yorum-konu">{n}<small>{counts[k]}</small></button>'
+                    for k, n, _w in TOPICS if counts[k] >= 2)
+    chips = (f'<div class="lz-tpc" role="group" aria-label="Yorum konusu"><button type="button" data-tpc="" aria-pressed="true" data-track-label="at-{code}-yorum-konu">Tümü<small>{len(items)}</small></button>{chips}</div>') if chips else ""
     return f'''<section class="lz-sec lz-reviews" id="lz-yorumlar">
-  <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b>{st["five"]}</b><span>/ {st["mentions"]}</span></div><p>Google'da lazer geçen {st["mentions"]} yorumun {st["five"]}'u 5 yıldız.</p></div>
+  <div class="lz-rvstat"><span class="lz-over">Lazerde yorumlarımız konuşuyor</span><div class="lz-big"><b data-lz-count="{st["five"]}">{st["five"]}</b><span>/ {st["mentions"]}</span></div><p>Google'da lazer geçen {st["mentions"]} yorumun {st["five"]}'u 5 yıldız.</p></div>
+  {chips}
   <div class="lz-rvrow" data-lz-rv><div class="lz-rvtrack">{cards}</div></div>
   <p class="lz-fine">Google yorumlarından aynen alıntı; “…” kısaltmayı gösterir. Sonuç kişiye göre değişir. <a href="{MAPS}" target="_blank" rel="noopener" data-track-label="at-{code}-yorumlar-google">Tüm yorumlar ↗</a></p>
 </section>'''
@@ -674,7 +704,7 @@ def price_card(code, link):
     <h3>Kişiye özel fiyat</h3>
     <p>Fiyat; bölgeye, seans sayısına ve pakete göre değişir. Tek seans ve 8 seanslık paket seçenekleri var; <b>bitiş garantili paket</b> seçeneğimiz de var.</p>
     <div class="lz-actions">
-      {wa_link(code, "fiyat-wa", "Merhaba, lazer epilasyon için fiyat almak istiyorum.", "lz-btn-gold", "Fiyatımı WhatsApp'tan iste")}
+      {wa_link(code, "fiyat-wa", "Merhaba, lazer epilasyon için fiyat almak istiyorum.", "lz-btn-gold", "WhatsApp'tan fiyat iste")}
       <a class="lz-btn-line" href="{link('fiyat')}#lz-menu" data-track-label="at-{code}-fiyat-menu"><span>Bölge menüsünün tamamı</span>{ICON["arrow"]}</a>
     </div>
   </div>
@@ -734,6 +764,7 @@ def quick_section(code):
     return f'''<section class="lz-sec lz-quick" id="lz-hizli">
   {sec_head("15 dakikalık bölgeler", "Tek bölge, <em>kısa seans</em>", "Randevu sistemimizde tek seansı 15 dakika olan kadın bölgeleri. Dokunun, listenize eklensin; erkek bölgeleri haritada.")}
   <div class="lz-qrow">{chips}</div>
+  <a class="lz-qgo" href="#lz-takvim" data-lz-scroll data-lz-qgo hidden data-track-label="at-{code}-hizli-plan">Lazer Planım'a bakın {ICON["arrow"]}</a>
 </section>'''
 
 
@@ -776,7 +807,7 @@ def page_data(key: str, media: str, nav: bool) -> dict:
         {"t": "Yorumlar", "th": f"{media}lazer-koltuk-480.webp", "fr": [{"rv": r} for r in rev["items"][:3]]},
         {"t": "Fiyat", "th": f"{media}lazer-uzman-480.webp", "fr": [{"price": True}]},
     ]
-    d = {"page": key, "code": P["code"], "g": P["g"], "media": media, "wa": WA, "regions": regs,
+    d = {"page": key, "code": P["code"], "g": P["g"], "media": media, "wa": WA, "regions": regs, "faceDefault": bool(P.get("face")),
          "pkgParts": PKG_PARTS, "face": sorted(FACE_IDS), "stories": stories, "stats": rev["stats"]}
     if nav:
         d["nav"] = load("nav.json")

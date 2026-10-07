@@ -62,6 +62,7 @@
     this.initHero(); this.initRings(); this.initScroll(); this.initMap(); this.initJourney(); this.initCal(); this.initDevice();
     this.initReels(); this.initReviews(); this.initZoom(); this.initMenu(); this.initTone(); this.initQuick(); this.initFamily();
     if (!this.host.bar) this.initBar();
+    this.initShine(); this.initHalo();
     this.sync();
     this.refreshMinutes();
   }
@@ -142,8 +143,15 @@
     if (this.sens) s += " Cildim hassas.";
     return s;
   };
+  P.planWhen = function () {
+    return ["bu ay", "gelecek ay", "2 ay sonra"][this.start] || "bu ay";
+  };
   P.msg = function (place) {
     var rt = this.regText();
+    if (place === "plan-wa" && rt) {
+      var iv = this.interval();
+      return "Merhaba, lazer epilasyon planım: " + rt + ". 8 seans, " + iv[0] + "–" + iv[1] + " hafta arayla; " + this.planWhen() + " başlamak istiyorum. Fiyat ve uygun günleri öğrenebilir miyim?" + this.extras();
+    }
     var base = place === "ton-wa" ? "Merhaba, hassas cildim için lazer epilasyon ön görüşmesi istiyorum." :
       (rt ? "Merhaba, lazer epilasyon için fiyat ve plan almak istiyorum." : "Merhaba, lazer epilasyon hakkında bilgi almak istiyorum.");
     return base + (rt ? " Bölgeler: " + rt + "." : "") + this.extras();
@@ -167,14 +175,15 @@
     if (tot) {
       var sum = 0, known = 0;
       this.sel.forEach(function (k) { var r = self.mins(k); if (r) { sum += r.m; known++; } });
-      tot.innerHTML = known ? 'Menüdeki süreler toplamı <b>≈ ' + sum + ' dk</b>' + (known < this.sel.length ? " + paket" : "") : "";
+      tot.innerHTML = this.sel.length ? '<b>' + this.sel.length + ' bölge</b>' + (known ? ' · menüdeki süreler <b>≈ ' + sum + ' dk</b>' + (known < this.sel.length ? " + paket" : "") : "") + ' · <b>8 seans</b>' : "";
     }
     $$("[data-lz-wa]", root).forEach(function (a) { a.href = self.wa(self.msg(a.getAttribute("data-lz-wa"))); });
     var waLbl = $('[data-lz-wa="harita-wa"] .lz-lbl', root);
     if (waLbl) waLbl.textContent = this.sel.length ? this.sel.length + " bölgeyi WhatsApp'tan sor" : "WhatsApp'tan fiyat sor";
+    var qg = $("[data-lz-qgo]", root); if (qg) qg.hidden = !this.sel.length;
     var my = $("[data-lz-mybar]", root);
     if (my) { my.hidden = !this.sel.length; var c = $("[data-lz-mycount]", my); if (c) c.textContent = "Fiyat listem · " + this.sel.length + " kalem"; }
-    if (this.bar) { this.bar.wa.href = this.wa(this.msg("bar-wa")); $(".lz-lbl", this.bar.wa).textContent = this.sel.length ? this.sel.length + " bölge · fiyat sor" : "WhatsApp'tan fiyat sor"; }
+    if (this.bar) { this.bar.wa.href = this.wa(this.msg(this.sel.length ? "plan-wa" : "bar-wa")); $(".lz-lbl", this.bar.wa).textContent = this.sel.length ? "Planım · " + this.sel.length + " bölge" : "WhatsApp'tan fiyat sor"; }
     if (this.host.bar) this.host.bar(this.barText());
     this.renderCal();
     if (this.planOpen) this.renderPlan();
@@ -183,8 +192,8 @@
 
   /* ---------------- L1 hero ---------------- */
   P.initHero = function () {
-    var self = this, root = this.root, scan = $(".lz-scan", root);
-    if (scan && this.tier !== "C") requestAnimationFrame(function () { requestAnimationFrame(function () { scan.classList.add("go"); }); });
+    var self = this, root = this.root, stage = $(".lz-stage", root);
+    if (stage && this.tier !== "C") stage.classList.add("go");
     var o = openState(), chip = $("[data-lz-open]", root);
     if (chip) chip.innerHTML = '<i class="lz-dot' + (o.open ? "" : " off") + '"></i>' + o.txt;
     var v = $(".lz-hero-vid", root);
@@ -284,9 +293,16 @@
   };
   P.setSide = function (side, quiet) {
     var ui = $(".lz-map-ui", this.root); if (!ui) return;
+    var from = this.side, self = this, fig = $(".lz-figure", ui);
     this.side = side;
     $$("[data-lz-side]", ui).forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-lz-side") === side); });
-    this.showFig();
+    var dir = !quiet && from !== side && (side === "yuz" || from === "yuz") ? (side === "yuz" ? "in" : "out") : "";
+    if (dir && document.startViewTransition && this.tier !== "C" && fig) {
+      var de = document.documentElement;
+      fig.style.viewTransitionName = "lz-fig"; de.classList.add("lz-vt-" + dir);
+      var vt = document.startViewTransition(function () { self.showFig(); });
+      vt.finished.then(function () { fig.style.viewTransitionName = ""; de.classList.remove("lz-vt-" + dir); }, function () { fig.style.viewTransitionName = ""; de.classList.remove("lz-vt-" + dir); });
+    } else this.showFig();
     if (!quiet && side === "yuz") { var f = $(".lz-figure", ui); if (f && f.getBoundingClientRect().top < 0) f.scrollIntoView({ block: "center", behavior: "smooth" }); }
   };
   P.setGender = function (g, quiet) {
@@ -318,10 +334,16 @@
     if (this.tier === "C" || !el || !el.ownerSVGElement) return;
     var svg = el.ownerSVGElement, fx = $(".lz-fx", svg), bb;
     try { bb = el.getBBox(); } catch (e) { return; }
-    var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", bb.x + bb.width / 2); c.setAttribute("cy", bb.y + bb.height / 2); c.setAttribute("r", Math.max(8, Math.min(bb.width, bb.height) / 2));
-    c.setAttribute("class", "lz-shot"); fx.appendChild(c);
-    setTimeout(function () { c.remove(); }, 900);
+    var NS = "http://www.w3.org/2000/svg", cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2, r = Math.max(8, Math.min(bb.width, bb.height) / 2);
+    var g = document.createElementNS(NS, "g"); g.setAttribute("class", "lz-shotg");
+    g.innerHTML = '<circle class="lz-flash" cx="' + cx + '" cy="' + cy + '" r="' + r * 1.4 + '"/>' +
+      '<circle class="lz-shot" cx="' + cx + '" cy="' + cy + '" r="' + r + '"/>' +
+      '<circle class="lz-shot lz-shot2" cx="' + cx + '" cy="' + cy + '" r="' + r + '"/>' +
+      [0, 60, 120, 180, 240, 300].map(function (a) { var rad = a * Math.PI / 180, x1 = cx + Math.cos(rad) * r * .9, y1 = cy + Math.sin(rad) * r * .9, x2 = cx + Math.cos(rad) * r * 2.1, y2 = cy + Math.sin(rad) * r * 2.1;
+        return '<line class="lz-spark" x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '"/>'; }).join("");
+    fx.appendChild(g);
+    if (navigator.vibrate) try { navigator.vibrate(12); } catch (e) {}
+    setTimeout(function () { g.remove(); }, 1000);
   };
   P.refreshMinutes = function () {
     /* Minutes come from the CRM menu at build time; refresh them from the live menu when it answers. */
@@ -377,11 +399,12 @@
   P.initCal = function () {
     var self = this, cal = $("[data-lz-cal]", this.root);
     if (!cal) return;
-    $$("[data-start]", cal).forEach(function (b) { b.addEventListener("click", function () { self.start = +b.getAttribute("data-start"); $$("[data-start]", cal).forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); self.renderCal(); }); });
+    $$("[data-start]", cal).forEach(function (b) { b.addEventListener("click", function () { self.start = +b.getAttribute("data-start"); $$("[data-start]", cal).forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); self.sync(); }); });
   };
   P.interval = function () {
     var face = 0, body = 0, self = this;
     this.sel.forEach(function (k) { if (self.isFace(k)) face++; else body++; });
+    if (!this.sel.length && this.D.faceDefault) return [4, 6, "yüz"];
     return (face && !body) ? [4, 6, "yüz"] : [6, 8, "vücut"];
   };
   P.renderCal = function () {
@@ -399,51 +422,119 @@
     var a = nodes[7].e, b = nodes[7].l;
     var when = TR_MON[a.getUTCMonth()] + (a.getUTCFullYear() !== b.getUTCFullYear() ? " " + a.getUTCFullYear() : "") + (a.getUTCMonth() === b.getUTCMonth() && a.getUTCFullYear() === b.getUTCFullYear() ? "" : " – " + TR_MON[b.getUTCMonth()]) + " " + b.getUTCFullYear();
     $("[data-lz-calsum]", cal).textContent = "8. seans ≈ " + when + " · " + iv[0] + "–" + iv[1] + " hafta arayla (" + iv[2] + (this.sel.length ? "" : ", bölge seçince güncellenir") + ")";
+    this.renderPlanCard(cal, iv);
+  };
+  var GUAR = ["tepeden", "tum-vucut-4", "full-vucut", "kemer-ustu"];
+  P.renderPlanCard = function (cal, iv) {
+    var self = this, reg = $("[data-lz-pc-reg]", cal);
+    if (!reg) return;
+    if (!this.sel.length) {
+      reg.innerHTML = '<a href="#lz-harita" data-track-label="at-' + this.code + '-plan-harita">Haritadan bölge seçin</a>';
+      var a = $("a", reg);
+      a.addEventListener("click", function (e) { var t = document.getElementById("lz-harita"); if (!t) return; e.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    } else reg.innerHTML = this.sel.map(function (k) { return "<span>" + esc(self.name(k)) + "</span>"; }).join("");
+    var sum = 0, known = 0;
+    this.sel.forEach(function (k) { var r = self.mins(k); if (r) { sum += r.m; known++; } });
+    $("[data-lz-pc-min]", cal).textContent = known ? "Menüdeki süreler ≈ " + sum + " dk / seans" + (known < this.sel.length ? " + paket" : "") : (this.sel.length ? "Pakete göre" : "Bölge seçince görünür");
+    $("[data-lz-pc-iv]", cal).textContent = "8 seans · " + iv[0] + "–" + iv[1] + " hafta arayla (" + iv[2] + ")";
+    var trow = $("[data-lz-pc-tonerow]", cal);
+    if (trow) {
+      var tn = this.tone && $('[data-tone="' + this.tone + '"] span', this.root), bits = [];
+      if (tn) bits.push(tn.textContent + " ton"); if (this.sens) bits.push("hassas, ön görüşme");
+      trow.hidden = !bits.length; $("[data-lz-pc-tone]", cal).textContent = bits.join(" · ");
+    }
+    var badge = $("[data-lz-pc-badge]", cal);
+    if (badge) badge.hidden = !this.sel.some(function (k) { return GUAR.indexOf(k) >= 0 || (k.indexOf("pkg:") === 0 && /bitiş garantili/i.test(k)); });
+    cal.classList.toggle("has", this.sel.length > 0);
+    var lbl = $('[data-lz-wa="plan-wa"] .lz-lbl', cal);
+    if (lbl) lbl.textContent = this.sel.length ? "Planı WhatsApp'a gönder" : "WhatsApp'tan plan iste";
   };
 
   /* ---------------- L5 device ---------------- */
   P.initDevice = function () {
-    var root = this.root;
-    $$(".lz-hot", root).forEach(function (h) {
-      h.addEventListener("click", function () {
-        var k = h.getAttribute("data-hot");
-        $$(".lz-hot", root).forEach(function (x) { x.setAttribute("aria-pressed", x === h); });
-        $$("[data-hotcard]", root).forEach(function (c) { c.hidden = c.getAttribute("data-hotcard") !== k; });
-      });
-    });
+    var self = this, root = this.root, hots = $$(".lz-hot", root), fig = $(".lz-devfig", root), tour = null;
+    function pick(h) {
+      var k = h.getAttribute("data-hot");
+      hots.forEach(function (x) { x.setAttribute("aria-pressed", x === h); });
+      $$("[data-hotcard]", root).forEach(function (c) { c.hidden = c.getAttribute("data-hotcard") !== k; });
+    }
+    function stop() { if (tour) { clearInterval(tour); tour = null; } if (fig) fig.classList.remove("touring"); }
+    hots.forEach(function (h) { h.addEventListener("click", function () { stop(); pick(h); }); });
+    if (!fig || !hots.length || this.tier === "C" || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      var i = 0; fig.classList.add("touring"); pick(hots[0]);
+      tour = setInterval(function () { i++; if (i >= hots.length) { stop(); pick(hots[0]); return; } pick(hots[i]); }, 1200);
+    }, { threshold: 0.5 });
+    io.observe(fig);
+    fig.addEventListener("pointerdown", stop, { once: true });
   };
 
   /* ---------------- L6 reels ---------------- */
   P.initReels = function () {
     var self = this, reels = $$(".lz-reel", this.root);
-    var stIdx = { "lazer-film-jel": [0, 0], "lazer-film-bacak": [0, 1], "lazer-film-cene": [1, 0], "lazer-film-yuz": [1, 1] };
-    reels.forEach(function (r) {
-      var v = $("video", r), key = r.getAttribute("data-reel");
+    if (!reels.length) return;
+    var films = reels.map(function (r) { var v = $("video", r); return { video: v.getAttribute("data-src") || v.currentSrc || v.src, poster: v.getAttribute("data-poster") || v.getAttribute("poster"), cap: $(".lz-reel-t", r).textContent }; });
+    /* <video poster> downloads at parse time even with preload="none"; posters come in only near the viewport */
+    function posters() { reels.forEach(function (r) { var v = $("video", r), p = v.getAttribute("data-poster"); if (p) { v.setAttribute("poster", p); v.removeAttribute("data-poster"); } }); }
+    if ("IntersectionObserver" in window) { var pio = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { pio.disconnect(); posters(); } }, { rootMargin: "900px 0px" }); pio.observe(reels[0]); }
+    else posters();
+    reels.forEach(function (r, i) {
       r.addEventListener("click", function () {
-        var at = stIdx[key];
-        if (at) return self.story(at[0], at[1]);
-        self.storyOne(v.getAttribute("data-src") || v.currentSrc || v.src, v.getAttribute("poster"), $(".lz-reel-t", r).textContent);
+        $$(".lz-reel video", self.root).forEach(function (v) { v.pause(); });
+        self.D.stories.push({ t: "Salonumuzda çekildi", fr: films, tmp: true });
+        self.story(self.D.stories.length - 1, i);
+        self.D.stories = self.D.stories.filter(function (s) { return !s.tmp; });
       });
-      if (self.tier !== "A" || !("IntersectionObserver" in window)) return;
-      new IntersectionObserver(function (es) {
-        var on = es[0].isIntersecting;
-        if (on && v.getAttribute("data-src")) { v.src = v.getAttribute("data-src"); v.removeAttribute("data-src"); }
-        if (on) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause();
-      }, { threshold: 0.6 }).observe(v);
     });
-  };
-  P.storyOne = function (src, poster, cap) {
-    this.D.stories.push({ t: cap, fr: [{ video: src, poster: poster, cap: cap }], tmp: true });
-    this.story(this.D.stories.length - 1, 0);
-    this.D.stories = this.D.stories.filter(function (s) { return !s.tmp; });
+    if (this.tier !== "A" || !("IntersectionObserver" in window)) return;
+    /* one film at a time: the reel most in view plays, the rest stay on their posters (and are not downloaded) */
+    var ratio = new Map(), cur = null;
+    function settle() {
+      var best = null, br = 0.6;
+      ratio.forEach(function (r, v) { if (r >= br) { best = v; br = r; } });
+      if (best === cur) return;
+      if (cur) cur.pause();
+      cur = best;
+      if (!cur) return;
+      if (cur.getAttribute("data-src")) { cur.src = cur.getAttribute("data-src"); cur.removeAttribute("data-src"); }
+      var p = cur.play(); if (p && p.catch) p.catch(function () {});
+    }
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { ratio.set(e.target, e.intersectionRatio); }); settle(); }, { threshold: [0, 0.6, 0.8, 1] });
+    reels.forEach(function (r) { io.observe($("video", r)); });
   };
 
   /* ---------------- L7 reviews ---------------- */
   P.initReviews = function () {
-    var tr = $(".lz-rvtrack", this.root); if (!tr || this.tier === "C") return;
-    var n = tr.children.length;
-    tr.innerHTML += tr.innerHTML.replace(/<article class="lz-rv">/g, '<article class="lz-rv" aria-hidden="true">');
-    tr.style.setProperty("--dur", (n * 8) + "s"); tr.classList.add("run");
+    var self = this, sec = $(".lz-reviews", this.root), tr = $(".lz-rvtrack", this.root); if (!tr) return;
+    var row = $("[data-lz-rv]", this.root), orig = tr.innerHTML, n = tr.children.length, moving = this.tier !== "C";
+    function wall(on) {
+      if (on && moving) { tr.innerHTML = orig + orig.replace(/<article class="lz-rv"/g, '<article class="lz-rv" aria-hidden="true"'); tr.style.setProperty("--dur", (n * 8) + "s"); tr.classList.add("run"); }
+      else { tr.classList.remove("run"); }
+      row.classList.toggle("filtered", !on || !moving);
+    }
+    $$("[data-tpc]", sec).forEach(function (b) {
+      b.addEventListener("click", function () {
+        var k = b.getAttribute("data-tpc");
+        $$("[data-tpc]", sec).forEach(function (x) { x.setAttribute("aria-pressed", x === b); });
+        if (!k) { tr.innerHTML = orig; wall(true); row.scrollLeft = 0; return; }
+        tr.innerHTML = orig; wall(false); row.scrollLeft = 0;
+        $$(".lz-rv", tr).forEach(function (c) { c.hidden = (" " + c.getAttribute("data-tp") + " ").indexOf(" " + k + " ") < 0; });
+      });
+    });
+    row.addEventListener("click", function () { if (tr.classList.contains("run")) tr.classList.toggle("paused"); });
+    var big = $("[data-lz-count]", sec);
+    if (!moving || !("IntersectionObserver" in window)) { wall(moving); return; }
+    row.classList.add("filtered");
+    var io = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect(); wall(true);
+      if (!big) return;
+      var to = +big.getAttribute("data-lz-count"), t0 = performance.now();
+      (function step(t) { var k = Math.min(1, (t - t0) / 1200); big.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); })(t0);
+    }, { threshold: 0.35 });
+    io.observe(sec);
   };
 
   /* ---------------- zoom (hygiene, device) ---------------- */
@@ -600,6 +691,27 @@
     this.typeT = setInterval(function () { i += step; el.textContent = msg.slice(0, i); if (i >= msg.length) clearInterval(self.typeT); }, 16);
   };
 
+  /* ---------------- finish: gold CTAs shine once when they come into view; a soft light follows the pointer ---------------- */
+  P.initShine = function () {
+    var els = $$(".lz-shine", this.root).concat(this.bar ? [this.bar.wa] : []);
+    if (this.tier === "C" || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } });
+    }, { threshold: 0.8 });
+    els.forEach(function (e) { io.observe(e); });
+  };
+  P.initHalo = function () {
+    if (this.tier !== "A" || !matchMedia("(pointer: fine) and (min-width: 960px)").matches) return;
+    var root = this.root, h = document.createElement("div"), x = 0, y = 0, q = false;
+    h.className = "lz-halo"; h.setAttribute("aria-hidden", "true"); root.appendChild(h);
+    root.addEventListener("pointermove", function (e) {
+      var b = root.getBoundingClientRect(); x = e.clientX - b.left; y = e.clientY - b.top;
+      if (q) return; q = true;
+      requestAnimationFrame(function () { q = false; h.style.transform = "translate(" + (x - 210) + "px," + (y - 210) + "px)"; h.classList.add("on"); });
+    }, { passive: true });
+    root.addEventListener("pointerleave", function () { h.classList.remove("on"); });
+  };
+
   /* ---------------- sticky bar (live pages) ---------------- */
   P.initBar = function () {
     var self = this, bar = document.createElement("nav");
@@ -609,6 +721,12 @@
       '<a class="lz-btn-round" href="tel:+905330390076" data-track-label="at-' + this.code + '-bar-tel" aria-label="Arayın">' + TELI + "</a>";
     document.body.appendChild(bar); document.body.classList.add("lz-page");
     this.bar = { el: bar, wa: $("a", bar) };
+    /* desktop: the hero already carries both CTAs and its proof strip; the floating bar joins once it is passed */
+    var hero = $(".lz-hero", this.root);
+    if (hero && "IntersectionObserver" in window && matchMedia("(min-width:960px)").matches) {
+      bar.classList.add("hide");
+      new IntersectionObserver(function (es) { bar.classList.toggle("hide", es[0].intersectionRatio >= 0.5); }, { threshold: [0, 0.5, 1] }).observe(hero);
+    }
     $("button", bar).addEventListener("click", function () { self.openPlan(); });
     relead();
   };

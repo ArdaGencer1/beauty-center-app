@@ -13,6 +13,21 @@ inceleyerek token harcamasını önlemektir.
 - Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
   anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
   olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
+- **Ölçüldü (10-07):** yayındaki sürüm `1791383911-8f6e` v3'ten ileride
+  (291 dosya, `index.html` 459 KB; v3 205 KB). `tirnak` bölümü çok büyümüş,
+  `salon`/`kas` küçük farklı; `lazer`, `kirpik`, `lifting`, `pmu`, `cilt`
+  v3 ile aynı. Yeni derlemeler yayındaki sürümden yapılır
+  (`plans/claude/20261007/lazer-wow-plan.md` §7).
+- **Yayın (10-07): Version 8 = “v4 lazer”** (`1791384922-cc83`, 315 dosya).
+  `a3_build.py` ile `artifact-1791383911.html` tabanından derlendi; geri
+  okunan `index.html` sha256 eşleşti. Artifact başka bir organizasyondan
+  düzenleme yetkisiyle paylaşılmıştır (bu hesabın “mine” listesinde yok).
+- **Paralel çalışma (10-07):** aynı Artifact'te başka bir oturum cilt ve tırnak
+  üzerinde yayın yapıyor (v4'ten sonra iki kez). Lazer yayınları her seferinde
+  **o anki yayındaki sürümden** derlenir: `a3_build.py` yeniden derleme kipi
+  yalnız lazer bloklarını (görünümler, `#lz-css`, veri + `lazer.js`) değiştirir,
+  gerisini bayt bayt korur. Reddedilen yayın yeni tabanı verir; onunla yeniden
+  derlenir. Son yayın: Version 14 = “v6 lazer dalga 4” (`1791387402-8d7b`).
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.
@@ -108,6 +123,9 @@ envanteridir.
 ## Planların gerçek durumu
 
 ### 1. Lazer epilasyon ailesi — ileri aşamada, yarım
+
+Güncel çalışma planı: `plans/claude/20261007/lazer-wow-plan.md` (“vay”
+planı; Dalga 1–2 kaynakta tamamlandı, kalan adımlar §7).
 
 Plan:
 `plans/claude/20261007/https-panel-seldagencerbeauty-com-new-cu-wiggly-adleman.md`
