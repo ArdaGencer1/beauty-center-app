@@ -52,7 +52,7 @@ Dosyalar: `originals/instagram/videos/*_<IG id>.mp4`. Hepsi 720×1280, 9:16.
 
 | Slug (yeni) | V | IG id · tarih | Ne görünüyor | Kullanılacak aralık ve edit | Rol |
 |---|---|---|---|---|---|
-| `tirnak-film-giris` | V16 | 18187785991403175 · 08-13 | Krem takımlı kadın mermer lobiden SG logolu resepsiyona yürüyor → tırnak barında eldivenli uzman törpülüyor → badem french makro | **0,0–3,4 sn** (giriş + işlem, yazısız) ve **5,2–6,0 sn** (sonuç). 3,6 sn'den sonra "Selda Gençer'de" yazısı, 6,2 sn'den sonra "Premium Protez Tırnak" yazısı gömülü olduğu için kesilir. 60 kare film. | **Merkez sayfa açılışı: "Kapıdan tırnağa"** (T1). `yuz`: profil görünüyor, sahip onayı gerekiyor. |
+| `tirnak-film-giris` | V16 | 18187785991403175 · 08-13 | Krem takımlı kadın mermer lobiden SG logolu resepsiyona yürüyor → tırnak barında eldivenli uzman törpülüyor → badem french makro | **0,0–3,4 sn** (giriş + işlem, yazısız) ve **5,2–6,0 sn** (sonuç). 3,6 sn'den sonra "Selda Gençer'de" yazısı, 6,2 sn'den sonra "Premium Protez Tırnak" yazısı gömülü olduğu için kesilir. 60 kare film. | **Merkez sayfa açılışı: "Kapıdan tırnağa"** (T1). `yuz`: profil görünüyor; kullanım izni var (sahip, 10-07). |
 | `tirnak-film-kartela` | V15 | 18118642289477894 · 08-13 (24 fps) | Bahçe yolu → frezeyle kırmızı oje çıkarma → **salonun gerçek, numaralı jel oje kartelası** → fırça → kare french | 1,4–2,0 (freze), **2,2–3,1 (kartela)**, 3,4–4,2 (fırça), **5,2–6,6 (sonuç)**. 0–1,0 (ilgisiz yol) ile 6,7 sn sonrası (sonradan eklenmiş yıldız efekti) kesilir. | Gerçek Kartela (T3), kalıcı oje açılışı. |
 | `tirnak-film-firca` | V13 | 18374798185224149 · 08-07 | İnce fırçayla kırmızı mikro-french, altın kap, ızgaralı masa | **5,4–10,0 sn.** 1,5–2,6 sn'deki Instagram gönderi kartı ve 4,2–4,8 sn'deki bulanık geçiş kesilir. 48 kare film. | Fırça Darbesi (T4), nail art ve jel. |
 | `tirnak-film-hijyen` | V11 | 18126120175637645 · 06-23 | Aletler yıkanıyor → kutu → altın lavabo → sterilizasyon cihazı → kişiye özel poşet | **Üstteki gömülü yazı bandı kırpılır:** 720×900 (4:5), y 380–1280. Yazıların yerine HTML'de onaylı dil kullanılır (§5). Adımlar: 3,6–6,0 · 8,4 · 10,9–13,3 · 15,7–18,1. | **Hijyen Yolculuğu** (T5): manikür, pedikür, medikal pedikür, el-ayak. |
@@ -177,7 +177,7 @@ Her perde, o perdede seçtiğiniz şeyi taşıyan bir CTA ile biter. Örnek: "Ki
 |---|---|---|---|
 | T1 | **Kapıdan Tırnağa** (açılış filmi) | Yukarıdaki storyboard. Kademe C'de poster ve üç satırlık metin gösterilir. | 60 kare WebP atlas. Mevcut `initWalk` deseniyle, ama atlastan çizer. LCP = AVIF poster ≤180 KB. |
 | T2 | **Renk Atölyesi v2** | Mevcut ton eşleme korunur. Eklenenler:<br>- 4. şekil **Badem**.<br>- **"Parmağınla boya"**: sahnede yatay sürükleme rengi yumuşak bir fırça maskesiyle boyar. Dikey hareket sayfayı kaydırır (`touch-action:pan-y`).<br>- "↺ Yeniden" düğmesi. | Canvas ile açığa çıkarma maskesi. Mevcut `SW`, `SHAPES` ve SVG filtreleri yeniden kullanılır. |
-| T3 | **Gerçek Kartela** | Kartela karesi üzerinde numaralı nabız noktaları (031–036, 046, 057, 643, 644, 653…). Dokununca renk yakınlaşır ve "Bu renk: 033" görünür. Seçim alt çubuğa ve WhatsApp mesajına girer.<br>Not: "Numaralar salondaki kartelanın videosundan okunmuştur; stok değişebilir." | Koordinatlar karede ölçülür. 4K çekim (P1) gelince yalnız görsel ve koordinatlar değişir. |
+| T3 | **Gerçek Kartela** | Kartela karesi üzerinde 22 nabız noktası. Dokununca ton adı (ve etiket yönü netleşince numarası: "Mercan · No 031") görünür. Seçim alt çubuğa ve WhatsApp mesajına girer.<br>**Oje markası yazılmaz** (sahip, 10-07).<br>Not: "Numaralar karteladaki etiketlerden okundu." | Koordinatlar karede ölçülür. Okunan numaralar `data/kartela.json` içinde iki ihtimalle durur (`no_ust`, `no_alt`); `"etiket"` alanı sahip cevabıyla `"ust"` ya da `"alt"` olunca sayfaya girer. 4K çekim (P1) gelince görsel ve koordinatlar değişir. |
 | T4 | **Fırça Darbesi** | Kaydırdıkça mikro-french çizilir: "Çizgi → Renk → Parlaklık". | 48 kare atlas. Kaydırmaya bağlı (`animation-timeline`, JS yedeği). |
 | T5 | **Hijyen Yolculuğu** | Yapışkan sahnede 4 adım: Yıkama → Kurulama → Sterilizasyon cihazı → Kişiye özel paket. Yanında hijyen yorumlarından birebir alıntı. | Kırpılmış (4:5) film kareleri. Kademe C'de 4 kart alt alta. |
 | T6 | **Tasarım Duvarı v2** | Vay sırasıyla masonry. Video kartlar görününce oynar (A/B kademesi). Basılı tutunca yakınlaşır.<br>Her kartta **"Bunu istiyorum"** düğmesi davetiyeyi `ref` ile açar: "Model: Holografik (sitedeki fotoğraf)". | Mevcut `card()` ve `openLightbox` genişletilir. |
@@ -264,13 +264,14 @@ Her perde, o perdede seçtiğiniz şeyi taşıyan bir CTA ile biter. Örnek: "Ki
 **Kullanılacak dil (kanıtlı):**
 - "Salonumuzda çekildi."
 - Kelimesi kelimesine Google yorumları.
-- "Kişiye özel paket, yanınızda açılır" (salonun kendi videosundan; §7-3 açık).
+- "Kişiye özel paket, yanınızda açılır" (sahip onayı, 10-07: her işlemde geçerli).
 - "Rengi kartelamızdan siz seçersiniz."
 - "Sterilizasyon cihazımızda tıbbi seviyede sterilize edilir." (sahip onayı, 10-07: cihaz geçerli.)
 - "Protez tırnakta bakım aralığımız 4 hafta." (sahip, 10-07.)
 
 **Yasak:**
 - "%100 hijyen", "en iyi" / "1 numara", "kırılmaz", "hiç kalkmaz", "acısız" (kendi iddiamız olarak).
+- Oje markası yazılmaz (sahip, 10-07). Kartela etiketlerindeki küçük marka baskısı fotoğrafın kendisinde kalır; metne, alt metne ya da mesaja girmez.
 - Uzman adı yazılmaz (sahip, 10-07). Yorumlar kelimesi kelimesine kalır; içlerinde geçen adlar müşterinin sözüdür.
 - `kare-kirmizi` ve `yuvarlak-kirmizi` fotoğraflarına "protez" ya da "kalıcı oje" denmez; yalnız şekil ve renk yazılır (sahip türünü bilmiyor).
 - Yeni nesil tips ile klasik protez arasında fark iddiası yazılmaz (sahip tam bilmiyor). Tips sayfası "birlikte konuşalım" dilinde kalır.
@@ -328,17 +329,18 @@ Lazer yamasının deseni kullanılır: `build.py --out / --check / --apply / --r
 
 | # | Soru | Cevap (10-07) | Uygulama |
 |---|---|---|---|
-| 1 | V16'daki kadın (salona giriş sahnesi) kim? Web'de kullanılmasına izin var mı? | Henüz yok | Açılış filmi kullanılıyor; izin gelmezse kadının göründüğü kareler çıkarılıp film `manifest_tirnak.json` üzerinden yeniden kesilir. |
+| 1 | V16'daki kadın (salona giriş sahnesi) kim? Web'de kullanılmasına izin var mı? | **İzin var** | Açılış filmi ("Kapıdan tırnağa") olduğu gibi kalır. |
 | 2 | Sterilizasyon cihazı belgeli mi? ("tıbbi seviyede") | **Cihaz geçerli, yazılabilir** | Hijyen adımı, SSS ve hikâyede "tıbbi seviyede sterilizasyon". |
-| 3 | "Kişiye özel paket, yanınızda açılır" her işlemde geçerli mi? | Henüz yok | Salonun kendi videosundaki dil olarak duruyor. |
-| 4 | Kartela numaraları ve oje markası yazılabilir mi? | Henüz yok | Kartelada ton adları var; numara ve marka yok. |
+| 3 | "Kişiye özel paket, yanınızda açılır" her işlemde geçerli mi? | **Evet** | Hijyen adımı, SSS ve hikâyelerde tüm sayfalarda. |
+| 4 | Kartela numaraları ve oje markası yazılabilir mi? | **Marka yazılmaz** (numara serbest) | Marka hiçbir yerde yok. Numaralar karelerden okundu: 031–036, 136, 041, 643, 644, 653, 057, 046, 047. Hangi tırnağa ait oldukları 10. soruya bağlı. |
 | 5 | Tırnak kalemlerinin tam fiyat ve süre listesi | **Sunucudaki fiyat listesinde** | `sync_prices.py` (§5). Sunucuda çalıştırılınca 11 "Fiyatı sorun" kalemi kendiliğinden dolar. |
 | 6 | Uzman adları yazılsın mı? | **Gerek yok** | Sayfa metninde ad yok; yorumlar aynen. |
 | 7 | `kare-kirmizi` / `yuvarlak-kirmizi` protez mi, kalıcı oje mi? | **Bilinmiyor** | Alt metinler nötr: "Kırmızı kare tırnak", "Kırmızı oval tırnak". |
 | 8 | Protez bakım aralığı? | **4 hafta** | SSS, Bakım Saati (T9), "Fiyatı ne belirler?", bakım sayfası girişi ve yeni T13 bakım randevusu. |
 | 9 | Yeni nesil tips ile klasik protez farkı? | **Tam bilinmiyor** | Fark iddiası yok; karar kartında "Ayrıntıyı birlikte konuşalım". |
+| 10 | Kartelada numara etiketi, **üstündeki** tırnağın mı **altındaki** tırnağın mı? Örnek: 031 etiketi mercan (parlak pembe-kırmızı) tırnağın mı, altındaki kırmızı simli tırnağın mı? | Sorulacak | Videoda her sütun "tırnak → renkli parça → etiket → şeffaf tutucu → alt sıradaki tırnak" diye gidiyor; iki okuma da geometriye uyuyor. Yanlış numara müşteriyi yanlış renge götüreceği için tahmin edilmedi. Cevap `"ust"` ise 14, `"alt"` ise 13 tona numara girer; değişiklik `kartela.json` içinde tek alan. |
 
-Açık kalanlar: 1, 3, 4. Hiçbiri yayını bekletmez.
+Açık kalan: 10. Yayını bekletmez.
 
 ---
 
@@ -421,3 +423,13 @@ Yayın 1791382406-9153: 278 dosya. 43 dosya eklendi, 6 dosya kaldırıldı (`tir
   - Son taban: `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/tirnak-build-v6.html`.
   - Canlı anlık görüntü: `artifact-v6.html`.
 - `website/index.html` canlı sürüm 6'nın aynısı. İçindeki Vücut görselleri (`m/ig/vucut-*`) Artifact'te ve Vücut dalında; bu dalda değil.
+
+### 10.2 Son cevaplar (sürüm 7)
+
+- Giriş filmi için izin var, "kişiye özel paket" her işlemde geçerli, oje markası yazılmaz. §7 güncellendi.
+- Kartela numaraları okundu ve veriye işlendi. Etiketin hangi tırnağa ait olduğu (§7-10) netleşene kadar sayfada yalnız ton adı görünür.
+- Numaralı mod yerelde denendi. Mercan'a dokununca "No 031 · salondaki kartela" görünüyor; mesaj "kartelada beğendiğim ton: Mercan (031)", davetiye kartı "Mercan (031)" oluyor.
+- Bu arada Lazer ailesi (6 sayfa, kaş vitrinindeki düzeltmelerle birlikte) sürüm 6'nın üzerine yayınlandı. Tırnak değişiklikleri onun üzerine `build_proto.py --base tirnak-build-v6.html --live <canlı>` ile birleştirildi.
+  - Prototip panelindeki çakışmayı (onların "Lazer sayfası" satırı, bizim tırnak notumuz) birleştirme aracı kendisi çözdü. Kural: iki taraf farklı satırlara dokunduysa her satır, onu değiştiren taraftan alınır; aynı satıra iki taraf da farklı dokunduysa `.conflict` dosyasına yazılıp elle çözülür.
+  - Araç, önceki iki birleştirmeyi (sürüm 6 ve sürüm 6'nın üstüne ilk deneme) birebir aynı sonuçla yeniden üretti.
+  - Canlı sürüme göre fark yalnız tırnağın 8 satırı.

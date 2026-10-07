@@ -20,6 +20,7 @@ OUT.conflict for a person to resolve.
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import re
 import subprocess
@@ -62,6 +63,33 @@ class Patch:
         self.log.append(what)
 
 
+def resolve_linewise(text: str) -> tuple[str, int]:
+    """Settle diff3 conflict hunks where the two sides touched different lines: the nail build only edits lines in place,
+    so line up base and live inside the hunk and take, per stretch, the side that changed it (live's inserted rows and
+    edited rows, our edited nail rows). A stretch both sides changed differently stays a conflict. Returns (text, left)."""
+    lines, out, i, left = text.split("\n"), [], 0, 0
+    while i < len(lines):
+        if not lines[i].startswith("<<<<<<< nail build"):
+            out.append(lines[i]); i += 1; continue
+        j = lines.index("||||||| base", i); k = lines.index("=======", j); e = lines.index(">>>>>>> live", k)
+        ours, base, theirs = lines[i + 1:j], lines[j + 1:k], lines[k + 1:e]
+        got = [] if len(ours) == len(base) else None
+        for tag, b1, b2, t1, t2 in (difflib.SequenceMatcher(None, base, theirs, autojunk=False).get_opcodes() if got is not None else []):
+            if tag == "equal":
+                got += ours[b1:b2]
+            elif ours[b1:b2] == base[b1:b2] or ours[b1:b2] == theirs[t1:t2]:
+                got += theirs[t1:t2]
+            else:
+                got = None
+                break
+        if got is None:
+            out += lines[i:e + 1]; left += 1
+        else:
+            out += got
+        i = e + 1
+    return "\n".join(out), left
+
+
 def js_json(obj) -> str:
     return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
@@ -80,8 +108,8 @@ def proto_row() -> str:
                      for g, slugs in GROUPS)
     return ('  <div class="row"><span>Tırnak sayfası · 22</span><select id="tzSel" class="tz-sel" aria-label="Tırnak sayfası" data-track-label="at-proto-tirnak">'
             f'{groups}</select><p>Tırnak: “çekim bekliyor” sayfalarda gerçek salon görselleriyle dürüst stand-in var. Fiyatı menüde olmayan kalemler '
-            '“Fiyatı sorun” olarak WhatsApp\'a gider (sunucuda sync_prices.py ile tamamlanır). Sterilizasyon ifadesi ve 4 haftalık bakım aralığı sahip onaylı; '
-            'kartela ton adları fotoğraftan, numaralar sahip onayı bekliyor.</p></div>\n')
+            '“Fiyatı sorun” olarak WhatsApp\'a gider (sunucuda sync_prices.py ile tamamlanır). Sterilizasyon dili, kişiye özel paket, giriş filmi ve 4 haftalık bakım '
+            'sahip onaylı. Kartelada marka yazılmaz; numaralar okundu, etiketin hangi tırnağa ait olduğu netleşince açılır.</p></div>\n')
 
 
 def build(src: str) -> str:
@@ -168,12 +196,14 @@ def main() -> int:
         with tempfile.TemporaryDirectory() as td:
             ours = Path(td) / "ours.html"
             ours.write_text(out, encoding="utf-8")
-            r = subprocess.run(["git", "merge-file", "-p", "-L", "nail build", "-L", "base", "-L", "live", str(ours), a.base, a.live],
+            r = subprocess.run(["git", "merge-file", "-p", "--diff3", "-L", "nail build", "-L", "base", "-L", "live", str(ours), a.base, a.live],
                                capture_output=True)
-        merged = r.stdout.decode("utf-8")
+        merged, left = resolve_linewise(r.stdout.decode("utf-8"))
         if r.returncode:
+            print(f"{r.returncode - left} conflict(s) settled line by line")
+        if left:
             Path(a.out + ".conflict").write_text(merged, encoding="utf-8")
-            raise SystemExit(f"{r.returncode} conflict(s): resolve {a.out}.conflict by hand (keep both sides' intent), then check it")
+            raise SystemExit(f"{left} conflict(s): resolve {a.out}.conflict by hand (keep both sides' intent), then check it")
         print(f"merged onto {a.live}")
         out = merged
     Path(a.out).write_text(out, encoding="utf-8")

@@ -10,7 +10,8 @@ texts, menu, questions, media with alt text) is static here; src/tirnak.js only 
 Facts used and where they come from:
   prices / minutes      data/crm_tirnak.json   (CRM price menu; sync_prices.py refreshes it on the server, the rest: "fiyatı sorun")
   reviews               data/reviews_tirnak.json (Google, verbatim)
-  kartela dots          data/kartela.json      (positions + colours measured on the salon's own video frame)
+  kartela dots          data/kartela.json      (positions + colours measured on the salon's own video frame; label numbers
+                                                read from it, shown once "etiket" says which tip a label belongs to; no brand)
   media                 ../media_ig_20261007/manifest_tirnak.json (+ the processed photos in website/m/ig)
   hygiene steps         the salon's own Instagram video 18126120175637645 (owner confirmed the steriliser claim, 2026-10-07)
   maintenance interval  4 weeks for protez tırnak (owner, 2026-10-07)
@@ -33,7 +34,8 @@ M = "m/ig/"  # prototype media root; the live site uses /images/ig/
 
 CRM = json.loads((DATA / "crm_tirnak.json").read_text(encoding="utf-8"))
 REVIEWS = json.loads((DATA / "reviews_tirnak.json").read_text(encoding="utf-8"))["reviews"]
-KARTELA = json.loads((DATA / "kartela.json").read_text(encoding="utf-8"))["dots"]
+_K = json.loads((DATA / "kartela.json").read_text(encoding="utf-8"))
+KARTELA, KARTELA_ETIKET = _K["dots"], _K.get("etiket")  # etiket: None | "ust" | "alt"
 ROWS = {r["id"]: r for r in CRM["rows"]}
 ASK = {r["id"]: r for r in CRM["ask"]}
 BAKIM_HAFTA = 4  # protez tırnak maintenance interval (owner)
@@ -377,15 +379,27 @@ def blk_atelier_sec() -> str:
             f'<p class="hero-note">Renk denemesi fotoğraf üzerinde yapılır; salondaki oje ile birebir aynı olmayabilir.</p></div></div></div>')
 
 
+def kartela_no(d: dict) -> str | None:
+    return d.get(f"no_{KARTELA_ETIKET}") if KARTELA_ETIKET else None
+
+
 def blk_kartela() -> str:
-    dots = "".join(f'<button class="tz-ks" style="left:{d["x"]}%;top:{d["y"]}%;--c:{d["c"]}" data-n="{esc(d["n"])}" data-r="{d["r"]}" aria-label="{esc(d["n"])}, {d["r"]}. sıra"></button>' for d in KARTELA)
+    def dot(d: dict) -> str:
+        no = kartela_no(d)
+        where = f"{no} numara" if no else f"{d['r']}. sıra"
+        return (f'<button class="tz-ks" style="left:{d["x"]}%;top:{d["y"]}%;--c:{d["c"]}" data-n="{esc(d["n"])}" data-r="{d["r"]}"'
+                + (f' data-no="{no}"' if no else "") + f' aria-label="{esc(d["n"])}, {where}"></button>')
+    nums = any(kartela_no(d) for d in KARTELA)
+    dots = "".join(dot(d) for d in KARTELA)
     return (f'<div class="sec dark-band gutter tz-kartela-sec"><div class="golden">'
             f'<div class="tz-kartela" data-tz-kartela><img src="{M}tirnak-kartela.webp" alt="Salondaki jel oje kartelası" width="720" height="1280" loading="lazy">{dots}'
             f'<div class="tz-kpick" aria-live="polite"><i></i><span><b>Bir tona dokunun</b><small>Salondaki kartela</small></span></div></div>'
             f'<div class="sec-head" style="margin:0"><span class="eyebrow">Gerçek kartela</span><h2>Rengi <em>kartelamızdan</em> seçin.</h2>'
-            f'<p>Bu, salondaki jel oje kartelamız. Bir tona dokunun; adını mesajınıza ekleyelim, numarasını salonda karteladan birlikte bulalım.</p>'
-            f'<div class="golden-actions">{gold("Bu tonla saatimi seç", "data-tz-plan data-tz-place=kartela")}</div>'
-            f'<p class="hero-note" style="color:#968B76">Ton adları fotoğrafa bakılarak verildi; ekrandaki renk ışığa göre değişebilir.</p></div></div></div>')
+            + ('<p>Bu, salondaki jel oje kartelamız. Bir tona dokunun; adını ve kartela numarasını mesajınıza ekleyelim.</p>' if nums else
+               '<p>Bu, salondaki jel oje kartelamız. Bir tona dokunun; adını mesajınıza ekleyelim, numarasını salonda karteladan birlikte bulalım.</p>')
+            + f'<div class="golden-actions">{gold("Bu tonla saatimi seç", "data-tz-plan data-tz-place=kartela")}</div>'
+            + '<p class="hero-note" style="color:#968B76">Ton adları fotoğrafa bakılarak verildi'
+            + ('; numaralar karteladaki etiketlerden okundu' if nums else '') + '. Ekrandaki renk ışığa göre değişebilir.</p></div></div></div>')
 
 
 def blk_firca() -> str:

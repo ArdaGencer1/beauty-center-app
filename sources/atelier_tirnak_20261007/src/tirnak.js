@@ -211,10 +211,10 @@ function tzAtelier(st){ var base=$(".tz-base",st), neu=$(".tz-neutral",st), T=[$
   if(S.tier!=="C" && !TZ.colorTouched) tzInView(st,function(){ var seq=["gul","gece","kiraz"].filter(function(i){ return i!==orig(); }).concat([orig()]), k=0;
     (function step(){ if(user||!st.isConnected) return; var id=seq[k++]; paint(id,id!==orig()); if(k<seq.length) TZ.timers.push(setTimeout(step,1700)); })(); },.5); }
 
-/* ---------- T3: Gerçek Kartela ---------- */
+/* ---------- T3: Gerçek Kartela (a dot carries data-no once kartela.json says which tip a label belongs to) ---------- */
 function tzKartela(el){ var pick=$(".tz-kpick",el), ks=$$(".tz-ks",el);
   ks.forEach(function(b){ b.setAttribute("aria-pressed","false"); b.addEventListener("click",function(){ ks.forEach(function(x){ x.setAttribute("aria-pressed",x===b); });
-    TZ.ton=b.dataset.n+" ("+b.dataset.r+". sıra)"; pick.style.setProperty("--c",b.style.getPropertyValue("--c")); $("b",pick).textContent=b.dataset.n; $("small",pick).textContent=b.dataset.r+". sıra · salondaki kartela";
+    var no=b.dataset.no; TZ.ton=b.dataset.n+(no?" ("+no+")":" ("+b.dataset.r+". sıra)"); pick.style.setProperty("--c",b.style.getPropertyValue("--c")); $("b",pick).textContent=b.dataset.n; $("small",pick).textContent=(no?"No "+no:b.dataset.r+". sıra")+" · salondaki kartela";
     pick.classList.remove("on"); void pick.offsetWidth; pick.classList.add("on"); if(navigator.vibrate) try{ navigator.vibrate(6); }catch(_){} updateBar(); }); }); }
 
 /* ---------- T5: Hijyen Yolculuğu (sticky, four steps) ---------- */

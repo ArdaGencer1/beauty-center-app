@@ -1,5 +1,6 @@
 {
- "_doc": "Gerçek Kartela (T3) noktaları: tirnak-kartela.webp (V15 18118642289477894, 2,5 sn) üzerinde yüzde konum ve 13x13 px medyan renk. Adlar fotoğrafa bakılarak verildi; kartela numarası eşlemesi sahibin onayına kadar yok.",
+ "_doc": "Gerçek Kartela (T3) noktaları: tirnak-kartela.webp (V15 18118642289477894, 2,5 sn) üzerinde yüzde konum ve 13x13 px medyan renk. Adlar fotoğrafa bakılarak verildi. Numaralar karteladaki etiketlerden okundu (V15 2,2–3,0 sn; marka yazılmaz, sahip 10-07). Etiketin üstteki tırnağa mı (no_ust) alttaki tırnağa mı (no_alt) ait olduğu videodan kesin değil; 'etiket' sahip cevabıyla 'ust' ya da 'alt' olunca numaralar sayfaya girer, null iken yalnız ton adı görünür.",
+ "etiket": null,
  "dots": [
   {
    "x": 18.1,
@@ -34,126 +35,153 @@
    "y": 21.2,
    "n": "Mercan",
    "r": 2,
-   "c": "#FD3652"
+   "c": "#FD3652",
+   "no_ust": "031",
+   "no_alt": "019"
   },
   {
    "x": 25.7,
    "y": 19.9,
    "n": "Fuşya",
    "r": 2,
-   "c": "#893552"
+   "c": "#893552",
+   "no_ust": "032",
+   "no_alt": "021"
   },
   {
    "x": 39.2,
    "y": 18.4,
    "n": "Vişne çürüğü",
    "r": 2,
-   "c": "#3A1E20"
+   "c": "#3A1E20",
+   "no_ust": "033"
   },
   {
    "x": 51.4,
    "y": 16.8,
    "n": "Lavanta",
    "r": 2,
-   "c": "#7C66A0"
+   "c": "#7C66A0",
+   "no_ust": "034"
   },
   {
    "x": 62.2,
    "y": 14.5,
    "n": "Pudra pembe",
    "r": 2,
-   "c": "#C2878A"
+   "c": "#C2878A",
+   "no_ust": "035"
   },
   {
    "x": 72.5,
    "y": 14.1,
    "n": "Bordo",
    "r": 2,
-   "c": "#48141D"
+   "c": "#48141D",
+   "no_ust": "036"
   },
   {
    "x": 83.9,
    "y": 12.5,
    "n": "Şeker pembe",
    "r": 2,
-   "c": "#F48E90"
+   "c": "#F48E90",
+   "no_ust": "136"
   },
   {
    "x": 8.3,
    "y": 47.8,
    "n": "Kırmızı simli",
    "r": 3,
-   "c": "#9C3834"
+   "c": "#9C3834",
+   "no_ust": "041",
+   "no_alt": "031"
   },
   {
    "x": 25.7,
    "y": 45.7,
    "n": "Mor",
    "r": 3,
-   "c": "#51355B"
+   "c": "#51355B",
+   "no_ust": "643",
+   "no_alt": "032"
   },
   {
    "x": 41.7,
    "y": 42.2,
    "n": "Koyu kiraz",
    "r": 3,
-   "c": "#381211"
+   "c": "#381211",
+   "no_ust": "644",
+   "no_alt": "033"
   },
   {
    "x": 56.9,
    "y": 39.5,
    "n": "Simli gül",
    "r": 3,
-   "c": "#A1808F"
+   "c": "#A1808F",
+   "no_ust": "653",
+   "no_alt": "034"
   },
   {
    "x": 70.1,
    "y": 36.6,
    "n": "Bakır simli",
    "r": 3,
-   "c": "#634136"
+   "c": "#634136",
+   "no_ust": "057",
+   "no_alt": "035"
   },
   {
    "x": 85.4,
    "y": 33.2,
    "n": "Nude",
    "r": 3,
-   "c": "#B2987E"
+   "c": "#B2987E",
+   "no_ust": "046",
+   "no_alt": "036"
   },
   {
    "x": 94.4,
    "y": 30.9,
    "n": "Altın simli",
    "r": 3,
-   "c": "#9F9E8C"
+   "c": "#9F9E8C",
+   "no_ust": "047",
+   "no_alt": "136"
   },
   {
    "x": 38.2,
    "y": 83.2,
    "n": "Simli fuşya",
    "r": 4,
-   "c": "#A8507F"
+   "c": "#A8507F",
+   "no_alt": "644"
   },
   {
    "x": 59.7,
    "y": 77.3,
    "n": "Simli lila",
    "r": 4,
-   "c": "#897492"
+   "c": "#897492",
+   "no_alt": "653"
   },
   {
    "x": 77.8,
    "y": 75.0,
    "n": "Holografik gümüş",
    "r": 4,
-   "c": "#7B766C"
+   "c": "#7B766C",
+   "no_alt": "057"
   },
   {
    "x": 92.4,
    "y": 68.0,
    "n": "Simli turkuaz",
    "r": 4,
-   "c": "#1B424E"
+   "c": "#1B424E",
+   "no_alt": "046"
   }
  ]
 }
