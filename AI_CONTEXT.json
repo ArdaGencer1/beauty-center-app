@@ -10,6 +10,8 @@
     "canonical_website": "website/index.html",
     "canonical_working_copy": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-current.html",
     "builder": "sources/atelier_lazer_20261007/build_artifact.py",
+    "presentation_mode": "A_tam_solen_only",
+    "theme_policy": "preserve_existing_colors",
     "published_to_artifact_url": false
   },
   "measurement": {
