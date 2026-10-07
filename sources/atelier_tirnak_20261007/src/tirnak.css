@@ -165,6 +165,10 @@ html[data-tier="C"] .tz-katman .k-l{opacity:1;transform:none}
 .s-plate{transition:transform .5s var(--ease)}
 .s-cut{fill:none;stroke:#B9826E;stroke-width:3;stroke-linecap:round}
 .s-w{font:italic 500 26px var(--display);fill:#F4E6BE}
+.s-due{font:600 10.5px var(--body);letter-spacing:.12em;fill:#E2C98B;opacity:0;transition:opacity .35s}
+.tz-saat.due .s-due{opacity:1}
+.tz-saat.due .s-cut{stroke:#E2C98B}
+.tz-bk .opt{background:linear-gradient(180deg,rgba(201,165,92,.08),transparent),var(--raised)}
 .tz-range{display:grid;gap:6px;padding:10px 16px 16px;color:#C3B8A1;font:600 10px/1 var(--body);letter-spacing:.2em;text-transform:uppercase}
 .tz-range input{width:100%;accent-color:#C9A55C}
 .tz-inline{position:relative;max-width:720px;border-radius:26px;padding:24px 20px;background:var(--raised);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;gap:6px}

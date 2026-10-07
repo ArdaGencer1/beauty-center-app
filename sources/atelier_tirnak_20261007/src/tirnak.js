@@ -3,18 +3,18 @@
    <template data-tz-inc-tpl>. tzShow() clones one page into #tzMount and wires its scenes. Every name here
    starts with tz/TZ so it cannot collide with the other families' code. Uses the prototype's helpers
    ($, $$, S, lbl, waHref, visitCode, openPlanner, openStory, sampleSlots, months, initLive, initDust, SW, SHAPES). */
-var TZ_PAGES=__TZ_PAGES__, TZ_REVIEWS=__TZ_REVIEWS__, TZ_QUOTES=__TZ_QUOTES__;
+var TZ_PAGES=__TZ_PAGES__, TZ_REVIEWS=__TZ_REVIEWS__, TZ_QUOTES=__TZ_QUOTES__, TZ_BAKIM_HAFTA=__TZ_BAKIM__;
 (function(p){ Object.keys(p).forEach(function(k){ PLANS[k]=p[k]; }); })(__TZ_PLANS__);
 // Badem is a planner shape only: on the glossy bordo photo the automatic nail mask leaves the highlights out, so the
 // Renk Atölyesi keeps its three clean shapes until a hand-traced mask exists.
 SHAPES.badem={n:"Badem",img:"m/ig/tirnak-badem-bordo-k.webp",alt:"Bordo badem protez tırnak"};
-var TZ={page:null,pg:null,model:null,ton:null,uzunluk:null,color:null,colorTouched:false,scrollers:[],obs:[],timers:[]};
+var TZ={page:null,pg:null,model:null,ton:null,uzunluk:null,color:null,colorTouched:false,bakim:false,bkDay:null,scrollers:[],obs:[],timers:[]};
 // mean nail luminance under each mask (measured on the photos); the recolour maps it onto the polish colour
 var TZ_LREF={uzun:.233,kare:.217,oval:.348}, TZ_ORIG={uzun:"kiraz",kare:"kiraz",oval:"kiraz"};
 var TZ_SWEEP="linear-gradient(90deg,#000 calc(var(--x) * 1.12% - 12%),transparent calc(var(--x) * 1.12%))";
 STORIES["tz-merkez"]=[
   {t:"Salon",th:"m/ig/salon-tur-poster.webp",fr:[{video:"m/ig/salon-tur.mp4",poster:"m/ig/salon-tur-poster.webp",cap:"Tırnak barı ve salon"}]},
-  {t:"Hijyen",th:"m/ig/tirnak-hijyen-4.webp",fr:[{img:"m/ig/tirnak-hijyen-1.webp",cap:"Önce yıkama"},{img:"m/ig/tirnak-hijyen-2.webp",cap:"Kurulama"},{img:"m/ig/tirnak-hijyen-3.webp",cap:"Sterilizasyon"},{img:"m/ig/tirnak-hijyen-4.webp",cap:"Paketiniz yanınızda açılır"}]},
+  {t:"Hijyen",th:"m/ig/tirnak-hijyen-4.webp",fr:[{img:"m/ig/tirnak-hijyen-1.webp",cap:"Önce yıkama"},{img:"m/ig/tirnak-hijyen-2.webp",cap:"Kurulama"},{img:"m/ig/tirnak-hijyen-3.webp",cap:"Tıbbi seviyede sterilizasyon"},{img:"m/ig/tirnak-hijyen-4.webp",cap:"Paketiniz yanınızda açılır"}]},
   {t:"Tasarımlar",th:"m/ig/tirnak-holo-800.webp",fr:[{img:"m/ig/tirnak-3d-800.webp",cap:"3D çiçek ve inci"},{img:"m/ig/tirnak-holo-800.webp",cap:"Aurora cat-eye"},{img:"m/ig/tirnak-mermer-k.webp",cap:"Altın hatlı kelebek"},{img:"m/ig/tirnak-gumus-800.webp",cap:"Simli ombre"}]},
   {t:"Video",th:"m/ig/tirnak-krom-poster.webp",fr:[{video:"m/ig/tirnak-papatya.mp4",poster:"m/ig/tirnak-papatya-poster.webp",cap:"3D papatya"},{video:"m/ig/tirnak-krom.mp4",poster:"m/ig/tirnak-krom-poster.webp",cap:"Krom french"},{video:"m/ig/tirnak-babyboomer.mp4",poster:"m/ig/tirnak-babyboomer-poster.webp",cap:"Baby boomer"}]},
   {t:"Yorumlar",th:"m/monogram.png",fr:"rv:tirnak"},
@@ -28,7 +28,7 @@ STORIES["tz-oje"]=[
 STORIES["tz-protez"]=[
   {t:"Şekiller",th:"m/ig/tirnak-uzun-kirmizi-k.webp",fr:[{img:"m/ig/tirnak-yuvarlak-kirmizi-1200.webp",cap:"Oval"},{img:"m/ig/tirnak-kare-kirmizi-k.webp",cap:"Kare"},{img:"m/ig/tirnak-uzun-kirmizi-k.webp",cap:"Uzun"},{img:"m/ig/tirnak-badem-bordo-k.webp",cap:"Badem"}]},
   {t:"Video",th:"m/ig/tirnak-babyboomer-poster.webp",fr:[{video:"m/ig/tirnak-babyboomer.mp4",poster:"m/ig/tirnak-babyboomer-poster.webp",cap:"Baby boomer"},{video:"m/ig/tirnak-krom.mp4",poster:"m/ig/tirnak-krom-poster.webp",cap:"Krom french"}]},
-  {t:"Hijyen",th:"m/ig/tirnak-hijyen-4.webp",fr:[{img:"m/ig/tirnak-hijyen-1.webp",cap:"Önce yıkama"},{img:"m/ig/tirnak-hijyen-3.webp",cap:"Sterilizasyon"},{img:"m/ig/tirnak-hijyen-4.webp",cap:"Paketiniz yanınızda açılır"}]},
+  {t:"Hijyen",th:"m/ig/tirnak-hijyen-4.webp",fr:[{img:"m/ig/tirnak-hijyen-1.webp",cap:"Önce yıkama"},{img:"m/ig/tirnak-hijyen-3.webp",cap:"Tıbbi seviyede sterilizasyon"},{img:"m/ig/tirnak-hijyen-4.webp",cap:"Paketiniz yanınızda açılır"}]},
   {t:"Yorumlar",th:"m/monogram.png",fr:"rv:tirnak"},
   {t:"Fiyat",th:"m/ig/tirnak-gumus-800.webp",fr:"price:tz-protez"}];
 STORIES["tz-art"]=[
@@ -37,7 +37,7 @@ STORIES["tz-art"]=[
   {t:"Yorumlar",th:"m/monogram.png",fr:"rv:tirnak"},
   {t:"Fiyat",th:"m/ig/tirnak-holo-800.webp",fr:"price:tz-art"}];
 STORIES["tz-bakim"]=[
-  {t:"Hijyen",th:"m/ig/tirnak-hijyen-4.webp",fr:[{img:"m/ig/tirnak-hijyen-1.webp",cap:"Önce yıkama"},{img:"m/ig/tirnak-hijyen-2.webp",cap:"Kurulama"},{img:"m/ig/tirnak-hijyen-3.webp",cap:"Sterilizasyon"},{img:"m/ig/tirnak-hijyen-4.webp",cap:"Paketiniz yanınızda açılır"}]},
+  {t:"Hijyen",th:"m/ig/tirnak-hijyen-4.webp",fr:[{img:"m/ig/tirnak-hijyen-1.webp",cap:"Önce yıkama"},{img:"m/ig/tirnak-hijyen-2.webp",cap:"Kurulama"},{img:"m/ig/tirnak-hijyen-3.webp",cap:"Tıbbi seviyede sterilizasyon"},{img:"m/ig/tirnak-hijyen-4.webp",cap:"Paketiniz yanınızda açılır"}]},
   {t:"Hazırlık",th:"m/ig/tirnak-hazirlik-poster.webp",fr:[{video:"m/ig/tirnak-hazirlik.mp4",poster:"m/ig/tirnak-hazirlik-poster.webp",cap:"Eldivenli eller"}]},
   {t:"Salon",th:"m/ig/salon-tur-poster.webp",fr:[{video:"m/ig/salon-tur.mp4",poster:"m/ig/salon-tur-poster.webp",cap:"Tırnak barı ve salon"}]},
   {t:"Yorumlar",th:"m/monogram.png",fr:"rv:tirnak"},
@@ -66,8 +66,18 @@ function tzExtras(shape,withColor){ var parts=[], meta=[];
   return {parts:parts,meta:meta}; }
 function tzMsg(o,day,time,shape,code){ var when=day?((day.label==="Bugün"||day.label==="Yarın")?day.label.toLocaleLowerCase("tr-TR"):day.full)+" "+time:"";
   var x=tzExtras(shape,/oje|protez|art/i.test(o.n)), pg=TZ.pg||{}, from=pg.semtFrom?pg.semtFrom+" yazıyorum; ":"", rest=x.parts.join(", ");
-  return "Merhaba, "+from+o.n.toLocaleLowerCase("tr-TR")+" için "+when+" uygun mu?"+(rest?" "+rest.charAt(0).toLocaleUpperCase("tr-TR")+rest.slice(1)+".":"")+(o.ask?" Fiyat bilgisini de alabilir miyim?":"")+" "+code; }
-function tzMeta(shape,o){ var x=tzExtras(null,!o||/oje|protez|art/i.test(o.n)); return (shape?" · "+shape:"")+(x.meta.length?" · "+x.meta.join(" · "):""); }
+  var bk=TZ.bakim&&TZ.bkDay?" Bakım randevumu da "+TZ_BAKIM_HAFTA+" hafta sonrasına, "+TZ.bkDay+" saat "+time+" için ayırabilir misiniz?":"";
+  return "Merhaba, "+from+o.n.toLocaleLowerCase("tr-TR")+" için "+when+" uygun mu?"+(rest?" "+rest.charAt(0).toLocaleUpperCase("tr-TR")+rest.slice(1)+".":"")+bk+(o.ask?" Fiyat bilgisini de alabilir miyim?":"")+" "+code; }
+function tzMeta(shape,o){ var x=tzExtras(null,!o||/oje|protez|art/i.test(o.n)); return (shape?" · "+shape:"")+(x.meta.length?" · "+x.meta.join(" · "):"")+(TZ.bakim&&TZ.bkDay?" · bakım "+TZ.bkDay:""); }
+
+/* T13 bakım randevusu: protez maintenance is every 4 weeks (owner); one tap books the next one too.
+   Same weekday 4 weeks on, so it is never a Monday (closed). Called before tzMsg/tzMeta on every render. */
+var TZ_BAKIM_OPTS=["mpk","uzatma","dolgu"];
+function tzBakim(o,day,n){ TZ.bkDay=null; if(!o||!day||TZ_BAKIM_OPTS.indexOf(o.id)<0) return "";
+  var d=new Date(day.date.getTime()+TZ_BAKIM_HAFTA*7*864e5); TZ.bkDay=d.getUTCDate()+" "+TR_MON[d.getUTCMonth()]+" "+TR_DAYS[d.getUTCDay()];
+  return '<div class="pstep tz-bk"><span class="eyebrow"><i>'+n+'</i> Bakım · '+TZ_BAKIM_HAFTA+' hafta sonra</span><button class="opt" data-tz-bakim aria-pressed="'+(!!TZ.bakim)+'"><span class="rad"></span>'+
+    '<span class="nm">Bakım randevumu da ayırın<small>'+TZ.bkDay+' · aynı saat · bakım aralığımız '+TZ_BAKIM_HAFTA+' hafta</small></span></button></div>'; }
+function tzBakimBind(box,rerender,key){ $$("[data-tz-bakim]",box).forEach(function(b){ lbl(b,key); b.addEventListener("click",function(){ TZ.bakim=!TZ.bakim; rerender(); }); }); }
 
 /* ---------- page engine ---------- */
 function tzBoot(){
@@ -244,14 +254,15 @@ function tzReviews(box){ var tag=box.dataset.tzRv, list=TZ_REVIEWS.filter(functi
 /* ---------- inline invitation (protez-tirnak-randevu): the planner, laid out on the page ---------- */
 function tzInline(box){ var body=$(".tz-inline-body",box), plan=PLANS[TZ.pg.fam], st={opt:TZ.pg.opt||plan.opts[0].id,shape:(SHAPES[S.shape]||SHAPES.uzun).n,day:0,time:null}, slots=sampleSlots("tirnak"), code=visitCode(), c="at-tz-"+TZ.pg.code+"-davetiye-";
   function render(){ var o=plan.opts.filter(function(x){ return x.id===st.opt; })[0], d=slots[st.day]; if(d&&(!st.time||d.times.indexOf(st.time)<0)) st.time=d.times[0];
-    var msg=tzMsg(o,d,st.time,plan.shapes?st.shape:null,code), n=1;
+    var bk=tzBakim(o,d,plan.shapes?4:3), msg=tzMsg(o,d,st.time,plan.shapes?st.shape:null,code), n=1;
     var h='<div class="pstep"><span class="eyebrow"><i>'+(n++)+'</i> İşlem</span><div class="opts">'+plan.opts.map(function(x){ return '<button class="opt" data-o="'+x.id+'" aria-pressed="'+(x.id===st.opt)+'" data-track-label="'+c+'islem"><span class="rad"></span><span class="nm">'+x.n+(x.b?'<span class="badge">'+x.b+'</span>':'')+'<small>'+(x.d?x.d+' dk':(x.s||''))+'</small></span><span class="pr">'+(x.ps||fmtTL(x.p))+'</span></button>'; }).join("")+'</div></div>';
     if(plan.shapes) h+='<div class="pstep"><span class="eyebrow"><i>'+(n++)+'</i> Şekil</span><div class="shapes">'+plan.shapes.map(function(s){ return '<button data-s="'+s+'" aria-pressed="'+(s===st.shape)+'" data-track-label="'+c+'sekil">'+s+'</button>'; }).join("")+'</div></div>';
     h+='<div class="pstep"><span class="eyebrow"><i>'+(n++)+'</i> Gün ve saat</span><div class="days">'+slots.map(function(x,i){ return '<button data-d="'+i+'" aria-pressed="'+(i===st.day)+'" data-track-label="'+c+'gun">'+x.label+'</button>'; }).join("")+'</div>'+
       '<div class="times">'+(d?d.times.map(function(t){ return '<button data-t="'+t+'" aria-pressed="'+(t===st.time)+'" data-track-label="'+c+'saat">'+t+'</button>'; }).join(""):"")+'</div><span class="slot-note">Prototipte örnek saatler; canlıda randevu sistemindeki boş saatler gelir. Kesin onayı ekibimiz WhatsApp\'ta verir.</span></div>';
+    if(bk){ h+=bk; n++; }
     h+='<div class="pstep"><span class="eyebrow"><i>'+(n++)+'</i> Mesajınız</span><div class="bubble"><span>'+tzEsc(msg)+'</span><small>şimdi</small></div>'+
       '<div class="send-row"><a class="btn-gold shine" href="'+waHref(msg)+'" target="_blank" rel="noopener" data-track-label="'+c+'wa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20l1.4-4.2A8.5 8.5 0 1 1 7.6 19L3 20z"/></svg><span class="lbl">WhatsApp\'ta gönder</span></a><span class="fineprint">Mesaj hazır; göndermek size kalır.</span></div></div>';
-    body.innerHTML=h;
+    body.innerHTML=h; tzBakimBind(body,render,c+"bakim");
     $$("[data-o]",body).forEach(function(b){ b.addEventListener("click",function(){ st.opt=b.dataset.o; render(); }); });
     $$("[data-s]",body).forEach(function(b){ b.addEventListener("click",function(){ st.shape=b.dataset.s; render(); }); });
     $$("[data-d]",body).forEach(function(b){ b.addEventListener("click",function(){ st.day=+b.dataset.d; st.time=null; render(); }); });
@@ -261,6 +272,6 @@ function tzInline(box){ var body=$(".tz-inline-body",box), plan=PLANS[TZ.pg.fam]
 
 /* ---------- T9: Bakım saati (drawing, representative) ---------- */
 function tzSaat(el){ var r=$("input",el), plate=$(".s-plate",el), w=$(".s-w",el);
-  function set(){ var k=+r.value; plate.style.transform="translateY("+(-k*6)+"px)"; w.textContent=k+". hafta"; }
+  function set(){ var k=+r.value; plate.style.transform="translateY("+(-k*6)+"px)"; w.textContent=k+". hafta"; el.classList.toggle("due",k>=TZ_BAKIM_HAFTA); }
   r.addEventListener("input",set); set(); }
 (function(){ var sel=$("#tzSel"); if(sel) sel.addEventListener("change",function(){ hideProto(); go(sel.value==="tirnak"?"tirnak":"tirnak/"+sel.value); }); })();

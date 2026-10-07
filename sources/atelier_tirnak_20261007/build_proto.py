@@ -3,19 +3,28 @@
 """TIRNAK ATELYESİ -- put the 22 nail pages into the ATELİER prototype (the Claude Artifact's page).
 
 Reads the prototype source (default: the v3 snapshot), applies counted, verified replacements, writes the page.
-Only nail code is touched: the tırnak <section>, the nail rows of NAV, SHAPES' kare label, the old nail-only
+Only nail code is touched: the tırnak <section>, the nail rows of NAV, SHAPES' kare/oval labels, the old nail-only
 functions (initAtelier, initGallery, IG_NAILS, STORIES.tirnak), and the small hooks the nail pages need in shared
-code (go() takes "#view/param", the planner prints the tz extras, the bar asks tz for its label). --check then
+code (go() takes "#view/param", the planner prints the tz extras and the 4-week bakım step, the bar asks tz for its label). --check then
 confirms that everything outside those spots is byte-for-byte the source.
 
   python3 sources/atelier_tirnak_20261007/build_proto.py [--src FILE] [--out FILE]
+
+Other families publish to the same Artifact too. When the live version has moved on, build as usual and merge three-way:
+the last nail build that went out (--base, kept next to the snapshots) against the live source (--live). Only the nail
+edits since --base are carried onto --live; everything the other sessions published stays. A conflict is written to
+OUT.conflict for a person to resolve.
+
+  python3 sources/atelier_tirnak_20261007/build_proto.py --base prototypes/.../tirnak-build-vN.html --live live.html
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -70,8 +79,9 @@ def proto_row() -> str:
     groups = "".join(f'<optgroup label="{g}">' + "".join(f'<option value="{s}">{meta[s]["nav"]}{tag[meta[s]["status"]]}</option>' for s in slugs) + "</optgroup>"
                      for g, slugs in GROUPS)
     return ('  <div class="row"><span>Tırnak sayfası · 22</span><select id="tzSel" class="tz-sel" aria-label="Tırnak sayfası" data-track-label="at-proto-tirnak">'
-            f'{groups}</select><p>Tırnak: “çekim bekliyor” sayfalarda gerçek salon görselleriyle dürüst stand-in var. Fiyatı doğrulanmamış kalemler '
-            '“Fiyatı sorun” olarak WhatsApp\'a gider. Hijyen adımlarının dili salonun kendi videosundan, kartela ton adları fotoğraftan; ikisi de sahip onayı bekliyor.</p></div>\n')
+            f'{groups}</select><p>Tırnak: “çekim bekliyor” sayfalarda gerçek salon görselleriyle dürüst stand-in var. Fiyatı menüde olmayan kalemler '
+            '“Fiyatı sorun” olarak WhatsApp\'a gider (sunucuda sync_prices.py ile tamamlanır). Sterilizasyon ifadesi ve 4 haftalık bakım aralığı sahip onaylı; '
+            'kartela ton adları fotoğraftan, numaralar sahip onayı bekliyor.</p></div>\n')
 
 
 def build(src: str) -> str:
@@ -84,7 +94,9 @@ def build(src: str) -> str:
     P.rep('<button data-v="lazer">Lazer</button></div></div>\n', '<button data-v="lazer">Lazer</button></div></div>\n' + proto_row(), what="proto row")
     P.sub(r'<!-- ===================== TIRNAK ===================== -->\n<section data-view="tirnak" hidden>.*?</section>\n\n(?=<!-- ===================== İPEK KİRPİK)',
           section(), "tirnak section")
-    P.rep('alt:"Kırmızı kare kalıcı oje"}', 'alt:"Kırmızı kare protez tırnak"}', what="SHAPES kare alt")
+    # owner does not know whether the kare / oval photos are protez or kalıcı oje: name the shape and colour only
+    P.rep('alt:"Kırmızı kare kalıcı oje"}', 'alt:"Kırmızı kare tırnak"}', what="SHAPES kare alt")
+    P.rep('alt:"Kırmızı oval kalıcı oje"}', 'alt:"Kırmızı oval tırnak"}', what="SHAPES oval alt")
     P.sub(r'function initAtelier\(\)\{\n.*?\n\}\n(?=\n/\* ---------- gallery ---------- \*/)', '', "drop initAtelier")
     P.sub(r'var IG_NAILS=\[.*?\];\n', '', "drop IG_NAILS", flags=0)
     P.sub(r'function initGallery\(\)\{ var g=\$\("#gal"\);.*?\n', '', "drop initGallery", flags=0)
@@ -92,7 +104,10 @@ def build(src: str) -> str:
     P.rep('var priceOf=function(x){ return plan.custom?"Kişiye özel":fmtTL(x.p); };',
           'var priceOf=function(x){ return x.ps||(plan.custom?"Kişiye özel":fmtTL(x.p)); }, tz=/^tz-/.test(P.fam);', what="planner priceOf")
     P.rep("'</i> Şekil · renk: '+colorName+'</span>", "'</i> Şekil'+(colorName?' · renk: '+colorName:'')+'</span>", what="planner shape label")
+    P.rep('\n  var when=day?(day.full+" · "+P.time):"";\n', '\n  if(tz){ var bk=tzBakim(o,day,stepN); if(bk){ h+=bk; stepN++; } }\n  var when=day?(day.full+" · "+P.time):"";\n', what="planner bakım step")
     P.rep('\n  P.msg=msg;\n', '\n  if(tz) msg=tzMsg(o,day,P.time,plan.shapes?P.shape:null,P.code);\n  P.msg=msg;\n', what="planner tz msg")
+    P.rep('lbl($("#sendWa"),"at-"+P.fam+"-davetiye-wa"); relead();',
+          'lbl($("#sendWa"),"at-"+P.fam+"-davetiye-wa"); relead(); if(tz) tzBakimBind($("#sheetBody"),renderPlanner,"at-"+P.fam+"-davetiye-bakim");', what="planner bakım bind")
     P.rep("(colorName?' · '+colorName+(P.shape?' · '+P.shape:''):'')+'<br>Konutkent",
           "(colorName?' · '+colorName+(P.shape?' · '+P.shape:''):'')+(tz?tzMeta(plan.shapes?P.shape:null,o):'')+'<br>Konutkent", what="planner tz meta")
     P.rep("'+fmtTL(x.p)+'</b></div>'", "'+(x.ps||fmtTL(x.p))+'</b></div>'", what="priceCard ps")
@@ -110,7 +125,8 @@ def build(src: str) -> str:
     js = (js.replace("__TZ_PAGES__", js_json(render.page_meta()))
             .replace("__TZ_REVIEWS__", js_json(render.REVIEWS))
             .replace("__TZ_QUOTES__", js_json(render.QUOTES))
-            .replace("__TZ_PLANS__", js_json(render.plans_js())))
+            .replace("__TZ_PLANS__", js_json(render.plans_js()))
+            .replace("__TZ_BAKIM__", str(render.BAKIM_HAFTA)))
     assert "__TZ_" not in js
     P.rep('\n/* ---------- views ---------- */\n', '\n' + js + '\n/* ---------- views ---------- */\n', what="tz js")
     P.rep('if(v==="tirnak"){ var s=SW.filter(function(x){return x.id===S.color})[0]; l.textContent=(s?s.name:"Rengim")+" · saatimi seç"; }',
@@ -138,9 +154,28 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", default=str(SRC))
     ap.add_argument("--out", default=str(OUT))
+    ap.add_argument("--base", default="", help="the nail build the live Artifact last received (merge base)")
+    ap.add_argument("--live", default="", help="the live Artifact source to merge the new nail edits onto")
+    ap.add_argument("--build-out", default="", help="also keep the plain build here (the next --base)")
     a = ap.parse_args()
     src = Path(a.src).read_text(encoding="utf-8")
     out = build(src)
+    if a.build_out:
+        Path(a.build_out).write_text(out, encoding="utf-8")
+    if a.live:
+        if not a.base:
+            raise SystemExit("--live needs --base")
+        with tempfile.TemporaryDirectory() as td:
+            ours = Path(td) / "ours.html"
+            ours.write_text(out, encoding="utf-8")
+            r = subprocess.run(["git", "merge-file", "-p", "-L", "nail build", "-L", "base", "-L", "live", str(ours), a.base, a.live],
+                               capture_output=True)
+        merged = r.stdout.decode("utf-8")
+        if r.returncode:
+            Path(a.out + ".conflict").write_text(merged, encoding="utf-8")
+            raise SystemExit(f"{r.returncode} conflict(s): resolve {a.out}.conflict by hand (keep both sides' intent), then check it")
+        print(f"merged onto {a.live}")
+        out = merged
     Path(a.out).write_text(out, encoding="utf-8")
     print(f"{a.out}: {len(out.encode()):,} bytes (source {len(src.encode()):,})")
     return 0

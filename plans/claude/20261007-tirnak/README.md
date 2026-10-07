@@ -183,10 +183,11 @@ Her perde, o perdede seçtiğiniz şeyi taşıyan bir CTA ile biter. Örnek: "Ki
 | T6 | **Tasarım Duvarı v2** | Vay sırasıyla masonry. Video kartlar görününce oynar (A/B kademesi). Basılı tutunca yakınlaşır.<br>Her kartta **"Bunu istiyorum"** düğmesi davetiyeyi `ref` ile açar: "Model: Holografik (sitedeki fotoğraf)". | Mevcut `card()` ve `openLightbox` genişletilir. |
 | T7 | **Şekil ve Uzunluk** | 4 gerçek fotoğraf (oval → kare → uzun → badem) arasında kaydırıcı. Seçim davetiyedeki şekil adımını doldurur. | Mevcut `SHAPES`. |
 | T8 | **Karar kartları** | Kalıcı oje · jel güçlendirme · protez · yeni nesil tips. Her birinde süre, fiyat (CRM) ve "kime uygun" (yalnız mevcut sayfa metinlerinden). | Mevcut `.versus` 4'lüye genişletilir. |
-| T9 | **Bakım Saati** (bakım ve dolgu) | SVG tırnak, hafta kaydırıcısıyla uzar ve uzama payı görünür ("temsili").<br>[Fotoğrafımı göndereyim] düğmesi hazır WhatsApp mesajı açar: "Mevcut tırnağımın fotoğrafını gönderiyorum, bakım zamanı geldi mi?" | Saf SVG. Aralık bilgisi sahip onayıyla girer (§7, soru 8). |
+| T9 | **Bakım Saati** (bakım ve dolgu) | SVG tırnak, hafta kaydırıcısıyla uzar ve uzama payı görünür ("temsili").<br>[Fotoğrafımı göndereyim] düğmesi hazır WhatsApp mesajı açar: "Mevcut tırnağımın fotoğrafını gönderiyorum, bakım zamanı geldi mi?" | Saf SVG. Aralık **4 hafta** (sahip, 10-07): kaydırıcı 4. haftada "Bakım zamanı" der. |
 | T10 | **Söz duvarı** | 9 tırnak yorumu ile manikür, pedikür ve protezden bahseden 3 salon yorumu, kelimesi kelimesine.<br>Öne çıkan ifadeler:<br>- "hiç acı hissetmedim"<br>- "protez tırnak hakkındaki ön yargılarım değişti"<br>- "incecik ama sağlam"<br>- "hiçbir atma vs. sorun yaşamadım"<br>- "Çok temiz bir yer öncelikle" | Kaynak `data/reviews_tirnak.json` (GBP). Not: "Google yorumlarından aynen." |
 | T11 | **Davetiye v2** | Adımlar: işlem → şekil → renk no / model → gün → saat → WhatsApp.<br>Örnek mesaj: "Merhaba, manikür + protez tırnak + kalıcı oje için Perşembe 14:30 uygun mu? Şekil: badem, renk: 033, model: Holografik. [W-…]" | Mevcut `renderPlanner`. Yeni `ref` ve `colorNo` alanları eklenir. |
 | T12 | **Final perde** | Orkide döngüsü, "Sıradaki eller sizinki.", altın [Saatimi seç], WhatsApp ve telefon. | `auto-vid` deseni. |
+| T13 | **Bakım randevusu** (sahip cevabından sonra eklendi) | Protez, uzatma ve bakım-dolgu seçilince davetiyede bir adım daha çıkar: "Bakım randevumu da ayırın · 4 Kasım Çarşamba · aynı saat". Tek dokunuşla mesaja girer: "Bakım randevumu da 4 hafta sonrasına, 4 Kasım Çarşamba saat 19:00 için ayırabilir misiniz?" Davetiye kartında "bakım 4 Kasım Çarşamba" yazar. Varsayılan kapalıdır. | `tzBakim` / `tzBakimBind`. Tarih = seçilen gün + 28 gün; aynı hafta günü olduğu için Pazartesi'ye (kapalı) düşmez. Etiket `at-tz-<sayfa>-davetiye-bakim`. |
 
 ---
 
@@ -244,6 +245,10 @@ Her perde, o perdede seçtiğiniz şeyi taşıyan bir CTA ile biter. Örnek: "Ki
 
 **Fiyatlar:**
 - Fiyatlar yalnız CRM'den alınır (`/api/public/price-menu`). Derleme anında `sources/atelier_tirnak_20261007/data/crm_tirnak.json` dosyasına dondurulur.
+- **Eşitleme (sahip: "fiyat listesi sunucuda"):** Sunucuda `python3 sources/atelier_tirnak_20261007/sync_prices.py` önce kuru çalışır. Hangi kalemin hangi CRM satırına eşleştiğini, eşleşmeyenleri ve hiçbir sayfanın kullanmadığı tırnak satırlarını yazar. Doğruysa `--write` ile dosyayı günceller. Ardından `build_proto.py` yeniden derlenir.
+  - Bir kalem yalnız **tek** bir CRM satırına (ya da aynı fiyat ve süreli birkaç satıra) eşleşirse fiyat alır. Eşleşmeyen ya da birden çok farklı satıra eşleşen kalem "Fiyatı sorun" olarak kalır. Fiyat tahmin edilmez.
+  - Sayfalardaki bütün rakamlar bu dosyadan gelir: fiyat çipleri, menüler, davetiye, SSS süreleri, karar kartları, "Fiyatı ne belirler?" ve "Dört kapı" kartları. Bir kalem fiyat alınca o sayfanın çipi kendiliğinden "Fiyatı sorun"dan rakama döner.
+  - Bu Claude ortamının ağ kuralı `seldagencerbeauty.com` adresine izin vermiyor. Bu yüzden betik sunucuda çalıştırılmalı, ya da uç noktanın JSON çıktısı kaydedilip `--file` ile verilmeli.
 - Prototipte CRM'den (10-06) alınmış 4 kalem; derlemede yeniden doğrulanır:
 
   | Kalem | Fiyat |
@@ -259,11 +264,16 @@ Her perde, o perdede seçtiğiniz şeyi taşıyan bir CTA ile biter. Örnek: "Ki
 **Kullanılacak dil (kanıtlı):**
 - "Salonumuzda çekildi."
 - Kelimesi kelimesine Google yorumları.
-- "Kişiye özel paket, yanınızda açılır" (sahip onayıyla; §7).
+- "Kişiye özel paket, yanınızda açılır" (salonun kendi videosundan; §7-3 açık).
 - "Rengi kartelamızdan siz seçersiniz."
+- "Sterilizasyon cihazımızda tıbbi seviyede sterilize edilir." (sahip onayı, 10-07: cihaz geçerli.)
+- "Protez tırnakta bakım aralığımız 4 hafta." (sahip, 10-07.)
 
 **Yasak:**
-- "%100 hijyen", "tıbbi seviyede" (cihaz belgesi yoksa), "en iyi" / "1 numara", "kırılmaz", "hiç kalkmaz", "acısız" (kendi iddiamız olarak).
+- "%100 hijyen", "en iyi" / "1 numara", "kırılmaz", "hiç kalkmaz", "acısız" (kendi iddiamız olarak).
+- Uzman adı yazılmaz (sahip, 10-07). Yorumlar kelimesi kelimesine kalır; içlerinde geçen adlar müşterinin sözüdür.
+- `kare-kirmizi` ve `yuvarlak-kirmizi` fotoğraflarına "protez" ya da "kalıcı oje" denmez; yalnız şekil ve renk yazılır (sahip türünü bilmiyor).
+- Yeni nesil tips ile klasik protez arasında fark iddiası yazılmaz (sahip tam bilmiyor). Tips sayfası "birlikte konuşalım" dilinde kalır.
 - Sahte önce/sonra; sahte kıtlık, geri sayım, popup.
 - Rakibi kötüleyen ya da korku dili (V12'deki yazı tonu).
 - Medikal pedikürde tedavi iddiası ("mantar tedavisi" vb.).
@@ -314,17 +324,21 @@ Lazer yamasının deseni kullanılır: `build.py --out / --check / --apply / --r
 
 ---
 
-## 7. Sahibe sorulacaklar (D1'i bekletmez)
+## 7. Sahibe sorulanlar ve cevaplar
 
-1. V16'daki kadın (salona giriş sahnesi) kim? Web'de kullanılmasına izin var mı?
-2. Sterilizasyon cihazının adı ve türü nedir? Videoda "tıbbi seviyede" yazıyor; belge yoksa bu ifade kullanılmaz.
-3. "Kişiye özel paket, yanınızda açılır" her manikür ve pedikürde geçerli mi?
-4. Kartela numaraları ve oje markası sayfada yazılabilir mi?
-5. CRM'deki tırnak kalemlerinin tam listesi: pedikür, medikal pedikür, çıkarma, bakım-dolgu, tips, ayak protez, uzatma, güçlendirme; her birinin süresi ve fiyatı.
-6. Uzman adları sayfada yazılsın mı? Yorumlarda Ceren, Pelin, Melisa, Zelal ve Tamay geçiyor; yorumlar her durumda kelimesi kelimesine kalır.
-7. `kare-kirmizi` ve `yuvarlak-kirmizi` protez tırnak mı, kalıcı oje mi? (IG altyazısından.)
-8. Protez bakım aralığı ne söylenebilir? (T9 için; söylenemezse yalnız "fotoğrafını gönder" kalır.)
-9. Yeni nesil tips ile klasik protez arasındaki gerçek fark nedir?
+| # | Soru | Cevap (10-07) | Uygulama |
+|---|---|---|---|
+| 1 | V16'daki kadın (salona giriş sahnesi) kim? Web'de kullanılmasına izin var mı? | Henüz yok | Açılış filmi kullanılıyor; izin gelmezse kadının göründüğü kareler çıkarılıp film `manifest_tirnak.json` üzerinden yeniden kesilir. |
+| 2 | Sterilizasyon cihazı belgeli mi? ("tıbbi seviyede") | **Cihaz geçerli, yazılabilir** | Hijyen adımı, SSS ve hikâyede "tıbbi seviyede sterilizasyon". |
+| 3 | "Kişiye özel paket, yanınızda açılır" her işlemde geçerli mi? | Henüz yok | Salonun kendi videosundaki dil olarak duruyor. |
+| 4 | Kartela numaraları ve oje markası yazılabilir mi? | Henüz yok | Kartelada ton adları var; numara ve marka yok. |
+| 5 | Tırnak kalemlerinin tam fiyat ve süre listesi | **Sunucudaki fiyat listesinde** | `sync_prices.py` (§5). Sunucuda çalıştırılınca 11 "Fiyatı sorun" kalemi kendiliğinden dolar. |
+| 6 | Uzman adları yazılsın mı? | **Gerek yok** | Sayfa metninde ad yok; yorumlar aynen. |
+| 7 | `kare-kirmizi` / `yuvarlak-kirmizi` protez mi, kalıcı oje mi? | **Bilinmiyor** | Alt metinler nötr: "Kırmızı kare tırnak", "Kırmızı oval tırnak". |
+| 8 | Protez bakım aralığı? | **4 hafta** | SSS, Bakım Saati (T9), "Fiyatı ne belirler?", bakım sayfası girişi ve yeni T13 bakım randevusu. |
+| 9 | Yeni nesil tips ile klasik protez farkı? | **Tam bilinmiyor** | Fark iddiası yok; karar kartında "Ayrıntıyı birlikte konuşalım". |
+
+Açık kalanlar: 1, 3, 4. Hiçbiri yayını bekletmez.
 
 ---
 
@@ -391,3 +405,19 @@ Yayın 1791382406-9153: 278 dosya. 43 dosya eklendi, 6 dosya kaldırıldı (`tir
 - **Doğrulama:** Test Chromium'u H.264 oynatamıyor. Bu yüzden videolar poster yedeğiyle (`.tz-vp`) doğrulandı. Gerçek tarayıcıda oynatma ayrıca bakılmalı.
 
 **Kapsam dışı bulgu:** Kaş vitrini hâlâ `kas-cift-3` çiftini kullanıyor. Bu görselde yabancı filigran var.
+
+### 10.1 Sahip cevaplarından sonra (Artifact sürüm 6)
+
+- §7'deki cevaplar sayfalara işlendi: sterilizasyon dili, 4 haftalık bakım, nötr şekil adları, uzman adı yok.
+- **T13 Bakım randevusu:** Hem açılan davetiyede hem `protez-tirnak-randevu` sayfasındaki satır içi davetiyede çalışıyor.
+- Bakım Saati 4. haftada "Bakım zamanı" diyor. Altına [Bakım saatimi seç] düğmesi eklendi.
+- **Tek fiyat kaynağı:** `render.py` içindeki elle yazılmış bütün TL ve dakika rakamları `crm_tirnak.json` dosyasından okunuyor (`tl()`, `dk()`, `page_price()`).
+- **`sync_prices.py`:** Sunucuda çalıştırılır (§5). İki farklı JSON biçimindeki örnek menüyle denendi: eşleşen, belirsiz ve eşleşmeyen kalemler doğru ayrıldı. `--write` sonrası derleme rakamları her yere taşıdı.
+- **Aynı Artifact'e başka oturumlar da yayın yapıyor.** Sürüm 5'i Vücut ailesi (9 sayfa) yayınladı; dalı `claude/vucut-inceltme-sayfalari-uvc9o6`. Sürüm 6, o sürümün üzerine üç yönlü birleştirmeyle kuruldu:
+  - Taban: sürüm 4'teki tırnak derlemesi. Bir yan: yeni tırnak derlemesi. Öbür yan: canlı sürüm 5.
+  - Tek çakışma prototip panelindeydi (onların "Vücut" düğmesi, bizim tırnak notumuz). İkisi de korundu.
+  - Doğrulama: canlı sürüme göre fark yalnız tırnak değişikliklerimiz (84 satır); 22 rota ve Vücut dahil 8 vitrin hatasız.
+- **Bundan sonraki derlemeler:** `build_proto.py --base <son tırnak derlemesi> --live <canlı kaynak> --build-out <yeni taban>`. Çakışma `.conflict` dosyasına yazılır ve elle çözülür.
+  - Son taban: `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/tirnak-build-v6.html`.
+  - Canlı anlık görüntü: `artifact-v6.html`.
+- `website/index.html` canlı sürüm 6'nın aynısı. İçindeki Vücut görselleri (`m/ig/vucut-*`) Artifact'te ve Vücut dalında; bu dalda değil.

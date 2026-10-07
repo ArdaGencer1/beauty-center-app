@@ -8,11 +8,12 @@ texts, menu, questions, media with alt text) is static here; src/tirnak.js only 
 (film scrub, Renk Atölyesi, kartela, hijyen steps, wall filters, invitation extras).
 
 Facts used and where they come from:
-  prices / minutes      data/crm_tirnak.json   (4 rows verified in prototype v3; the rest: "fiyatı sorun")
+  prices / minutes      data/crm_tirnak.json   (CRM price menu; sync_prices.py refreshes it on the server, the rest: "fiyatı sorun")
   reviews               data/reviews_tirnak.json (Google, verbatim)
   kartela dots          data/kartela.json      (positions + colours measured on the salon's own video frame)
   media                 ../media_ig_20261007/manifest_tirnak.json (+ the processed photos in website/m/ig)
-  hygiene steps         the salon's own Instagram video 18126120175637645 (owner to confirm wording, plan §7)
+  hygiene steps         the salon's own Instagram video 18126120175637645 (owner confirmed the steriliser claim, 2026-10-07)
+  maintenance interval  4 weeks for protez tırnak (owner, 2026-10-07)
 Shared blocks (hijyen, atelier, kartela, fırça, wall, şekil, versus, final, yol) are written once as includes
 (<div data-tz-inc="…">); inline=True expands them for a static page.
 """
@@ -35,6 +36,28 @@ REVIEWS = json.loads((DATA / "reviews_tirnak.json").read_text(encoding="utf-8"))
 KARTELA = json.loads((DATA / "kartela.json").read_text(encoding="utf-8"))["dots"]
 ROWS = {r["id"]: r for r in CRM["rows"]}
 ASK = {r["id"]: r for r in CRM["ask"]}
+BAKIM_HAFTA = 4  # protez tırnak maintenance interval (owner)
+
+
+def fmt_tl(p: int) -> str:
+    return f"{p:,}".replace(",", ".") + " TL"
+
+
+def tl(i: str) -> str:
+    """Menu price of one CRM row, e.g. "1.500 TL"; every price on the pages comes through here."""
+    return fmt_tl(ROWS[i]["p"])
+
+
+def dk(i: str) -> int:
+    return ROWS[i]["d"]
+
+
+def page_price(spec) -> str:
+    """A page's price chip: a literal, or (row id, suffix); a row that is not in the menu yet asks for the price."""
+    if isinstance(spec, str):
+        return spec
+    i, suffix = spec
+    return tl(i) + suffix if i in ROWS else "Fiyatı sorun"
 
 ICON = {
     "arrow": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
@@ -63,7 +86,7 @@ def plan_opts(fam: str) -> list[dict]:
     for i in PLANS[fam]["opts"]:
         if i in ROWS:
             r = ROWS[i]
-            out.append({"id": i, "n": r["n"], "p": r["p"], "d": r["d"], "b": r.get("b")})
+            out.append({"id": i, "n": r["n"], "p": r["p"], "d": r.get("d"), "b": r.get("b")})
         else:
             a = ASK[i]
             out.append({"id": i, "n": a["n"], "p": None, "d": None, "ps": "Fiyatı sorun", "s": a.get("s", "Fiyat ve süre WhatsApp'ta netleşir"), "ask": True})
@@ -113,13 +136,13 @@ SEMT_IN = {"Çayyolu": "Çayyolu'nda", "Yaşamkent": "Yaşamkent'te"}
 RATING = '<span class="chip chip-in"><span class="star">★</span> 4,6 · 263 yorum</span>'
 
 FAQ = {
-    "sure": ("Ne kadar sürer?", "Randevu sistemimizdeki süreler: kalıcı oje 75 dk; manikür ve jel güçlendirme ile kalıcı oje 90 dk; manikür, protez tırnak ve kalıcı oje 120 dk."),
+    "sure": ("Ne kadar sürer?", f"Randevu sistemimizdeki süreler: kalıcı oje {dk('oje')} dk; manikür ve jel güçlendirme ile kalıcı oje {dk('mjk')} dk; manikür, protez tırnak ve kalıcı oje {dk('mpk')} dk."),
     "renk": ("Rengi nasıl seçiyorum?", "Salondaki kartelamızdan siz seçersiniz. Sitedeki Renk Atölyesi fikir vermek içindir; ekrandaki ton, ojenin kendisiyle birebir aynı olmayabilir."),
     "model": ("Beğendiğim bir modelin fotoğrafını getirebilir miyim?", "Evet. Fotoğrafı WhatsApp'tan gönderin; uygulanabilirliğini ve fiyatını mesajda birlikte netleştiririz."),
-    "hijyen": ("Aletler nasıl temizleniyor?", "Metal aletler önce yıkanır, kurutulur, sterilizasyon cihazına girer ve kişiye özel pakette bekler. Paketiniz yanınızda açılır."),
+    "hijyen": ("Aletler nasıl temizleniyor?", "Metal aletler önce yıkanır, kurutulur, sterilizasyon cihazımızda tıbbi seviyede sterilize edilir ve kişiye özel pakette bekler. Paketiniz yanınızda açılır."),
     "randevu": ("Randevuyu nasıl alıyorum?", "“Saatimi seç” ile işlemi, günü ve saati seçin. Hazır mesaj WhatsApp'ta açılır; göndermek size kalır, onayı ekibimiz verir."),
-    "protez": ("Protez tırnak nasıl uygulanıyor?", "Önce şekil ve uzunluğu birlikte seçeriz. Tırnaklarınız manikürle hazırlanır, protez uygulanır ve kalıcı oje ile bitirilir. Menüde bu üçü birlikte 120 dk."),
-    "bakim": ("Protez tırnağın bakımı ne zaman?", "Tırnak uzadıkça dipte bir uzama payı belirir. En doğrusu bir fotoğraf gönderip uzmanımıza sormak; bakım zamanını o söyler."),
+    "protez": ("Protez tırnak nasıl uygulanıyor?", f"Önce şekil ve uzunluğu birlikte seçeriz. Tırnaklarınız manikürle hazırlanır, protez uygulanır ve kalıcı oje ile bitirilir. Menüde bu üçü birlikte {dk('mpk')} dk; bakım aralığımız {BAKIM_HAFTA} hafta."),
+    "bakim": ("Protez tırnağın bakımı ne zaman?", f"Protez tırnakta bakım aralığımız {BAKIM_HAFTA} hafta. Tırnağınız uzadıkça dipte bir boşluk belirir; bakımda bu boşluk doldurulur. Randevu alırken {BAKIM_HAFTA} hafta sonraki bakımınızı da ayırabilirsiniz. Daha erken bir boşluk fark ederseniz fotoğraf gönderin, birlikte bakalım."),
     "cikar": ("Protezi kendim çıkarabilir miyim?", "Çekip koparmanızı önermeyiz; doğal tırnağa zarar verebilir. Salonda, uygun aletle adım adım alırız."),
     "art": ("Nail art fiyatı nasıl belirleniyor?", "Desene göre değişir. Beğendiğiniz modeli seçip gönderin; fiyatı WhatsApp'ta iletelim."),
     "ask": ("Bu işlemin fiyatını neden göremiyorum?", "Sitede yalnızca randevu sistemimizdeki aktif menüden doğruladığımız fiyatları gösteriyoruz. Bu işlem için güncel fiyatı WhatsApp'ta hemen iletelim."),
@@ -132,7 +155,7 @@ FAQ = {
 # hero: ("film",) | ("video", slug, alt) | ("photo", file, w, h, alt) | ("atelier",)
 PAGES = [
     dict(slug="tirnak", code="merkez", fam="tz-merkez", wave="D1", status="tam", nav="Nail studio",
-         h1="Ankara Nail <em>Studio</em>", lede="Kapıdan girdiğiniz an başlar.", price="1.000 TL'den",
+         h1="Ankara Nail <em>Studio</em>", lede="Kapıdan girdiğiniz an başlar.", price=("oje", "'den"),
          hero=("film",), bar="Tırnak randevum · saatimi seç",
          scenes=["yol", "hijyen", "atelier", "firca", "wall", "soz:all", "versus", "menu:oje,mko,mjk,mpk,art", "faq:sure,renk,hijyen,randevu", "final", "live", "visit"]),
     dict(slug="nail-art-ankara", code="art", fam="tz-art", wave="D1", status="tam", nav="Nail art",
@@ -140,86 +163,86 @@ PAGES = [
          hero=("video", "tirnak-papatya", "Badem ombre tırnak, 3D papatya nail art; salonumuzda çekildi"), bar="Nail art · saatimi seç",
          scenes=["wall", "firca", "soz:art", "menu:art,mpk,oje", "faq:art,model,randevu", "final", "live", "visit"]),
     dict(slug="kalici-oje", code="oje", fam="tz-oje", wave="D1", status="tam", nav="Kalıcı oje",
-         h1="Ankara Kalıcı <em>Oje</em>", lede="Rengi siz seçin, gerisi bizde.", price="1.000 TL'den",
+         h1="Ankara Kalıcı <em>Oje</em>", lede="Rengi siz seçin, gerisi bizde.", price=("oje", "'den"),
          hero=("atelier",), bar="Kalıcı oje · saatimi seç",
          scenes=["kartela", "firca", "soz:oje", "how:oje", "menu:oje,mko,mjk", "faq:sure,renk,hijyen", "final", "live", "visit"]),
     dict(slug="kalici-oje-fiyatlari", code="ojefiyat", fam="tz-oje", wave="D1", status="tam", nav="Kalıcı oje fiyatları",
-         h1="Kalıcı Oje <em>Fiyatları</em>", lede="Randevu sistemimizdeki aktif menüden.", price="1.000 TL'den",
+         h1="Kalıcı Oje <em>Fiyatları</em>", lede="Randevu sistemimizdeki aktif menüden.", price=("oje", "'den"),
          hero=("video", "tirnak-orkide", "Bordo badem tırnaklar ve beyaz orkide; salonumuzda çekildi"), bar="Kalıcı oje · saatimi seç",
          scenes=["menu:oje,mko,mjk", "dahil", "kartela", "soz:oje", "faq:sure,renk,randevu", "final", "live", "visit"]),
     dict(slug="jel-tirnak", code="jel", fam="tz-oje", opt="mjk", wave="D2", status="ince", nav="Jel tırnak ve jel oje",
-         h1="Jel Tırnak ve <em>Jel Oje</em>", lede="Kendi tırnağınızın üstüne ince bir jel katmanı.", price="1.300 TL · manikürle",
+         h1="Jel Tırnak ve <em>Jel Oje</em>", lede="Kendi tırnağınızın üstüne ince bir jel katmanı.", price=("mjk", " · manikürle"),
          hero=("photo", "tirnak-lacivert-desen-k.webp", 1200, 1328, "Lacivert desenli jel destekli kalıcı oje"), bar="Jel güçlendirme · saatimi seç",
          scenes=["versus", "firca", "soz:oje", "menu:mjk,oje,mko", "faq:jel,sure,renk", "final", "live", "visit"]),
     dict(slug="tirnak-guclendirme", code="guclendir", fam="tz-oje", opt="mjk", wave="D2", status="cekim", nav="Tırnak güçlendirme",
-         h1="Tırnak <em>Güçlendirme</em>", lede="Kendi tırnağınız, ince bir jel katmanıyla.", price="1.300 TL · manikürle",
+         h1="Tırnak <em>Güçlendirme</em>", lede="Kendi tırnağınız, ince bir jel katmanıyla.", price=("mjk", " · manikürle"),
          hero=("video", "tirnak-hazirlik", "Eldivenli manikür hazırlığı; salonumuzda çekildi"), bar="Güçlendirme · saatimi seç",
          scenes=["katman", "hijyen", "soz:oje", "menu:mjk,mko", "faq:jel,sure,hijyen", "final", "live", "visit"]),
     dict(slug="protez-tirnak", code="protez", fam="tz-protez", wave="D1", status="tam", nav="Protez tırnak",
-         h1="Ankara Protez <em>Tırnak</em>", lede="Hayal ettiğiniz uzunluk ve şekil.", price="1.500 TL",
+         h1="Ankara Protez <em>Tırnak</em>", lede="Hayal ettiğiniz uzunluk ve şekil.", price=("mpk", ""),
          hero=("video", "tirnak-babyboomer", "Baby boomer ombre protez tırnak, altın varak; salonumuzda çekildi"), bar="Protez tırnak · saatimi seç",
          scenes=["sekil", "wall", "hijyen", "soz:protez", "how:protez", "menu:mpk,dolgu,cikar", "faq:protez,bakim,hijyen", "final", "live", "visit"]),
     dict(slug="protez-tirnak-modelleri", code="model", fam="tz-protez", wave="D1", status="tam", nav="Protez tırnak modelleri",
-         h1="Protez Tırnak <em>Modelleri</em>", lede="Beğendiğinize dokunun, saatinizi seçin.", price="1.500 TL",
+         h1="Protez Tırnak <em>Modelleri</em>", lede="Beğendiğinize dokunun, saatinizi seçin.", price=("mpk", ""),
          hero=("photo", "tirnak-3d-800.webp", 800, 1056, "3D çiçek ve inci detaylı pembe protez tırnak"), bar="Modelim · saatimi seç",
          scenes=["wall", "sekil", "soz:protez", "menu:mpk,art", "faq:model,art,protez", "final", "live", "visit"]),
     dict(slug="protez-tirnak-fiyatlari-ankara", code="pfiyat", fam="tz-protez", wave="D1", status="tam", nav="Protez tırnak fiyatları",
-         h1="Protez Tırnak <em>Fiyatları</em> Ankara", lede="Randevu sistemimizdeki aktif menüden.", price="1.500 TL",
+         h1="Protez Tırnak <em>Fiyatları</em> Ankara", lede="Randevu sistemimizdeki aktif menüden.", price=("mpk", ""),
          hero=("photo", "tirnak-gumus-1200.webp", 1200, 1600, "Gümüş simli ombre protez tırnak"), bar="Protez tırnak · saatimi seç",
          scenes=["menu:mpk,dolgu,cikar,tips,art", "belirler", "versus", "soz:protez", "faq:protez,ask,randevu", "final", "live", "visit"]),
     dict(slug="protez-tirnak-randevu", code="prandevu", fam="tz-protez", wave="D1", status="tam", nav="Protez tırnak randevusu",
-         h1="Protez Tırnak <em>Randevusu</em>", lede="Üç dokunuşta mesajınız hazır.", price="1.500 TL",
+         h1="Protez Tırnak <em>Randevusu</em>", lede="Üç dokunuşta mesajınız hazır.", price=("mpk", ""),
          hero=("video", "tirnak-lila", "Süt beyazı badem protez tırnak; salonumuzda çekildi"), bar="Saatimi seç",
          scenes=["inline", "soz:protez", "hijyen", "faq:randevu,protez,konum", "final", "visit"]),
     dict(slug="protez-tirnak-bakim-dolgu", code="dolgu", fam="tz-protez", opt="dolgu", wave="D2", status="ince", nav="Protez tırnak bakım ve dolgu",
-         h1="Protez Tırnak <em>Bakım ve Dolgu</em>", lede="Tırnağınız uzadıkça, bakımla tazelenir.", price="Fiyatı sorun",
+         h1="Protez Tırnak <em>Bakım ve Dolgu</em>", lede="Dört haftada bir, bakımla tazelenir.", price=("dolgu", ""),
          hero=("video", "tirnak-freze", "Freze ucuyla eski jelin alınması; salonumuzda çekildi"), bar="Bakım · saatimi seç",
          scenes=["saat", "foto:dolgu", "hijyen", "soz:protez", "menu:dolgu,mpk", "faq:bakim,ask,hijyen", "final", "live", "visit"]),
     dict(slug="protez-tirnak-cikartma", code="cikar", fam="tz-protez", opt="cikar", wave="D2", status="ince", nav="Protez tırnak çıkarma",
-         h1="Protez Tırnak <em>Çıkarma</em>", lede="Protezinizi özenle, adım adım alırız.", price="Fiyatı sorun",
+         h1="Protez Tırnak <em>Çıkarma</em>", lede="Protezinizi özenle, adım adım alırız.", price=("cikar", ""),
          hero=("video", "tirnak-freze", "Freze ucuyla eski jelin alınması; salonumuzda çekildi"), bar="Çıkarma · saatimi seç",
          scenes=["how:cikar", "foto:cikar", "hijyen", "soz:protez", "menu:cikar,mpk", "faq:cikar,ask,hijyen", "final", "live", "visit"]),
     dict(slug="tirnak-uzatma", code="uzatma", fam="tz-protez", opt="uzatma", wave="D1", status="tam", nav="Tırnak uzatma",
-         h1="Ankara Tırnak <em>Uzatma</em>", lede="Kısa, orta ya da uzun: seçim sizin.", price="1.500 TL · protezle",
+         h1="Ankara Tırnak <em>Uzatma</em>", lede="Kısa, orta ya da uzun: seçim sizin.", price=("mpk", " · protezle"),
          hero=("photo", "tirnak-uzun-kirmizi-k.webp", 1200, 1230, "Kırmızı uzun protez tırnak"), bar="Uzunluğum · saatimi seç",
          scenes=["sekil:uzunluk", "wall", "soz:protez", "menu:mpk,uzatma", "faq:uzunluk,protez,bakim", "final", "live", "visit"]),
     dict(slug="yeni-nesil-tips", code="tips", fam="tz-protez", opt="tips", wave="D2", status="cekim", nav="Yeni nesil tips",
-         h1="Yeni Nesil <em>Tips</em>", lede="Tırnak uzatmanın bir başka yolu.", price="Fiyatı sorun",
+         h1="Yeni Nesil <em>Tips</em>", lede="Tırnak uzatmanın bir başka yolu.", price=("tips", ""),
          hero=("video", "tirnak-krom", "Simli krom french badem tırnak; salonumuzda çekildi"), bar="Tips · saatimi seç",
          scenes=["versus", "wall", "soz:protez", "menu:tips,mpk", "faq:ask,uzunluk,randevu", "final", "live", "visit"]),
     dict(slug="ayak-protez-tirnak", code="ayak", fam="tz-protez", opt="ayak", wave="D2", status="cekim", nav="Ayak protez tırnak",
-         h1="Ayak Protez <em>Tırnak</em>", lede="Ayaklarınız da aynı özeni hak ediyor.", price="Fiyatı sorun",
+         h1="Ayak Protez <em>Tırnak</em>", lede="Ayaklarınız da aynı özeni hak ediyor.", price=("ayak", ""),
          hero=("photo", "tirnak-hijyen-2.webp", 720, 900, "Yıkanan aletler, salonun logolu havlusunda kuruyor"), bar="Ayak protez · saatimi seç",
          note="Ayak protez tırnak fotoğraflarımız çekim aşamasında; görsel, aletlerimizin hijyen sürecinden.",
          scenes=["hijyen", "foto:ayak", "soz:bakim", "menu:ayak,pedikur", "faq:ask,hijyen,randevu", "final", "live", "visit"]),
     dict(slug="cayyolu-protez-tirnak", code="cayyolu", fam="tz-protez", wave="D1", status="tam", nav="Çayyolu protez tırnak",
-         h1="Çayyolu Protez <em>Tırnak</em>", lede="Çayyolu'ndan ~2 km, Konutkent'te.", price="1.500 TL", semt="Çayyolu",
+         h1="Çayyolu Protez <em>Tırnak</em>", lede="Çayyolu'ndan ~2 km, Konutkent'te.", price=("mpk", ""), semt="Çayyolu",
          hero=("film",), bar="Çayyolu'ndan · saatimi seç",
          scenes=["yerel:Çayyolu", "wall", "soz:protez", "hijyen", "menu:mpk,dolgu,cikar", "faq:konum,protez,randevu", "final", "live", "visit"]),
     dict(slug="yasamkent-protez-tirnak", code="yasamkent", fam="tz-protez", wave="D1", status="tam", nav="Yaşamkent protez tırnak",
-         h1="Yaşamkent Protez <em>Tırnak</em>", lede="Yaşamkent'ten ~3 km, Konutkent'te.", price="1.500 TL", semt="Yaşamkent",
+         h1="Yaşamkent Protez <em>Tırnak</em>", lede="Yaşamkent'ten ~3 km, Konutkent'te.", price=("mpk", ""), semt="Yaşamkent",
          hero=("film",), bar="Yaşamkent'ten · saatimi seç",
          scenes=["yerel:Yaşamkent", "wall", "soz:protez", "hijyen", "menu:mpk,dolgu,cikar", "faq:konum,protez,randevu", "final", "live", "visit"]),
     dict(slug="manikur-ankara", code="manikur", fam="tz-bakim", opt="mko", wave="D1", status="tam", nav="Manikür",
-         h1="Ankara <em>Manikür</em>", lede="Önce hijyen, sonra güzellik.", price="1.100 TL · kalıcı ojeyle",
+         h1="Ankara <em>Manikür</em>", lede="Önce hijyen, sonra güzellik.", price=("mko", " · kalıcı ojeyle"),
          hero=("video", "tirnak-hazirlik", "Eldivenli manikür hazırlığı; salonumuzda çekildi"), bar="Manikür · saatimi seç",
          scenes=["hijyen", "atelier", "soz:bakim", "how:manikur", "menu:mko,manikur,mp", "faq:hijyen,renk,randevu", "final", "live", "visit"]),
     dict(slug="pedikur-ankara", code="pedikur", fam="tz-bakim", opt="pedikur", wave="D2", status="cekim", nav="Pedikür",
-         h1="Ankara <em>Pedikür</em>", lede="Ayaklarınız için ayrılmış bir saat.", price="Fiyatı sorun",
+         h1="Ankara <em>Pedikür</em>", lede="Ayaklarınız için ayrılmış bir saat.", price=("pedikur", ""),
          hero=("photo", "tirnak-hijyen-1.webp", 720, 900, "Metal aletler altın kâsede yıkanıyor"), bar="Pedikür · saatimi seç",
          note="Pedikür fotoğraflarımız çekim aşamasında; görsel, aletlerimizin hijyen sürecinden.",
          scenes=["hijyen", "soz:bakim", "menu:pedikur,mp,medped", "faq:hijyen,ask,randevu", "final", "live", "visit"]),
     dict(slug="medikal-pedikur", code="medped", fam="tz-bakim", opt="medped", wave="D2", status="cekim", nav="Medikal pedikür",
-         h1="Medikal <em>Pedikür</em>", lede="Hassas ayaklar için özenli bir bakım.", price="Fiyatı sorun",
+         h1="Medikal <em>Pedikür</em>", lede="Hassas ayaklar için özenli bir bakım.", price=("medped", ""),
          hero=("photo", "tirnak-hijyen-oda.webp", 720, 900, "Salonun sterilizasyon odası"), bar="Medikal pedikür · saatimi seç",
          note="Fotoğraf, salonumuzun sterilizasyon odası. Pedikür fotoğraflarımız çekim aşamasında.",
          scenes=["doktor", "hijyen", "soz:bakim", "menu:medped,pedikur", "faq:medikal,hijyen,ask", "final", "live", "visit"]),
     dict(slug="manikur-pedikur-fiyatlari", code="mpfiyat", fam="tz-bakim", opt="mko", wave="D2", status="tam", nav="Manikür pedikür fiyatları",
-         h1="Manikür Pedikür <em>Fiyatları</em>", lede="Randevu sistemimizdeki aktif menüden.", price="1.100 TL'den",
+         h1="Manikür Pedikür <em>Fiyatları</em>", lede="Randevu sistemimizdeki aktif menüden.", price=("mko", "'den"),
          hero=("photo", "tirnak-hijyen-4.webp", 720, 900, "Kişiye özel kapalı paketteki makas"), bar="Manikür · pedikür · saatimi seç",
          scenes=["menu:mko,manikur,pedikur,mp,medped", "hijyen", "soz:bakim", "faq:ask,hijyen,randevu", "final", "live", "visit"]),
     dict(slug="el-ayak-bakimi", code="elayak", fam="tz-bakim", opt="elayak", wave="D2", status="cekim", nav="El ve ayak bakımı",
-         h1="El ve Ayak <em>Bakımı</em>", lede="Eller ve ayaklar için bir ritüel.", price="Fiyatı sorun",
+         h1="El ve Ayak <em>Bakımı</em>", lede="Eller ve ayaklar için bir ritüel.", price=("elayak", ""),
          hero=("photo", "still-firca-1200.webp", 1200, 1600, "Fırçalar, tırnak bakım ürünleri ve altın tepsi"), bar="El & ayak · saatimi seç",
          note="El ve ayak bakımı fotoğraflarımız çekim aşamasında; görsel, salondaki ürün ve fırçalarımız.",
          scenes=["how:elayak", "hijyen", "soz:bakim", "menu:elayak,mko,mp", "faq:ask,hijyen,randevu", "final", "live", "visit"]),
@@ -274,7 +297,7 @@ def gold(label: str, attrs: str, icon: str = "arrow", cls: str = "") -> str:
 
 
 def chips(p: dict) -> str:
-    price = f'<span class="chip chip-in price" style="animation-delay:.08s">{esc(p["price"])}</span>'
+    price = f'<span class="chip chip-in price" style="animation-delay:.08s">{esc(page_price(p["price"]))}</span>'
     slot = '<span class="chip chip-in" style="animation-delay:.16s" data-slot-chip="tirnak"><span class="dot"></span> <span>Bugün müsait</span></span>'
     return f'<div class="chips">{RATING}{price}{slot}</div>'
 
@@ -380,7 +403,7 @@ def blk_firca() -> str:
 def blk_hijyen() -> str:
     steps = [("01", "Yıkama", "Kullanılan her metal alet önce yıkanır.", "tirnak-hijyen-1.webp", "Metal aletler altın kâsede yıkanıyor"),
              ("02", "Kurulama", "Temiz havluda kurutulur.", "tirnak-hijyen-2.webp", "Yıkanan aletler logolu havluda kuruyor"),
-             ("03", "Sterilizasyon", "Sterilizasyon cihazına girer.", "tirnak-hijyen-3.webp", "Aletler sterilizasyon cihazının tepsisinde"),
+             ("03", "Sterilizasyon", "Sterilizasyon cihazımızda tıbbi seviyede sterilize edilir.", "tirnak-hijyen-3.webp", "Aletler sterilizasyon cihazının tepsisinde"),
              ("04", "Kişiye özel paket", "Kapalı pakette bekler; paketiniz yanınızda açılır.", "tirnak-hijyen-4.webp", "Kişiye özel kapalı paketteki makas")]
     imgs = "".join(f'<img class="tz-hij-img{" on" if i == 0 else ""}" src="{M}{f}" alt="{esc(a)}" width="720" height="900" loading="lazy">' for i, (_, _, _, f, a) in enumerate(steps))
     lis = "".join(f'<li class="{"on" if i == 0 else ""}"><span class="n">{n}</span><div><b>{t}</b><p>{s}</p></div></li>' for i, (n, t, s, _, _) in enumerate(steps))
@@ -409,7 +432,7 @@ def blk_wall() -> str:
 
 
 SEKIL = [("oval", "Oval", "Kısa", "tirnak-yuvarlak-kirmizi-1200.webp", "Kırmızı oval tırnak"),
-         ("kare", "Kare", "Orta", "tirnak-kare-kirmizi-k.webp", "Kırmızı kare protez tırnak"),
+         ("kare", "Kare", "Orta", "tirnak-kare-kirmizi-k.webp", "Kırmızı kare tırnak"),
          ("uzun", "Uzun", "Uzun", "tirnak-uzun-kirmizi-k.webp", "Kırmızı uzun protez tırnak"),
          ("badem", "Badem", "Badem", "tirnak-badem-bordo-k.webp", "Bordo badem protez tırnak")]
 
@@ -425,10 +448,10 @@ def blk_sekil() -> str:
 
 
 def blk_versus() -> str:
-    cards = [("kalici-oje", "Kalıcı oje", "Kendi tırnağınıza renk", ["Ekleme yok", "75 dk", "1.000 TL'den"]),
-             ("tirnak-guclendirme", "Jel güçlendirme", "İnce bir jel katmanı", ["Kendi tırnağınızın üstüne", "90 dk · manikürle", "1.300 TL"]),
-             ("protez-tirnak", "Protez tırnak", "Uzunluk ve şekil", ["Uzunluk eklenir", "120 dk · manikür ve ojeyle", "1.500 TL"]),
-             ("yeni-nesil-tips", "Yeni nesil tips", "Uzatmanın başka yolu", ["Ayrıntıyı birlikte konuşalım", "Süre ve fiyat: WhatsApp'ta", "Fiyatı sorun"])]
+    cards = [("kalici-oje", "Kalıcı oje", "Kendi tırnağınıza renk", ["Ekleme yok", f"{dk('oje')} dk", tl("oje") + "'den"]),
+             ("tirnak-guclendirme", "Jel güçlendirme", "İnce bir jel katmanı", ["Kendi tırnağınızın üstüne", f"{dk('mjk')} dk · manikürle", tl("mjk")]),
+             ("protez-tirnak", "Protez tırnak", "Uzunluk ve şekil", ["Uzunluk eklenir", f"{dk('mpk')} dk · manikür ve ojeyle", tl("mpk")]),
+             ("yeni-nesil-tips", "Yeni nesil tips", "Uzatmanın başka yolu", ["Ayrıntıyı birlikte konuşalım"] + ([f"{dk('tips')} dk", tl("tips")] if "tips" in ROWS else ["Süre ve fiyat: WhatsApp'ta", "Fiyatı sorun"]))]
     out = "".join(f'<div class="vs-card"><span class="eyebrow">{e}</span><b>{t}</b><ul>{"".join(f"<li>{x}</li>" for x in li)}</ul>'
                   f'<a class="btn-line" href="#tirnak/{s}" data-go="tirnak/{s}" data-tz-place="karar">Sayfasına git →</a></div>' for s, e, t, li in cards)
     return (f'<div class="sec gutter"><div class="sec-head"><span class="eyebrow">Karar vermek için</span><h2>Oje mi, jel mi, <em>protez</em> mi?</h2>'
@@ -447,10 +470,10 @@ def blk_final() -> str:
 
 
 def blk_yol() -> str:
-    tiles = [("kalici-oje", "tirnak-lila", "Kalıcı oje", "1.000 TL'den"),
-             ("protez-tirnak", "tirnak-babyboomer", "Protez tırnak", "1.500 TL"),
+    tiles = [("kalici-oje", "tirnak-lila", "Kalıcı oje", tl("oje") + "'den"),
+             ("protez-tirnak", "tirnak-babyboomer", "Protez tırnak", tl("mpk")),
              ("nail-art-ankara", "tirnak-papatya", "Nail art", "Desene göre"),
-             ("manikur-ankara", "tirnak-hazirlik", "Manikür ve pedikür", "1.100 TL'den")]
+             ("manikur-ankara", "tirnak-hazirlik", "Manikür ve pedikür", tl("mko") + "'den")]
     out = "".join(f'<a class="tile" href="#tirnak/{s}" data-go="tirnak/{s}" data-tz-place="yol-{s.split("-")[0]}">'
                   f'<img class="tz-vp" src="{M}{v}-poster.webp" alt="" loading="lazy"><video class="auto-vid" muted playsinline loop preload="none" poster="{M}{v}-poster.webp" data-src="{M}{v}.mp4" aria-hidden="true"></video>'
                   f'<span class="tile-tag">Vitrin · canlı</span><span class="tile-txt"><b>{t}</b><span>{pr}</span></span></a>' for s, v, t, pr in tiles)
@@ -463,16 +486,13 @@ INCLUDES = {"atelier": blk_atelier, "atelier-sec": blk_atelier_sec, "kartela": b
 
 
 # ----------------------------------------------------------------------------------------------- per-page blocks
-def fmt_tl(p: int) -> str:
-    return f"{p:,}".replace(",", ".") + " TL"
-
-
 def blk_menu(p: dict, ids: list[str]) -> str:
     rows = []
     for i in ids:
         if i in ROWS:
             r = ROWS[i]
-            rows.append(f'<div class="mrow"><span class="nm">{esc(r["n"])}<small>{r.get("b", "")} · {r["d"]} dk</small></span><span class="ld"></span><span class="pr">{fmt_tl(r["p"])}</span></div>')
+            small = " · ".join(x for x in (r.get("b"), f'{r["d"]} dk' if r.get("d") else None) if x)
+            rows.append(f'<div class="mrow"><span class="nm">{esc(r["n"])}<small>{small}</small></span><span class="ld"></span><span class="pr">{fmt_tl(r["p"])}</span></div>')
         else:
             a = ASK[i]
             msg = f"Merhaba, {a['n'].lower()} fiyatını öğrenebilir miyim?"
@@ -527,15 +547,15 @@ def blk_doktor() -> str:
 
 
 def blk_dahil(p: dict) -> str:
-    cards = [("Kalıcı oje", "Renk kartelamızdan siz seçersiniz; 75 dk."), ("Manikürle", "Manikür ve kalıcı oje birlikte; 75 dk."),
-             ("Jel güçlendirmeyle", "Manikür, ince jel katmanı ve kalıcı oje; 90 dk."), ("Tasarım eklerseniz", "Nail art desene göre fiyatlanır; mesajla iletelim.")]
+    cards = [("Kalıcı oje", f"Renk kartelamızdan siz seçersiniz; {dk('oje')} dk."), ("Manikürle", f"Manikür ve kalıcı oje birlikte; {dk('mko')} dk."),
+             ("Jel güçlendirmeyle", f"Manikür, ince jel katmanı ve kalıcı oje; {dk('mjk')} dk."), ("Tasarım eklerseniz", "Nail art desene göre fiyatlanır; mesajla iletelim.")]
     out = "".join(f'<div class="vs-card"><b>{t}</b><p class="muted" style="margin:0;font-size:14px">{s}</p></div>' for t, s in cards)
     return f'<div class="sec gutter" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Ne dahil?</span><h2>Fiyatın <em>içinde</em> ne var?</h2></div><div class="versus tz-vs4">{out}</div></div>'
 
 
 def blk_belirler(p: dict) -> str:
     cards = [("Uzunluk ve şekil", "Seçtiğiniz uzunluk ve şekil uygulamayı belirler."), ("Tasarım", "Düz renk ya da nail art; desen fiyata eklenir."),
-             ("Bakım", "Sonraki bakım ve dolgu ayrı bir randevudur."), ("Menü", "Manikür, protez ve kalıcı oje birlikte 1.500 TL · 120 dk.")]
+             ("Bakım", f"Bakım ve dolgu {BAKIM_HAFTA} haftada bir, ayrı bir randevudur."), ("Menü", f"Manikür, protez ve kalıcı oje birlikte {tl('mpk')} · {dk('mpk')} dk.")]
     out = "".join(f'<div class="vs-card"><b>{t}</b><p class="muted" style="margin:0;font-size:14px">{s}</p></div>' for t, s in cards)
     return f'<div class="sec gutter" style="padding-top:0"><div class="sec-head"><span class="eyebrow">Fiyatı ne belirler?</span><h2>Dört <em>soru</em>, net bir fiyat.</h2></div><div class="versus tz-vs4">{out}</div></div>'
 
@@ -547,7 +567,7 @@ def blk_katman() -> str:
     return ('<div class="sec dark-band gutter"><div class="golden"><div class="tz-katman" data-tz-katman><svg viewBox="0 0 400 240" aria-hidden="true">'
             f'<rect class="k-skin" x="130" y="186" width="260" height="40" rx="20"/>{rows}</svg></div>'
             '<div class="sec-head" style="margin:0"><span class="eyebrow">Katman katman</span><h2>Kendi tırnağınız, <em>üstünde</em> ince bir jel.</h2>'
-            '<p>Jel güçlendirmede uzunluk eklenmez; doğal tırnağınızın üstüne ince bir jel katmanı ve kalıcı oje uygulanır. Menüde manikürle birlikte 90 dk.</p>'
+            f'<p>Jel güçlendirmede uzunluk eklenmez; doğal tırnağınızın üstüne ince bir jel katmanı ve kalıcı oje uygulanır. Menüde manikürle birlikte {dk("mjk")} dk.</p>'
             '<p class="hero-note" style="color:#968B76">Çizim temsilidir.</p></div></div></div>')
 
 
@@ -558,11 +578,12 @@ def blk_saat(p: dict) -> str:
             '<g class="s-plate"><path class="s-p" d="M140 214 Q200 194 260 214 L260 98 Q260 30 200 24 Q140 30 140 98Z"/>'
             '<path class="s-tip" d="M140 72 Q200 54 260 72 L260 98 Q260 30 200 24 Q140 30 140 72Z"/></g>'
             '<path class="s-cut" d="M132 226 Q200 200 268 226"/>'
-            '<text x="330" y="60" text-anchor="middle" class="s-w">0. hafta</text></svg>'
-            '<label class="tz-range"><span>Haftaları kaydırın</span><input type="range" min="0" max="4" step="1" value="0" aria-label="Hafta"></label></div>'
-            '<div class="sec-head" style="margin:0"><span class="eyebrow">Bakım saati</span><h2>Dipte bir <em>boşluk</em> belirdiyse.</h2>'
-            '<p>Doğal tırnak uzadıkça protez öne doğru ilerler, dipte kendi tırnağınız görünmeye başlar. Bakım zamanını uzmanımız söyler; bir fotoğraf yeterli.</p>'
-            '<p class="hero-note" style="color:#968B76">Çizim temsilidir; hafta sayısı kişiden kişiye değişir.</p></div></div></div>')
+            '<text x="330" y="60" text-anchor="middle" class="s-w">0. hafta</text><text x="394" y="88" text-anchor="end" class="s-due">BAKIM ZAMANI</text></svg>'
+            f'<label class="tz-range"><span>Haftaları kaydırın</span><input type="range" min="0" max="{BAKIM_HAFTA}" step="1" value="0" aria-label="Hafta"></label></div>'
+            f'<div class="sec-head" style="margin:0"><span class="eyebrow">Bakım saati</span><h2>Dipte bir <em>boşluk</em> belirdiyse.</h2>'
+            f'<p>Doğal tırnak uzadıkça protez öne doğru ilerler, dipte kendi tırnağınız görünmeye başlar. Bakım aralığımız {BAKIM_HAFTA} hafta; randevunuzu alırken bir sonrakini de ayırabilirsiniz. Daha erken bir boşluk fark ederseniz bir fotoğraf yeterli.</p>'
+            f'<div class="golden-actions">{gold("Bakım saatimi seç", "data-tz-plan data-tz-place=saat")}</div>'
+            '<p class="hero-note" style="color:#968B76">Çizim temsilidir; uzama hızı kişiden kişiye değişir.</p></div></div></div>')
 
 
 def blk_inline(p: dict) -> str:
