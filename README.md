@@ -2,6 +2,17 @@
 
 Web sitesi, Claude Artifact prototipi, geliştirme planları ve medya kütüphanesi için ortak çalışma deposu.
 
+## AI ajanları: önce buradan başla
+
+- İnsan/ajan handoff: [AI_HANDOFF.md](AI_HANDOFF.md)
+- Makine-okunur durum: [AI_CONTEXT.json](AI_CONTEXT.json)
+- Claude başlangıcı: [CLAUDE.md](CLAUDE.md)
+- Codex/diğer ajan kuralları: [AGENTS.md](AGENTS.md)
+- Medyayı açmadan sorgulama: `python3 scripts/ai_media_lookup.py summary`
+
+Ajanlar 548 işlenmiş dosyayı veya 100 ham videoyu topluca incelememeli. Önce
+manifest ve medya indeksinden en fazla 3–6 görsel ya da 1–3 video kısa listelemeli.
+
 ## Yapı
 
 - `website/index.html` — geliştirilebilir ve tarayıcıda açılabilir ATELİER prototipi
