@@ -142,8 +142,15 @@
     if (this.sens) s += " Cildim hassas.";
     return s;
   };
+  P.planWhen = function () {
+    return ["bu ay", "gelecek ay", "2 ay sonra"][this.start] || "bu ay";
+  };
   P.msg = function (place) {
     var rt = this.regText();
+    if (place === "plan-wa" && rt) {
+      var iv = this.interval();
+      return "Merhaba, lazer epilasyon planım: " + rt + ". 8 seans, " + iv[0] + "–" + iv[1] + " hafta arayla; " + this.planWhen() + " başlamak istiyorum. Fiyat ve uygun günleri öğrenebilir miyim?" + this.extras();
+    }
     var base = place === "ton-wa" ? "Merhaba, hassas cildim için lazer epilasyon ön görüşmesi istiyorum." :
       (rt ? "Merhaba, lazer epilasyon için fiyat ve plan almak istiyorum." : "Merhaba, lazer epilasyon hakkında bilgi almak istiyorum.");
     return base + (rt ? " Bölgeler: " + rt + "." : "") + this.extras();
@@ -167,14 +174,14 @@
     if (tot) {
       var sum = 0, known = 0;
       this.sel.forEach(function (k) { var r = self.mins(k); if (r) { sum += r.m; known++; } });
-      tot.innerHTML = known ? 'Menüdeki süreler toplamı <b>≈ ' + sum + ' dk</b>' + (known < this.sel.length ? " + paket" : "") : "";
+      tot.innerHTML = this.sel.length ? '<b>' + this.sel.length + ' bölge</b>' + (known ? ' · menüdeki süreler <b>≈ ' + sum + ' dk</b>' + (known < this.sel.length ? " + paket" : "") : "") + ' · <b>8 seans</b>' : "";
     }
     $$("[data-lz-wa]", root).forEach(function (a) { a.href = self.wa(self.msg(a.getAttribute("data-lz-wa"))); });
     var waLbl = $('[data-lz-wa="harita-wa"] .lz-lbl', root);
     if (waLbl) waLbl.textContent = this.sel.length ? this.sel.length + " bölgeyi WhatsApp'tan sor" : "WhatsApp'tan fiyat sor";
     var my = $("[data-lz-mybar]", root);
     if (my) { my.hidden = !this.sel.length; var c = $("[data-lz-mycount]", my); if (c) c.textContent = "Fiyat listem · " + this.sel.length + " kalem"; }
-    if (this.bar) { this.bar.wa.href = this.wa(this.msg("bar-wa")); $(".lz-lbl", this.bar.wa).textContent = this.sel.length ? this.sel.length + " bölge · fiyat sor" : "WhatsApp'tan fiyat sor"; }
+    if (this.bar) { this.bar.wa.href = this.wa(this.msg(this.sel.length ? "plan-wa" : "bar-wa")); $(".lz-lbl", this.bar.wa).textContent = this.sel.length ? "Planım · " + this.sel.length + " bölge" : "WhatsApp'tan fiyat sor"; }
     if (this.host.bar) this.host.bar(this.barText());
     this.renderCal();
     if (this.planOpen) this.renderPlan();
@@ -183,8 +190,8 @@
 
   /* ---------------- L1 hero ---------------- */
   P.initHero = function () {
-    var self = this, root = this.root, scan = $(".lz-scan", root);
-    if (scan && this.tier !== "C") requestAnimationFrame(function () { requestAnimationFrame(function () { scan.classList.add("go"); }); });
+    var self = this, root = this.root, stage = $(".lz-stage", root);
+    if (stage && this.tier !== "C") stage.classList.add("go");
     var o = openState(), chip = $("[data-lz-open]", root);
     if (chip) chip.innerHTML = '<i class="lz-dot' + (o.open ? "" : " off") + '"></i>' + o.txt;
     var v = $(".lz-hero-vid", root);
@@ -318,10 +325,16 @@
     if (this.tier === "C" || !el || !el.ownerSVGElement) return;
     var svg = el.ownerSVGElement, fx = $(".lz-fx", svg), bb;
     try { bb = el.getBBox(); } catch (e) { return; }
-    var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    c.setAttribute("cx", bb.x + bb.width / 2); c.setAttribute("cy", bb.y + bb.height / 2); c.setAttribute("r", Math.max(8, Math.min(bb.width, bb.height) / 2));
-    c.setAttribute("class", "lz-shot"); fx.appendChild(c);
-    setTimeout(function () { c.remove(); }, 900);
+    var NS = "http://www.w3.org/2000/svg", cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2, r = Math.max(8, Math.min(bb.width, bb.height) / 2);
+    var g = document.createElementNS(NS, "g"); g.setAttribute("class", "lz-shotg");
+    g.innerHTML = '<circle class="lz-flash" cx="' + cx + '" cy="' + cy + '" r="' + r * 1.4 + '"/>' +
+      '<circle class="lz-shot" cx="' + cx + '" cy="' + cy + '" r="' + r + '"/>' +
+      '<circle class="lz-shot lz-shot2" cx="' + cx + '" cy="' + cy + '" r="' + r + '"/>' +
+      [0, 60, 120, 180, 240, 300].map(function (a) { var rad = a * Math.PI / 180, x1 = cx + Math.cos(rad) * r * .9, y1 = cy + Math.sin(rad) * r * .9, x2 = cx + Math.cos(rad) * r * 2.1, y2 = cy + Math.sin(rad) * r * 2.1;
+        return '<line class="lz-spark" x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '"/>'; }).join("");
+    fx.appendChild(g);
+    if (navigator.vibrate) try { navigator.vibrate(12); } catch (e) {}
+    setTimeout(function () { g.remove(); }, 1000);
   };
   P.refreshMinutes = function () {
     /* Minutes come from the CRM menu at build time; refresh them from the live menu when it answers. */
@@ -377,7 +390,7 @@
   P.initCal = function () {
     var self = this, cal = $("[data-lz-cal]", this.root);
     if (!cal) return;
-    $$("[data-start]", cal).forEach(function (b) { b.addEventListener("click", function () { self.start = +b.getAttribute("data-start"); $$("[data-start]", cal).forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); self.renderCal(); }); });
+    $$("[data-start]", cal).forEach(function (b) { b.addEventListener("click", function () { self.start = +b.getAttribute("data-start"); $$("[data-start]", cal).forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); self.sync(); }); });
   };
   P.interval = function () {
     var face = 0, body = 0, self = this;
@@ -399,6 +412,26 @@
     var a = nodes[7].e, b = nodes[7].l;
     var when = TR_MON[a.getUTCMonth()] + (a.getUTCFullYear() !== b.getUTCFullYear() ? " " + a.getUTCFullYear() : "") + (a.getUTCMonth() === b.getUTCMonth() && a.getUTCFullYear() === b.getUTCFullYear() ? "" : " – " + TR_MON[b.getUTCMonth()]) + " " + b.getUTCFullYear();
     $("[data-lz-calsum]", cal).textContent = "8. seans ≈ " + when + " · " + iv[0] + "–" + iv[1] + " hafta arayla (" + iv[2] + (this.sel.length ? "" : ", bölge seçince güncellenir") + ")";
+    this.renderPlanCard(cal, iv);
+  };
+  var GUAR = ["tepeden", "tum-vucut-4", "full-vucut", "kemer-ustu"];
+  P.renderPlanCard = function (cal, iv) {
+    var self = this, reg = $("[data-lz-pc-reg]", cal);
+    if (!reg) return;
+    if (!this.sel.length) {
+      reg.innerHTML = '<a href="#lz-harita" data-track-label="at-' + this.code + '-plan-harita">Haritadan bölge seçin</a>';
+      var a = $("a", reg);
+      a.addEventListener("click", function (e) { var t = document.getElementById("lz-harita"); if (!t) return; e.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" }); });
+    } else reg.innerHTML = this.sel.map(function (k) { return "<span>" + esc(self.name(k)) + "</span>"; }).join("");
+    var sum = 0, known = 0;
+    this.sel.forEach(function (k) { var r = self.mins(k); if (r) { sum += r.m; known++; } });
+    $("[data-lz-pc-min]", cal).textContent = known ? "Menüdeki süreler ≈ " + sum + " dk / seans" + (known < this.sel.length ? " + paket" : "") : (this.sel.length ? "Pakete göre" : "Bölge seçince görünür");
+    $("[data-lz-pc-iv]", cal).textContent = "8 seans · " + iv[0] + "–" + iv[1] + " hafta arayla (" + iv[2] + ")";
+    var badge = $("[data-lz-pc-badge]", cal);
+    if (badge) badge.hidden = !this.sel.some(function (k) { return GUAR.indexOf(k) >= 0 || (k.indexOf("pkg:") === 0 && /bitiş garantili/i.test(k)); });
+    cal.classList.toggle("has", this.sel.length > 0);
+    var lbl = $('[data-lz-wa="plan-wa"] .lz-lbl', cal);
+    if (lbl) lbl.textContent = this.sel.length ? "Planı WhatsApp'a gönder" : "WhatsApp'tan plan iste";
   };
 
   /* ---------------- L5 device ---------------- */

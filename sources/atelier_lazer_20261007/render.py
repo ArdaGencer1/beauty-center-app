@@ -367,10 +367,10 @@ def journey_svg(code: str = "lz") -> str:
 
 # --------------------------------------------------------------------------------------------- pages
 PAGES = {
-    "hub": {"slug": "laser-signature", "code": "lazer", "g": "kadin", "hero": ("img", "lazer-5", None), "focal": "64% 58%",
+    "hub": {"slug": "laser-signature", "code": "lazer", "g": "kadin", "hero": ("video", "lazer-film-jel", None), "focal": "50% 72%",
             "lede": "Lasermach, 3 dalga boyu, soğutmalı başlık. Bölgenizi seçin, planı birlikte yapalım.",
             "order": ["map", "journey", "cal", "device", "reels", "reviews", "hygiene", "price", "family", "visit"]},
-    "kamp": {"slug": "laser-signature-kampanya", "code": "lzkamp", "g": "kadin", "hero": ("img", "lazer-5", None), "focal": "64% 58%",
+    "kamp": {"slug": "laser-signature-kampanya", "code": "lzkamp", "g": "kadin", "hero": ("video", "lazer-film-jel", None), "focal": "50% 72%",
              "lede": "Lasermach, 3 dalga boyu, soğutmalı başlık. Bölgenizi seçin, planı birlikte yapalım.",
              "order": ["map", "journey", "cal", "device", "reels", "reviews", "hygiene", "price", "family", "visit"]},
     "fiyat": {"slug": "lazer-epilasyon-fiyatlari-ankara", "code": "lzfiyat", "g": "kadin", "hero": ("img", "lazer-ekran", None), "focal": "42% 32%",
@@ -499,8 +499,8 @@ def page_html(key: str, media: str, h1: str, link) -> str:
     if kind == "video":
         poster = f"{media}{slug}-poster.webp"
         first = still_img(still, "lz-poster lz-kb") if still else (
-            f'<img class="lz-poster" src="{poster}" alt="{esc(HERO_MEDIA[slug])}" width="720" height="1280" fetchpriority="high" decoding="async">')
-        stage = first + f'<video class="lz-hero-vid" muted playsinline loop preload="none" data-src="{media}{slug}.mp4" aria-hidden="true"></video>'
+            f'<img class="lz-poster" style="object-position:{P.get("focal", "50% 50%")}" src="{poster}" alt="{esc(HERO_MEDIA[slug])}" width="720" height="1280" fetchpriority="high" decoding="async">')
+        stage = first + f'<video class="lz-hero-vid" style="object-position:{P.get("focal", "50% 50%")}" muted playsinline loop preload="none" data-src="{media}{slug}.mp4" aria-hidden="true"></video>'
         hero_img = f"{media}{still}-800.webp" if still else poster
     else:
         stage = still_img(slug, "lz-poster lz-kb")
@@ -514,7 +514,7 @@ def page_html(key: str, media: str, h1: str, link) -> str:
     h.append(f'<div class="lz" data-lz-page="{key}" data-lz-code="{code}" data-lz-g="{g}" data-lz-media="{media}">')
     # ---------------------------------------------------------------- L1 hero
     h.append(f'''<header class="lz-hero" id="lz-ust">
-  <div class="lz-stage">{stage}<div class="lz-scan" aria-hidden="true"></div><div class="lz-glow" aria-hidden="true"></div><div class="lz-scrim" aria-hidden="true"></div>
+  <div class="lz-stage">{stage}<div class="lz-veil" aria-hidden="true"></div><div class="lz-scan" aria-hidden="true"></div><div class="lz-glow" aria-hidden="true"></div><div class="lz-scrim" aria-hidden="true"></div>
   </div>
   <div class="lz-copy">
     <span class="lz-over">Konutkent · Çankaya · Lasermach diode</span>
@@ -602,12 +602,24 @@ def journey_section(code):
 
 def cal_section(code):
     return f'''<section class="lz-sec lz-calsec" id="lz-takvim">
-  {sec_head("Seans takvimi", "8 seanslık <em>yolculuğunuz</em>", "Seçtiğiniz bölgelere göre tahmini takvim. Yüz bölgelerinde 4–6, vücutta 6–8 hafta arayla.")}
-  <div class="lz-cal" data-lz-cal>
+  {sec_head("Lazer planım", "8 seanslık <em>planınız</em>", "Haritada seçtiğiniz bölgeler burada plana dönüşür. Yüz bölgelerinde 4–6, vücutta 6–8 hafta arayla.")}
+  <div class="lz-cal lz-plancard" data-lz-cal>
+    <div class="lz-pc-top"><span class="lz-pc-brand">Lazer Planım</span><span class="lz-pc-sub">Selda Gençer Beauty Center · Konutkent</span></div>
+    <dl class="lz-pc-rows">
+      <div><dt>Bölgeler</dt><dd data-lz-pc-reg><a href="#lz-harita" data-lz-scroll data-track-label="at-{code}-plan-harita">Haritadan bölge seçin</a></dd></div>
+      <div><dt>Süre</dt><dd data-lz-pc-min>Bölge seçince görünür</dd></div>
+      <div><dt>Plan</dt><dd data-lz-pc-iv>8 seans · 6–8 hafta arayla</dd></div>
+    </dl>
+    <p class="lz-pc-badge" data-lz-pc-badge hidden>Bitiş garantili paket seçeneği</p>
+    <span class="lz-pc-lab">Başlangıç</span>
     <div class="lz-seg lz-start" role="group" aria-label="Başlangıç"><button type="button" data-start="0" aria-pressed="true" data-track-label="at-{code}-takvim-baslangic">Bu ay</button><button type="button" data-start="1" aria-pressed="false" data-track-label="at-{code}-takvim-baslangic">Gelecek ay</button><button type="button" data-start="2" aria-pressed="false" data-track-label="at-{code}-takvim-baslangic">2 ay sonra</button></div>
     <ol class="lz-track" data-lz-track></ol>
     <p class="lz-calsum" data-lz-calsum>8 seans, vücut bölgelerinde 6–8 hafta arayla.</p>
-    <p class="lz-fine">Tahminidir; uzmanınız cilt ve kıl yapınıza göre ayarlar.</p>
+    <div class="lz-actions">
+      {wa_link(code, "plan-wa", "Merhaba, lazer epilasyon için fiyat ve plan almak istiyorum.", "lz-btn-gold lz-shine", "WhatsApp'tan plan iste")}
+      <button type="button" class="lz-btn-line" data-lz-plan data-track-label="at-{code}-plan-gun">{ICON["cal"]}<span>Gün de seçeyim</span></button>
+    </div>
+    <p class="lz-fine">Tahminidir; uzmanınız cilt ve kıl yapınıza göre ayarlar. Fiyatı bölgelerinize göre WhatsApp'tan iletiyoruz.</p>
   </div>
 </section>'''
 
@@ -674,7 +686,7 @@ def price_card(code, link):
     <h3>Kişiye özel fiyat</h3>
     <p>Fiyat; bölgeye, seans sayısına ve pakete göre değişir. Tek seans ve 8 seanslık paket seçenekleri var; <b>bitiş garantili paket</b> seçeneğimiz de var.</p>
     <div class="lz-actions">
-      {wa_link(code, "fiyat-wa", "Merhaba, lazer epilasyon için fiyat almak istiyorum.", "lz-btn-gold", "Fiyatımı WhatsApp'tan iste")}
+      {wa_link(code, "fiyat-wa", "Merhaba, lazer epilasyon için fiyat almak istiyorum.", "lz-btn-gold", "WhatsApp'tan fiyat iste")}
       <a class="lz-btn-line" href="{link('fiyat')}#lz-menu" data-track-label="at-{code}-fiyat-menu"><span>Bölge menüsünün tamamı</span>{ICON["arrow"]}</a>
     </div>
   </div>

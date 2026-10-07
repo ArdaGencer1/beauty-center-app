@@ -117,6 +117,35 @@ Artifact ve canlı site değişmedi).
 - “Tahminidir; uzmanınız cilt ve kıl yapınıza göre ayarlar.” notu kalır.
 - Kart yapışkan barın metnini de günceller: “Planım (3 bölge) → WhatsApp”.
 
+**Durum (10-07): Dalga 2 tamamlandı** (yalnız `sources/atelier_lazer_20261007/`;
+Artifact ve canlı site değişmedi).
+
+- W1: `hub` ve `kamp` hero'su `lazer-film-jel` (poster 13,8 KB LCP; video
+  `load` sonrası, A/B kademesi). Açılış: koyu perde, 1,3 sn'lik lazer
+  taraması perdeyi yukarıdan aşağı kaldırır, H1 0,8 sn'de yanar. C kademesi
+  ve azaltılmış harekette perde yok.
+- W2: silüet yeniden çizilmedi, **yeniden stillendirildi**: altın kontur,
+  saydam gövde, noktalı bölge dikişleri (manken görünümü kalktı). Atış
+  efekti: parlama + iki halka + 6 kıvılcım, 12 ms titreşim. Canlı sayaç:
+  “2 bölge · menüdeki süreler ≈ 60 dk · 8 seans”. Yüze yakınlaşma geçişi
+  (View Transition) yapılmadı; Dalga 3'e kaldı.
+- W3: takvim bölümü “Lazer Planım” kartına dönüştü: bölgeler, süre,
+  8 seans + aralık, başlangıç, 8. seans tahmini, rozet (yalnız CRM'deki
+  4 bitiş garantili paket ve fiyat menüsündeki garantili kalemler),
+  “Planı WhatsApp'a gönder” (`plan-wa`) ve “Gün de seçeyim” (`plan-gun`).
+  Yapışkan bar seçim varken aynı plan mesajını gönderir (“Planım · N bölge”).
+- Örnek mesaj: “Merhaba, lazer epilasyon planım: koltuk altı, tüm bacak
+  (kadın). 8 seans, 6–8 hafta arayla; gelecek ay başlamak istiyorum. Fiyat
+  ve uygun günleri öğrenebilir miyim? [W-…]”
+- `bindLeadTracking` her senkronizasyonda yeniden çağrılmaz (tanımı canlı
+  `script.js`'te; tekilleştirme bilinmediği için çift ölçüm riski alınmadı).
+- Doğrulama: 7 sayfa × 320/390/430/1400 px, 2 bölge seçiliyken: JS hatası 0,
+  yatay taşma 0, plan kartı çakışması 0, kesilen düğme etiketi 0 (≤360 px
+  için düğme yazısı küçültüldü), etiketsiz `a`/`button` 0, [W-] taşımayan
+  WhatsApp bağlantısı 0. Yalnız yüz seçiminde aralık 4–6 hafta doğrulandı.
+- Not: Masaüstü hero'da 720p video yarım ekrana büyütülüyor; hafif yumuşak
+  görünür. Yeni çekim kararı (§6.2) bunu çözer.
+
 ### Dalga 3 — Kanıt bölümlerini parlat
 
 **W4 · Işığın Yolculuğu, tek sahne**
