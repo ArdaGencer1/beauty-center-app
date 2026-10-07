@@ -10,11 +10,14 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Yayındaki son sürüm **Artifact v4**'tür (`1791383911-8f6e`: v3 + vücut ailesi,
-  başka oturum); depoda `artifact-v4.html`. **Artifact v5** (v4 + Cilt Atlası)
-  depoda hazır (`artifact-v5.html` = `website/index.html`) ama **henüz
-  yayınlanmadı**; yayın sahip onayı bekliyor. Yayından önce Artifact'i yeniden
-  oku; sürüm değiştiyse `a4_build.py` tabanını güncelleyip yeniden derle.
+- Yayındaki sürüm **Artifact v6** = Artifact sürüm 12, `1791386588-7eb6`
+  (v3 + vücut + lazer + tırnak kartela, başka oturumlar + Cilt Atlası). Depoda
+  `artifact-v6.html` = `website/index.html` (yayın iskeleti olmadan). Artifact'e
+  aynı anda birden çok oturum yayın yapıyor: yayından hemen önce yeniden oku ve
+  değişiklikleri o sürümün üzerine birleştir.
+- Yayın servisi sayfayı kendi `<!doctype…><body>` iskeletiyle sarar ve geri
+  okumada bu iskelet döner. Geri okunan dosyayı olduğu gibi yayınlama: önce
+  iskeleti sök (ilk satır ve son `</body></html>`), yoksa iskelet ikilenir.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.
@@ -39,7 +42,7 @@ inceleyerek token harcamasını önlemektir.
 | Medya üreticisi | `sources/media_ig_20261007/build_media.py` | Crop, hizalama, poster, video ve varyant üretim kuralları. |
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
-| Artifact anlık görüntüleri | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v{3,4,5}.html` | v4 = yayındaki sürüm; v5 = v4 + Cilt Atlası (yayın bekliyor). |
+| Artifact anlık görüntüleri | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v{3,4,5,6}.html` | v4/v5 = başka oturumların ara sürümleri; v6 = yayındaki sürüm (Cilt Atlası dahil). |
 | Cilt Atlası kaynakları | `sources/atelier_cilt_20261007/` | `build_cilt_media.py`, `a4_build.py`, `shoot_cilt.cjs`, `src/`, `data/cilt_media.json`. |
 | Güncel planlar | `plans/claude/20261007/` | Lazer, PMU, Cilt Atlası ve Cilt Atlası v5 uygulama/güncelleme planı. |
 
@@ -132,7 +135,7 @@ Hazır olanlar: 24 PMU manifest kaydı ve bunlardan üretilmiş varyantlar.
 Kalanlar: `pmu_build.py`, `pmu_pack.py`, yeni vitrin/sahneler, `shoot2.mjs`,
 Artifact yayını ve plandaki doğrulamalar.
 
-### 3. Cilt Atlası — 24 sayfa prototipte hazır, yayın bekliyor
+### 3. Cilt Atlası — 24 sayfa yayında (Artifact sürüm 12)
 
 Plan: `plans/claude/20261007/planlayal-m-mutable-rossum.md`; uygulama ve
 güncelleme planı: `plans/claude/20261007/cilt-atlasi-hikaye-v5.md`.
@@ -141,7 +144,7 @@ Hazır olanlar: 11 yeni cilt medyası (9 video, 1 kaydırma filmi sprite'ı, 1
 döndürülmüş önce/sonra çifti); sayfa motoru; 24 alt sayfa (`#cilt/<slug>`) ve
 hub'da atlas; çıkarılan kareler kaldırıldı; tarayıcı doğrulaması 50/50.
 
-Kalanlar: Artifact'e yayın (sahip onayı), yeni CRM kalemlerinin doğrulanması,
+Kalanlar: yeni CRM kalemlerinin doğrulanması,
 yalnız sunucuda duran kadro fotoğrafları (#1, #3, #5, #7…), personel çekimleri,
 canlıya taşıma ve TagCtx kapısı. Ayrıntı ve sıra v5 planında (G0–G6).
 

@@ -21,8 +21,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 ART = REPO / "prototypes" / "claude-artifact" / "WmsLiPPTLdnrjSrdYSXcLM"
-BASE = ART / "artifact-v4.html"  # yayındaki sürüm 1791383911-8f6e (v3 + vücut ailesi, başka oturum)
-OUT_ART = ART / "artifact-v5.html"
+BASE = ART / "artifact-v5.html"  # yayındaki sürüm 1791385473-59b6 (v3 + vücut + lazer ailesi + tırnak kartela, başka oturumlar)
+OUT_ART = ART / "artifact-v6.html"
 OUT_WEB = REPO / "website" / "index.html"
 MEDIA = REPO / "website"
 
@@ -59,7 +59,7 @@ STORIES_CILT = (
 QUIZ_LINK = ("(CA_OPT2SLUG[o.id]?'<button class=\"btn-line\" style=\"justify-content:center;margin-top:8px\" data-go=\"cilt/'"
              "+CA_OPT2SLUG[o.id]+'\" data-track-label=\"at-cilt-test-sayfa\">'+o.n+' sayfası →</button>':'')+")
 
-PROTO_NOTE = (" <b>Cilt Atlası v4:</b> 24 cilt alt sayfası prototipte açılır (<code>#cilt/…</code>); yalnızca salonun gerçek "
+PROTO_NOTE = (" <b>Cilt Atlası:</b> 24 cilt alt sayfası prototipte açılır (<code>#cilt/…</code>); yalnızca salonun gerçek "
               "medyası. Personel çekimi bekleyen sayfalar: leke, hollywood, paris, dermabrazyon, hydra elite, hassas cilt, "
               "antioksidan, dudak, kararma, sırt, koltuk altı, dirsek, anti aging, göz çevresi. Yeni 5 menü kalemi (ton, saten, "
               "dudak, sırt, koltuk altı) ile alan/bölge fiyatları planın CRM matrisinden alındı; canlıya almadan önce CRM'den "
@@ -78,7 +78,22 @@ def build() -> str:
     css = (HERE / "src" / "cilt.css").read_text(encoding="utf-8")
     js = (HERE / "src" / "cilt_pages.js").read_text(encoding="utf-8") + (HERE / "src" / "cilt.js").read_text(encoding="utf-8")
 
-    h = sub1(h, "</head>", f'<style id="cilt-atlas">\n{css}</style>\n</head>', "css")
+    # Yayın servisi sayfayı kendi belge iskeletiyle sarar; geri okunan taban bu iskeleti içerir.  Çift iskelet
+    # olmasın diye sökülür (ilk satır <!doctype…<body>, son satır </body></html>).
+    if h.startswith("<!doctype html><html><head><meta charset=utf8>"):
+        first, rest = h.split("\n", 1)
+        if not first.rstrip().endswith("<body>"):
+            sys.exit("iskelet: ilk satır beklenen biçimde değil")
+        h = rest.rstrip("\n")
+        if not h.endswith("</body></html>"):
+            sys.exit("iskelet: son satır beklenen biçimde değil")
+        h = h[: -len("</body></html>")].rstrip("\n") + "\n"
+    if "<!doctype" in h.lower():
+        sys.exit("iskelet: ikinci <!doctype> kaldı")
+    m0 = re.match(r"<title>[^<]*</title>\n", h)
+    if not m0:
+        sys.exit("yama 'css': sayfa <title> ile başlamıyor")
+    h = h[: m0.end()] + f'<style id="cilt-atlas">\n{css}</style>\n' + h[m0.end():]
 
     # --- hub: kahraman (çıkarılan yarım yüz karesi yerine gerçek LED döngüsü)
     m = re.search(r'<div class="half-stage" id="halfStage".*?</button>\s*</div>', h, re.S)

@@ -1,4 +1,4 @@
-/* ---------- CİLT ATLASI v4: alt sayfa motoru ----------
+/* ---------- CİLT ATLASI: alt sayfa motoru ----------
    Yol: #cilt/<slug> (tabanın genel görünüm/parametre yolu).  Alt sayfalar cilt görünümünün içinde açılır; böylece S.view "cilt" kalır ve davetiye,
    alt çubuk, [W-] kodu ve sayaç olduğu gibi çalışır.  Her buton data-track-label="at-<kod>-<yer>" taşır. */
 var CA={cur:null,film:null,obs:[]};

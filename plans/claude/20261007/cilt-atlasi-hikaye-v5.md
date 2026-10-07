@@ -27,7 +27,7 @@ Başlangıç durumu:
 | Stil (`ca-` öneki) | `sources/atelier_cilt_20261007/src/cilt.css` |
 | Artifact derleyicisi (taban: v4; her yama tam 1 eşleşme) | `sources/atelier_cilt_20261007/a4_build.py` |
 | Tarayıcı doğrulaması | `sources/atelier_cilt_20261007/shoot_cilt.cjs` |
-| Çıktı | `website/index.html` = `prototypes/.../artifact-v5.html` |
+| Çıktı | `website/index.html` = `prototypes/.../artifact-v6.html` (yayındaki sürüm 12) |
 
 ### Hikâye yapısı (her alt sayfa)
 
@@ -100,7 +100,7 @@ BASE=http://127.0.0.1:8766/index.html NODE_PATH=$(npm root -g) \
 
 | # | İş | Kim / koşul | Çıktı |
 |---|---|---|---|
-| G0 | **Artifact'e yayın** (v5) | Sahip onayı (bu oturumda otomatik izin denetimi durdurdu) | Yayın öncesi Artifact yeniden okunur; v4'ten farklıysa `a4_build.py` tabanı yeni sürümle güncellenip yeniden derlenir. 21 dosya eklenir, 14 dosya kaldırılır; sonra yayın tekrar okunur |
+| G0 | ~~Artifact'e yayın~~ **Yapıldı** | Sahip onayıyla | Sürüm 12 (`1791386588-7eb6`): 21 dosya eklendi, 14 dosya kaldırıldı (322 dosya). Geri okundu: tek iskelet, içerik birebir. Yayın sırasında lazer ve tırnak oturumları da yayın yaptı; değişiklikleri korundu |
 | G1 | CRM doğrulaması | Sahip / CRM | Yeni 5 kalem (ton, saten, dudak, sırt, koltuk altı) ve yenileme bölge fiyatları (3.500/4.000/6.000) ile ton alan fiyatları (4.500/5.500/6.500) planın CRM matrisinden alındı; canlı CRM'den yeniden doğrula. Sırt 3 fiyatının (3.500/6.500/7.000) yarım/tam eşleşmesi |
 | G2 | Sunucudaki fotoğraflar (D1 tamamlama) | Sunucu oturumu | Planın kadrosundaki şu kareler yalnızca sunucuda: #1 gerçek yarım yüz 18063357971188976 (hub kahramanı olmalı), #3 17945921837942670 (kaydırıcı), #4 17913554493238260, #5 cilt odası 17884915872588889 (fiyatlar ve vücut stand-in'i), #7 Space Oxygen 17894387157352959 (dermabrazyon, hydra), #8 Dermaplus rafı 18133083652567287, #12 göz çevresi 18161360971378712, #13 erkek şakak 18093388681773950, #14/#15 burun gözenek, #18 oda köşesi, #19 kalp karesi, #20 köpük, #22 olgun cilt. `build_media.py` + manifest ile işle, `website/m/ig/`'ye koy, `CM`'ye ekle, sayfalarda `hero`/`proof`/perde medyasını değiştir |
 | G3 | Personel çekimi (D3) | Salon; çekim listesi ana plan §3 | P1: leke, dermabrazyon/hydra (Space Oxygen), hollywood/paris, uzman portresi. P2: sırt, koltuk altı, dirsek, kararma, antioksidan, dudak, hassas. Rıza (KVKK). Gelince yalnızca `CM` + sayfa `hero/proof` alanı değişir, `shoot:true` kaldırılır |
@@ -108,4 +108,9 @@ BASE=http://127.0.0.1:8766/index.html NODE_PATH=$(npm root -g) \
 | G5 | Canlı siteye taşıma | Sahip onayı + `--check` | `render.py` benzeri statik HTML (SEO için H1/metin sunucuda), canlı slug'lar; ana plan §6'daki canlı hatalar (cilt-inceltme şablon metni, "8 seans", Dermaplus ekran görüntüleri, og:image, ödünç fiyatlar, sırt sayfasındaki yüz) |
 | G6 | TagCtx kapısı | Sunucu | `./run tag_ctx.py audit --record`, `diff`, `verify --pages <cilt sayfaları>`, `patches/verify_tags.sh` |
 
-Önerilen sıra: **G0 → G1 → G2 → G4 → G3 → G5 → G6.**
+Önerilen sıra: **G1 → G2 → G4 → G3 → G5 → G6** (G0 tamamlandı).
+
+## 5. Yayın notu
+
+- `a4_build.py` cilt yamalarını cilt öncesi bir tabana uygular. Yayındaki sürüm artık Cilt Atlası'nı içerdiği için sonraki cilt değişiklikleri doğrudan `src/` dosyalarından ve yayındaki sürüm üzerinde yapılmalı (yamalar ikinci kez uygulanamaz, derleyici bunu 0/2 eşleşme hatasıyla durdurur).
+- Geri okunan sayfa yayın iskeletini içerir; yayından önce sökülür (bkz. `AI_HANDOFF.md`).
