@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-07",
+  "read_first": "AI_HANDOFF.md",
+  "artifact": {
+    "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
+    "continue_existing": true,
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
+    "repository_snapshot_version": 3
+  },
+  "media": {
+    "selected_items": 111,
+    "processed_files": 548,
+    "raw_videos": 100,
+    "repository_manifest": "sources/media_ig_20261007/manifest.json",
+    "repository_index": "website/m/ig/media_index.json",
+    "server_manifest": "patches/media_ig_20261007/manifest.json",
+    "server_index": "patches/media_ig_20261007/out/images/ig/media_index.json",
+    "server_originals": "/var/www/seldagencerbeauty.com/all_api_meta/instagram_exports/20261006-191757Z/media",
+    "metadata_source": "/var/www/seldagencerbeauty.com/all_api_meta/instagram.db",
+    "forbidden_metadata_source": "media.json",
+    "family_counts": {
+      "tirnak": 25,
+      "pmu": 24,
+      "lazer": 15,
+      "cilt": 13,
+      "kirpik": 12,
+      "salon": 9,
+      "kas": 7,
+      "still": 5,
+      "bolgesel": 1
+    },
+    "visual_review_limit": {
+      "images": 6,
+      "videos": 3
+    }
+  },
+  "plans": [
+    {
+      "key": "lazer",
+      "status": "partial_advanced",
+      "priority": 1,
+      "path": "plans/claude/20261007/https-panel-seldagencerbeauty-com-new-cu-wiggly-adleman.md",
+      "ready": [
+        "15 selected media records",
+        "render.py",
+        "src/lazer.css",
+        "src/lazer.js",
+        "CRM/navigation/review data"
+      ],
+      "remaining": [
+        "Artifact v4 build and publish to the same URL",
+        "live patch build.py",
+        "screenshots and checks",
+        "mobile/desktop and CTA tests",
+        "owner-approved live apply"
+      ]
+    },
+    {
+      "key": "pmu",
+      "status": "partial_media_ready",
+      "priority": 2,
+      "path": "plans/claude/20261007/pasted-content-id-81ae-dosya-glistening-pancake.md",
+      "ready": [
+        "24 selected media records",
+        "processed media variants"
+      ],
+      "remaining": [
+        "pmu_build.py",
+        "pmu_pack.py",
+        "new showcases and scenes",
+        "shoot2.mjs",
+        "Artifact publish and verification"
+      ]
+    },
+    {
+      "key": "cilt",
+      "status": "planned_mostly_unimplemented",
+      "priority": 3,
+      "path": "plans/claude/20261007/planlayal-m-mutable-rossum.md",
+      "ready": [
+        "media research",
+        "page/media matrix",
+        "edit recipe",
+        "shoot list",
+        "wave plan",
+        "13 legacy manifest records"
+      ],
+      "remaining": [
+        "media v2",
+        "page engine",
+        "25 pages in D1-D3",
+        "staff shoots",
+        "replace placeholders",
+        "verification"
+      ]
+    }
+  ],
+  "hard_rules": [
+    "Do not create a new Artifact",
+    "Do not bulk-open processed media or raw videos",
+    "Filter manifest and media_index before visual review",
+    "Use instagram.db, never media.json",
+    "Do not invent before/after results, prices, guarantees or claims",
+    "Do not commit secrets, personal data or instagram.db",
+    "Do not apply to the live site without explicit owner approval"
+  ],
+  "completion_gates": [
+    "published same Artifact URL and read back",
+    "zero broken media references",
+    "zero browser console errors",
+    "zero mobile horizontal overflow",
+    "mobile and desktop screenshots reviewed",
+    "WhatsApp/phone CTA and W-code tracking verified",
+    "Artifact file limit respected",
+    "live patch dry-run/check passed"
+  ]
+}
