@@ -16,6 +16,26 @@
     "snapshot_base_note": "Artifact version 16 (1791388726-c3e0: nail, brow 'perde', 5 laser subpages, Cilt Atlasi and 'mobil-duzen' sessions) with the body additions removed; build.py without the mobile layer reproduces version 16 byte for byte",
     "rebase": "Several sessions publish this Artifact. Before publishing body/mobile changes: read the live index.html, then python3 sources/atelier_vucut_20261007/rebase.py LIVE.html --rev $(git log -1 --format=%h -- sources/atelier_vucut_20261007) --out prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-taban-<id>.html, point build.py BASE at it, build, test, publish"
   },
+  "measurement": {
+    "system": "TagCtx",
+    "runbook": "TAGCTX_RUNBOOK.md",
+    "cli": "tag_ctx.py",
+    "deploy_gate": "patches/verify_tags.sh",
+    "baseline": "tagctx-baseline.json",
+    "required_after_changes_to": [
+      "HTML or JavaScript",
+      "CTA, forms, WhatsApp or phone links",
+      "Consent Mode",
+      "GTM",
+      "conversion and attribution code"
+    ],
+    "completion_commands": [
+      "./run tag_ctx.py audit --record",
+      "./run tag_ctx.py diff",
+      "./run tag_ctx.py verify --pages CHANGED_PAGES",
+      "patches/verify_tags.sh CHANGED_PAGES"
+    ]
+  },
   "media": {
     "selected_items": 111,
     "processed_files": 568,
@@ -143,7 +163,8 @@
     "Use instagram.db, never media.json",
     "Do not invent before/after results, prices, guarantees or claims",
     "Do not commit secrets, personal data or instagram.db",
-    "Do not apply to the live site without explicit owner approval"
+    "Do not apply to the live site without explicit owner approval",
+    "Do not declare a site or tracking change complete until TagCtx passes"
   ],
   "completion_gates": [
     "published same Artifact URL and read back",
@@ -153,7 +174,8 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ],
   "mobile_layer": {
     "source": [

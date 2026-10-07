@@ -10,6 +10,8 @@ Her web sitesi, Artifact, fotoğraf veya video işinden önce:
 6. Instagram için `instagram.db` kullan; `media.json` kullanma.
 7. Bitiş kapılarının tamamı geçmeden planı “tamamlandı” sayma.
 8. Açık sahip onayı olmadan canlı siteye uygulama yapma.
+9. HTML/JS, CTA, form, WhatsApp/telefon, Consent Mode, GTM, attribution veya dönüşüm kodu değişirse `TAGCTX_RUNBOOK.md` dosyasını uygula.
+10. TagCtx `audit --record`, `diff`, runtime `verify` ve `patches/verify_tags.sh` geçmeden ölçümün korunmuş olduğunu söyleme.
 
 Başlangıç komutları:
 
@@ -17,4 +19,6 @@ Başlangıç komutları:
 python3 scripts/ai_media_lookup.py summary
 python3 scripts/ai_media_lookup.py search lazer --family lazer --limit 6
 python3 scripts/ai_media_lookup.py show lazer-film-jel
+./run tag_ctx.py audit
+./run tag_ctx.py verify
 ```

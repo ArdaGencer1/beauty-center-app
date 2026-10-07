@@ -20,6 +20,9 @@ inceleyerek token harcamasını önlemektir.
 - Gerçek olmayan önce/sonra, stok görsel, başka uzmana ait iş, fiyat uydurma,
   sonuç garantisi veya doğrulanmamış iddia ekleme.
 - `.env`, erişim anahtarı, kişisel veri veya `instagram.db` Git'e konmaz.
+- HTML/JS, CTA, form, WhatsApp/telefon bağlantısı, Consent Mode, GTM veya
+  dönüşüm koduna dokunan her işten sonra `TAGCTX_RUNBOOK.md` izlenir ve
+  `patches/verify_tags.sh` geçmeden ölçümün korunduğu söylenmez.
 
 ## Kaynak haritası
 
@@ -239,6 +242,8 @@ gerçek işlem videoları ve dürüst süreç anlatımı kullanılır.
 - WhatsApp/telefon CTA ve `[W-]` izleme davranışı doğrulandı.
 - Artifact dosya sınırı aşılmadı; PMU planındaki bilinen sınır 255 dosyadır.
 - Canlı site için önce dry-run/`--check`; açık sahip onayı olmadan `--apply` yok.
+- Site/tracking değiştiyse TagCtx `audit --record`, `diff` ve runtime `verify`
+  geçti; yeni kritik ölçüm bulgusu yok.
 
 ## Repo aktarım notu
 

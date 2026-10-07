@@ -1,0 +1,55 @@
+name: TagCtx live measurement guard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "website/**"
+      - "prototypes/**"
+      - "tag_ctx.py"
+      - "adsai/tag_*.py"
+      - "tagtools/**"
+      - "patches/verify_tags.sh"
+      - "requirements-tagctx.txt"
+      - ".github/workflows/tagctx-live.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tagctx-live
+  cancel-in-progress: true
+
+jobs:
+  live-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-tagctx.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: tagtools/package-lock.json
+
+      - name: Install TagCtx Python dependencies
+        run: python -m pip install -r requirements-tagctx.txt
+
+      - name: Install browser probe
+        working-directory: tagtools
+        run: |
+          npm ci
+          PLAYWRIGHT_BROWSERS_PATH="$PWD/browsers" npx playwright install --with-deps chromium
+
+      - name: Verify live measurement without sending test hits
+        run: python tag_ctx.py verify --json
