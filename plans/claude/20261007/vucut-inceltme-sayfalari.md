@@ -31,9 +31,13 @@ Sahip planı onayladı ve şunları söyledi:
 - **"sen oralara orijinal olmayanları koy, en son sunucuya geçireceğiz"** → kendi çekimi olmayan sayfalara temsilî görsel/çizim konur ("Temsilî görsel / Temsilî çizim" etiketiyle); sunucu adımları (540 px, IG başlık araması, canlı) en sona kalır.
 - Yüzü kısmen görünen Slim Tone yüz videosu, sahibin 2026-10-06 tarihli genel izniyle ("en iyilerini kullan sıkıntı yok") kullanıldı.
 
-**Yayın:** Aynı Artifact'e **sürüm 5** (`1791382773-9c80`) yayınlandı ve geri okundu (yayınlanan gövde yerel derlemeyle bayt bayt aynı).
-Taban, bu sırada başka bir oturumun yayınladığı tırnak sürümüdür (`artifact-v4-tirnak.html`, 22 tırnak sayfası); vücut değişiklikleri onun üstüne birleştirildi, tırnak sayfaları korunarak test edildi.
-Kaynak: `sources/atelier_vucut_20261007/` (`build.py`, `src/vucut.css`, `src/vucut.js`); anlık görüntü `prototypes/.../artifact-v5.html`.
+**Yayın:** Aynı Artifact'e önce **sürüm 5** (`1791382773-9c80`), kaş düzeltmesiyle **sürüm 7** (`1791383911-8f6e`) yayınlandı; ikisi de geri okundu (yayınlanan gövde yerel derlemeyle bayt bayt aynı).
+Taban, başka bir oturumun yayınladığı tırnak sürümüdür: sürüm 5 için `artifact-v4-tirnak.html` (22 tırnak sayfası), sürüm 7 için `artifact-v6-tirnak-taban.html` (sürüm 6'daki T13 bakım randevusu dahil, vücut eklemeleri çıkarılmış). Vücut değişiklikleri onun üstüne birleştirildi, tırnak sayfaları korunarak test edildi.
+Kaynak: `sources/atelier_vucut_20261007/` (`build.py`, `src/vucut.css`, `src/vucut.js`); anlık görüntü `prototypes/.../artifact-v7.html`.
+
+**Üçüncü tur (2026-10-07):** Sahip açık sorulara **"tam bilmiyorum"** dedi ve kaş düzeltmesini onayladı.
+- Açık sorular (bkz. 6) açık kalır. `em`, `heykeltras`, `popo`, `pasif`, `catlak` sayfaları teyide kadar temsilî görsel/çizimle durur; fiyat yazılmaz, "Ön görüşme" CTA'sı kalır. Cevaplar salon kayıtlarından, cihaz faturalarından veya personelden alınmalı.
+- Kaş sayfasında manifestin başka uzmana ait diye dışladığı `kas-cift-3` (IG `18516297502030856`) kaldırıldı. Altın Oran aynası salonun kendi kına sonrası fotoğrafına (`kas-kina-sonra-800.webp`) geçti, ölçü noktaları o kaşa göre yeniden yerleştirildi. Galeride 3 çift kaldı. İki `kas-cift-3` dosyası Artifact'ten silindi (sürüm 7'de 291 dosya).
 Ekran görüntüleri: `plans/claude/20261007/vucut-sayfalar-mobil.jpg`.
 
 | Görünüm | Canlı slug | Kahraman | Durum |
@@ -183,7 +187,7 @@ python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 | Dalga | İçerik | Yayın |
 |---|---|---|
 | **V0** (bu çalışma, **tamam**) | Ham video ön elemesi (74), medya v1 (10 kalem / 20 dosya), `build_vucut.py`, `manifest_vucut.json`, `triage_videos.tsv`, `ai_media_lookup.py` vücut desteği, bu plan | Depo |
-| **V1** (**tamam**, sürüm 5) | Sayfa motoru + gerçek medyalı 4 sayfa: `bolgesel-incelme` (hub, Bölge Haritası), `emler`, `lenf-drenaj`, `slim-tone`; salon kutucuğu güncellemesi | Aynı Artifact |
+| **V1** (**tamam**, sürüm 5; güncel sürüm 7) | Sayfa motoru + gerçek medyalı 4 sayfa: `bolgesel-incelme` (hub, Bölge Haritası), `emler`, `lenf-drenaj`, `slim-tone`; salon kutucuğu güncellemesi | Aynı Artifact |
 | **V2** (**tamam**, sürüm 5; temsilî görsel/çizimle) | Kalan 5 sayfa: teyide göre `heykeltras` / `g5-masaji` / `popo-bakimi` (#3 ile ya da stand-in), `pasif-jimnastik` ve `catlak` dürüst stand-in + "çekim bekliyor" rozeti | Aynı Artifact |
 | **V3** | Sunucu adımları (bkz. 7) + çekimler geldikçe yalnız `manifest_vucut.json` güncellenir → yeniden derle → yayınla | Aynı Artifact |
 | Canlı | Sahip onayı + dry-run / `--check`; onaysız `--apply` yok | Canlı site |
@@ -194,7 +198,7 @@ python3 scripts/ai_media_lookup.py search "" --family vucut --limit 10
 
 ## 6. Sahibe sorulacaklar
 
-Yanıtlananlar (2026-10-07): 1 (siyah başlık = G5), 3 (sonuç = Slim Tone + G5 + lenf drenaj programı), 6 (genel izin 2026-10-06). Açık kalanlar: 2, 4, 5, 7, 8 ve **EM vücut bakımı Slim Tone ile aynı cihaz mı?**
+Yanıtlananlar (2026-10-07): 1 (siyah başlık = G5), 3 (sonuç = Slim Tone + G5 + lenf drenaj programı), 6 (genel izin 2026-10-06). Açık kalanlar: 2, 4, 5, 7, 8 ve **EM vücut bakımı Slim Tone ile aynı cihaz mı?** Sahip bunlara üçüncü turda "tam bilmiyorum" dedi; temsilî görseller kalır, sorular personele veya salon kayıtlarına yöneltilmeli.
 
 1. `vucut-roller`'daki siyah silindir başlıklı cihazın adı ne: G5 mi, vakumlu roller mı, heykeltraş mı? Hangi sayfalarda gösterilebilir (G5, heykeltraş, popo)?
 2. Sehpadaki cihaz (`vucut-cihaz-masa`) Slim Tone mu? Slim Tone vücutta da uygulanıyor mu?

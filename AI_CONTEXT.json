@@ -5,15 +5,16 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v5.html",
-    "repository_snapshot_version": 5,
-    "published_version_id": "1791382773-9c80",
-    "snapshot_base": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v4-tirnak.html",
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v7.html",
+    "repository_snapshot_version": 7,
+    "published_version_id": "1791383911-8f6e",
+    "snapshot_base": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v6-tirnak-taban.html",
     "file_limits": {
       "per_publish": 255,
       "per_version": 511,
-      "files_in_version_5": 293
-    }
+      "files_in_version_7": 291
+    },
+    "snapshot_base_note": "Artifact version 6 (1791383614-b96f, another session's nail T13 update) with the body additions removed; build.py without KAS_PATCHES reproduces version 6 byte for byte"
   },
   "media": {
     "selected_items": 111,
@@ -114,20 +115,21 @@
     },
     {
       "key": "vucut",
-      "status": "published_artifact_v5_server_pending",
+      "status": "published_artifact_v7_server_pending",
       "priority": 4,
       "path": "plans/claude/20261007/vucut-inceltme-sayfalari.md",
       "ready": [
         "74 raw videos triaged (triage_videos.tsv)",
         "10 body media items in website/m/ig (fam vucut); 15 files published",
         "owner decisions 2026-10-07: black roller head = G5, tower device = Slim Tone, program = Slim Tone + G5 + lymph drainage",
-        "9 body pages in Artifact version 5 (sources/atelier_vucut_20261007/build.py)",
+        "9 body pages in the Artifact since version 5; current version 7 (sources/atelier_vucut_20261007/build.py)",
+        "kas page: excluded kas-cift-3 (another artist) replaced by kas-kina-sonra-800 in the golden-ratio mirror, gallery 3 pairs, kas-cift-3 files removed from the Artifact (owner approved 2026-10-07)",
         "QA: 0 overflow, 0 script errors, CTA/W-code verified locally",
-        "published page read back and byte-identical to build"
+        "published page read back and byte-identical to build (version 7)"
       ],
       "remaining": [
-        "owner: EM = Slim Tone?, cart device, heykeltras, pasif jimnastik, CRM prices, catlak protocol",
-        "server: instagram_context.py caption search, 540px pair rebuild, live page audit",
+        "owner answered 'tam bilmiyorum' (2026-10-07) to: EM = Slim Tone?, cart device, heykeltras, pasif jimnastik, CRM prices, catlak protocol; stand-ins stay until salon records or staff confirm",
+        "server: instagram_context.py caption search, 540px pair rebuild, live page audit (incl. whether the live kas page uses kas-cift-3)",
         "staff shoots for pasif, catlak, popo, heykeltras, lenf (worn)",
         "live patch dry-run/check and owner-approved apply"
       ]

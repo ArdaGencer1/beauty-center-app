@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""ATELİER · Vücut ailesi -- yayındaki Artifact'e 9 vücut sayfasını ekler (v5).
+"""ATELİER · Vücut ailesi -- yayındaki Artifact'e 9 vücut sayfasını ekler; kaş sayfasındaki dışlanmış fotoğrafı çıkarır (Artifact 7. sürüm).
 
-Girdi : prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v4-tirnak.html
-        (yayındaki sürüm 1791382406-9153: v3 + başka bir oturumun eklediği 22 tırnak sayfası; birebir)
+Girdi : prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v6-tirnak-taban.html
+        (yayındaki 6. sürüm 1791383614-b96f'den vücut eklemeleri çıkarılmış hâli: v3 + başka bir oturumun 22 tırnak
+        sayfası ve T13 bakım randevusu. artifact-v4-tirnak.html (1791382406-9153) ile farkı yalnızca o oturumun
+        tırnak değişiklikleridir; KAS_PATCHES olmadan derlenen çıktı 1791383614-b96f ile birebir aynıdır.)
 Çıktı : website/index.html                   açılabilir site (tam belge)
-        prototypes/.../artifact-v5.html      yayınlanan sürümün depodaki anlık görüntüsü
+        prototypes/.../artifact-v7.html      yayınlanan 7. sürümün depodaki anlık görüntüsü (v5 = kaş düzeltmesinden önceki kendi yayınımız)
         --publish DIR                        Artifact'e yüklenecek gövde (yayın iskeleti çıkarılmış)
 
 Yaptıkları:
@@ -28,7 +30,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 SNAP = REPO / "prototypes" / "claude-artifact" / "WmsLiPPTLdnrjSrdYSXcLM"
-BASE = SNAP / "artifact-v4-tirnak.html"
+BASE = SNAP / "artifact-v6-tirnak-taban.html"
 SITE = REPO / "website"
 sys.path.insert(0, str(REPO / "sources" / "atelier_lazer_20261007"))
 import render as LZ  # noqa: E402  (yalnızca SHAPES / HAIR / smooth / mirror kullanılır)
@@ -137,13 +139,32 @@ PATCHES = [
      '  if(v==="lazer"){ initRegions(); initPairs("galLazer","lazer"); }\n  if(VUCUT_BY[v]) initVucut(v);\n'),
     ("function boot(){\n  S.world=", "function boot(){\n  buildVucut();\n  S.world="),
 ]
+# Kaş sayfası (sahip onayı 2026-10-07): manifestin "başka uzmana ait" diye dışladığı kas-cift-3 (IG 18516297502030856)
+# Altın Oran Aynası'ndan ve galeriden çıkar. Aynanın yerine salonun kendi "altın oran · kına" sonucu gelir; kaşın yönü aynı
+# (baş sağda, kuyruk solda), ölçü noktaları bu fotoğrafın 800x500 kapak kırpımına göre yeniden konumlandı.
+KAS_PATCHES = [
+    ('<img src="m/ig/kas-cift-3-sonra-800.webp" alt="Altın oran ölçü çizgileriyle kaş" width="800" height="500" loading="lazy">',
+     '<img src="m/ig/kas-kina-sonra-800.webp" alt="Altın oran ölçü çizgileriyle kaş, salonumuzda yapıldı" width="800" height="534" loading="lazy">'),
+    ('<path class="g-line" pathLength="1" d="M830 900 L602 209"/>', '<path class="g-line" pathLength="1" d="M830 900 L715 194"/>'),
+    ('<path class="g-line" pathLength="1" d="M830 900 L300 50"/>', '<path class="g-line" pathLength="1" d="M830 900 L452 59"/>'),
+    ('<path class="g-line" pathLength="1" d="M830 900 L-5 188"/>', '<path class="g-line" pathLength="1" d="M830 900 L-17 224"/>'),
+    ('<circle class="g-ring d1" cx="615" cy="248" r="13"/><circle class="g-ring d2" cx="330" cy="98" r="13"/><circle class="g-ring d3" cx="42" cy="228" r="13"/>',
+     '<circle class="g-ring d1" cx="722" cy="238" r="13"/><circle class="g-ring d2" cx="470" cy="100" r="13"/><circle class="g-ring d3" cx="18" cy="252" r="13"/>'),
+    ('<circle class="g-dot d1" cx="615" cy="248" r="9"/><circle class="g-dot d2" cx="330" cy="98" r="9"/><circle class="g-dot d3" cx="42" cy="228" r="9"/>',
+     '<circle class="g-dot d1" cx="722" cy="238" r="9"/><circle class="g-dot d2" cx="470" cy="100" r="9"/><circle class="g-dot d3" cx="18" cy="252" r="9"/>'),
+    ('<text class="g-lbl d1" x="640" y="214" text-anchor="end">BAŞLANGIÇ</text>', '<text class="g-lbl d1" x="760" y="296" text-anchor="end">BAŞLANGIÇ</text>'),
+    ('<text class="g-lbl d2" x="352" y="70">KAVİS</text>', '<text class="g-lbl d2" x="494" y="74">KAVİS</text>'),
+    ('<text class="g-lbl d3" x="30" y="300">BİTİŞ</text>', '<text class="g-lbl d3" x="24" y="306">BİTİŞ</text>'),
+    ('var KAS_PAIRS=[["kas-cift-2","Kaş alımı"],["kas-cift-3","Kaş tasarımı"],["kas-kina","Altın oran · kına"],["kas-laminasyon","Kaş laminasyonu"]];',
+     'var KAS_PAIRS=[["kas-cift-2","Kaş alımı"],["kas-kina","Altın oran · kına"],["kas-laminasyon","Kaş laminasyonu"]];'),
+]
 CSS_ANCHOR = '</style>\n\n<div class="wrap" lang="tr">'
 JS_ANCHOR = "/* ---------- boot ---------- */"
 
 
 def build() -> str:
     html = BASE.read_text(encoding="utf-8")
-    for old, new in PATCHES:
+    for old, new in PATCHES + KAS_PATCHES:
         n = html.count(old)
         if n != 1:
             raise SystemExit(f"yama {n} kez eşleşti (1 olmalı): {old[:80]}")
@@ -180,8 +201,8 @@ def main() -> int:
     if a.check:
         return 0
     (SITE / "index.html").write_text(html, encoding="utf-8")
-    (SNAP / "artifact-v5.html").write_text(html, encoding="utf-8")
-    print(f"  -> {SITE / 'index.html'}\n  -> {SNAP / 'artifact-v5.html'}")
+    (SNAP / "artifact-v7.html").write_text(html, encoding="utf-8")
+    print(f"  -> {SITE / 'index.html'}\n  -> {SNAP / 'artifact-v7.html'}")
     if a.publish:
         head_end = html.index("</head><body>\n") + len("</head><body>\n")
         body = html[head_end:].rstrip()
