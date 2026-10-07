@@ -1,0 +1,3 @@
+# Python bytecode caches (created when TagCtx tests run)
+__pycache__/
+*.pyc
