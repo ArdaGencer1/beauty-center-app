@@ -1,5 +1,7 @@
 # KAŞ VE YÜZ "Hikâye": 5 sayfa, storytelling scroll (plan, 2026-10-07)
 
+**Durum:** sahip planı onayladı (2026-10-07). Sahip kararları bölüm 7'de.
+
 ## Bağlam
 
 Sahip, menüdeki **Kaş ve yüz** ailesinin bütün sayfalarının ATELİER
@@ -32,7 +34,8 @@ konteynerden uç nokta 403 verdi; fiyatlar sunucuda okunacak. Okunana kadar sahn
 fiyat yerine "Fiyat menüde" bağlantısı durur; fiyat uydurulmaz.
 
 **Yorumlar.** Prototipte `f:"kas"` etiketli 7 Google yorumu var; çoğu "Ebru Nur
-Hanım"ı ve "altın oran"ı anıyor. Bunlar olduğu gibi kullanılır. Yüz alımı için
+Hanım"ı ve "altın oran"ı anıyor. Bunlar müşterinin yazdığı gibi kullanılır;
+uzman adı ayrıca öne çıkarılmaz, portre kullanılmaz (sahip: gerek yok). Yüz alımı için
 ayrı yorum yoksa olmayan yorum varmış gibi gösterilmez.
 
 ---
@@ -67,8 +70,8 @@ Manifest ve `media_index.json` ile ön elendi; yalnız bu 6 öğe açıldı.
 | `kas-cift-2` (18092748737430504) | 2048×1365 yarımlar | Gür, dağınık kaş + beyaz haritalama macunu → temiz, şekilli kaş. **En güçlü dönüşüm.** | Uyanış dönüşümü 01 ve hikâyenin "Okuma" perdesi | İki yarı farklı ölçekte → `align` (göz kapağı kıvrımı + burun kökü; işlem görmeyen noktalar). Alt şerit ve etiket için ortak kırpım (üst ~%68). Altyazı dürüst: "Haritalama sonrası, alım öncesi". |
 | `kas-kina` (18196341943375941) | 1448×965 yarımlar | Sol yarı gerçek "önce" değil, **beyaz macunla haritalama anı**; sağ yarı kınalı, düz, önden temiz sonuç. | Hikâyenin "Haritalama" ve "Alım" perdeleri; sağ yarı **Altın Oran Aynası'nın yeni tabanı** | Etiket için ortak kırpım (üst ~%68). Aynı seans, aynı danışan olduğundan perde geçişinde süpürme ile birleştirilebilir. |
 | `kas-profil` (17879042364617421) | dikey, 800×1066 çıktı | Yatakta uzanan danışan, kapalı göz, yandan; altın oran kaş. Keskin, sıcak ışık. | **Mobil kahraman** (4:5) ve **Final perde** | Alttaki "ALTIN ORAN KAŞ" hapı ve imza kırpılır (yaklaşık x %15–100, y %5–82 → 4:5). Kaşın üstündeki SG monogramı **kalır** (kıl üstünde silme = sonucu değiştirmek). |
-| `kas-laminasyon` (18088049695997551) | **1080×540**, yumuşak | Aşağı dönük ince kıllar → yukarı taranmış, kahverengi, laminasyonlu kaş. "Önce" üstten kesik. | `kas-laminasyonu` için **ince** kanıt; daha iyisi bulunana kadar kahraman | Büyütme yok: en fazla 800w. Hafif `unsharp`, ortak renk ayarı. |
-| `kas-3-adim` (18040684901410337) | 1335×555 | Önce · laminasyon · sonuç, 3 bant. **3. bantta yabancı hesap filigranı ("@refreshed…") okunuyor.** | **Kullanılmayacak.** Manifest `excluded` listesine eklenir; sahibe sorulur. | — |
+| `kas-laminasyon` (18088049695997551) | **1080×540**, yumuşak | Aşağı dönük ince kıllar → yukarı taranmış, kahverengi, laminasyonlu kaş. "Önce" üstten kesik. | `kas-laminasyonu` galerisinde ikinci kanıt | Büyütme yok: en fazla 800w. Hafif `unsharp`, ortak renk ayarı. |
+| `kas-3-adim` (18040684901410337) | 1335×555 bantlar | Önce · laminasyon uygulaması · sonuç, aynı danışan, 3 bant. 3. bantta kaşın üst sınırında soluk "@refreshed…" yazısı var; **sahip: başka bir yer değil, edit hatası → kullanılacak.** | **`kas-laminasyonu` Tarama perdelerinin gerçek fotoğrafları** (3 bant = 3 perde) | Yazı yalnız harf biçimli maskeyle ve yalnız cilt piksellerinde temizlenir (inpaint); kıllara dokunulmaz. Kutu `delogo` denendi: kılları bulandırdı, kullanılmaz. Kanıt temiz değilse yalnız 1. ve 2. bant kullanılır, sonuç `kas-laminasyon`dan gelir. |
 
 **Açılmadan bırakılanlar (kural sınırı):**
 
@@ -76,8 +79,9 @@ Manifest ve `media_index.json` ile ön elendi; yalnız bu 6 öğe açıldı.
   kullanıyor. Pudralama (kalıcı makyaj) ise kaş alımı sayfasında **sonuç gibi
   gösterilemez**. Sahip netleştirene kadar yalnız PMU'da kalır.
 - 17986864907913512: PMU'dan "laminasyon ve lifting, PMU değil" diye dışlanmıştı.
-  `kas-laminasyonu` için en güçlü kahraman adayı olabilir; sunucuda 1 kez açılıp
-  doğrulanır (bkz. 1b).
+  **Sahip: güzelse kullanılsın.** Depoda yok; sunucuda 1 kez açılıp doğrulanır.
+  Güzelse `kas-laminasyonu` kahramanı olur ve manifeste `kas-lam-lifting` olarak
+  eklenir (PMU dışlaması geçerli kalır).
 
 ### 1b. Video: kaş ailesinde seçilmiş video yok
 
@@ -89,7 +93,7 @@ sunucuda metin araması yapılır:
 ```bash
 python3 /var/www/seldagencerbeauty.com/all_api_meta/instagram_context.py --search "kaş alımı"
 # aynı komut: "altın oran", "laminasyon", "kına", "yüz alımı", "ip ile", "iple",
-#             "ağda", "bıyık", "dudak üstü", "çene", "Ebru"
+#             "cımbız", "bıyık", "dudak üstü", "çene"
 ```
 
 Sonuçlar yalnız 720p+ yerel ham videolarla kesiştirilir. Her sayfa için **en fazla
@@ -103,7 +107,7 @@ Aranan anlar (varsa kaydırmaya bağlı film olur, yoksa çekim listesine gider)
 | Cımbız veya iple alım yakın plan | "Alım" perdesi |
 | Kına sürme ve silme | "Kına" bandı |
 | Laminasyonda kılların fırçayla yukarı taranması | `kas-laminasyonu` "Tarama" filmi |
-| İple yüz alımı (threading) | Yüz alımı ailesinin kahramanı |
+| İple yüz alımı ve cımbızla ince düzeltme | Yüz alımı ailesinin kahramanı |
 
 Seçilen her video için mevcut `build_media.py` alanları kullanılır: `trim`,
 `poster_t`, `yuz`. Film için 36 kare, 540×960, 4×3 atlas (PMU planındaki
@@ -116,8 +120,8 @@ Durum değerleri: **tam** = gerçek sonuç kanıtı var · **ince** = zayıf · 
 | Sayfa | Kahraman | İmza sahnesi | Kanıt / galeri | Durum |
 |---|---|---|---|---|
 | `kas-alimi` (merkez) | `kas-altin-oran` slider (masaüstü), `kas-profil` (mobil 4:5) | **Bir Kaş, Beş Perde** (kaydırmalı hikâye) + Altın Oran Aynası (`kas-kina` sonra) | `kas-cift-2`, `kas-altin-oran`, `kas-kina` | tam |
-| `kas-laminasyonu` | 17986864907913512 (doğrulanırsa), yoksa `kas-laminasyon` | **Tarama** (SVG kıllar kaydırdıkça yukarı taranır, "temsili" etiketli) + "Hangisi bana göre?" | `kas-laminasyon` | ince → çekim P1 |
-| `yuz-alimi` | Altın çizgi SVG yüz portresi + `still-altin` (17880458079585542) | **Yüz Haritası** (bölgeye dokun → yöntem, süre, CRM fiyatı, sayfa) | — | çekim P1 |
+| `kas-laminasyonu` | 17986864907913512 (güzelse), yoksa `kas-3-adim` 3. bant | **Tarama**: `kas-3-adim`'in 3 gerçek bandı + SVG fırça izi + "Hangisi bana göre?" | `kas-laminasyon` | tam (videosu çekim P1) |
+| `yuz-alimi` | Altın çizgi SVG yüz portresi + `still-altin` (17880458079585542) | **Yüz Haritası** (bölgeye dokun → ip ve cımbız, süre, CRM fiyatı, sayfa) | — | çekim P1 |
 | `cene-alimi` | Aynı motor, çene seçili | Yüz Haritası + **"Kalıcı çözüm?" köprüsü** → `yuz-lazer` (`lazer-film-cene`, "Yüz lazer epilasyon · salonumuzda çekildi" etiketli) | — | çekim P1 |
 | `dudakustu-alimi` | Aynı motor, dudak üstü seçili | Yüz Haritası + "Kaç dakika?" zaman çizgisi (CRM süresi) + lazer köprüsü | — | çekim P1 |
 
@@ -184,7 +188,7 @@ alta duran statik kartlara döner.
    (`P.ref` = "Uyanış 02 · altın oran").
 4. **KINA BANDI.** `kas-kina` sonra yakın plan; CRM'de kına kalemi varsa seçenek
    çipi olarak eklenir, yoksa yalnız anlatım.
-5. **SÖZ.** 7 kaş yorumu, Ebru Nur Hanım vurgusuyla (adı yorumlarda geçtiği gibi).
+5. **SÖZ.** 7 kaş yorumu, müşterinin yazdığı gibi; ek isim vurgusu ve portre yok.
 6. **YOL HARİTASI kartları.** "Kaşlarım seyrek" → `pmu-kas` (microblading);
    "Kıllarım dağınık" → `kas-laminasyonu`; "Yüzümde ince tüy" → `yuz-alimi`.
 7. **MENÜ (`#kas/fiyat`)** ve **SSS** (canlı sayfanın JSON-LD SSS'sinden kısaltılmış).
@@ -196,7 +200,8 @@ alta duran statik kartlara döner.
 1. PERDE: laminasyon çifti, girişte otomatik süpürme.
 2. **TARAMA** (`initComb`): ~120 SVG kıl dağınık durur; kaydırdıkça fırça geçer,
    kıllar yukarı taranır ve sabitlenir. Üç adım: kaldırma → sabitleme → besleme
-   (adım metni canlı sayfadan). "Temsili çizim" etiketi.
+   (adım metni canlı sayfadan). Her adımın arkasında `kas-3-adim`'in gerçek bandı
+   durur; SVG yalnız fırça izini çizer ve "temsili çizim" etiketi taşır.
 3. **HANGİSİ BANA GÖRE?** `initQuiz` ile 3 soru → kaş alımı · laminasyon ·
    microblading önerisi; her sonuç kendi sayfasına ve fiyatına gider. Tıbbi soru yok.
 4. Kanıt, SÖZ (laminasyon yorumu yoksa "Salon için yazılanlar" etiketi), SSS, final perde.
@@ -211,8 +216,8 @@ canonical her sayfanın kendisininkidir.
 1. PERDE: kaydırdıkça altın çizgiyle kendini çizen SVG yüz portresi (fotoğraf
    gerekmez, sahte sonuç riski yok). Başlık sayfaya göre değişir.
 2. **YÜZ HARİTASI** (`initFaceMap`): bölgeler alın, kaş arası, yanak, favori,
-   dudak üstü, çene, boyun. Dokununca: yöntem (ip/ağda; **sahibe sorulacak**),
-   süre ve fiyat (CRM), "Bu bölgeyi seç" → davetiyeye eklenir. Birden çok bölge
+   dudak üstü, çene, boyun. Dokununca: yöntem (**ip ile ve cımbızla**; sahip
+   onayı), süre ve fiyat (CRM), "Bu bölgeyi seç" → davetiyeye eklenir. Birden çok bölge
    seçilebilir; toplam yalnız CRM'de paket varsa gösterilir.
 3. **ÜÇ PERDE** (`initScrolly`): *Hazırlık* → *Uygulama* → *Sonrası* (yatıştırma;
    iddia yok). Video gelene kadar `still-altin` ve `still-firca` (18107668510813428) stand-in.
@@ -243,9 +248,8 @@ güzellik modu ve filtre kapalı, 4:5 fotoğraf, 1080p 9:16 video, 10–20 sn te
 |---|---|---|
 | P1 | kas-alimi | Haritalama ipi/kalemle ölçüm (5–10 sn), cımbız alım makro, kına sürme ve silme, aynada ilk bakış (yüz çevirme, 3 sn) |
 | P1 | kas-laminasyonu | Kılların fırçayla yukarı taranma anı (makro, yandan ışık); önce/sonra aynı ışıkta 3 açı |
-| P1 | yuz-alimi | İple alım yakın planı (eller + ip; yüz kısmi) |
+| P1 | yuz-alimi | İple alım yakın planı (eller + ip; yüz kısmi) ve cımbızla ince düzeltme makrosu |
 | P2 | cene, dudak üstü | Yalnız uygulama anı (eller, ürün); hassas bölge için önce/sonra istenmez |
-| P2 | hepsi | Ebru Nur Hanım portresi, izin alınırsa |
 | P3 | b-roll | Altın cımbız ve fırçalar still-life, ayna önü ışık |
 
 Teslim: Instagram'a atılanlar kütüphaneye düşer; atılmayanlar
@@ -297,17 +301,17 @@ altyapıyı bu faz yazar, PMU kullanır).
 
 ---
 
-## 7. Sahibe sorulacaklar (K1'i bekletmez)
+## 7. Sahip kararları (2026-10-07) ve açık soru
 
-1. `kas-3-adim` (18040684901410337) üçüncü bantta yabancı hesap filigranı var:
-   kalıcı olarak dışlansın mı? (Öneri: evet.)
-2. `kas-yakin` (18037699223717361): doğal kaş mı, pudralama (PMU) mı?
-3. Yüz, çene ve dudak üstü alımı yöntemi (ip mi, ağda mı, ikisi mi) ve CRM'deki
-   kalemler; kına ayrı kalem mi?
-4. 17986864907913512 (laminasyon + lifting) kaş laminasyonu sayfasında kullanılabilir mi?
-5. Ebru Nur Hanım'ın adı ve portresi için izin.
+| # | Konu | Karar |
+|---|---|---|
+| 1 | `kas-3-adim` yazısı | Dışlanmaz. Yazı başka bir yerin adı değil, edit hatası. Cilt üzerindeki harfler maskeyle temizlenir (bkz. 1a). |
+| 2 | `kas-yakin` doğal kaş mı, pudralama mı? | **Açık.** Cevap gelene kadar yalnız PMU'da kalır. |
+| 3 | Yüz, çene, dudak üstü yöntemi | **İp ile ve cımbızla.** Ağda yazılmaz. |
+| 4 | 17986864907913512 (laminasyon + lifting) | Güzelse kullanılır; sunucuda doğrulanır. |
+| 5 | Uzman adı ve portresi | Gerek yok. Portre çekilmez, ad öne çıkarılmaz. |
 
----
+Hâlâ CRM'den okunacak: yüz, çene ve dudak üstü alımı fiyat ve süreleri; kına ayrı kalem mi?
 
 ## 8. Dalgalar
 
