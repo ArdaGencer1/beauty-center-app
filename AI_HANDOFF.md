@@ -10,7 +10,8 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
+- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür; yayındaki Artifact
+  2026-10-07 itibarıyla sürüm 15'tir ve v3'ten çok farklıdır. Artifact üzerinde bu
   anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
   olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
@@ -139,6 +140,24 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
+### 4. Kaş ve yüz "Hikâye" — K1 ve mobil iyileştirmeler yayında (Artifact sürüm 15)
+
+Plan: `plans/claude/20261007/kas-yuz-hikaye-scroll.md`
+
+Kapsam: `kas-alimi`, `kas-laminasyonu`, `yuz-alimi`, `cene-alimi`,
+`dudakustu-alimi` (storytelling scroll).
+
+Hazır olanlar: 6 kaş öğesinin görsel incelemesi, sayfa-medya matrisi, edit
+reçetesi, çekim listesi, dalga planı.
+
+Yayında: "Beş Perde" kaydırmalı bölümü, etiketsiz Altın Oran Aynası ve kapanış
+(ayrıntı planın 9. bölümünde). K0 başka oturumca zaten yapılmıştı.
+
+Kalanlar: sunucuda IG metin araması (kaş/yüz
+videoları) ve 17986864907913512 kontrolü; CRM fiyatları (yüz/çene/dudak üstü,
+kına); `kas-yakin` sorusu; medya v2; `initScrolly`
+ve sayfalar; çekimler; doğrulama.
+
 Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
 
 ## Bilinen dışlamalar ve doğruluk kararları
@@ -151,6 +170,24 @@ Manifestte açıkça dışlanan PMU/kaş içerikleri:
 - `18104556860143186`: stok görünümlü kalem posteri.
 - `17986864907913512`: brow lamination/lash lift; PMU değil.
 - `18284646271254855`: 360p microblading videosu.
+
+Kaş incelemesi (2026-10-07, 6 öğe görsel doğrulandı; ayrıntı kaş/yüz planında):
+
+- `kas-altin-oran` (`17969532135076932`): kahraman; etiket ve alt şerit ortak kırpılır.
+- `kas-cift-2` (`18092748737430504`): en güçlü dönüşüm; iki yarı hizalanmalı.
+- `kas-kina` (`18196341943375941`): sol yarı gerçek "önce" değil, haritalama macunu.
+- `kas-profil` (`17879042364617421`): mobil kahraman; kaş üstündeki monogram kalır.
+- `kas-laminasyon` (`18088049695997551`): 1080×540, ince; büyütülmez.
+- `kas-3-adim` (`18040684901410337`): **kullanılır** (sahip 10-07: 3. banttaki
+  "@refreshed…" yazısı edit hatası). Yazı yalnız cilt üzerinde maskeyle temizlenir;
+  kutu `delogo` kılları bulandırıyor.
+- Prototip v3 `kas` vitrini hâlâ dışlanmış `kas-cift-3` görselini kullanıyor
+  (Altın Oran Aynası ve `KAS_PAIRS`); kaş/yüz planının K0 adımı bunu kaldırır.
+- Yüz/çene/dudak üstü alımı: ip ile ve cımbızla (sahip 10-07). Uzman portresi
+  ve ad vurgusu kullanılmaz.
+- 17986864907913512: laminasyon sayfasında güzelse kullanılır (sahip 10-07).
+- `kas-yakin` (`18037699223717361`) PMU planında `pmu-kas-pudra` olarak da geçiyor;
+  sahip netleştirene kadar kaş alımı sayfasında kullanılmaz.
 
 Cilt planında çıkarılması kararlaştırılan eski seçimler:
 

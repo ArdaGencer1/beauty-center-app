@@ -114,6 +114,31 @@
         "replace placeholders",
         "verification"
       ]
+    },
+    {
+      "key": "kas_yuz",
+      "status": "partial_k1_published",
+      "priority": 4,
+      "path": "plans/claude/20261007/kas-yuz-hikaye-scroll.md",
+      "ready": [
+        "visual review of 6 brow items",
+        "page/media matrix",
+        "edit recipe",
+        "shoot list",
+        "wave plan",
+        "owner decisions 2026-10-07 (kas-3-adim kept, threading+tweezers, no staff portrait)",
+        "Artifact v13: Beş Perde scroll section, label-free golden mirror, closing section",
+        "sources/kas_perde_20261007 (media + build scripts)",
+        "Artifact v15: kaş mobile pass (label-free mobile hero, full-bleed perde, tappable steps, 44px FAQ targets)"
+      ],
+      "remaining": [
+        "server IG text search for brow/face videos and check of 17986864907913512",
+        "CRM prices for face/chin/upper-lip and henna",
+        "owner answer: kas-yakin natural brow or powder PMU",
+        "K2 pages: kas-laminasyonu, yuz/cene/dudakustu (Yüz Haritası)",
+        "staff shoots",
+        "verification"
+      ]
     }
   ],
   "hard_rules": [
@@ -134,7 +159,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }
