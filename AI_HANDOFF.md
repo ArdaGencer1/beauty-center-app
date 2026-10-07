@@ -10,9 +10,11 @@ inceleyerek token harcamasını önlemektir.
 
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
-- Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür. Artifact üzerinde bu
-  anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
-  olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
+- Depodaki son kaynak anlık görüntüsü
+  `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-live.html` =
+  **Artifact Sürüm 18** (`1791390454-c30c`, 2026-10-07). Birden çok oturum aynı
+  Artifact'e yayın yapıyor; sürümü doğrulamadan “tam eşleşiyor” deme ve
+  değişikliği her zaman en son yayınlanan sürümün üzerine uygula.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.
@@ -37,7 +39,9 @@ inceleyerek token harcamasını önlemektir.
 | Medya üreticisi | `sources/media_ig_20261007/build_media.py` | Crop, hizalama, poster, video ve varyant üretim kuralları. |
 | Ham videolar | `originals/instagram/videos/` | 100 video; yalnızca seçilen Instagram ID/slug için aç. |
 | Lazer kaynakları | `sources/atelier_lazer_20261007/` | `render.py`, `src/lazer.css`, `src/lazer.js` ve doğrulanmış veri. |
-| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html` | Mevcut Artifact'in depodaki v3 tabanı. |
+| Artifact anlık görüntüsü | `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-live.html` | Sürüm 18 (1,1 MB). Eski v3 tabanı `artifact-v3.html` olarak duruyor. |
+| Tırnak / Renk Atölyesi v3 | `sources/atelier_tirnak_20261007/` | Maske iyileştirme, sayfa yaması, TagCtx kapı raporları, önce/sonra görüntüleri. Adım günlüğü: `plans/claude/20261007/renk-atolyesi-v3-adimlar.md`. |
+| Artifact ölçüm probu | `tagtools/artifact_probe.mjs` | Artifact için TagCtx eşi: etiket, CTA, `[W-]`, hata, kırık medya, taşma; ölçüm isteklerini iptal eder. |
 | Güncel planlar | `plans/claude/20261007/` | Lazer, PMU ve Cilt Atlası planları. |
 
 ### Sunucudaki asıl yollar
@@ -151,6 +155,17 @@ Manifestte açıkça dışlanan PMU/kaş içerikleri:
 - `18104556860143186`: stok görünümlü kalem posteri.
 - `17986864907913512`: brow lamination/lash lift; PMU değil.
 - `18284646271254855`: 360p microblading videosu.
+
+Tırnak medyası (2026-10-07, Renk Atölyesi v3):
+
+- `tirnak-orkide` (`18089498999286039`): **çıkarıldı**. Kaynak yumuşak ve
+  sarı ışıklı; yayındaki kopya 425 kbps idi. Yerine `tirnak-lila`
+  (`18213037222332820`, süt beyazı) ve `tirnak-babyboomer` kullanıldı.
+- `tirnak-babyboomer`: kaynak ID repodaki 100 orijinal arasında yok; sunucu
+  dışa aktarımında doğrulanmalı.
+- `tirnak-krom` = `18226291744323491` (birebir eşleşme).
+- Renk Atölyesi maskeleri v3: `*-kirmizi-mask-v3.png` + `*-shade-1200.webp`.
+  v2 `*-kirmizi-mask.png` artık kullanılmıyor.
 
 Cilt planında çıkarılması kararlaştırılan eski seçimler:
 
