@@ -1,0 +1,1157 @@
+{
+ "_doc": "FAZ M (plan 0b, 2026-10-06): best real-result media chosen from the salon's Instagram (all 392 items reviewed). split: h = top/bottom pair (top = önce), v = left/right pair (left = önce), h3 = three stacked steps (first = önce, last = sonra). yuz = a client's face is recognisable (owner 2026-10-06: 'en iyilerini kullan sıkıntı yok'). Posters with prices or claims are excluded on purpose.",
+ "items": [
+  {
+   "slug": "salon-giris",
+   "id": "17877053286496908",
+   "fam": "salon",
+   "kind": "video",
+   "film": 72,
+   "alt": "Selda Gençer Beauty Center girişi: kırmızı halı, cam kapı ve altın monogramlı resepsiyon, Konutkent"
+  },
+  {
+   "slug": "salon-cephe",
+   "id": "17877211629689213",
+   "fam": "salon",
+   "kind": "video",
+   "film": 36,
+   "alt": "Selda Gençer Beauty Center cephesi, resepsiyon, sertifika duvarı ve bekleme salonu"
+  },
+  {
+   "slug": "salon-tur",
+   "id": "18014729837423154",
+   "fam": "salon",
+   "kind": "video",
+   "trim": [
+    0,
+    14
+   ],
+   "alt": "Salon turu: tırnak barı, uygulama odası ve altın korkuluklu merdiven"
+  },
+  {
+   "slug": "salon-resepsiyon",
+   "id": "17915368251233815",
+   "fam": "salon",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Kasetli tavanlı resepsiyon ve bekleme salonu"
+  },
+  {
+   "slug": "salon-merdiven",
+   "id": "18081951466894957",
+   "fam": "salon",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Altın çıtalı merdiven ve kadife koltuklu bekleme alanı"
+  },
+  {
+   "slug": "salon-lobi",
+   "id": "18206708032335644",
+   "fam": "salon",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Mermer zeminli lobi ve merdiven"
+  },
+  {
+   "slug": "salon-lobi-2",
+   "id": "18083680814252903",
+   "fam": "salon",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Cam cepheli bekleme salonu"
+  },
+  {
+   "slug": "acilis",
+   "id": "18032788969913973",
+   "fam": "salon",
+   "kind": "video",
+   "trim": [
+    0,
+    9
+   ],
+   "yuz": true,
+   "alt": "Selda Gençer Beauty Center açılışı, 2024"
+  },
+  {
+   "slug": "acilis-foto",
+   "id": "18045137929722800",
+   "fam": "salon",
+   "kind": "image",
+   "item": 1,
+   "yuz": true,
+   "alt": "Selda Gençer Beauty Center açılış günü, 2024"
+  },
+  {
+   "slug": "kas-altin-oran",
+   "id": "17969532135076932",
+   "fam": "kas",
+   "kind": "image",
+   "split": "h",
+   "alt": "Altın oran kaş alımı öncesi ve sonrası"
+  },
+  {
+   "slug": "kas-cift-2",
+   "id": "18092748737430504",
+   "fam": "kas",
+   "kind": "image",
+   "split": "h",
+   "alt": "Kaş alımı öncesi ve sonrası"
+  },
+  {
+   "slug": "kas-kina",
+   "id": "18196341943375941",
+   "fam": "kas",
+   "kind": "image",
+   "split": "h",
+   "alt": "Altın oran kaş: kına uygulaması ve sonuç"
+  },
+  {
+   "slug": "kas-laminasyon",
+   "id": "18088049695997551",
+   "fam": "kas",
+   "kind": "image",
+   "split": "h",
+   "alt": "Kaş laminasyonu öncesi ve sonrası"
+  },
+  {
+   "slug": "kas-profil",
+   "id": "17879042364617421",
+   "fam": "kas",
+   "kind": "image",
+   "alt": "Altın oranla şekillendirilmiş kaş, yakın çekim"
+  },
+  {
+   "slug": "kas-yakin",
+   "id": "18037699223717361",
+   "fam": "kas",
+   "kind": "image",
+   "alt": "Şekillendirilmiş dolgun kaş, yan profil"
+  },
+  {
+   "slug": "kas-3-adim",
+   "id": "18040684901410337",
+   "fam": "kas",
+   "kind": "image",
+   "split": "h3",
+   "alt": "Kaş laminasyonu: önce, uygulama ve sonuç"
+  },
+  {
+   "slug": "kirpik-makro-1",
+   "id": "17986019318762562",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "İpek kirpik makro çekim"
+  },
+  {
+   "slug": "kirpik-makro-2",
+   "id": "17885561247405556",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "Volüm ipek kirpik yakın çekim"
+  },
+  {
+   "slug": "kirpik-makro-3",
+   "id": "17918048469017834",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "Mega volüm ipek kirpik detayı"
+  },
+  {
+   "slug": "kirpik-makro-4",
+   "id": "18027584354550038",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "Kirpik, yakın çekim"
+  },
+  {
+   "slug": "ipek-kirpik-1",
+   "id": "18107383999958512",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "İpek kirpik uygulaması sonrası"
+  },
+  {
+   "slug": "ipek-kirpik-2",
+   "id": "18126043255725501",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "Klasik ipek kirpik sonucu"
+  },
+  {
+   "slug": "ipek-kirpik-3",
+   "id": "17883162954668298",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "İpek kirpik ve kaş, tam bakış"
+  },
+  {
+   "slug": "ipek-kirpik-4",
+   "id": "18027151178746074",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "Doğal görünümlü ipek kirpik"
+  },
+  {
+   "slug": "ipek-kirpik-5",
+   "id": "17917970235180938",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "Hacimli ipek kirpik"
+  },
+  {
+   "slug": "ipek-kirpik-6",
+   "id": "18103810502001285",
+   "fam": "kirpik",
+   "kind": "image",
+   "alt": "İpek kirpik, yan açı"
+  },
+  {
+   "slug": "ipek-kirpik-cift",
+   "id": "18054018488742876",
+   "fam": "kirpik",
+   "kind": "image",
+   "split": "h",
+   "alt": "İpek kirpik öncesi ve sonrası"
+  },
+  {
+   "slug": "lifting-cift",
+   "id": "18383965606199591",
+   "fam": "kirpik",
+   "kind": "image",
+   "split": "h",
+   "alt": "Kirpik lifting öncesi ve sonrası"
+  },
+  {
+   "slug": "dudak-cift-1",
+   "id": "17911169580122001",
+   "fam": "pmu",
+   "kind": "image",
+   "split": "h",
+   "alt": "Dudak renklendirme öncesi ve sonrası"
+  },
+  {
+   "slug": "dudak-cift-2",
+   "id": "18075112550059667",
+   "fam": "pmu",
+   "kind": "image",
+   "split": "h",
+   "alt": "Kalıcı dudak renklendirme öncesi ve sonrası"
+  },
+  {
+   "slug": "dudak-cift-3",
+   "id": "18064602863533289",
+   "fam": "pmu",
+   "kind": "image",
+   "split": "h",
+   "alt": "Dudak renklendirme, yan açı önce ve sonra"
+  },
+  {
+   "slug": "dudak-cift-4",
+   "id": "17974051505767167",
+   "fam": "pmu",
+   "kind": "image",
+   "split": "h",
+   "alt": "Dudak renklendirme sonucu, önce ve sonra"
+  },
+  {
+   "slug": "dudak-cift-5",
+   "id": "18090624406991437",
+   "fam": "pmu",
+   "kind": "image",
+   "split": "v",
+   "alt": "Dudak renklendirme, profil önce ve sonra"
+  },
+  {
+   "slug": "dudak-1",
+   "id": "18097193168193292",
+   "fam": "pmu",
+   "kind": "image",
+   "alt": "Kalıcı dudak renklendirme sonucu"
+  },
+  {
+   "slug": "dudak-2",
+   "id": "18097362176047296",
+   "fam": "pmu",
+   "kind": "image",
+   "alt": "Dudak renklendirme, doğal ton"
+  },
+  {
+   "slug": "goz-cizgisi-cift",
+   "id": "18092434226621694",
+   "fam": "pmu",
+   "kind": "image",
+   "split": "h",
+   "alt": "Kalıcı göz çizgisi (dipliner) öncesi ve sonrası"
+  },
+  {
+   "slug": "pmu-kas-1",
+   "id": "18098050940207862",
+   "fam": "pmu",
+   "kind": "image",
+   "alt": "Kalıcı makyaj kaş sonucu"
+  },
+  {
+   "slug": "pmu-kas-2",
+   "id": "18076203524667311",
+   "fam": "pmu",
+   "kind": "image",
+   "alt": "Microblading kaş: çizim ve sonuç"
+  },
+  {
+   "slug": "pmu-dudak-a",
+   "file": "public_html/images/kalici-makyaj-2.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "once_box": [
+    2,
+    0,
+    797,
+    1600
+   ],
+   "sonra_box": [
+    803,
+    0,
+    1598,
+    1600
+   ],
+   "grade": "pmu",
+   "sizes": [
+    480,
+    795
+   ],
+   "alt": "Dudak renklendirme: solda önce, sağda sonra"
+  },
+  {
+   "slug": "pmu-dudak-b",
+   "file": "public_html/images/kalici-makyaj-3.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "once_box": [
+    0,
+    0,
+    1102,
+    733
+   ],
+   "sonra_box": [
+    0,
+    738,
+    1102,
+    1471
+   ],
+   "grade": "pmu",
+   "sizes": [
+    480,
+    800,
+    1100
+   ],
+   "alt": "Dudak renklendirme: soluk dudaktan belirgin tona, önce ve sonra"
+  },
+  {
+   "slug": "pmu-dudak-c",
+   "file": "public_html/images/kalici-makyaj-1.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "once_box": [
+    0,
+    0,
+    411,
+    801
+   ],
+   "sonra_box": [
+    416,
+    0,
+    827,
+    801
+   ],
+   "grade": "pmu",
+   "sizes": [
+    480
+   ],
+   "alt": "Dudak renklendirme, yakın çekim önce ve sonra"
+  },
+  {
+   "slug": "pmu-goz-a",
+   "file": "public_html/images/kalici-makyaj-10.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "once_box": [
+    2,
+    0,
+    797,
+    1600
+   ],
+   "sonra_box": [
+    803,
+    0,
+    1598,
+    1600
+   ],
+   "grade": "pmu",
+   "sizes": [
+    480,
+    795
+   ],
+   "alt": "Kalıcı eyeliner: solda önce, sağda sonra"
+  },
+  {
+   "slug": "pmu-kas-cift-a",
+   "id": "17981935718764019",
+   "fam": "pmu",
+   "kind": "image",
+   "once_box": [
+    0,
+    0,
+    1350,
+    841
+   ],
+   "sonra_box": [
+    0,
+    846,
+    1350,
+    1687
+   ],
+   "grade": "pmu",
+   "sizes": [
+    480,
+    800,
+    1200
+   ],
+   "alt": "Kalıcı kaş: seyrek kaşlardan dolgun kaşlara, önce ve sonra"
+  },
+  {
+   "slug": "pmu-kas-cift-b",
+   "id": "18091579450867776",
+   "fam": "pmu",
+   "kind": "image",
+   "once_box": [
+    0,
+    0,
+    1350,
+    822
+   ],
+   "sonra_box": [
+    0,
+    866,
+    1350,
+    1688
+   ],
+   "grade": "pmu",
+   "sizes": [
+    480,
+    800,
+    1200
+   ],
+   "alt": "Kalıcı kaş, kıl tekniği: önce ve sonra"
+  },
+  {
+   "slug": "pmu-ton-gulpembe",
+   "file": "public_html/images/kalici-makyaj-4.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "grade": "pmu",
+   "vignette": true,
+   "sizes": [
+    800,
+    1200
+   ],
+   "alt": "Kalıcı dudak renklendirme, gül pembesi ton"
+  },
+  {
+   "slug": "pmu-ton-visne",
+   "file": "public_html/images/kalici-makyaj-5.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "grade": "pmu",
+   "vignette": true,
+   "sizes": [
+    800,
+    1200
+   ],
+   "alt": "Kalıcı dudak renklendirme, vişne ton"
+  },
+  {
+   "slug": "pmu-ton-gulkurusu",
+   "file": "public_html/images/kalici-makyaj-7.jpeg",
+   "fam": "pmu",
+   "kind": "image",
+   "grade": "pmu",
+   "vignette": true,
+   "sizes": [
+    800,
+    1200
+   ],
+   "alt": "Kalıcı dudak renklendirme, gül kurusu ton"
+  },
+  {
+   "slug": "pmu-kas-makro",
+   "id": "18046411448587830",
+   "fam": "pmu",
+   "kind": "image",
+   "crop": [
+    0,
+    0,
+    1350,
+    1395
+   ],
+   "grade": "pmu",
+   "vignette": true,
+   "sizes": [
+    800,
+    1200
+   ],
+   "alt": "Kalıcı kaş, kıl tekniği: yakın çekim"
+  },
+  {
+   "slug": "pmu-kas-pudra",
+   "id": "18037699223717361",
+   "fam": "pmu",
+   "kind": "image",
+   "delogo": [
+    [
+     280,
+     1105,
+     480,
+     170
+    ]
+   ],
+   "grade": "pmu",
+   "vignette": true,
+   "sizes": [
+    800
+   ],
+   "alt": "Kalıcı kaş, pudralama tekniği"
+  },
+  {
+   "slug": "pmu-oda-istasyon",
+   "id": "18604797226029445",
+   "fam": "pmu",
+   "kind": "image",
+   "crop": [
+    740,
+    600,
+    1420,
+    1507
+   ],
+   "grade": "pmu",
+   "sizes": [
+    680
+   ],
+   "alt": "Kalıcı makyaj istasyonu: pigmentler, kalem ve altın tepsi"
+  },
+  {
+   "slug": "pmu-oda-yatak",
+   "id": "17869181736564248",
+   "fam": "pmu",
+   "kind": "image",
+   "crop": [
+    740,
+    380,
+    1420,
+    1287
+   ],
+   "grade": "pmu",
+   "sizes": [
+    680
+   ],
+   "alt": "Kalıcı makyaj odası: kadife yatak, ayna ve bakım arabası"
+  },
+  {
+   "slug": "pmu-kalem",
+   "id": "17971549406932390",
+   "fam": "pmu",
+   "kind": "video",
+   "film": 48,
+   "film_w": 480,
+   "poster_t": 9.0,
+   "yuz": true,
+   "alt": "Kalıcı kaş seansı: kıl kıl çizim, tarama, sonuç ve aynada ilk bakış"
+  },
+  {
+   "slug": "cilt-yarim-1",
+   "id": "17951646918167938",
+   "fam": "cilt",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Cilt bakımı: yüzün yarısı öncesi, yarısı sonrası"
+  },
+  {
+   "slug": "cilt-yarim-2",
+   "id": "17909854857222461",
+   "fam": "cilt",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Cilt bakımı sonrası ışıltı, yarım yüz karşılaştırma"
+  },
+  {
+   "slug": "cilt-cift-1",
+   "id": "18039236768821035",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "v",
+   "yuz": true,
+   "alt": "Cilt bakımı öncesi ve sonrası"
+  },
+  {
+   "slug": "cilt-cift-2",
+   "id": "18016986917719157",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "v",
+   "yuz": true,
+   "alt": "Cilt bakımı öncesi ve sonrası, yakın çekim"
+  },
+  {
+   "slug": "akne-cift-1",
+   "id": "17937892356335721",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "h",
+   "yuz": true,
+   "alt": "Akne bakımı öncesi ve sonrası"
+  },
+  {
+   "slug": "akne-cift-2",
+   "id": "18029533706831317",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "h",
+   "yuz": true,
+   "alt": "Akne bakımı öncesi ve sonrası, ikinci danışan"
+  },
+  {
+   "slug": "cilt-cift-3",
+   "id": "18086010650107298",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "v",
+   "alt": "Leke bakımı öncesi ve sonrası"
+  },
+  {
+   "slug": "cilt-cift-4",
+   "id": "17987084615917224",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "v",
+   "yuz": true,
+   "alt": "Cilt bakımı sonrası nem ve parlaklık"
+  },
+  {
+   "slug": "cilt-cift-5",
+   "id": "18091846780704413",
+   "fam": "cilt",
+   "kind": "image",
+   "split": "v",
+   "yuz": true,
+   "alt": "Kızarıklık bakımı öncesi ve sonrası"
+  },
+  {
+   "slug": "cilt-islem",
+   "id": "18394257022142297",
+   "fam": "cilt",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Cilt bakımında maske uygulaması"
+  },
+  {
+   "slug": "cilt-led",
+   "id": "18617996404000518",
+   "fam": "cilt",
+   "kind": "video",
+   "film": 60,
+   "alt": "LED ışık terapisi: yeşil, kırmızı, mor ve mavi ışık"
+  },
+  {
+   "slug": "cilt-video-2",
+   "id": "18084203987184570",
+   "fam": "cilt",
+   "kind": "video",
+   "alt": "Cilt bakımı uygulaması"
+  },
+  {
+   "slug": "cilt-video-3",
+   "id": "18119195767718567",
+   "fam": "cilt",
+   "kind": "video",
+   "trim": [
+    0,
+    12
+   ],
+   "alt": "LED kubbe ile cilt bakımı"
+  },
+  {
+   "slug": "tirnak-kare-kirmizi",
+   "id": "17976576482881104",
+   "fam": "tirnak",
+   "kind": "image",
+   "mask": true,
+   "mask_sat": 0.8,
+   "mask_lo": 0.36,
+   "mask_hi": 0.95,
+   "mask_box_sat": 0.66,
+   "mask_fill": [
+    [
+     0.84,
+     0.32,
+     0.93,
+     0.46
+    ]
+   ],
+   "mask_keep": [
+    [
+     0.68,
+     0.18,
+     0.74,
+     0.23
+    ],
+    [
+     0.08,
+     0.55,
+     0.25,
+     0.72
+    ]
+   ],
+   "mask_cut": [
+    [
+     0.1,
+     0.5,
+     0.18,
+     0.598
+    ]
+   ],
+   "alt": "Kırmızı kalıcı oje, kare tırnak"
+  },
+  {
+   "slug": "tirnak-uzun-kirmizi",
+   "id": "18165363142437661",
+   "fam": "tirnak",
+   "kind": "image",
+   "mask": true,
+   "mask_cut": [
+    [
+     0.82,
+     0.0,
+     1.0,
+     0.14
+    ]
+   ],
+   "mask_lo": 0.32,
+   "mask_hi": 0.92,
+   "mask_keep": [
+    [
+     0.6,
+     0.31,
+     0.65,
+     0.37
+    ]
+   ],
+   "mask_soft": [
+    [
+     0.5,
+     0.18,
+     0.69,
+     0.283
+    ],
+    [
+     0.69,
+     0.27,
+     0.79,
+     0.34
+    ],
+    [
+     0.69,
+     0.08,
+     0.82,
+     0.19
+    ],
+    [
+     0.79,
+     0.36,
+     0.91,
+     0.45
+    ]
+   ],
+   "alt": "Kırmızı uzun protez tırnak"
+  },
+  {
+   "slug": "tirnak-badem-bordo",
+   "id": "18131148559533053",
+   "fam": "tirnak",
+   "kind": "image",
+   "mask": true,
+   "mask_rmin": 28,
+   "alt": "Bordo badem protez tırnak"
+  },
+  {
+   "slug": "tirnak-yuvarlak-kirmizi",
+   "id": "18083162861007929",
+   "fam": "tirnak",
+   "kind": "image",
+   "mask": true,
+   "mask_fill": [
+    [
+     0.9,
+     0.39,
+     0.99,
+     0.55
+    ]
+   ],
+   "mask_box_sat": 0.42,
+   "mask_rmin": 35,
+   "mask_sat": 0.6,
+   "mask_lo": 0.3,
+   "mask_hi": 0.75,
+   "alt": "Kırmızı oval kalıcı oje"
+  },
+  {
+   "slug": "tirnak-inci",
+   "id": "18095137817263128",
+   "fam": "tirnak",
+   "kind": "image",
+   "item": 1,
+   "alt": "İnci efektli protez tırnak"
+  },
+  {
+   "slug": "tirnak-holo",
+   "id": "17873233836616558",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Holografik nail art"
+  },
+  {
+   "slug": "tirnak-mor",
+   "id": "17994977030970583",
+   "fam": "tirnak",
+   "kind": "image",
+   "item": 1,
+   "alt": "Mor taş detaylı nail art"
+  },
+  {
+   "slug": "tirnak-3d",
+   "id": "18105850234807306",
+   "fam": "tirnak",
+   "kind": "image",
+   "item": 1,
+   "alt": "3D çiçek detaylı protez tırnak"
+  },
+  {
+   "slug": "tirnak-neon",
+   "id": "18118434571698269",
+   "fam": "tirnak",
+   "kind": "image",
+   "item": 1,
+   "alt": "Neon mor kalıcı oje"
+  },
+  {
+   "slug": "tirnak-gumus",
+   "id": "18159807721458502",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Gümüş simli ombre protez tırnak"
+  },
+  {
+   "slug": "tirnak-mermer",
+   "id": "18133751902546934",
+   "fam": "tirnak",
+   "kind": "image",
+   "item": 1,
+   "alt": "Mermer desenli nail art"
+  },
+  {
+   "slug": "tirnak-kirmizi-2",
+   "id": "18003542663910256",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Parlak kırmızı kalıcı oje"
+  },
+  {
+   "slug": "tirnak-lacivert-desen",
+   "id": "18063531056450206",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Lacivert desenli jel destekli kalıcı oje"
+  },
+  {
+   "slug": "tirnak-lila-french",
+   "id": "18101695625503990",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Lila french protez tırnak"
+  },
+  {
+   "slug": "tirnak-bebek-mavisi",
+   "id": "17852457033654946",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Bebek mavisi badem tırnak"
+  },
+  {
+   "slug": "tirnak-bordo-french",
+   "id": "17975884562957683",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Bordo french nail art"
+  },
+  {
+   "slug": "tirnak-kirmizi-desen",
+   "id": "18089862823953692",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Kırmızı desenli protez tırnak"
+  },
+  {
+   "slug": "tirnak-lacivert",
+   "id": "17932488975128667",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Lacivert kalıcı oje"
+  },
+  {
+   "slug": "tirnak-bakir-desen",
+   "id": "17945173287066411",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Bakır desenli nail art"
+  },
+  {
+   "slug": "tirnak-sut-beyaz",
+   "id": "18091879963865992",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Süt beyazı badem protez tırnak"
+  },
+  {
+   "slug": "tirnak-leopar",
+   "id": "18048141389508035",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Leopar desenli siyah nail art"
+  },
+  {
+   "slug": "tirnak-nude",
+   "id": "18104233286116789",
+   "fam": "tirnak",
+   "kind": "image",
+   "alt": "Nude badem protez tırnak"
+  },
+  {
+   "slug": "tirnak-video-1",
+   "id": "17898568689257024",
+   "fam": "tirnak",
+   "kind": "video",
+   "alt": "Nail art uygulaması"
+  },
+  {
+   "slug": "tirnak-video-2",
+   "id": "18213037222332820",
+   "fam": "tirnak",
+   "kind": "video",
+   "alt": "Protez tırnak sonucu"
+  },
+  {
+   "slug": "tirnak-video-3",
+   "id": "18096499007018487",
+   "fam": "tirnak",
+   "kind": "video",
+   "alt": "Badem protez tırnak, yakın çekim"
+  },
+  {
+   "slug": "lazer-1",
+   "id": "18187662313346224",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Lazer epilasyon uygulaması"
+  },
+  {
+   "slug": "lazer-2",
+   "id": "18075151286260581",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Diode lazer başlığı ile uygulama"
+  },
+  {
+   "slug": "lazer-3",
+   "id": "18095832997759812",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Lazer epilasyon cihazı"
+  },
+  {
+   "slug": "lazer-4",
+   "id": "17897285763316977",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Lazer epilasyon, kol bölgesi"
+  },
+  {
+   "slug": "lazer-5",
+   "id": "17894600409162953",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Lazer epilasyon, yakın çekim"
+  },
+  {
+   "slug": "bolgesel-cift",
+   "id": "18319579426235256",
+   "fam": "bolgesel",
+   "kind": "image",
+   "split": "v",
+   "alt": "Bölgesel incelme öncesi ve sonrası"
+  },
+  {
+   "slug": "still-altin",
+   "id": "17880458079585542",
+   "fam": "still",
+   "kind": "image",
+   "alt": "Altın aletler, mum ve kahve"
+  },
+  {
+   "slug": "still-kutu",
+   "id": "18104790091800124",
+   "fam": "still",
+   "kind": "image",
+   "alt": "Altın Selda Gençer kutusu"
+  },
+  {
+   "slug": "still-firca",
+   "id": "18107668510813428",
+   "fam": "still",
+   "kind": "image",
+   "alt": "Fırçalar ve bakım ürünleri"
+  },
+  {
+   "slug": "still-kirpik",
+   "id": "18593472577053386",
+   "fam": "still",
+   "kind": "image",
+   "alt": "İpek kirpik tepsileri ve cımbızlar"
+  },
+  {
+   "slug": "still-urun",
+   "id": "18185603593380318",
+   "fam": "still",
+   "kind": "image",
+   "alt": "Kirpik bakım ürünleri"
+  },
+  {
+   "slug": "lazer-film-jel",
+   "id": "17891700807595292",
+   "fam": "lazer",
+   "kind": "video",
+   "trim": [
+    3.8,
+    9.7
+   ],
+   "poster_t": 4.5,
+   "alt": "Lazer epilasyon: jel üzerinde Lasermach başlığın pembe ışığı, salonumuzda çekildi"
+  },
+  {
+   "slug": "lazer-film-cene",
+   "id": "18096951407528888",
+   "fam": "lazer",
+   "kind": "video",
+   "trim": [
+    2.8,
+    10.2
+   ],
+   "poster_t": 7.9,
+   "yuz": true,
+   "alt": "Çene ve gıdı bölgesinde lazer epilasyon, salonumuzda çekildi"
+  },
+  {
+   "slug": "lazer-film-bacak",
+   "id": "18326727661258778",
+   "fam": "lazer",
+   "kind": "video",
+   "trim": [
+    3.6,
+    10.6
+   ],
+   "poster_t": 4.53,
+   "alt": "Bacakta lazer epilasyon uygulaması, salonumuzda çekildi"
+  },
+  {
+   "slug": "lazer-film-bacak2",
+   "id": "17874576207529500",
+   "fam": "lazer",
+   "kind": "video",
+   "trim": [
+    1.0,
+    6.5
+   ],
+   "poster_t": 2.73,
+   "alt": "Lazer başlığı bacak üzerinde, salonumuzda çekildi"
+  },
+  {
+   "slug": "lazer-film-yuz",
+   "id": "18361016620152430",
+   "fam": "lazer",
+   "kind": "video",
+   "trim": [
+    0,
+    6.3
+   ],
+   "poster_t": 3.9,
+   "yuz": true,
+   "alt": "Koruyucu gözlükle yüz bölgesinde lazer epilasyon, salonumuzda çekildi"
+  },
+  {
+   "slug": "lazer-koltuk",
+   "id": "18058141007303868",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Koltuk altına Lasermach başlığıyla lazer epilasyon, salonumuzda"
+  },
+  {
+   "slug": "lazer-yuz-gozluk",
+   "id": "18122820550555476",
+   "fam": "lazer",
+   "kind": "image",
+   "yuz": true,
+   "alt": "Koruyucu gözlükle yüz bölgesine lazer epilasyon"
+  },
+  {
+   "slug": "lazer-ekran",
+   "id": "17977799688010994",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Lasermach lazer cihazının ekranı: enerji, atım süresi, cilt tonu ve başlık sıcaklığı"
+  },
+  {
+   "slug": "lazer-uzman",
+   "id": "17914759008174743",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Eldivenli uzmanımız bacağa lazer epilasyon uyguluyor"
+  },
+  {
+   "slug": "lazer-kilif",
+   "id": "18356001847208677",
+   "fam": "lazer",
+   "kind": "image",
+   "alt": "Koruyucu kılıflı lazer başlığıyla koltuk altı uygulaması"
+  }
+ ],
+ "excluded": [
+  {
+   "id": "18516297502030856",
+   "was": "kas-cift-3",
+   "why": "another artist's photo: a 'TALITA ...STRO' watermark shows in the iris under our logo; owner 2026-10-07: posted by mistake"
+  },
+  {
+   "file": "public_html/images/kalici-makyaj-dudak-20260407.png",
+   "why": "AI-smoothed copy of kalici-makyaj-7 (1024x1536 PNG); not a real result"
+  },
+  {
+   "id": "18104556860143186",
+   "why": "PMU poster with a stock-looking pen photo"
+  },
+  {
+   "id": "17986864907913512",
+   "why": "brow lamination and lash lift, not permanent makeup"
+  },
+  {
+   "id": "18284646271254855",
+   "why": "microblading video, 360p only"
+  }
+ ]
+}

@@ -1,0 +1,2261 @@
+{
+ "salon-giris": {
+  "fam": "salon",
+  "kind": "video",
+  "alt": "Selda Gençer Beauty Center girişi: kırmızı halı, cam kapı ve altın monogramlı resepsiyon, Konutkent",
+  "id": "17877053286496908",
+  "permalink": "https://www.instagram.com/reel/DUxP_phDIjw/",
+  "date": "2026-02-15",
+  "yuz": false,
+  "mp4": "salon-giris.mp4",
+  "poster": "salon-giris-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 11.54,
+  "bytes": 1832424,
+  "film": {
+   "dir": "film/salon-giris",
+   "frames": 71
+  },
+  "split": null
+ },
+ "salon-cephe": {
+  "fam": "salon",
+  "kind": "video",
+  "alt": "Selda Gençer Beauty Center cephesi, resepsiyon, sertifika duvarı ve bekleme salonu",
+  "id": "17877211629689213",
+  "permalink": "https://www.instagram.com/reel/DcTuCKTsb1F/",
+  "date": "2026-08-21",
+  "yuz": false,
+  "mp4": "salon-cephe.mp4",
+  "poster": "salon-cephe-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 4.71,
+  "bytes": 1177957,
+  "film": {
+   "dir": "film/salon-cephe",
+   "frames": 35
+  },
+  "split": null
+ },
+ "salon-tur": {
+  "fam": "salon",
+  "kind": "video",
+  "alt": "Salon turu: tırnak barı, uygulama odası ve altın korkuluklu merdiven",
+  "id": "18014729837423154",
+  "permalink": "https://www.instagram.com/reel/C9ClPiYIfnF/",
+  "date": "2024-07-05",
+  "yuz": false,
+  "mp4": "salon-tur.mp4",
+  "poster": "salon-tur-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 14,
+  "bytes": 1267968,
+  "split": null
+ },
+ "salon-resepsiyon": {
+  "fam": "salon",
+  "kind": "image",
+  "alt": "Kasetli tavanlı resepsiyon ve bekleme salonu",
+  "id": "17915368251233815",
+  "permalink": "https://www.instagram.com/p/DRtm2y9jBN-/",
+  "date": "2025-12-01",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "salon-resepsiyon-480.webp",
+    "800": "salon-resepsiyon-800.webp",
+    "1200": "salon-resepsiyon-1200.webp"
+   },
+   "w": 1440,
+   "h": 1440
+  },
+  "split": null
+ },
+ "salon-merdiven": {
+  "fam": "salon",
+  "kind": "image",
+  "alt": "Altın çıtalı merdiven ve kadife koltuklu bekleme alanı",
+  "id": "18081951466894957",
+  "permalink": "https://www.instagram.com/p/DRUXGgZjBdp/",
+  "date": "2025-11-21",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "salon-merdiven-480.webp",
+    "800": "salon-merdiven-800.webp",
+    "1200": "salon-merdiven-1200.webp"
+   },
+   "w": 1440,
+   "h": 1464
+  },
+  "split": null
+ },
+ "salon-lobi": {
+  "fam": "salon",
+  "kind": "image",
+  "alt": "Mermer zeminli lobi ve merdiven",
+  "id": "18206708032335644",
+  "permalink": "https://www.instagram.com/p/DW_gkM0jAIY/",
+  "date": "2026-04-11",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "salon-lobi-480.webp",
+    "800": "salon-lobi-800.webp",
+    "1200": "salon-lobi-1200.webp"
+   },
+   "w": 1440,
+   "h": 1440
+  },
+  "split": null
+ },
+ "salon-lobi-2": {
+  "fam": "salon",
+  "kind": "image",
+  "alt": "Cam cepheli bekleme salonu",
+  "id": "18083680814252903",
+  "permalink": "https://www.instagram.com/p/DVdCr4RjEUo/",
+  "date": "2026-03-04",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "salon-lobi-2-480.webp",
+    "800": "salon-lobi-2-800.webp",
+    "1200": "salon-lobi-2-1200.webp"
+   },
+   "w": 1440,
+   "h": 1440
+  },
+  "split": null
+ },
+ "acilis": {
+  "fam": "salon",
+  "kind": "video",
+  "alt": "Selda Gençer Beauty Center açılışı, 2024",
+  "id": "18032788969913973",
+  "permalink": "https://www.instagram.com/reel/C5RlcVGswK1/",
+  "date": "2024-04-02",
+  "yuz": true,
+  "mp4": "acilis.mp4",
+  "poster": "acilis-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 9,
+  "bytes": 1727730,
+  "split": null
+ },
+ "acilis-foto": {
+  "fam": "salon",
+  "kind": "image",
+  "alt": "Selda Gençer Beauty Center açılış günü, 2024",
+  "id": "18045137929722800",
+  "permalink": "https://www.instagram.com/p/C5RlVZmsAMo/",
+  "date": "2024-04-02",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "acilis-foto-480.webp",
+    "800": "acilis-foto-800.webp"
+   },
+   "w": 1080,
+   "h": 1080
+  },
+  "split": null
+ },
+ "kas-altin-oran": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Altın oran kaş alımı öncesi ve sonrası",
+  "id": "17969532135076932",
+  "permalink": "https://www.instagram.com/p/DaH0PsLMmGL/",
+  "date": "2026-06-28",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "kas-altin-oran-once-480.webp",
+    "800": "kas-altin-oran-once-800.webp",
+    "1200": "kas-altin-oran-once-1200.webp"
+   },
+   "w": 1448,
+   "h": 965
+  },
+  "sonra": {
+   "files": {
+    "480": "kas-altin-oran-sonra-480.webp",
+    "800": "kas-altin-oran-sonra-800.webp",
+    "1200": "kas-altin-oran-sonra-1200.webp"
+   },
+   "w": 1448,
+   "h": 965
+  },
+  "split": "h"
+ },
+ "kas-cift-2": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Kaş alımı öncesi ve sonrası",
+  "id": "18092748737430504",
+  "permalink": "https://www.instagram.com/p/Dc0VtHQxebU/",
+  "date": "2026-09-03",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "kas-cift-2-once-480.webp",
+    "800": "kas-cift-2-once-800.webp",
+    "1200": "kas-cift-2-once-1200.webp"
+   },
+   "w": 2048,
+   "h": 1365
+  },
+  "sonra": {
+   "files": {
+    "480": "kas-cift-2-sonra-480.webp",
+    "800": "kas-cift-2-sonra-800.webp",
+    "1200": "kas-cift-2-sonra-1200.webp"
+   },
+   "w": 2048,
+   "h": 1365
+  },
+  "split": "h"
+ },
+ "kas-kina": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Altın oran kaş: kına uygulaması ve sonuç",
+  "id": "18196341943375941",
+  "permalink": "https://www.instagram.com/p/DdBdmStscdR/",
+  "date": "2026-09-08",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "kas-kina-once-480.webp",
+    "800": "kas-kina-once-800.webp",
+    "1200": "kas-kina-once-1200.webp"
+   },
+   "w": 1448,
+   "h": 965
+  },
+  "sonra": {
+   "files": {
+    "480": "kas-kina-sonra-480.webp",
+    "800": "kas-kina-sonra-800.webp",
+    "1200": "kas-kina-sonra-1200.webp"
+   },
+   "w": 1448,
+   "h": 965
+  },
+  "split": "h"
+ },
+ "kas-laminasyon": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Kaş laminasyonu öncesi ve sonrası",
+  "id": "18088049695997551",
+  "permalink": "https://www.instagram.com/p/DSJ_9S8jGej/",
+  "date": "2025-12-12",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "kas-laminasyon-once-480.webp",
+    "800": "kas-laminasyon-once-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "sonra": {
+   "files": {
+    "480": "kas-laminasyon-sonra-480.webp",
+    "800": "kas-laminasyon-sonra-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "split": "h"
+ },
+ "kas-profil": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Altın oranla şekillendirilmiş kaş, yakın çekim",
+  "id": "17879042364617421",
+  "permalink": "https://www.instagram.com/p/Da-I1t2Mi6d/",
+  "date": "2026-07-19",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "kas-profil-480.webp",
+    "800": "kas-profil-800.webp",
+    "1200": "kas-profil-1200.webp"
+   },
+   "w": 1448,
+   "h": 1931
+  },
+  "split": null
+ },
+ "kas-yakin": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Şekillendirilmiş dolgun kaş, yan profil",
+  "id": "18037699223717361",
+  "permalink": "https://www.instagram.com/p/DRtmFG1DLQ2/",
+  "date": "2025-12-01",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "kas-yakin-480.webp",
+    "800": "kas-yakin-800.webp"
+   },
+   "w": 1080,
+   "h": 1350
+  },
+  "split": null
+ },
+ "kas-3-adim": {
+  "fam": "kas",
+  "kind": "image",
+  "alt": "Kaş laminasyonu: önce, uygulama ve sonuç",
+  "id": "18040684901410337",
+  "permalink": "https://www.instagram.com/p/DOstKOsjOW9/",
+  "date": "2025-09-17",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "kas-3-adim-once-480.webp",
+    "800": "kas-3-adim-once-800.webp",
+    "1200": "kas-3-adim-once-1200.webp"
+   },
+   "w": 1335,
+   "h": 555
+  },
+  "sonra": {
+   "files": {
+    "480": "kas-3-adim-sonra-480.webp",
+    "800": "kas-3-adim-sonra-800.webp",
+    "1200": "kas-3-adim-sonra-1200.webp"
+   },
+   "w": 1335,
+   "h": 555
+  },
+  "full": {
+   "files": {
+    "480": "kas-3-adim-480.webp",
+    "800": "kas-3-adim-800.webp",
+    "1200": "kas-3-adim-1200.webp"
+   },
+   "w": 1335,
+   "h": 1666
+  },
+  "split": "h3"
+ },
+ "kirpik-makro-1": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "İpek kirpik makro çekim",
+  "id": "17986019318762562",
+  "permalink": "https://www.instagram.com/p/DSpRjZ1jJGP/",
+  "date": "2025-12-24",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "kirpik-makro-1-480.webp",
+    "800": "kirpik-makro-1-800.webp"
+   },
+   "w": 1080,
+   "h": 1080
+  },
+  "split": null
+ },
+ "kirpik-makro-2": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Volüm ipek kirpik yakın çekim",
+  "id": "17885561247405556",
+  "permalink": "https://www.instagram.com/p/DRmE5EFDKWN/",
+  "date": "2025-11-28",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "kirpik-makro-2-480.webp",
+    "800": "kirpik-makro-2-800.webp"
+   },
+   "w": 1080,
+   "h": 1080
+  },
+  "split": null
+ },
+ "kirpik-makro-3": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Mega volüm ipek kirpik detayı",
+  "id": "17918048469017834",
+  "permalink": "https://www.instagram.com/p/DMfwhJFoQ_h/",
+  "date": "2025-07-24",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "kirpik-makro-3-480.webp",
+    "800": "kirpik-makro-3-800.webp",
+    "1200": "kirpik-makro-3-1200.webp"
+   },
+   "w": 1440,
+   "h": 1440
+  },
+  "split": null
+ },
+ "kirpik-makro-4": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Kirpik, yakın çekim",
+  "id": "18027584354550038",
+  "permalink": "https://www.instagram.com/p/DQHW-gtDEjG/",
+  "date": "2025-10-22",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "kirpik-makro-4-480.webp",
+    "800": "kirpik-makro-4-800.webp",
+    "1200": "kirpik-makro-4-1200.webp"
+   },
+   "w": 1350,
+   "h": 1688
+  },
+  "split": null
+ },
+ "ipek-kirpik-1": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "İpek kirpik uygulaması sonrası",
+  "id": "18107383999958512",
+  "permalink": "https://www.instagram.com/p/DaYHzI2spiJ/",
+  "date": "2026-07-04",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "ipek-kirpik-1-480.webp",
+    "800": "ipek-kirpik-1-800.webp",
+    "1200": "ipek-kirpik-1-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "ipek-kirpik-2": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Klasik ipek kirpik sonucu",
+  "id": "18126043255725501",
+  "permalink": "https://www.instagram.com/p/DZsB_kIsfUD/",
+  "date": "2026-06-17",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "ipek-kirpik-2-480.webp",
+    "800": "ipek-kirpik-2-800.webp",
+    "1200": "ipek-kirpik-2-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "ipek-kirpik-3": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "İpek kirpik ve kaş, tam bakış",
+  "id": "17883162954668298",
+  "permalink": "https://www.instagram.com/p/DaXTlRcs-lp/",
+  "date": "2026-07-04",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "ipek-kirpik-3-480.webp",
+    "800": "ipek-kirpik-3-800.webp",
+    "1200": "ipek-kirpik-3-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "ipek-kirpik-4": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Doğal görünümlü ipek kirpik",
+  "id": "18027151178746074",
+  "permalink": "https://www.instagram.com/p/DZuGSrRs7l3/",
+  "date": "2026-06-18",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "ipek-kirpik-4-480.webp",
+    "800": "ipek-kirpik-4-800.webp",
+    "1200": "ipek-kirpik-4-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "ipek-kirpik-5": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Hacimli ipek kirpik",
+  "id": "17917970235180938",
+  "permalink": "https://www.instagram.com/p/DZsTM2lsKG7/",
+  "date": "2026-06-17",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "ipek-kirpik-5-480.webp",
+    "800": "ipek-kirpik-5-800.webp",
+    "1200": "ipek-kirpik-5-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "ipek-kirpik-6": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "İpek kirpik, yan açı",
+  "id": "18103810502001285",
+  "permalink": "https://www.instagram.com/p/DZNG79qsmLl/",
+  "date": "2026-06-05",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "ipek-kirpik-6-480.webp",
+    "800": "ipek-kirpik-6-800.webp",
+    "1200": "ipek-kirpik-6-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "dudak-cift-1": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme öncesi ve sonrası",
+  "id": "17911169580122001",
+  "permalink": "https://www.instagram.com/p/DSXIl1GCJaH/",
+  "date": "2025-12-17",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "dudak-cift-1-once-480.webp",
+    "800": "dudak-cift-1-once-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "sonra": {
+   "files": {
+    "480": "dudak-cift-1-sonra-480.webp",
+    "800": "dudak-cift-1-sonra-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "split": "h"
+ },
+ "dudak-cift-2": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı dudak renklendirme öncesi ve sonrası",
+  "id": "18075112550059667",
+  "permalink": "https://www.instagram.com/p/DNvbiiC2Ihk/",
+  "date": "2025-08-24",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "dudak-cift-2-once-480.webp",
+    "800": "dudak-cift-2-once-800.webp",
+    "1200": "dudak-cift-2-once-1200.webp"
+   },
+   "w": 1440,
+   "h": 900
+  },
+  "sonra": {
+   "files": {
+    "480": "dudak-cift-2-sonra-480.webp",
+    "800": "dudak-cift-2-sonra-800.webp",
+    "1200": "dudak-cift-2-sonra-1200.webp"
+   },
+   "w": 1440,
+   "h": 900
+  },
+  "split": "h"
+ },
+ "dudak-cift-3": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme, yan açı önce ve sonra",
+  "id": "18064602863533289",
+  "permalink": "https://www.instagram.com/p/DSXCQYAiEJ5/",
+  "date": "2025-12-17",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "dudak-cift-3-once-480.webp",
+    "800": "dudak-cift-3-once-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "sonra": {
+   "files": {
+    "480": "dudak-cift-3-sonra-480.webp",
+    "800": "dudak-cift-3-sonra-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "split": "h"
+ },
+ "dudak-cift-4": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme sonucu, önce ve sonra",
+  "id": "17974051505767167",
+  "permalink": "https://www.instagram.com/p/DNvDLkI2BPM/",
+  "date": "2025-08-24",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "dudak-cift-4-once-480.webp",
+    "800": "dudak-cift-4-once-800.webp",
+    "1200": "dudak-cift-4-once-1200.webp"
+   },
+   "w": 1440,
+   "h": 900
+  },
+  "sonra": {
+   "files": {
+    "480": "dudak-cift-4-sonra-480.webp",
+    "800": "dudak-cift-4-sonra-800.webp",
+    "1200": "dudak-cift-4-sonra-1200.webp"
+   },
+   "w": 1440,
+   "h": 900
+  },
+  "split": "h"
+ },
+ "dudak-cift-5": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme, profil önce ve sonra",
+  "id": "18090624406991437",
+  "permalink": "https://www.instagram.com/p/DTnnhDFjLH7/",
+  "date": "2026-01-17",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "dudak-cift-5-once-480.webp"
+   },
+   "w": 720,
+   "h": 1800
+  },
+  "sonra": {
+   "files": {
+    "480": "dudak-cift-5-sonra-480.webp"
+   },
+   "w": 720,
+   "h": 1800
+  },
+  "split": "v"
+ },
+ "dudak-1": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı dudak renklendirme sonucu",
+  "id": "18097193168193292",
+  "permalink": "https://www.instagram.com/p/DaaGQwdsU2Y/",
+  "date": "2026-07-05",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "dudak-1-480.webp",
+    "800": "dudak-1-800.webp",
+    "1200": "dudak-1-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "dudak-2": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme, doğal ton",
+  "id": "18097362176047296",
+  "permalink": "https://www.instagram.com/p/DaaxhdWsMMD/",
+  "date": "2026-07-05",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "dudak-2-480.webp",
+    "800": "dudak-2-800.webp",
+    "1200": "dudak-2-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "pmu-kas-1": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı makyaj kaş sonucu",
+  "id": "18098050940207862",
+  "permalink": "https://www.instagram.com/p/DaswTonMCiX/",
+  "date": "2026-07-12",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "pmu-kas-1-480.webp",
+    "800": "pmu-kas-1-800.webp",
+    "1200": "pmu-kas-1-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "pmu-kas-2": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Microblading kaş: çizim ve sonuç",
+  "id": "18076203524667311",
+  "permalink": "https://www.instagram.com/p/DaU0pjIxX9z/",
+  "date": "2026-07-03",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "pmu-kas-2-480.webp",
+    "800": "pmu-kas-2-800.webp",
+    "1200": "pmu-kas-2-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "cilt-yarim-1": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Cilt bakımı: yüzün yarısı öncesi, yarısı sonrası",
+  "id": "17951646918167938",
+  "permalink": "https://www.instagram.com/p/DYxJxzfsFEq/",
+  "date": "2026-05-25",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-yarim-1-480.webp",
+    "800": "cilt-yarim-1-800.webp",
+    "1200": "cilt-yarim-1-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "cilt-yarim-2": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Cilt bakımı sonrası ışıltı, yarım yüz karşılaştırma",
+  "id": "17909854857222461",
+  "permalink": "https://www.instagram.com/p/DYxIOxos5HX/",
+  "date": "2026-05-25",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-yarim-2-480.webp",
+    "800": "cilt-yarim-2-800.webp",
+    "1200": "cilt-yarim-2-1200.webp"
+   },
+   "w": 1341,
+   "h": 1677
+  },
+  "split": null
+ },
+ "cilt-cift-1": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Cilt bakımı öncesi ve sonrası",
+  "id": "18039236768821035",
+  "permalink": "https://www.instagram.com/p/Dbp7vllMb6C/",
+  "date": "2026-08-05",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "cilt-cift-1-once-480.webp"
+   },
+   "w": 668,
+   "h": 1654
+  },
+  "sonra": {
+   "files": {
+    "480": "cilt-cift-1-sonra-480.webp"
+   },
+   "w": 668,
+   "h": 1654
+  },
+  "split": "v"
+ },
+ "cilt-cift-2": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Cilt bakımı öncesi ve sonrası, yakın çekim",
+  "id": "18016986917719157",
+  "permalink": "https://www.instagram.com/p/DbnPT9qsnYI/",
+  "date": "2026-08-04",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "cilt-cift-2-once-480.webp"
+   },
+   "w": 675,
+   "h": 1687
+  },
+  "sonra": {
+   "files": {
+    "480": "cilt-cift-2-sonra-480.webp"
+   },
+   "w": 675,
+   "h": 1687
+  },
+  "split": "v"
+ },
+ "akne-cift-1": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Akne bakımı öncesi ve sonrası",
+  "id": "17937892356335721",
+  "permalink": "https://www.instagram.com/p/DbEHYCXNW2x/",
+  "date": "2026-07-21",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "akne-cift-1-once-480.webp",
+    "800": "akne-cift-1-once-800.webp",
+    "1200": "akne-cift-1-once-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "sonra": {
+   "files": {
+    "480": "akne-cift-1-sonra-480.webp",
+    "800": "akne-cift-1-sonra-800.webp",
+    "1200": "akne-cift-1-sonra-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "split": "h"
+ },
+ "akne-cift-2": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Akne bakımı öncesi ve sonrası, ikinci danışan",
+  "id": "18029533706831317",
+  "permalink": "https://www.instagram.com/p/DbDhr3yMcUn/",
+  "date": "2026-07-21",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "akne-cift-2-once-480.webp",
+    "800": "akne-cift-2-once-800.webp",
+    "1200": "akne-cift-2-once-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "sonra": {
+   "files": {
+    "480": "akne-cift-2-sonra-480.webp",
+    "800": "akne-cift-2-sonra-800.webp",
+    "1200": "akne-cift-2-sonra-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "split": "h"
+ },
+ "cilt-cift-3": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Leke bakımı öncesi ve sonrası",
+  "id": "18086010650107298",
+  "permalink": "https://www.instagram.com/p/DScN4flDIDK/",
+  "date": "2025-12-19",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "cilt-cift-3-once-480.webp"
+   },
+   "w": 540,
+   "h": 1080
+  },
+  "sonra": {
+   "files": {
+    "480": "cilt-cift-3-sonra-480.webp"
+   },
+   "w": 540,
+   "h": 1080
+  },
+  "split": "v"
+ },
+ "cilt-cift-4": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Cilt bakımı sonrası nem ve parlaklık",
+  "id": "17987084615917224",
+  "permalink": "https://www.instagram.com/p/DSSDlHsDBy9/",
+  "date": "2025-12-15",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "cilt-cift-4-once-480.webp"
+   },
+   "w": 540,
+   "h": 1080
+  },
+  "sonra": {
+   "files": {
+    "480": "cilt-cift-4-sonra-480.webp"
+   },
+   "w": 540,
+   "h": 1080
+  },
+  "split": "v"
+ },
+ "cilt-cift-5": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Kızarıklık bakımı öncesi ve sonrası",
+  "id": "18091846780704413",
+  "permalink": "https://www.instagram.com/p/DOJFEsTCIqD/",
+  "date": "2025-09-03",
+  "yuz": true,
+  "once": {
+   "files": {
+    "480": "cilt-cift-5-once-480.webp"
+   },
+   "w": 720,
+   "h": 1800
+  },
+  "sonra": {
+   "files": {
+    "480": "cilt-cift-5-sonra-480.webp"
+   },
+   "w": 720,
+   "h": 1800
+  },
+  "split": "v"
+ },
+ "cilt-islem": {
+  "fam": "cilt",
+  "kind": "image",
+  "alt": "Cilt bakımında maske uygulaması",
+  "id": "18394257022142297",
+  "permalink": "https://www.instagram.com/p/DNkfnFMMLMN/",
+  "date": "2025-08-20",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-islem-480.webp",
+    "800": "cilt-islem-800.webp"
+   },
+   "w": 1080,
+   "h": 1350
+  },
+  "split": null
+ },
+ "cilt-led": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "LED ışık terapisi: yeşil, kırmızı, mor ve mavi ışık",
+  "id": "18617996404000518",
+  "permalink": "https://www.instagram.com/reel/DaNuslHMnY3/",
+  "date": "2026-06-30",
+  "yuz": false,
+  "mp4": "cilt-led.mp4",
+  "poster": "cilt-led-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 15.62,
+  "bytes": 1936130,
+  "film": {
+   "dir": "film/cilt-led",
+   "frames": 59
+  },
+  "split": null
+ },
+ "cilt-video-2": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Cilt bakımı uygulaması",
+  "id": "18084203987184570",
+  "permalink": "https://www.instagram.com/reel/DafduCVsd-M/",
+  "date": "2026-07-07",
+  "yuz": false,
+  "mp4": "cilt-video-2.mp4",
+  "poster": "cilt-video-2-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 7.26,
+  "bytes": 1570079,
+  "split": null
+ },
+ "cilt-video-3": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "LED kubbe ile cilt bakımı",
+  "id": "18119195767718567",
+  "permalink": "https://www.instagram.com/reel/Dck5y-psgr1/",
+  "date": "2026-08-28",
+  "yuz": false,
+  "mp4": "cilt-video-3.mp4",
+  "poster": "cilt-video-3-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 12,
+  "bytes": 1311527,
+  "split": null
+ },
+ "tirnak-kare-kirmizi": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Kırmızı kalıcı oje, kare tırnak",
+  "id": "17976576482881104",
+  "permalink": "https://www.instagram.com/p/DZ0S1yNsYpW/",
+  "date": "2026-06-20",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-kare-kirmizi-480.webp",
+    "800": "tirnak-kare-kirmizi-800.webp",
+    "1200": "tirnak-kare-kirmizi-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "mask": "tirnak-kare-kirmizi-mask.png",
+  "split": null
+ },
+ "tirnak-uzun-kirmizi": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Kırmızı uzun protez tırnak",
+  "id": "18165363142437661",
+  "permalink": "https://www.instagram.com/p/DYesJ3oMmJi/",
+  "date": "2026-05-18",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-uzun-kirmizi-480.webp",
+    "800": "tirnak-uzun-kirmizi-800.webp",
+    "1200": "tirnak-uzun-kirmizi-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "mask": "tirnak-uzun-kirmizi-mask.png",
+  "split": null
+ },
+ "tirnak-badem-bordo": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Bordo badem protez tırnak",
+  "id": "18131148559533053",
+  "permalink": "https://www.instagram.com/p/DazhLIOsPh1/",
+  "date": "2026-07-15",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-badem-bordo-480.webp",
+    "800": "tirnak-badem-bordo-800.webp",
+    "1200": "tirnak-badem-bordo-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "mask": "tirnak-badem-bordo-mask.png",
+  "split": null
+ },
+ "tirnak-yuvarlak-kirmizi": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Kırmızı oval kalıcı oje",
+  "id": "18083162861007929",
+  "permalink": "https://www.instagram.com/p/DVVzvyxjCSF/",
+  "date": "2026-03-01",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-yuvarlak-kirmizi-480.webp",
+    "800": "tirnak-yuvarlak-kirmizi-800.webp",
+    "1200": "tirnak-yuvarlak-kirmizi-1200.webp"
+   },
+   "w": 1338,
+   "h": 1688
+  },
+  "mask": "tirnak-yuvarlak-kirmizi-mask.png",
+  "split": null
+ },
+ "tirnak-inci": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "İnci efektli protez tırnak",
+  "id": "18095137817263128",
+  "permalink": "https://www.instagram.com/p/DaFqaxyDIZf/",
+  "date": "2026-06-27",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-inci-480.webp",
+    "800": "tirnak-inci-800.webp"
+   },
+   "w": 1080,
+   "h": 1339
+  },
+  "split": null
+ },
+ "tirnak-holo": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Holografik nail art",
+  "id": "17873233836616558",
+  "permalink": "https://www.instagram.com/p/DZpFzZaM2IZ/",
+  "date": "2026-06-16",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-holo-480.webp",
+    "800": "tirnak-holo-800.webp"
+   },
+   "w": 1057,
+   "h": 1410
+  },
+  "split": null
+ },
+ "tirnak-mor": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Mor taş detaylı nail art",
+  "id": "17994977030970583",
+  "permalink": "https://www.instagram.com/p/DZkBVOsjPhP/",
+  "date": "2026-06-14",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-mor-480.webp",
+    "800": "tirnak-mor-800.webp"
+   },
+   "w": 1080,
+   "h": 1339
+  },
+  "split": null
+ },
+ "tirnak-3d": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "3D çiçek detaylı protez tırnak",
+  "id": "18105850234807306",
+  "permalink": "https://www.instagram.com/p/DZg7EtrjOQ1/",
+  "date": "2026-06-13",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-3d-480.webp",
+    "800": "tirnak-3d-800.webp"
+   },
+   "w": 1086,
+   "h": 1433
+  },
+  "split": null
+ },
+ "tirnak-neon": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Neon mor kalıcı oje",
+  "id": "18118434571698269",
+  "permalink": "https://www.instagram.com/p/DZaRrg5DEM2/",
+  "date": "2026-06-10",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-neon-480.webp",
+    "800": "tirnak-neon-800.webp"
+   },
+   "w": 1086,
+   "h": 1448
+  },
+  "split": null
+ },
+ "tirnak-gumus": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Gümüş simli ombre protez tırnak",
+  "id": "18159807721458502",
+  "permalink": "https://www.instagram.com/p/DZU-NdDMqNd/",
+  "date": "2026-06-08",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-gumus-480.webp",
+    "800": "tirnak-gumus-800.webp",
+    "1200": "tirnak-gumus-1200.webp"
+   },
+   "w": 1448,
+   "h": 1931
+  },
+  "split": null
+ },
+ "tirnak-mermer": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Mermer desenli nail art",
+  "id": "18133751902546934",
+  "permalink": "https://www.instagram.com/p/DW_g3pZjNRU/",
+  "date": "2026-04-11",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-mermer-480.webp",
+    "800": "tirnak-mermer-800.webp"
+   },
+   "w": 1080,
+   "h": 1350
+  },
+  "split": null
+ },
+ "tirnak-kirmizi-2": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Parlak kırmızı kalıcı oje",
+  "id": "18003542663910256",
+  "permalink": "https://www.instagram.com/p/DWogtCsjLI8/",
+  "date": "2026-04-02",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-kirmizi-2-480.webp",
+    "800": "tirnak-kirmizi-2-800.webp",
+    "1200": "tirnak-kirmizi-2-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "tirnak-lacivert-desen": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Lacivert desenli jel destekli kalıcı oje",
+  "id": "18063531056450206",
+  "permalink": "https://www.instagram.com/p/DWWum-UDPAM/",
+  "date": "2026-03-26",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-lacivert-desen-480.webp",
+    "800": "tirnak-lacivert-desen-800.webp",
+    "1200": "tirnak-lacivert-desen-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "tirnak-lila-french": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Lila french protez tırnak",
+  "id": "18101695625503990",
+  "permalink": "https://www.instagram.com/p/DVtgtc5jHEN/",
+  "date": "2026-03-10",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-lila-french-480.webp",
+    "800": "tirnak-lila-french-800.webp",
+    "1200": "tirnak-lila-french-1200.webp"
+   },
+   "w": 1440,
+   "h": 1440
+  },
+  "split": null
+ },
+ "tirnak-bebek-mavisi": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Bebek mavisi badem tırnak",
+  "id": "17852457033654946",
+  "permalink": "https://www.instagram.com/p/DUaC9IAjFjP/",
+  "date": "2026-02-06",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-bebek-mavisi-480.webp",
+    "800": "tirnak-bebek-mavisi-800.webp"
+   },
+   "w": 986,
+   "h": 986
+  },
+  "split": null
+ },
+ "tirnak-bordo-french": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Bordo french nail art",
+  "id": "17975884562957683",
+  "permalink": "https://www.instagram.com/p/DSM1zQsjK94/",
+  "date": "2025-12-13",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-bordo-french-480.webp",
+    "800": "tirnak-bordo-french-800.webp"
+   },
+   "w": 1080,
+   "h": 1080
+  },
+  "split": null
+ },
+ "tirnak-kirmizi-desen": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Kırmızı desenli protez tırnak",
+  "id": "18089862823953692",
+  "permalink": "https://www.instagram.com/p/DSMltn8DDqw/",
+  "date": "2025-12-13",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-kirmizi-desen-480.webp",
+    "800": "tirnak-kirmizi-desen-800.webp"
+   },
+   "w": 1080,
+   "h": 1080
+  },
+  "split": null
+ },
+ "tirnak-lacivert": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Lacivert kalıcı oje",
+  "id": "17932488975128667",
+  "permalink": "https://www.instagram.com/p/DRjg-9PjGbe/",
+  "date": "2025-11-27",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-lacivert-480.webp",
+    "800": "tirnak-lacivert-800.webp"
+   },
+   "w": 1080,
+   "h": 1080
+  },
+  "split": null
+ },
+ "tirnak-bakir-desen": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Bakır desenli nail art",
+  "id": "17945173287066411",
+  "permalink": "https://www.instagram.com/p/DQ9DCg6DBdV/",
+  "date": "2025-11-12",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-bakir-desen-480.webp",
+    "800": "tirnak-bakir-desen-800.webp",
+    "1200": "tirnak-bakir-desen-1200.webp"
+   },
+   "w": 1440,
+   "h": 1920
+  },
+  "split": null
+ },
+ "tirnak-sut-beyaz": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Süt beyazı badem protez tırnak",
+  "id": "18091879963865992",
+  "permalink": "https://www.instagram.com/p/DQy76k8DNN-/",
+  "date": "2025-11-08",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-sut-beyaz-480.webp",
+    "800": "tirnak-sut-beyaz-800.webp",
+    "1200": "tirnak-sut-beyaz-1200.webp"
+   },
+   "w": 1350,
+   "h": 1688
+  },
+  "split": null
+ },
+ "tirnak-leopar": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Leopar desenli siyah nail art",
+  "id": "18048141389508035",
+  "permalink": "https://www.instagram.com/p/DCOQOHesFkR/",
+  "date": "2024-11-11",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-leopar-480.webp",
+    "800": "tirnak-leopar-800.webp",
+    "1200": "tirnak-leopar-1200.webp"
+   },
+   "w": 1440,
+   "h": 1440
+  },
+  "split": null
+ },
+ "tirnak-nude": {
+  "fam": "tirnak",
+  "kind": "image",
+  "alt": "Nude badem protez tırnak",
+  "id": "18104233286116789",
+  "permalink": "https://www.instagram.com/p/DbG1qyZR4QM/",
+  "date": "2026-07-22",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "tirnak-nude-480.webp",
+    "800": "tirnak-nude-800.webp",
+    "1200": "tirnak-nude-1200.webp"
+   },
+   "w": 1350,
+   "h": 1687
+  },
+  "split": null
+ },
+ "tirnak-video-1": {
+  "fam": "tirnak",
+  "kind": "video",
+  "alt": "Nail art uygulaması",
+  "id": "17898568689257024",
+  "permalink": "https://www.instagram.com/reel/DNDowuHAjRY/",
+  "date": "2025-08-07",
+  "yuz": false,
+  "mp4": "tirnak-video-1.mp4",
+  "poster": "tirnak-video-1-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 12.9,
+  "bytes": 1356503,
+  "split": null
+ },
+ "tirnak-video-2": {
+  "fam": "tirnak",
+  "kind": "video",
+  "alt": "Protez tırnak sonucu",
+  "id": "18213037222332820",
+  "permalink": "https://www.instagram.com/reel/DZhyUcKMDtg/",
+  "date": "2026-06-13",
+  "yuz": false,
+  "mp4": "tirnak-video-2.mp4",
+  "poster": "tirnak-video-2-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 9.01,
+  "bytes": 858584,
+  "split": null
+ },
+ "tirnak-video-3": {
+  "fam": "tirnak",
+  "kind": "video",
+  "alt": "Badem protez tırnak, yakın çekim",
+  "id": "18096499007018487",
+  "permalink": "https://www.instagram.com/reel/DXHjUjijDYq/",
+  "date": "2026-04-14",
+  "yuz": false,
+  "mp4": "tirnak-video-3.mp4",
+  "poster": "tirnak-video-3-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 10.15,
+  "bytes": 792419,
+  "split": null
+ },
+ "lazer-1": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Lazer epilasyon uygulaması",
+  "id": "18187662313346224",
+  "permalink": "https://www.instagram.com/p/DSzZSGWDNlv/",
+  "date": "2025-12-28",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-1-480.webp",
+    "800": "lazer-1-800.webp"
+   },
+   "w": 901,
+   "h": 901
+  },
+  "split": null
+ },
+ "lazer-2": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Diode lazer başlığı ile uygulama",
+  "id": "18075151286260581",
+  "permalink": "https://www.instagram.com/p/DR_3q--DDZl/",
+  "date": "2025-12-08",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-2-480.webp",
+    "800": "lazer-2-800.webp",
+    "1200": "lazer-2-1200.webp"
+   },
+   "w": 1440,
+   "h": 1918
+  },
+  "split": null
+ },
+ "lazer-3": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Lazer epilasyon cihazı",
+  "id": "18095832997759812",
+  "permalink": "https://www.instagram.com/p/DPl67jADOJK/",
+  "date": "2025-10-09",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-3-480.webp",
+    "800": "lazer-3-800.webp",
+    "1200": "lazer-3-1200.webp"
+   },
+   "w": 1302,
+   "h": 1627
+  },
+  "split": null
+ },
+ "lazer-4": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Lazer epilasyon, kol bölgesi",
+  "id": "17897285763316977",
+  "permalink": "https://www.instagram.com/p/DPl5ZbpjK2v/",
+  "date": "2025-10-09",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-4-480.webp",
+    "800": "lazer-4-800.webp",
+    "1200": "lazer-4-1200.webp"
+   },
+   "w": 1350,
+   "h": 1688
+  },
+  "split": null
+ },
+ "lazer-5": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Lazer epilasyon, yakın çekim",
+  "id": "17894600409162953",
+  "permalink": "https://www.instagram.com/p/DNvBgY82Kpm/",
+  "date": "2025-08-24",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-5-480.webp",
+    "800": "lazer-5-800.webp",
+    "1200": "lazer-5-1200.webp"
+   },
+   "w": 1440,
+   "h": 1800
+  },
+  "split": null
+ },
+ "bolgesel-cift": {
+  "fam": "bolgesel",
+  "kind": "image",
+  "alt": "Bölgesel incelme öncesi ve sonrası",
+  "id": "18319579426235256",
+  "permalink": "https://www.instagram.com/p/DMxmJ7QshoE/",
+  "date": "2025-07-31",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "bolgesel-cift-once-480.webp"
+   },
+   "w": 540,
+   "h": 1350
+  },
+  "sonra": {
+   "files": {
+    "480": "bolgesel-cift-sonra-480.webp"
+   },
+   "w": 540,
+   "h": 1350
+  },
+  "split": "v"
+ },
+ "still-altin": {
+  "fam": "still",
+  "kind": "image",
+  "alt": "Altın aletler, mum ve kahve",
+  "id": "17880458079585542",
+  "permalink": "https://www.instagram.com/p/DYbL9vSo6b5/",
+  "date": "2026-05-17",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "still-altin-480.webp",
+    "800": "still-altin-800.webp",
+    "1200": "still-altin-1200.webp"
+   },
+   "w": 1254,
+   "h": 1254
+  },
+  "split": null
+ },
+ "still-kutu": {
+  "fam": "still",
+  "kind": "image",
+  "alt": "Altın Selda Gençer kutusu",
+  "id": "18104790091800124",
+  "permalink": "https://www.instagram.com/p/DZK8qytsrSN/",
+  "date": "2026-06-04",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "still-kutu-480.webp",
+    "800": "still-kutu-800.webp",
+    "1200": "still-kutu-1200.webp"
+   },
+   "w": 1254,
+   "h": 1254
+  },
+  "split": null
+ },
+ "still-firca": {
+  "fam": "still",
+  "kind": "image",
+  "alt": "Fırçalar ve bakım ürünleri",
+  "id": "18107668510813428",
+  "permalink": "https://www.instagram.com/p/DZkLl_4ss4D/",
+  "date": "2026-06-14",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "still-firca-480.webp",
+    "800": "still-firca-800.webp",
+    "1200": "still-firca-1200.webp"
+   },
+   "w": 1448,
+   "h": 1931
+  },
+  "split": null
+ },
+ "still-kirpik": {
+  "fam": "still",
+  "kind": "image",
+  "alt": "İpek kirpik tepsileri ve cımbızlar",
+  "id": "18593472577053386",
+  "permalink": "https://www.instagram.com/p/DZM4CFsMOBp/",
+  "date": "2026-06-05",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "still-kirpik-480.webp",
+    "800": "still-kirpik-800.webp",
+    "1200": "still-kirpik-1200.webp"
+   },
+   "w": 1254,
+   "h": 1254
+  },
+  "split": null
+ },
+ "still-urun": {
+  "fam": "still",
+  "kind": "image",
+  "alt": "Kirpik bakım ürünleri",
+  "id": "18185603593380318",
+  "permalink": "https://www.instagram.com/p/DZFYhJDMs1c/",
+  "date": "2026-06-02",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "still-urun-480.webp",
+    "800": "still-urun-800.webp"
+   },
+   "w": 1179,
+   "h": 1179
+  },
+  "split": null
+ },
+ "ipek-kirpik-cift": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "İpek kirpik öncesi ve sonrası",
+  "id": "18054018488742876",
+  "permalink": "https://www.instagram.com/p/DYbqEPRsxGd/",
+  "date": "2026-05-17",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "ipek-kirpik-cift-once-480.webp",
+    "800": "ipek-kirpik-cift-once-800.webp",
+    "1200": "ipek-kirpik-cift-once-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "sonra": {
+   "files": {
+    "480": "ipek-kirpik-cift-sonra-480.webp",
+    "800": "ipek-kirpik-cift-sonra-800.webp",
+    "1200": "ipek-kirpik-cift-sonra-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "split": "h"
+ },
+ "lifting-cift": {
+  "fam": "kirpik",
+  "kind": "image",
+  "alt": "Kirpik lifting öncesi ve sonrası",
+  "id": "18383965606199591",
+  "permalink": "https://www.instagram.com/p/DSj5I3mjIiU/",
+  "date": "2025-12-22",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "lifting-cift-once-480.webp",
+    "800": "lifting-cift-once-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "sonra": {
+   "files": {
+    "480": "lifting-cift-sonra-480.webp",
+    "800": "lifting-cift-sonra-800.webp"
+   },
+   "w": 1080,
+   "h": 540
+  },
+  "split": "h"
+ },
+ "goz-cizgisi-cift": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı göz çizgisi (dipliner) öncesi ve sonrası",
+  "id": "18092434226621694",
+  "permalink": "https://www.instagram.com/p/DaVQfuhsrKs/",
+  "date": "2026-07-03",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "goz-cizgisi-cift-once-480.webp",
+    "800": "goz-cizgisi-cift-once-800.webp",
+    "1200": "goz-cizgisi-cift-once-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "sonra": {
+   "files": {
+    "480": "goz-cizgisi-cift-sonra-480.webp",
+    "800": "goz-cizgisi-cift-sonra-800.webp",
+    "1200": "goz-cizgisi-cift-sonra-1200.webp"
+   },
+   "w": 1350,
+   "h": 843
+  },
+  "split": "h"
+ },
+ "lazer-film-jel": {
+  "fam": "lazer",
+  "kind": "video",
+  "alt": "Lazer epilasyon: jel üzerinde Lasermach başlığın pembe ışığı, salonumuzda çekildi",
+  "id": "17891700807595292",
+  "permalink": "https://www.instagram.com/reel/DbJQ6t1s_2s/",
+  "date": "2026-07-23",
+  "yuz": false,
+  "mp4": "lazer-film-jel.mp4",
+  "poster": "lazer-film-jel-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 5.9,
+  "bytes": 1164894,
+  "split": null
+ },
+ "lazer-film-cene": {
+  "fam": "lazer",
+  "kind": "video",
+  "alt": "Çene ve gıdı bölgesinde lazer epilasyon, salonumuzda çekildi",
+  "id": "18096951407528888",
+  "permalink": "https://www.instagram.com/reel/DcohwIgsCTi/",
+  "date": "2026-08-29",
+  "yuz": true,
+  "mp4": "lazer-film-cene.mp4",
+  "poster": "lazer-film-cene-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 7.4,
+  "bytes": 1005127,
+  "split": null
+ },
+ "lazer-film-bacak": {
+  "fam": "lazer",
+  "kind": "video",
+  "alt": "Bacakta lazer epilasyon uygulaması, salonumuzda çekildi",
+  "id": "18326727661258778",
+  "permalink": "https://www.instagram.com/reel/DanPdJNslBG/",
+  "date": "2026-07-10",
+  "yuz": false,
+  "mp4": "lazer-film-bacak.mp4",
+  "poster": "lazer-film-bacak-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 6.99,
+  "bytes": 1382298,
+  "split": null
+ },
+ "lazer-film-bacak2": {
+  "fam": "lazer",
+  "kind": "video",
+  "alt": "Lazer başlığı bacak üzerinde, salonumuzda çekildi",
+  "id": "17874576207529500",
+  "permalink": "https://www.instagram.com/reel/DantKM5MCa7/",
+  "date": "2026-07-10",
+  "yuz": false,
+  "mp4": "lazer-film-bacak2.mp4",
+  "poster": "lazer-film-bacak2-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 5.5,
+  "bytes": 1016125,
+  "split": null
+ },
+ "lazer-film-yuz": {
+  "fam": "lazer",
+  "kind": "video",
+  "alt": "Koruyucu gözlükle yüz bölgesinde lazer epilasyon, salonumuzda çekildi",
+  "id": "18361016620152430",
+  "permalink": "https://www.instagram.com/reel/DM-F_cyODvs/",
+  "date": "2025-08-05",
+  "yuz": true,
+  "mp4": "lazer-film-yuz.mp4",
+  "poster": "lazer-film-yuz-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 6.3,
+  "bytes": 1278167,
+  "split": null
+ },
+ "lazer-koltuk": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Koltuk altına Lasermach başlığıyla lazer epilasyon, salonumuzda",
+  "id": "18058141007303868",
+  "permalink": "https://www.instagram.com/p/DR_5SDpjPqD/",
+  "date": "2025-12-08",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-koltuk-480.webp",
+    "800": "lazer-koltuk-800.webp",
+    "1200": "lazer-koltuk-1200.webp"
+   },
+   "w": 1440,
+   "h": 1918
+  },
+  "split": null
+ },
+ "lazer-yuz-gozluk": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Koruyucu gözlükle yüz bölgesine lazer epilasyon",
+  "id": "18122820550555476",
+  "permalink": "https://www.instagram.com/p/DSzbKf_DOk3/",
+  "date": "2025-12-28",
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "lazer-yuz-gozluk-480.webp",
+    "800": "lazer-yuz-gozluk-800.webp"
+   },
+   "w": 1164,
+   "h": 1164
+  },
+  "split": null
+ },
+ "lazer-ekran": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Lasermach lazer cihazının ekranı: enerji, atım süresi, cilt tonu ve başlık sıcaklığı",
+  "id": "17977799688010994",
+  "permalink": "https://www.instagram.com/p/DY5HBIWMZVb/",
+  "date": "2026-05-28",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-ekran-480.webp",
+    "800": "lazer-ekran-800.webp",
+    "1200": "lazer-ekran-1200.webp"
+   },
+   "w": 1448,
+   "h": 1931
+  },
+  "split": null
+ },
+ "lazer-uzman": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Eldivenli uzmanımız bacağa lazer epilasyon uyguluyor",
+  "id": "17914759008174743",
+  "permalink": "https://www.instagram.com/p/DNu7jtw2MQ1/",
+  "date": "2025-08-24",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-uzman-480.webp",
+    "800": "lazer-uzman-800.webp"
+   },
+   "w": 1080,
+   "h": 1350
+  },
+  "split": null
+ },
+ "lazer-kilif": {
+  "fam": "lazer",
+  "kind": "image",
+  "alt": "Koruyucu kılıflı lazer başlığıyla koltuk altı uygulaması",
+  "id": "18356001847208677",
+  "permalink": "https://www.instagram.com/p/DY5HLDDM-2v/",
+  "date": "2026-05-28",
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "lazer-kilif-480.webp",
+    "800": "lazer-kilif-800.webp"
+   },
+   "w": 824,
+   "h": 1019
+  },
+  "split": null
+ },
+ "pmu-dudak-a": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme: solda önce, sağda sonra",
+  "id": "public_html/images/kalici-makyaj-2.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "pmu-dudak-a-once-480.webp",
+    "795": "pmu-dudak-a-once-795.webp"
+   },
+   "w": 795,
+   "h": 1600
+  },
+  "sonra": {
+   "files": {
+    "480": "pmu-dudak-a-sonra-480.webp",
+    "795": "pmu-dudak-a-sonra-795.webp"
+   },
+   "w": 795,
+   "h": 1600
+  },
+  "split": null
+ },
+ "pmu-dudak-b": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme: soluk dudaktan belirgin tona, önce ve sonra",
+  "id": "public_html/images/kalici-makyaj-3.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "pmu-dudak-b-once-480.webp",
+    "800": "pmu-dudak-b-once-800.webp",
+    "1100": "pmu-dudak-b-once-1100.webp"
+   },
+   "w": 1102,
+   "h": 733
+  },
+  "sonra": {
+   "files": {
+    "480": "pmu-dudak-b-sonra-480.webp",
+    "800": "pmu-dudak-b-sonra-800.webp",
+    "1100": "pmu-dudak-b-sonra-1100.webp"
+   },
+   "w": 1102,
+   "h": 733
+  },
+  "split": null
+ },
+ "pmu-dudak-c": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Dudak renklendirme, yakın çekim önce ve sonra",
+  "id": "public_html/images/kalici-makyaj-1.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "pmu-dudak-c-once-480.webp"
+   },
+   "w": 411,
+   "h": 801
+  },
+  "sonra": {
+   "files": {
+    "480": "pmu-dudak-c-sonra-480.webp"
+   },
+   "w": 411,
+   "h": 801
+  },
+  "split": null
+ },
+ "pmu-goz-a": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı eyeliner: solda önce, sağda sonra",
+  "id": "public_html/images/kalici-makyaj-10.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "pmu-goz-a-once-480.webp",
+    "795": "pmu-goz-a-once-795.webp"
+   },
+   "w": 795,
+   "h": 1600
+  },
+  "sonra": {
+   "files": {
+    "480": "pmu-goz-a-sonra-480.webp",
+    "795": "pmu-goz-a-sonra-795.webp"
+   },
+   "w": 795,
+   "h": 1600
+  },
+  "split": null
+ },
+ "pmu-kas-cift-a": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı kaş: seyrek kaşlardan dolgun kaşlara, önce ve sonra",
+  "id": "17981935718764019",
+  "permalink": "https://www.instagram.com/p/DQbZNMODJzz/",
+  "date": "2025-10-30",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "pmu-kas-cift-a-once-480.webp",
+    "800": "pmu-kas-cift-a-once-800.webp",
+    "1200": "pmu-kas-cift-a-once-1200.webp"
+   },
+   "w": 1350,
+   "h": 841
+  },
+  "sonra": {
+   "files": {
+    "480": "pmu-kas-cift-a-sonra-480.webp",
+    "800": "pmu-kas-cift-a-sonra-800.webp",
+    "1200": "pmu-kas-cift-a-sonra-1200.webp"
+   },
+   "w": 1350,
+   "h": 841
+  },
+  "split": null
+ },
+ "pmu-kas-cift-b": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı kaş, kıl tekniği: önce ve sonra",
+  "id": "18091579450867776",
+  "permalink": "https://www.instagram.com/p/DQbc2zWDKvL/",
+  "date": "2025-10-30",
+  "yuz": false,
+  "once": {
+   "files": {
+    "480": "pmu-kas-cift-b-once-480.webp",
+    "800": "pmu-kas-cift-b-once-800.webp",
+    "1200": "pmu-kas-cift-b-once-1200.webp"
+   },
+   "w": 1350,
+   "h": 822
+  },
+  "sonra": {
+   "files": {
+    "480": "pmu-kas-cift-b-sonra-480.webp",
+    "800": "pmu-kas-cift-b-sonra-800.webp",
+    "1200": "pmu-kas-cift-b-sonra-1200.webp"
+   },
+   "w": 1350,
+   "h": 822
+  },
+  "split": null
+ },
+ "pmu-ton-gulpembe": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı dudak renklendirme, gül pembesi ton",
+  "id": "public_html/images/kalici-makyaj-4.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "800": "pmu-ton-gulpembe-800.webp",
+    "1200": "pmu-ton-gulpembe-1200.webp"
+   },
+   "w": 1536,
+   "h": 2048
+  },
+  "split": null
+ },
+ "pmu-ton-visne": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı dudak renklendirme, vişne ton",
+  "id": "public_html/images/kalici-makyaj-5.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "800": "pmu-ton-visne-800.webp",
+    "1200": "pmu-ton-visne-1200.webp"
+   },
+   "w": 1536,
+   "h": 2048
+  },
+  "split": null
+ },
+ "pmu-ton-gulkurusu": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı dudak renklendirme, gül kurusu ton",
+  "id": "public_html/images/kalici-makyaj-7.jpeg",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "800": "pmu-ton-gulkurusu-800.webp",
+    "1200": "pmu-ton-gulkurusu-1200.webp"
+   },
+   "w": 1200,
+   "h": 1600
+  },
+  "split": null
+ },
+ "pmu-kas-makro": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı kaş, kıl tekniği: yakın çekim",
+  "id": "18046411448587830",
+  "permalink": "https://www.instagram.com/p/Dask2ZHMreM/",
+  "date": "2026-07-12",
+  "yuz": false,
+  "full": {
+   "files": {
+    "800": "pmu-kas-makro-800.webp",
+    "1200": "pmu-kas-makro-1200.webp"
+   },
+   "w": 1350,
+   "h": 1395
+  },
+  "split": null
+ },
+ "pmu-kas-pudra": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı kaş, pudralama tekniği",
+  "id": "18037699223717361",
+  "permalink": "https://www.instagram.com/p/DRtmFG1DLQ2/",
+  "date": "2025-12-01",
+  "yuz": false,
+  "full": {
+   "files": {
+    "800": "pmu-kas-pudra-800.webp"
+   },
+   "w": 1080,
+   "h": 1350
+  },
+  "split": null
+ },
+ "pmu-oda-istasyon": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı makyaj istasyonu: pigmentler, kalem ve altın tepsi",
+  "id": "18604797226029445",
+  "permalink": "https://www.instagram.com/p/DaaXt9HsXau/",
+  "date": "2026-07-05",
+  "yuz": false,
+  "full": {
+   "files": {
+    "680": "pmu-oda-istasyon-680.webp"
+   },
+   "w": 680,
+   "h": 907
+  },
+  "split": null
+ },
+ "pmu-oda-yatak": {
+  "fam": "pmu",
+  "kind": "image",
+  "alt": "Kalıcı makyaj odası: kadife yatak, ayna ve bakım arabası",
+  "id": "17869181736564248",
+  "permalink": "https://www.instagram.com/p/DaVIWfwM9pG/",
+  "date": "2026-07-03",
+  "yuz": false,
+  "full": {
+   "files": {
+    "680": "pmu-oda-yatak-680.webp"
+   },
+   "w": 680,
+   "h": 907
+  },
+  "split": null
+ },
+ "pmu-kalem": {
+  "fam": "pmu",
+  "kind": "video",
+  "alt": "Kalıcı kaş seansı: kıl kıl çizim, tarama, sonuç ve aynada ilk bakış",
+  "id": "17971549406932390",
+  "permalink": "https://www.instagram.com/reel/DcD2JK_sqxa/",
+  "date": "2026-08-15",
+  "yuz": true,
+  "mp4": "pmu-kalem.mp4",
+  "poster": "pmu-kalem-poster.webp",
+  "w": 720,
+  "h": 1280,
+  "dur": 14.81,
+  "bytes": 1958515,
+  "film": {
+   "dir": "film/pmu-kalem",
+   "frames": 48
+  },
+  "split": null
+ }
+}

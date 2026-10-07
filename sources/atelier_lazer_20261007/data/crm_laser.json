@@ -1,0 +1,511 @@
+{
+ "_doc": "Laser rows of the live CRM price menu (/api/public/price-menu): names, minutes, sessions only. Prices are deliberately not stored (owner rule: laser shows no price).",
+ "as_of": "2026-10-07",
+ "version": "1789907876931-25-292",
+ "rows": [
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "BEL PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "BOYUN PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "ENSE PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "FULL VÜCUT (BİTİŞ GARANTİLİ) PAKET",
+   "min": 120,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "FULL VÜCUT PAKET",
+   "min": 120,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "GENİTAL",
+   "min": 46,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "GENİTAL",
+   "min": 31,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "GÖBEK PAKET",
+   "min": 45,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "GÖĞÜS PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "KEMER ÜSTÜ BİTİŞ GARANTİLİ PAKET",
+   "min": 120,
+   "sessions": 15
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "KEMER ÜSTÜ PAKET",
+   "min": 90,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "KOLTUK ALTI PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "KULAK",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "OMUZ PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "SAKAL ÜSTÜ PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "SIRT PAKET",
+   "min": 45,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "TÜM BACAK PAKET",
+   "min": 45,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "TÜM KOL PAKET",
+   "min": 45,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "TÜM YÜZ PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "YARIM BACAK PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON PAKET",
+   "name": "YARIM KOL PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "BEL",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "BOYUN",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "ENSE",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "FULL VÜCUT",
+   "min": 120,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "GENİTAL",
+   "min": 31,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "GENİTAL",
+   "min": 46,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "GÖBEK",
+   "min": 45,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "GÖĞÜS",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "KEMER ÜSTÜ",
+   "min": 90,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "KOLTUK ALTI",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "KULAK",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "OMUZ",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "SAKAL ÜSTÜ",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "SIRT",
+   "min": 45,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "TARAMA TEPEDEN TIRNAĞA",
+   "min": 120,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "TÜM BACAK",
+   "min": 60,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "TÜM KOL",
+   "min": 45,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "TÜM YÜZ",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "YARIM BACAK",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "ERKEK LAZER EPİLASYON SEANS",
+   "name": "YARIM KOL",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "BEL PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "BİTİŞ GARANTİLİ TEPEDEN TIRNAĞA PAKET",
+   "min": 120,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "BÖLGESEL TARAMA (OLAN YERLER) PAKET",
+   "min": 120,
+   "sessions": 6
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "BOYUN PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "ÇENE PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "DUDAK ÜSTÜ PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "GENİTAL PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "GIDI PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "GÖBEK PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "GÖĞÜS PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "KOLTUK ALTI PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "OMUZ PAKET",
+   "min": 15,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "SIRT PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TARAMA TEPEDEN TIRNAĞA PAKET",
+   "min": 120,
+   "sessions": 4
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TARAMA TEPEDEN TIRNAĞA PAKET",
+   "min": 120,
+   "sessions": 6
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TEPEDEN TIRNAĞA PAKET",
+   "min": 120,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TÜM BACAK PAKET",
+   "min": 45,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TÜM KOL PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TÜM VÜCUT 4 BÖLGE BİTİŞ GARANTİLİ PAKET",
+   "min": 75,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TÜM VÜCUT 4 BÖLGE PAKET",
+   "min": 75,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "TÜM YÜZ PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "YARIM BACAK PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON PAKET",
+   "name": "YARIM KOL PAKET",
+   "min": 30,
+   "sessions": 8
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "BEL",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "BOYUN",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "ÇENE",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "DUDAK ÜSTÜ",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "GENİTAL",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "GIDI",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "GÖBEK",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "GÖĞÜS",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "KOLTUK ALTI",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "OMUZ",
+   "min": 15,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "POPO",
+   "min": 26,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "SIRT",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "TARAMA TEPEDEN TIRNAĞA",
+   "min": 120,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "TEPEDEN TIRNAĞA",
+   "min": 120,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "TÜM BACAK",
+   "min": 45,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "TÜM KOL",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "TÜM VÜCUT 4 BÖLGE",
+   "min": 75,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "TÜM YÜZ",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "YARIM BACAK",
+   "min": 30,
+   "sessions": 1
+  },
+  {
+   "service": "KADIN LAZER EPİLASYON SEANS",
+   "name": "YARIM KOL",
+   "min": 30,
+   "sessions": 1
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "_doc": "Laser reviews shown on the ATELIER laser pages. Text is the reviewer's own words from the Google Business Profile (gbp_cli.py reviews --raw), never reworded; a trailing '…' marks a cut made only to leave out a staff member's name (owner 10-07: no specialist names) or a percentage claim. 'n' is first name + surname initial. build.py --reviews-raw re-counts 'stats' and checks every quote is still a verbatim prefix of a live review.",
+ "stats": {"mentions": 31, "five": 30, "as_of": "2026-10-06", "rule": "original (non-translated) comment matches /lazer|epilasyon/i"},
+ "items": [
+  {"n": "Senem Cemre D.", "d": "2026-07", "t": "Daha önce bir çok yerde epilasyona gitmiş olmama rağmen hiç sonuç almamıştım. Çok memnunum. …"},
+  {"n": "A. B.", "d": "2026-06", "t": "Kapıdan girdiğiniz andan itibaren güler yüz ile karşılanıyorsunuz. Lazer epilasyonda gerçek anlamda çok kaliteliler. …"},
+  {"n": "Berke S.", "d": "2025-11", "g": "m", "t": "Başarılı işlem. Acısız lazer. Başarılı uzman."},
+  {"n": "Neslihan T.", "d": "2025-10", "t": "Ankara Çayyolu’nda uzun zamandır güvenebileceğim bir güzellik merkezi arıyordum. Selda Gencel Güzellik Merkezi’nde lazer epilasyona başladım ve ilk seanstan itibaren farkı gördüm. Kullanılan cihaz gerçekten çok etkili, neredeyse hiç acı hissetmedim. …"},
+  {"n": "Mahsa J.", "d": "2025-08", "t": "Lazer epilasyon için gittim fakat 4.seansdan sonra gerek bile duymuyorum çünkü hiç bir tüyüm çıkmıyor artık harikasınız beni büyük sorundan kurtardınız lazerde son noktasınız …"},
+  {"n": "Rabiya S.", "d": "2025-08", "t": "Lazerden çok memnunum 2. Seansım olmasına rağmen hala kıl çıkmıyor. Sizden ve ekipten çok memnun kaldım ayrıca geldiğimde psikolojik olarakta stres atıyorum Selda hanım sayesinde harika terapi sunuyor."},
+  {"n": "Kayra T.", "d": "2025-06", "t": "5 yıldızı gerçekten hak eden bir işletme yaklaşık 2 aydır lazer epilasyon hizmeti alıyorum daha 2. Seansta gözle görülür fark oluştu çok memnunum herkese tavsiye ediyorum"},
+  {"n": "Deniz Ö.", "d": "2025-06", "t": "Sadece demek istiyorum ki inanılmaz bir şekilde lazerden sonuç aldım.. …"},
+  {"n": "Tuncer K.", "d": "2025-05", "g": "m", "t": "Epilasyon için gittim lakin tereddütlerim olmasına rağmen güler yüzlü personel ve samimi bir ortam içerisinde gayet müşteri memnuniyetli anlayışla yaklaşımla karşılandım ve gayet memnun kaldım Selda hanıma teşekkürler"},
+  {"n": "Dilara K.", "d": "2025-04", "t": "Lazer ve tırnak işlemlerim için buraya geliyorum. Ortam temiz ve çok ferah. Çalışanlar da her defasında bana çok yardımcı oluyorlar. İlk lazer seansından itibaren etkisini görmeye başladım. İşlemler büyük bir titizlik ve özenle yapılıyor. …"},
+  {"n": "Ezgi S. G.", "d": "2025-04", "t": "Lazer epilasyon için Google’dan tesadüfen buldum. ilk seferde beklediğimin üstünde bir dökülme oldu. Çok memnunum. Ayrıca  çok güler yüzlü ve ilgililer. Tavsiye ederim."},
+  {"n": "Feyza Y.", "d": "2025-08", "t": "Çok memnun kaldım, gönül rahatlığıyla tavsiye ederim. Kalıcı oje ve lazer hizmeti aldım oldukça başarılıydı."}
+ ]
+}
