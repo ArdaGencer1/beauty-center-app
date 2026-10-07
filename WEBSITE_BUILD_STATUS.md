@@ -28,6 +28,8 @@ Son güncelleme: **2026-10-07**
   değiştirildi; eksik PNG monogram yerine repo içi `website/m/monogram.svg`
   eklendi.
 - HTML başlığı/metadata yapısı düzeltildi.
+- Ziyaretçi tarafındaki prototip modu seçicisi kaldırıldı; site yalnızca
+  **A / Tam Şölen** sunumunda çalışıyor ve mevcut renk sistemi korunuyor.
 - Medya referansı denetimi: **47/47 mevcut, 0 eksik**.
 - JavaScript sözdizimi, benzersiz DOM kimlikleri ve deterministik rebuild geçti.
 - Playwright: 1440 px masaüstü ve 390 px mobil; **0 yatay taşma, 0 konsol
