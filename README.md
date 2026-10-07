@@ -10,6 +10,7 @@ Web sitesi, Claude Artifact prototipi, geliştirme planları ve medya kütüphan
 - `sources/media_ig_20261007/` — medya üretim betiği ve manifest
 - `sources/atelier_lazer_20261007/` — lazer sayfaları prototip kaynakları
 - `plans/claude/20261007/` — lazer, kalıcı makyaj ve Cilt Atlası planları
+- `plans/claude/20261007-tirnak/` — tırnak ailesinin 22 sayfası için kaydırmalı hikâye planı ve medya kanıtları
 - `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüsü
 
 ## Aktif Artifact
