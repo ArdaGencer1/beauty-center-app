@@ -5,14 +5,18 @@
   "artifact": {
     "url": "https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM",
     "continue_existing": true,
-    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
-    "repository_snapshot_version": 3
+    "repository_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-live.html",
+    "repository_snapshot_version": 18,
+    "repository_snapshot_version_id": "1791390454-c30c",
+    "legacy_snapshot": "prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/artifact-v3.html",
+    "multiple_writers": true
   },
   "measurement": {
     "system": "TagCtx",
     "runbook": "TAGCTX_RUNBOOK.md",
     "cli": "tag_ctx.py",
     "deploy_gate": "patches/verify_tags.sh",
+    "artifact_probe": "tagtools/artifact_probe.mjs",
     "baseline": "tagctx-baseline.json",
     "required_after_changes_to": [
       "HTML or JavaScript",
@@ -56,6 +60,24 @@
     }
   },
   "plans": [
+    {
+      "key": "tirnak-renk-atolyesi-v3",
+      "status": "published_artifact_v18",
+      "path": "plans/claude/20261007/renk-atolyesi-v3-adimlar.md",
+      "sources": "sources/atelier_tirnak_20261007/",
+      "ready": [
+        "refined nail mattes and shade plates",
+        "orkide clip replaced by lila / babyboomer / krom",
+        "selection, drag and shape cross-fade fixes",
+        "phone palette",
+        "Artifact probe gate: 60 runs, no newly failing checks"
+      ],
+      "remaining": [
+        "verify babyboomer Instagram ID on the server export",
+        "optional: better oval red base photo",
+        "live site apply only with owner approval, then full server TagCtx gate"
+      ]
+    },
     {
       "key": "lazer",
       "status": "partial_advanced",
