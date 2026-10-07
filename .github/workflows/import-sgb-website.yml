@@ -1,0 +1,47 @@
+name: Import Selda Gencer website assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-sgb-website.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download verified transfer bundle
+        run: |
+          curl --fail --location --retry 5 --retry-delay 3 \
+            --output /tmp/sgb-website.tar.gz \
+            'https://seldagencerbeauty.com/github-transfer-uCOok4/website-bundle.mp4'
+          echo '0e3d9bec3b7e657106f2dc31e7b91554957331c7716872abdd63bd5b3d3fce93  /tmp/sgb-website.tar.gz' | sha256sum --check -
+
+      - name: Extract website, sources, plans, and media
+        run: |
+          tar -xzf /tmp/sgb-website.tar.gz -C .
+          test -f website/index.html
+          test -f sources/media_ig_20261007/manifest.json
+          test "$(find originals/instagram/videos -type f | wc -l)" -eq 100
+          if find website originals -type f -size +99M -print -quit | grep -q .; then
+            echo "A file exceeds GitHub's 100 MB limit" >&2
+            exit 1
+          fi
+
+      - name: Commit imported files
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add website sources plans prototypes originals
+          git commit -m 'Import website prototype, plans, processed media, and raw videos'
+          git push origin HEAD:main
