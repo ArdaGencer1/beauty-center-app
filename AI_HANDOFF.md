@@ -14,6 +14,8 @@ inceleyerek token harcamasını önlemektir.
   ana sürüm `website/index.html`; aynı içeriğin Artifact çalışma kopyası
   `artifact-current.html`'dir. Artifact URL'sine henüz geri yayınlanmadığı için
   URL'deki sürümü doğrulamadan “tam eşleşiyor” deme.
+- Ziyaretçi sürümünde yalnızca **A / Tam Şölen** sunumu kalır. Performans/tema
+  seçicisini geri ekleme ve mevcut renk sistemini açık istek olmadan değiştirme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
   sheet üretme. Önce manifest ve medya indeksinden ele, sonra yalnızca kısa
   listeyi görsel olarak doğrula.
