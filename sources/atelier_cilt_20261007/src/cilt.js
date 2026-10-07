@@ -17,11 +17,12 @@ NAV.forEach(function(g){ if(g[0]==="Cilt") g[1].forEach(function(it){ if(!it[2] 
 function caOpt(id){ return PLANS.cilt.opts.filter(function(x){ return x.id===id; })[0]||null; }
 function caRoute(){ return CA.cur?"cilt/"+CA.cur:"cilt"; }
 function caL(code,place){ return ' data-track-label="at-'+code+'-'+place+'"'; }
-function caPoster(k){ var m=CM[k]; if(!m) return "m/monogram.png"; return m.v?"m/ig/"+m.v+"-poster.webp":"m/ig/"+m.pair+"-sonra-"+m.s+".webp"; }
+function caPoster(k){ var m=CM[k]; if(!m) return "m/monogram.png"; if(m.img) return "m/ig/"+m.img+"-480.webp"; return m.v?"m/ig/"+m.v+"-poster.webp":"m/ig/"+m.pair+"-sonra-"+m.s+".webp"; }
 function caPriceTxt(p){ var o=p.opt?caOpt(p.opt):null; if(!o) return "Rehber · size uygun bakım";
   if(p.from) return p.from.toLocaleString("tr-TR")+" TL'den";
   return fmtTL(o.p)+(o.d?" · "+o.d+" dk":""); }
 function caMedia(k,lazy){ var m=CM[k]; if(!m) return "";
+  if(m.img) return '<img src="m/ig/'+m.img+'-720.webp" srcset="m/ig/'+m.img+'-480.webp 480w, m/ig/'+m.img+'-720.webp 720w" sizes="(min-width:960px) 50vw, 100vw" alt="'+m.alt+'" width="720" height="900" decoding="async"'+(lazy?' loading="lazy"':'')+'>';
   if(m.v) return '<video class="'+(lazy?"ca-lv":"auto-vid")+'" muted playsinline loop preload="none" poster="m/ig/'+m.v+'-poster.webp" data-src="m/ig/'+m.v+'.mp4" aria-label="'+m.alt+'"></video>';
   var b="m/ig/"+m.pair+"-", rows=m.s!==480;
   return '<div class="ca-pair'+(rows?" rows":"")+'"><figure><img src="'+b+"once-"+m.s+'.webp" alt="Önce: '+m.alt+'" loading="lazy"><span class="cmp-tag">Önce</span></figure><figure><img src="'+b+"sonra-"+m.s+'.webp" alt="Sonra: '+m.alt+'" loading="lazy"><span class="cmp-tag">Sonra</span></figure></div>'; }
@@ -199,3 +200,4 @@ function caAtlasHTML(){ return CA_GROUPS.map(function(g){ var list=Object.keys(C
 function caInitHub(){ var a=$("#ciltAtlas"); if(a && !a.dataset.done){ a.dataset.done=1; a.innerHTML=caAtlasHTML(); }
   var s=$("#ciltHubStory"); if(s && !s.dataset.done){ s.dataset.done=1; s.innerHTML=caStoryHTML(CA_SEANS,["Bir bakımın içinden","Klasik bakım, <em>adım adım</em>."],"cilt").replace('class="sec gutter ca-story"','class="ca-story"'); hubStory(); } }
 function hubStory(){ var b=$("#ciltHubStory [data-ca-story]"); if(!b) return; var keep=CA.obs; CA.obs=[]; caStory(b); CA.hubObs=CA.obs; CA.obs=keep; }
+/* ---------- /CİLT ATLASI ---------- */

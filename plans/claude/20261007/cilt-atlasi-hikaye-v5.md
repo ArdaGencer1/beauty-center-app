@@ -114,3 +114,46 @@ BASE=http://127.0.0.1:8766/index.html NODE_PATH=$(npm root -g) \
 
 - `a4_build.py` cilt yamalarını cilt öncesi bir tabana uygular. Yayındaki sürüm artık Cilt Atlası'nı içerdiği için sonraki cilt değişiklikleri doğrudan `src/` dosyalarından ve yayındaki sürüm üzerinde yapılmalı (yamalar ikinci kez uygulanamaz, derleyici bunu 0/2 eşleşme hatasıyla durdurur).
 - Geri okunan sayfa yayın iskeletini içerir; yayından önce sökülür (bkz. `AI_HANDOFF.md`).
+
+## 6. Güncelleme turu 2 (2026-10-07, Artifact sürüm 16 `1791388726-c3e0`)
+
+**G1 · CRM doğrulaması: yapılamadı (ağ).** Bu bulut ortamının ağ politikası `seldagencerbeauty.com`'u
+(ve `/api/public/price-menu`'yu) engelliyor. Diğer dallarda da cilt CRM verisi yok; `claude/happy-babbage-hz55k8`
+dalındaki cilt sayfaları aynı rakamları kullanıyor (bağımsız doğrulama değil). Kalan: sunucuda
+`/api/public/price-menu`'dan ton, saten, dudak, sırt, koltuk altı ve bölge/alan fiyatlarını oku.
+
+**G2 · Gerçek medya: kısmen yapıldı.** `instagram.com` ve sunucu arşivi bu ortamdan erişilemez. Ancak
+`claude/happy-babbage-hz55k8` dalında başka bir oturumun sunucu arşivinden ürettiği cilt medyası vardı; kısa liste
+görsel olarak doğrulandı ve 9 öğe alındı:
+
+| slug | IG id | Kullanım |
+|---|---|---|
+| `cilt-hydra` (video) | 18406447750155831 | Dermabrazyon ve Hydra kahramanı |
+| `cilt-maske` (video) | 18106634948074733 | Hollywood ve antioksidan kahramanı |
+| `cilt-led-kubbe` (video) | 18106634948074733 | Paris kahramanı |
+| `cilt-sunger` (video) | 18455967805112572 | Fiyatlar kahramanı (altın lavabo) |
+| `cilt-cihaz` | 18014729837423154 | Dermabrazyon/Hydra "Cihaz" perdesi |
+| `cilt-uygulama` | 18406447750155831 | Dermabrazyon/Hydra "Koltukta" perdesi |
+| `cilt-hazirlik` | 18106634948074733 | Hollywood/Paris maske hazırlığı |
+| `cilt-urun` | 18406447750155831 | Antioksidan "Ürün" perdesi |
+| `cilt-lamba` | 18455967805112572 | Analiz ve yüz bakımı "Erkekler de" perdesi |
+
+Dışlanan: `cilt-kirmizi-led` (çok karanlık). Cihazın hangi bakımda kullanıldığı sahibe sorulacak; metinler bu
+yüzden "çok başlıklı cihazımız, başlığı uzman seçer" diyor. Sunucuda kalanlar (hâlâ eksik): #1 gerçek yarım yüz,
+#3, #4, #5 cilt odası, #12, #13, #14/#15, #18, #19, #22.
+
+**G3 · Sahip soruları: sahipten yanıt bekliyor** (Hollywood ↔ Paris farkı, klasik adım sırası, cihaz başlıkları,
+Hydra Elite CRM kalemi, uzman adı/portre izni).
+
+**Mobil uyum ve yön (oryantasyon) düzeltmeleri** (`src/mobil.css` → `<style id="mobil-duzen">`, tüm görünümler):
+- Yatay telefon (≤560 px yükseklik): kahraman iki sütun, medya ekran yüksekliğinde; H1 ilk ekranda (önce 700–1300 px
+  aşağıdaydı: cilt, kaş, kirpik, lifting, kalıcı makyaj, tırnak alt sayfaları, vücut, lazer). Alt çubuk sağda küçük hap.
+- Dikey tablet ve 320 px telefon: kahraman yüksekliği `min(125vw, 58svh, 100svh − 300px)`; genişlik tam kalır.
+- Çentik: yatayda `env(safe-area-inset-*)` ile sol/sağ boşluk.
+- Cilt: yatayda hikâye ve film iki sütun / tam yükseklik; dikey tablette atlas 3 sütun; "← Cilt Atlası" dokunma alanı 44 px.
+- Doğrulama: `mobil_audit.cjs` 10 ekran × 10 cilt yolu 100/100; 13 diğer görünümde yatay ve dikey temiz; döndürme testi
+  (dikey ↔ yatay, sayfa ortasında) taşma yok, sahne-perde eşleşmesi korunuyor; `shoot_cilt.cjs` 50/50; 23 görünüm duman testi temiz.
+- Diğer oturumlara bildirilen küçük dokunma hedefleri: lazer bölge düğmeleri 29 px, tırnak `tz-ask` 14 px, salon 15 px bağlantılar.
+
+**Derleme:** Cilt artık yayında olduğu için `a4_build.py --refresh <yayındaki.html>` kullanılır: yalnız
+`#cilt-atlas` stili, `#mobil-duzen` stili ve `/* CİLT ATLASI … /CİLT ATLASI */` kod bloğu yenilenir.

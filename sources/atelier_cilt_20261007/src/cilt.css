@@ -151,3 +151,29 @@ html[data-tier="C"] .ca-layer,html[data-tier="C"] .ca-card{transition:none}
 .ca-row button,.ca-row>span:first-child{background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .ca-row .pr{padding:9px 14px;border:1px solid var(--line-strong);border-radius:999px;font:500 19px/1 var(--display);color:var(--gold-ink);white-space:nowrap}
 #ciltHubStory{padding-top:0}
+
+/* ---------- yön (oryantasyon) ve konum ---------- */
+.ca-crumb{min-height:44px;padding-right:8px}
+@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
+  .ca-hero .hero-media{aspect-ratio:auto;height:calc(100svh - var(--nav-h))}
+  .ca-scrolly{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+  .ca-stage{grid-column:1;grid-row:1;height:calc(100svh - var(--nav-h) - 20px);top:calc(var(--nav-h) + 10px)}
+  .ca-acts{grid-column:2;grid-row:1}
+  .ca-act{min-height:92svh;align-items:center;padding:0}
+  .ca-act:first-child{margin-top:0}
+  .ca-card{padding:16px}
+  .ca-card h3{font-size:26px}
+  .ca-film{height:200svh}
+  .ca-film-pin{height:calc(100svh - var(--nav-h) - 20px)}
+  .ca-map{grid-template-columns:minmax(0,.8fr) minmax(0,1fr)}
+  .ca-face{width:min(100%,250px)}
+  .ca-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .ca-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ca-duel{grid-template-columns:1fr auto 1fr;align-items:stretch}
+  .ca-duel .vs{align-self:center}
+}
+@media (min-width:600px) and (max-width:959px) and (orientation:portrait){
+  .ca-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ca-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ca-stage{height:min(52svh,600px)}
+}

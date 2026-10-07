@@ -2405,5 +2405,151 @@
    "w": 420,
    "h": 914
   }
+ },
+ "cilt-cihaz": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Salonumuzdaki çok başlıklı hydra cilt bakım cihazı",
+  "id": "18014729837423154",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-cihaz-480.webp",
+    "720": "cilt-cihaz-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-urun": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Salonda kullanılan Dermaplus bakım ürünü",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-urun-480.webp",
+    "720": "cilt-urun-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-uygulama": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Hydra başlığıyla uygulama, salonumuzda",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-uygulama-480.webp",
+    "720": "cilt-uygulama-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-hazirlik": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Maskenin kâsede hazırlanması",
+  "id": "18106634948074733",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "full": {
+   "files": {
+    "480": "cilt-hazirlik-480.webp",
+    "720": "cilt-hazirlik-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-lamba": {
+  "fam": "cilt",
+  "kind": "still",
+  "alt": "Büyüteç lambası altında bakıma hazırlık",
+  "id": "18455967805112572",
+  "permalink": null,
+  "date": null,
+  "yuz": true,
+  "full": {
+   "files": {
+    "480": "cilt-lamba-480.webp",
+    "720": "cilt-lamba-720.webp"
+   },
+   "w": 720,
+   "h": 900
+  },
+  "split": null
+ },
+ "cilt-hydra": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Hydra başlığıyla uygulama, salonumuzda çekildi",
+  "id": "18406447750155831",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-hydra.mp4",
+  "poster": "cilt-hydra-poster.webp",
+  "dur": 5.0,
+  "bytes": 735099,
+  "split": null
+ },
+ "cilt-maske": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Bakım maskesinin hazırlanıp uygulanması, salonumuzda çekildi",
+  "id": "18106634948074733",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-maske.mp4",
+  "poster": "cilt-maske-poster.webp",
+  "dur": 2.9,
+  "bytes": 513826,
+  "split": null
+ },
+ "cilt-sunger": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "Altın lavabo ve temizleme süngerleri, salonumuzda çekildi",
+  "id": "18455967805112572",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-sunger.mp4",
+  "poster": "cilt-sunger-poster.webp",
+  "dur": 2.6,
+  "bytes": 326593,
+  "split": null
+ },
+ "cilt-led-kubbe": {
+  "fam": "cilt",
+  "kind": "video",
+  "alt": "LED kubbe altında renk döngüsü, salonumuzda çekildi",
+  "id": "18106634948074733",
+  "permalink": null,
+  "date": null,
+  "yuz": false,
+  "mp4": "cilt-led-kubbe.mp4",
+  "poster": "cilt-led-kubbe-poster.webp",
+  "dur": 3.5,
+  "bytes": 533307,
+  "split": null
  }
 }

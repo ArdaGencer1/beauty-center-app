@@ -1,0 +1,40 @@
+/* ---------- MOBİL DÜZEN: yön (oryantasyon) ve konum, tüm görünümler ----------
+   Yalnızca 960 px altında ve yatay kısa ekranlarda çalışır; masaüstü düzenine dokunmaz.
+   Ölçüm (2026-10-07, 10 ekran): yatay telefonda kahraman 4:5 dikey kaldığı için H1 ekranın 700–1300 px altına
+   düşüyordu; dikey tablette ve 320 px telefonda H1 ilk ekranın dışındaydı; alt çubuk yatay ekranın %25'ini
+   kaplıyordu; çentikli telefonda yatay tutuşta içerik çentiğin altına giriyordu. */
+
+/* Çentik / güvenli alan: yatay tutuşta sol-sağ boşluk çentikten küçük olmasın */
+.gutter{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.nav{padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:max(14px,env(safe-area-inset-right,0px))}
+.hero-copy{padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+
+/* Dikey telefon ve tablet: kahraman medya ilk ekranda başlığa ve çiplere yer bıraksın */
+@media (max-width:959px) and (orientation:portrait){
+  /* yükseklik sınırı genişliği daraltmasın diye oran yerine açık yükseklik (karşılaştırma kaydırıcılı kahramanlar hariç) */
+  .hero-split .hero-media:not(:has(> .cmp)){aspect-ratio:auto;height:min(125vw,58svh,calc(100svh - 300px));max-height:none}
+  .hero-split .hero-media:not(:has(> .cmp)) > .half-stage,.hero-split .hero-media:not(:has(> .cmp)) > .kb-stage,.hero-split .hero-media:not(:has(> .cmp)) > .look-stage{aspect-ratio:auto;height:100%;max-height:none}
+  .hero-split .hero-media img,.hero-split .hero-media video{object-position:50% 40%}
+}
+
+/* Yatay telefon (kısa ekran): kahraman iki sütun, medya ekran yüksekliğinde; alt çubuk sağda küçük hap */
+@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
+  .hero-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;min-height:0}
+  .hero-split .hero-media{aspect-ratio:auto;height:calc(100svh - var(--nav-h) - env(safe-area-inset-top,0px));max-height:none}
+  .hero-split .hero-media > .cmp,.hero-split .half-stage,.hero-split .kb-stage,.hero-split .look-stage,.hero-split .atelier-stage{aspect-ratio:auto;height:100%;max-height:none;width:100%}
+  .hero-split .hero-copy{padding-top:14px;padding-bottom:14px;gap:10px;align-content:start}
+  .hero-copy h1{font-size:clamp(32px,5.2vw,50px)}
+  .hero-copy .lede{font-size:18px}
+  .bar{left:auto;right:max(10px,env(safe-area-inset-right,0px));bottom:max(8px,env(safe-area-inset-bottom,0px));width:min(380px,48vw);padding:6px;border:1px solid var(--line);border-radius:999px}
+  .bar .btn-gold{height:44px}
+  .bar .btn-round{width:44px;height:44px}
+  .sec{padding-block:44px}
+}
+
+/* Lazer ailesinin kendi kahramanı (.lz-): yatay kısa ekranda da iki sütun, başlık ilk ekranda */
+@media (orientation:landscape) and (max-height:560px) and (max-width:1199px){
+  .lz-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+  .lz-stage{height:calc(100svh - var(--lz-top,58px));min-height:0;order:2}
+  .lz-copy{margin:0;padding:calc(var(--lz-top,64px) + 8px) 20px 14px max(20px,env(safe-area-inset-left,0px));order:1}
+  .lz-h1{font-size:clamp(30px,5vw,46px)!important}
+}

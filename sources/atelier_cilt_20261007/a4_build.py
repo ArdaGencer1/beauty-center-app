@@ -10,6 +10,7 @@ Her yama tam olarak bir kez eşleşmek zorundadır; eşleşmezse derleme durur. 
 istenildiği kadar yeniden çalıştırılabilir.
 
 Kullanım:  python3 sources/atelier_cilt_20261007/a4_build.py [--check]
+           python3 sources/atelier_cilt_20261007/a4_build.py --refresh <yayındaki-sürüm.html>   (cilt zaten yayındaysa)
 """
 from __future__ import annotations
 
@@ -22,7 +23,7 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 ART = REPO / "prototypes" / "claude-artifact" / "WmsLiPPTLdnrjSrdYSXcLM"
 BASE = ART / "artifact-v5.html"  # yayındaki sürüm 1791385473-59b6 (v3 + vücut + lazer ailesi + tırnak kartela, başka oturumlar)
-OUT_ART = ART / "artifact-v6.html"
+OUT_ART = ART / "artifact-v7.html"
 OUT_WEB = REPO / "website" / "index.html"
 MEDIA = REPO / "website"
 
@@ -145,9 +146,67 @@ def build() -> str:
     h = sub1(h, "'<button class=\"q-back\" data-qagain", QUIZ_LINK + "'<button class=\"q-back\" data-qagain", "quiz-link")
     h = sub1(h, "yeniden doğrulandı.", "yeniden doğrulandı." + PROTO_NOTE, "proto-note")
 
+    h = put_mobile(h)
+
     # --- motor (IIFE içinde, boot'tan hemen önce: $, S, PLANS, NAV, REVIEWS, card, scrollers erişilebilir)
     h = sub1(h, "\nboot();\n})();", "\n" + js + "\nboot();\n})();", "engine")
     return h
+
+
+JS_START = "/* ---------- CİLT ATLASI · içerik (24 alt sayfa) ----------"
+JS_END = "/* ---------- /CİLT ATLASI ---------- */"
+
+
+def strip_wrapper(h: str) -> str:
+    """Yayın servisinin eklediği <!doctype…<body> … </body></html> iskeletini (bir ya da daha fazla kat) söker."""
+    w = "<!doctype html><html><head><meta charset=utf8>"
+    while h.startswith(w):
+        first, h = h.split("\n", 1)
+        if not first.rstrip().endswith("<body>"):
+            sys.exit("iskelet: ilk satır beklenen biçimde değil")
+        h = h.rstrip("\n")
+        if not h.endswith("</body></html>"):
+            sys.exit("iskelet: son satır beklenen biçimde değil")
+        h = h[: -len("</body></html>")].rstrip("\n") + "\n"
+    if "<!doctype" in h.lower():
+        sys.exit("iskelet: içeride <!doctype> kaldı")
+    return h
+
+
+def put_mobile(h: str) -> str:
+    """Ortak mobil düzen bloğu (<style id="mobil-duzen">): yoksa cilt stilinin hemen ardına eklenir, varsa yenilenir.
+    Sayfanın tüm stillerinden sonra gelmesi için </style> zincirinin sonuna değil, ilk <script>'ten önceye konur."""
+    css = (HERE / "src" / "mobil.css").read_text(encoding="utf-8")
+    o = '<style id="mobil-duzen">\n'
+    if o in h:
+        i = h.index(o) + len(o)
+        j = h.index("</style>", i)
+        return h[:i] + css + h[j:]
+    k = h.index("<script")
+    return h[:k] + o + css + "</style>\n" + h[k:]
+
+
+def refresh(base: Path) -> str:
+    """Cilt Atlası zaten yayında: yayındaki sürümü al, yalnız cilt stilini ve cilt kod bloğunu kaynaktan yenile."""
+    h = strip_wrapper(base.read_text(encoding="utf-8"))
+    css = (HERE / "src" / "cilt.css").read_text(encoding="utf-8")
+    js = (HERE / "src" / "cilt_pages.js").read_text(encoding="utf-8") + (HERE / "src" / "cilt.js").read_text(encoding="utf-8")
+    o = '<style id="cilt-atlas">\n'
+    i = h.index(o) + len(o)
+    j = h.index("</style>", i)
+    h = h[:i] + css + h[j:]
+    h = put_mobile(h)
+    if h.count(JS_START) != 1:
+        sys.exit("yenileme: cilt kod bloğu başlangıcı 1 kez bulunmalı")
+    i = h.index(JS_START)
+    if JS_END in h:
+        j = h.index(JS_END) + len(JS_END) + 1
+    else:  # ilk yayın (sürüm 12) bitiş işaretsizdi: blok hubStory satırıyla biter
+        m = re.compile(r"^function hubStory\(\)\{.*\n", re.M).search(h, i)
+        if not m:
+            sys.exit("yenileme: cilt kod bloğunun sonu bulunamadı")
+        j = m.end()
+    return h[:i] + js + h[j:]
 
 
 def check(h: str) -> int:
@@ -156,6 +215,8 @@ def check(h: str) -> int:
     # JS içinde parça parça kurulan yollar: CM ve GAL kayıtlarından türet
     for slug, s in re.findall(r'pair:"([a-z0-9-]+)",s:(\d+)', h):
         refs |= {f"m/ig/{slug}-once-{s}.webp", f"m/ig/{slug}-sonra-{s}.webp"}
+    for v in re.findall(r'\{img:"([a-z0-9-]+)"', h):
+        refs |= {f"m/ig/{v}-480.webp", f"m/ig/{v}-720.webp"}
     for v in re.findall(r'\{v:"([a-z0-9-]+)"', h):
         refs |= {f"m/ig/{v}.mp4", f"m/ig/{v}-poster.webp"}
     extra = {l.strip() for l in (HERE / "data" / "artifact_published_extra.txt").read_text().splitlines() if l.strip() and not l.startswith("#")}
@@ -173,8 +234,9 @@ def check(h: str) -> int:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true", help="yalnızca derle ve denetle, dosya yazma")
+    ap.add_argument("--refresh", metavar="YAYINDAKI.html", help="Cilt Atlası'nı içeren yayındaki sürümde yalnız cilt bloklarını yenile")
     a = ap.parse_args()
-    h = build()
+    h = refresh(Path(a.refresh)) if a.refresh else build()
     rc = check(h)
     if a.check:
         sys.exit(rc)
