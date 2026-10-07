@@ -424,12 +424,15 @@ Yayın 1791382406-9153: 278 dosya. 43 dosya eklendi, 6 dosya kaldırıldı (`tir
   - Canlı anlık görüntü: `artifact-v6.html`.
 - `website/index.html` canlı sürüm 6'nın aynısı. İçindeki Vücut görselleri (`m/ig/vucut-*`) Artifact'te ve Vücut dalında; bu dalda değil.
 
-### 10.2 Son cevaplar (sürüm 7)
+### 10.2 Son cevaplar (sürüm 9)
 
 - Giriş filmi için izin var, "kişiye özel paket" her işlemde geçerli, oje markası yazılmaz. §7 güncellendi.
 - Kartela numaraları okundu ve veriye işlendi. Etiketin hangi tırnağa ait olduğu (§7-10) netleşene kadar sayfada yalnız ton adı görünür.
 - Numaralı mod yerelde denendi. Mercan'a dokununca "No 031 · salondaki kartela" görünüyor; mesaj "kartelada beğendiğim ton: Mercan (031)", davetiye kartı "Mercan (031)" oluyor.
-- Bu arada Lazer ailesi (6 sayfa, kaş vitrinindeki düzeltmelerle birlikte) sürüm 6'nın üzerine yayınlandı. Tırnak değişiklikleri onun üzerine `build_proto.py --base tirnak-build-v6.html --live <canlı>` ile birleştirildi.
+- Bu arada Lazer ailesi (6 sayfa, kaş vitrinindeki düzeltmelerle birlikte) sürüm 6'nın üzerine yayınlandı (sürüm 7–8). Tırnak değişiklikleri onun üzerine `build_proto.py --base tirnak-build-v6.html --live <canlı>` ile birleştirildi.
   - Prototip panelindeki çakışmayı (onların "Lazer sayfası" satırı, bizim tırnak notumuz) birleştirme aracı kendisi çözdü. Kural: iki taraf farklı satırlara dokunduysa her satır, onu değiştiren taraftan alınır; aynı satıra iki taraf da farklı dokunduysa `.conflict` dosyasına yazılıp elle çözülür.
   - Araç, önceki iki birleştirmeyi (sürüm 6 ve sürüm 6'nın üstüne ilk deneme) birebir aynı sonuçla yeniden üretti.
   - Canlı sürüme göre fark yalnız tırnağın 8 satırı.
+- Sürüm 9'da 22 tırnak rotası (telefon ve masaüstü) ve 8 vitrinin "Saatimi seç" akışı, Lazer'in yayınladığı sürümle aynı davranıyor; JS hatası yok.
+- Bulgu (Lazer ailesinin kodu, dokunulmadı): Lazer planlayıcısı açıkken adres başka bir vitrine değişirse Lazer katmanı açık kalıyor ve tıklamaları engelliyor.
+- Bir sonraki birleştirmenin tabanı: `tirnak-build-v9.html`. Canlı anlık görüntü: `artifact-v9.html`.
