@@ -330,6 +330,15 @@ Hâlâ CRM'den okunacak: yüz, çene ve dudak üstü alımı fiyat ve süreleri;
     `sources/kas_perde_20261007/kasyuz_build.py` (sayılı `rep()`; yayındaki HTML'e uygulanır).
   - Doğrulama: Playwright 390 ve 1440 genişlik; konsol hatası 0, yatay taşma 0,
     kaş medyası eksik 0; reduced-motion'da statik görünüm.
+- **Mobil — yayında, Artifact sürüm 15** (`1791387535-eead`,
+  `sources/kas_perde_20261007/kasyuz_mobile.py`, `kasyuz_build.py`'den sonra uygulanır):
+  - Hero telefonda (≤699px) etiketsiz kırpım, 16:10; masaüstü hero değişmedi.
+  - Beş Perde telefonda kenardan kenara 1.8:1, sahne sabit randevu çubuğunun üstünde,
+    kaydırma ~%25 kısa; adım çubukları dokunulabilir (adıma atlar, 44px).
+  - Galeri kaş kartları etiketsiz kırpımlar, 2:1; kart yazısı 11px.
+  - Kapanış görseli telefonda en çok 44svh; başlık ilk ekranda.
+  - Kaş SSS başlıkları 44px dokunma alanı.
+  - Doğrulama: 360×740 ve 390×844; konsol hatası 0, yatay taşma 0, 40px altı dokunma alanı 0.
 - **K1 kalan:** Uyanış ayrı bölüm olarak yapılmadı (dönüşümler Beş Perde ve mevcut
   galeride); kına bandı CRM'de kına kalemi netleşince.
 - **K2, K3:** başlanmadı.

@@ -11,7 +11,7 @@ inceleyerek token harcamasını önlemektir.
 - Mevcut Claude Artifact geliştirilecek; yeni Artifact oluşturulmayacak:
   <https://claude.ai/artifact/WmsLiPPTLdnrjSrdYSXcLM>
 - Depodaki son kaynak anlık görüntüsü **Artifact v3**'tür; yayındaki Artifact
-  2026-10-07 itibarıyla sürüm 13'tür ve v3'ten çok farklıdır. Artifact üzerinde bu
+  2026-10-07 itibarıyla sürüm 15'tir ve v3'ten çok farklıdır. Artifact üzerinde bu
   anlık görüntüden sonra yalnızca Claude içinde yapılmış değişiklikler depoda
   olmayabilir; sürümü doğrulamadan “tam eşleşiyor” deme.
 - Fotoğrafları veya videoları topluca açma, yeniden analiz etme ya da contact
@@ -140,7 +140,7 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-### 4. Kaş ve yüz "Hikâye" — K1 ilk kısım yayında (Artifact sürüm 13)
+### 4. Kaş ve yüz "Hikâye" — K1 ve mobil iyileştirmeler yayında (Artifact sürüm 15)
 
 Plan: `plans/claude/20261007/kas-yuz-hikaye-scroll.md`
 
