@@ -27,6 +27,7 @@ kapısı zorunludur. `audit --record`, `diff`, runtime `verify` ve
 - `sources/media_ig_20261007/` — medya üretim betiği ve manifest
 - `sources/atelier_lazer_20261007/` — lazer sayfaları prototip kaynakları
 - `plans/claude/20261007/` — lazer, kalıcı makyaj ve Cilt Atlası planları
+- `plans/claude/20261007-tirnak/` — tırnak ailesinin 22 sayfası için kaydırmalı hikâye planı ve medya kanıtları
 - `prototypes/claude-artifact/WmsLiPPTLdnrjSrdYSXcLM/` — Artifact HTML anlık görüntüsü
 - `tag_ctx.py`, `adsai/tag_*.py`, `tagtools/` — TagCtx ölçüm denetimi
 - `patches/verify_tags.sh` — deploy sonrası ölçüm kapısı
