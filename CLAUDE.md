@@ -11,6 +11,9 @@ dosyasını oku.
 - Instagram için `instagram.db` kullan; `media.json` kullanma.
 - Planların “hazır” ve “kalan” durumu `AI_CONTEXT.json` içindedir.
 - Canlı siteye açık sahip onayı olmadan uygulama yapma.
+- Site veya tracking kodu değişiyorsa `TAGCTX_RUNBOOK.md` dosyasını uygula;
+  `audit --record`, `diff`, runtime `verify` ve `patches/verify_tags.sh` geçmeden
+  işi tamamlanmış sayma.
 
 Başlangıç:
 
