@@ -122,6 +122,28 @@
         "replace placeholders",
         "verification"
       ]
+    },
+    {
+      "key": "kirpik",
+      "status": "planned_media_reviewed",
+      "priority": 4,
+      "path": "plans/claude/20261007/kirpik-storytelling-scroll.md",
+      "ready": [
+        "5-page story map",
+        "image ranking (13 measured, 6 visually checked)",
+        "edit recipe (crop/delogo/grade)",
+        "video search protocol and candidate pool"
+      ],
+      "remaining": [
+        "server instagram.db video search (max 3)",
+        "check 17986864907913512 and ipek-kirpik-cift carousel",
+        "manifest update + build_media",
+        "kirpik.css/js story engine",
+        "3 new views + lifting rewrite",
+        "Artifact v5 publish after Lazer v4",
+        "verification and TagCtx",
+        "owner-approved live apply"
+      ]
     }
   ],
   "hard_rules": [
@@ -142,7 +164,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }

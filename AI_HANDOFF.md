@@ -148,7 +148,19 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
+### 4. Kirpik ailesi storytelling scroll — planlandı, medya incelendi
+
+Plan: `plans/claude/20261007/kirpik-storytelling-scroll.md`
+
+Hazır olanlar: 5 sayfalık hikâye haritası; 13 kirpik görselinin ölçümü ve 6'sının
+görsel doğrulaması; crop/delogo/grade reçetesi; video arama protokolü.
+
+Kalanlar: sunucuda `instagram.db` ile kirpik videosu araması (en fazla 3),
+`17986864907913512` kontrolü, manifest + `build_media.py`, story motoru, 3 yeni
+görünüm, lifting yeniden yazımı, Artifact v5 (Lazer v4 sonrası), doğrulama.
+
+Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**; kirpik dosya bütçesi
+nedeniyle Lazer v4'ten sonra gelir.
 
 ## Bilinen dışlamalar ve doğruluk kararları
 
@@ -171,6 +183,18 @@ Cilt planında çıkarılması kararlaştırılan eski seçimler:
 - `cilt-cift-5` (`18091846780704413`)
 - `cilt-islem` (`18394257022142297`)
 - `cilt-video-2` (`18084203987184570`)
+
+Kirpik görsel incelemesi (10-07):
+
+- `ipek-kirpik-1..6` ve `ipek-kirpik-cift` Instagram şablonunda “İPEK KİRPİK”
+  hapı ve imza yazısı taşıyor; manifestte crop yok. `ipek-kirpik-*` için üst
+  1:1 kırpma hapı siler; `ipek-kirpik-cift` sonrasında hap irisin üstünde,
+  silinmez.
+- `kirpik-makro-2` (`17885561247405556`): ailenin en yumuşak karesi; sahnede
+  kullanılmaz.
+- `ipek-kirpik-5` (`17917970235180938`): alt metin “Hacimli” yanlış; doğal
+  klasik görünüm.
+- `17986864907913512` PMU'dan elendi ama lifting sayfası için aday.
 
 Manifest eski kayıtları hâlâ içerebilir. Cilt geliştirmesinde planın son kararı
 manifestteki eski varlıktan üstündür. Lazer için gerçek “önce/sonra” yoktur;
