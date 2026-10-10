@@ -148,7 +148,21 @@ listesi ve dalga planı; manifestte 13 cilt kaydı.
 Kalanlar: medya v2, sayfa motoru, 25 sayfanın D1–D3 dalgaları, yeni personel
 çekimleri, yer tutucuların gerçek medyayla değişimi ve doğrulama bölümü.
 
-Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**.
+### 4. Kirpik “Bir bakışın hikâyesi” — planlandı
+
+Plan: `plans/claude/20261007/kirpik-storytelling-scroll.md`
+
+Hazır olanlar: 12 kirpik + 2 still kaydının ölçümlü incelemesi (6 görsel gözle
+doğrulandı), 5 sayfanın sahne × medya matrisi, edit reçetesi, çekim listesi,
+storytelling scroll motoru tasarımı ve K0–K5 dalgaları.
+
+Kalanlar: K0 sunucuda `instagram.db` ile en fazla 3 kirpik videosu ve
+`17986864907913512` lifting kararı; K1 `manifest_kirpik.json` ve kanıtlar;
+K2–K3 sayfalar; K4 doğrulama ve aynı Artifact'e yayın; K5 sahip onaylı canlı yama.
+
+Önerilen geliştirme sırası: **Lazer → PMU → Cilt Atlası**. Kirpik K0–K1
+(medya) hemen başlayabilir; K2–K4 PMU yayınından sonra aynı Artifact sürümü
+üzerine kurulur.
 
 ## Bilinen dışlamalar ve doğruluk kararları
 
@@ -171,6 +185,19 @@ Cilt planında çıkarılması kararlaştırılan eski seçimler:
 - `cilt-cift-5` (`18091846780704413`)
 - `cilt-islem` (`18394257022142297`)
 - `cilt-video-2` (`18084203987184570`)
+
+Kirpik incelemesinde bulunanlar (ayrıntı kirpik planında):
+
+- `ipek-kirpik-cift` (`18054018488742876`): “önce” yarısının alt ~%12'sinde başka
+  karenin şeridi var; iki yarının kadrajı farklı. Hizalama ve kırpma olmadan
+  slider'da kullanılmaz.
+- `ipek-kirpik-1…5`: altın “İPEK KİRPİK” bandı y≈0.85–0.92, imza y≈0.93–0.99;
+  y=0.84'ten kırpılır. `ipek-kirpik-6` ayrıca kontrol edilecek.
+- `kirpik-makro-3` (`17918048469017834`): ailenin en iyi makrosu, henüz
+  kullanılmıyor.
+- `kirpik-makro-4` (`18027584354550038`): “kahverengi” iddiası IG açıklamasıyla
+  doğrulanmadan yazılmaz.
+- `lifting-cift` (`18383965606199591`): kaynak 1080×540, büyütülmez.
 
 Manifest eski kayıtları hâlâ içerebilir. Cilt geliştirmesinde planın son kararı
 manifestteki eski varlıktan üstündür. Lazer için gerçek “önce/sonra” yoktur;

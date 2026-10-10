@@ -122,6 +122,28 @@
         "replace placeholders",
         "verification"
       ]
+    },
+    {
+      "key": "kirpik",
+      "status": "planned",
+      "priority": 4,
+      "path": "plans/claude/20261007/kirpik-storytelling-scroll.md",
+      "ready": [
+        "media review of 12 kirpik + 2 still records (metrics + 6 visual checks)",
+        "page/media matrix",
+        "edit recipe",
+        "shoot list",
+        "story engine design",
+        "wave plan K0-K5"
+      ],
+      "remaining": [
+        "K0 instagram.db video search (max 3) and 17986864907913512 decision",
+        "K1 manifest_kirpik.json + proofs",
+        "K2 initStory engine + kirpik hub",
+        "K3 kirpik-klasik, kirpik-mega, kirpik/fiyat, lifting",
+        "K4 verification + publish same Artifact",
+        "K5 owner-approved live patch + TagCtx"
+      ]
     }
   ],
   "hard_rules": [
@@ -142,7 +164,7 @@
     "mobile and desktop screenshots reviewed",
     "WhatsApp/phone CTA and W-code tracking verified",
     "Artifact file limit respected",
-    "live patch dry-run/check passed"
-    ,"TagCtx diff has no newly opened critical and runtime verify passed"
+    "live patch dry-run/check passed",
+    "TagCtx diff has no newly opened critical and runtime verify passed"
   ]
 }
